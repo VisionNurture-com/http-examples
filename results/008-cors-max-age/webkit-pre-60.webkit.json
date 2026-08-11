@@ -1,0 +1,21 @@
+{
+  "label": "webkit-pre-60",
+  "browser": "webkit",
+  "browser_version": "26.5",
+  "path": "/008/maxage-60/wk-pre",
+  "duration_s": 150,
+  "interval_s": 5,
+  "probes_sent": 30,
+  "probes_failed": 0,
+  "preflight_count": 3,
+  "preflight_offsets_s": [
+    0,
+    60,
+    120
+  ],
+  "preflight_gaps_s": [
+    60,
+    60
+  ],
+  "started_at": "2026-08-08T00:12:00.493Z"
+}

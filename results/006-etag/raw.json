@@ -1,0 +1,30 @@
+[
+  {
+    "case": "ETag あり",
+    "path": "/006/etag/on.css",
+    "first_status": 200,
+    "etag": [
+      "\"6a79595e-156\""
+    ],
+    "last_modified": [
+      "Mon, 10 Aug 2026 04:53:50 GMT"
+    ],
+    "cache_control": [
+      "no-cache"
+    ],
+    "conditional_sent": true,
+    "second_status": 304
+  },
+  {
+    "case": "ETag なし",
+    "path": "/006/etag/off.css",
+    "first_status": 200,
+    "etag": [],
+    "last_modified": [],
+    "cache_control": [
+      "no-cache"
+    ],
+    "conditional_sent": false,
+    "second_status": 200
+  }
+]

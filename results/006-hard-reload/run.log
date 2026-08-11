@@ -1,0 +1,14 @@
+measured-at: 2026-08-10T06:05:59.151Z
+scenario: 006-hard-reload
+mode: M2
+base: https://localhost:8444
+judgement: サーバ側の到着記録。ページ自身の再要求をキー到達の事前条件とする
+---
+{"scenario":"006-hard-reload","browser":"firefox","variant":"plain","reload_kind":"normal","focused_process":"firefox","page_rerequested":1,"asset_hits":0,"asset_statuses":[],"silent":true}
+{"scenario":"006-hard-reload","browser":"firefox","variant":"plain","reload_kind":"hard","focused_process":"firefox","page_rerequested":1,"asset_hits":1,"asset_statuses":[200],"silent":false}
+{"scenario":"006-hard-reload","browser":"firefox","variant":"immutable","reload_kind":"normal","focused_process":"firefox","page_rerequested":1,"asset_hits":0,"asset_statuses":[],"silent":true}
+{"scenario":"006-hard-reload","browser":"firefox","variant":"immutable","reload_kind":"hard","focused_process":"firefox","page_rerequested":1,"asset_hits":1,"asset_statuses":[200],"silent":false}
+{"scenario":"006-hard-reload","browser":"chromium","variant":"plain","reload_kind":"normal","focused_process":"Google Chrome for Testing","page_rerequested":1,"asset_hits":0,"asset_statuses":[],"silent":true}
+{"scenario":"006-hard-reload","browser":"chromium","variant":"plain","reload_kind":"hard","focused_process":"Google Chrome for Testing","page_rerequested":1,"asset_hits":1,"asset_statuses":[200],"silent":false}
+{"scenario":"006-hard-reload","browser":"chromium","variant":"immutable","reload_kind":"normal","focused_process":"Google Chrome for Testing","page_rerequested":1,"asset_hits":0,"asset_statuses":[],"silent":true}
+{"scenario":"006-hard-reload","browser":"chromium","variant":"immutable","reload_kind":"hard","focused_process":"Google Chrome for Testing","page_rerequested":1,"asset_hits":1,"asset_statuses":[200],"silent":false}

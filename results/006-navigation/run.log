@@ -1,0 +1,48 @@
+measured-at: 2026-08-10T05:31:37.037Z
+scenario: 006-navigation
+mode: M2
+browser: chromium 151.0.7922.34
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"plain","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"mustrev","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}
+{"scenario":"006-navigation","browser":"chromium","scheme":"https","variant":"nocache","route":"reload","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}
+measured-at: 2026-08-10T05:31:53.648Z
+scenario: 006-navigation
+mode: M2
+browser: firefox 153.0
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"plain","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"mustrev","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}
+{"scenario":"006-navigation","browser":"firefox","scheme":"https","variant":"nocache","route":"reload","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}
+measured-at: 2026-08-10T05:32:21.089Z
+scenario: 006-navigation
+mode: M2
+browser: webkit 26.5
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"plain","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"plain"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"mustrev","route":"reload","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}
+{"scenario":"006-navigation","browser":"webkit","scheme":"https","variant":"nocache","route":"reload","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nocache"}

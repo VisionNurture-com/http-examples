@@ -1,0 +1,25 @@
+{
+  "label": "default",
+  "browser": "chromium",
+  "browser_version": "151.0.7922.34",
+  "path": "/008/maxage-default/cr",
+  "duration_s": 24,
+  "interval_s": 1,
+  "probes_sent": 24,
+  "probes_failed": 0,
+  "preflight_count": 5,
+  "preflight_offsets_s": [
+    0,
+    5,
+    11,
+    16,
+    21
+  ],
+  "preflight_gaps_s": [
+    5,
+    6,
+    5,
+    5
+  ],
+  "started_at": "2026-08-07T12:09:19.869Z"
+}

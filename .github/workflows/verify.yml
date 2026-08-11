@@ -1,0 +1,76 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # M0 — docker 不要・ネットワーク不要。clean clone で必ず動く
+  structure:
+    name: structure (M0)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - run: npm run check:structure
+
+  # M0 — 記事に載せる値と実測ログの乖離を検出する
+  provenance:
+    name: provenance (M0)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - run: npm run check:provenance
+
+  # M1 — compose 上でシナリオを再実行し summary.json と比較する
+  # 設定値の陳腐化（nginx / Node / Express の版進行）を検出する
+  scenarios:
+    name: scenarios (M1)
+    runs-on: ubuntu-latest
+    needs: [structure, provenance]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      # 006 の M1 シナリオ（006-etag / 006-expires-directive / 006-proxy-cache）は
+      # 集計に tools/aggregate-006.mjs を通す。このスクリプトは summary.json へ
+      # 「測定に使ったブラウザの版」を載せるため playwright のランチャーを呼ぶ。
+      # 依存を入れないと ERR_MODULE_NOT_FOUND で落ちる（2026-08-12・公開リポの初回 CI で検出）。
+      - name: 依存を入れる（集計がブラウザ版を読むため playwright が要る）
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium firefox webkit
+      - name: 証明書を用意する（CI に mkcert は無いので自己署名になる）
+        run: bash tools/gen-certs.sh
+      - name: compose を起動する
+        run: docker compose up -d --wait
+      - name: M1 のシナリオを再実行する
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          found=0
+          for d in scenarios/*/; do
+            id="$(basename "$d")"
+            grep -qE '^#[[:space:]]*mode:[[:space:]]*M1' "$d/run.sh" || continue
+            echo "::group::$id"
+            bash "$d/run.sh"
+            echo "::endgroup::"
+            found=$((found + 1))
+          done
+          echo "M1 シナリオ $found 本を実行しました"
+      - name: 実測後に再突合する（乖離があればここで落ちる）
+        run: npm run check:provenance
+      - name: 失敗時にログを残す
+        if: failure()
+        run: docker compose logs --no-color
+      - name: 後片付け
+        if: always()
+        run: docker compose down -v

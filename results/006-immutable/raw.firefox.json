@@ -1,0 +1,184 @@
+[
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "control": "negative"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "nostore",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "control": "positive"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "nocache",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "control": "conditional"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "control": "negative"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "nostore",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "control": "positive"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "nocache",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "control": "conditional"
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain",
+    "route": "reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable",
+    "route": "reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain",
+    "route": "reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  },
+  {
+    "scenario": "006-immutable",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable",
+    "route": "reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true
+  }
+]

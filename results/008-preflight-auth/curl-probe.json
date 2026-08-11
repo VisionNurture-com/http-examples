@@ -1,0 +1,12 @@
+{
+  "probe": "curl",
+  "guarded_options_noauth": 401,
+  "guarded_get_noauth": 401,
+  "guarded_get_auth": 200,
+  "exempt_options_noauth": 204,
+  "exempt_get_noauth": 401,
+  "exempt_get_auth": 200,
+  "shortcut_options_noauth": 204,
+  "shortcut_get_noauth": 200,
+  "shortcut_get_auth": 200
+}

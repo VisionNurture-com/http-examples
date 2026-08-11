@@ -1,0 +1,36 @@
+measured-at: 2026-08-10T22:32:54.602Z
+scenario: 006-mustrev-boundary
+mode: M2
+browser: chromium 151.0.7922.34
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-mustrev-boundary","browser":"chromium","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-mustrev-boundary","browser":"chromium","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-mustrev-boundary","browser":"chromium","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-mustrev-boundary","browser":"chromium","scheme":"https","variant":"plain5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"plain5"}
+{"scenario":"006-mustrev-boundary","browser":"chromium","scheme":"https","variant":"mustrev5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"mustrev5"}
+measured-at: 2026-08-10T22:33:17.989Z
+scenario: 006-mustrev-boundary
+mode: M2
+browser: firefox 153.0
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-mustrev-boundary","browser":"firefox","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-mustrev-boundary","browser":"firefox","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-mustrev-boundary","browser":"firefox","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-mustrev-boundary","browser":"firefox","scheme":"https","variant":"plain5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"plain5"}
+{"scenario":"006-mustrev-boundary","browser":"firefox","scheme":"https","variant":"mustrev5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"mustrev5"}
+measured-at: 2026-08-10T22:33:49.500Z
+scenario: 006-mustrev-boundary
+mode: M2
+browser: webkit 26.5
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-mustrev-boundary","browser":"webkit","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-mustrev-boundary","browser":"webkit","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-mustrev-boundary","browser":"webkit","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-mustrev-boundary","browser":"webkit","scheme":"https","variant":"plain5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"plain5"}
+{"scenario":"006-mustrev-boundary","browser":"webkit","scheme":"https","variant":"mustrev5","route":"stale","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"mustrev5"}

@@ -1,0 +1,21 @@
+{
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "case_count": 5,
+  "R0_fetch_ok": true,
+  "R0_preflight_count": 1,
+  "R1_fetch_ok": true,
+  "R1_preflight_count": 0,
+  "R2_fetch_ok": true,
+  "R2_preflight_count": 2,
+  "R3_fetch_ok": false,
+  "R3_preflight_count": 1,
+  "R4_fetch_ok": false,
+  "R4_preflight_count": 1,
+  "R4_third_origin_reached": true,
+  "R4_third_origin_saw_null_origin": true,
+  "R4_authorization_survived": false
+}

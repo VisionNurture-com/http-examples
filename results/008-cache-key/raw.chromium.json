@@ -1,0 +1,274 @@
+[
+  {
+    "case": "K0",
+    "desc": "完全に同一のリクエストを 2 回",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K1",
+    "desc": "パスを変える",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K2",
+    "desc": "クエリだけ変える",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K3",
+    "desc": "メソッドを変える（PUT → DELETE）",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K4",
+    "desc": "独自ヘッダを増やす（x-probe → x-probe, x-extra）",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K5",
+    "desc": "独自ヘッダを減らす（x-probe, x-extra → x-probe）",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K6",
+    "desc": "credentials なし → include",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K7",
+    "desc": "credentials include → なし",
+    "system": "fixed",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K0",
+    "desc": "完全に同一のリクエストを 2 回",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K1",
+    "desc": "パスを変える",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K2",
+    "desc": "クエリだけ変える",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K3",
+    "desc": "メソッドを変える（PUT → DELETE）",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K4",
+    "desc": "独自ヘッダを増やす（x-probe → x-probe, x-extra）",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K5",
+    "desc": "独自ヘッダを減らす（x-probe, x-extra → x-probe）",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K6",
+    "desc": "credentials なし → include",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 1,
+    "second_fired": true,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "case": "K7",
+    "desc": "credentials include → なし",
+    "system": "echo",
+    "browser": "chromium",
+    "preflight_first": 1,
+    "preflight_second": 0,
+    "second_fired": false,
+    "first_result": {
+      "ok": true,
+      "status": 200
+    },
+    "second_result": {
+      "ok": true,
+      "status": 200
+    }
+  }
+]

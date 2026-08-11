@@ -1,0 +1,33 @@
+measured-at: 2026-08-08T05:24:19.751Z
+scenario: 008-wildcard-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録（生ログのカウントのみ・予測は入れない）
+---
+{"case":"W0","system":"explicit","desc":"Allow-Headers に authorization を明示列挙 + Authorization あり","browser":"chromium","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W1","system":"star","desc":"Allow-Headers が * + Authorization あり","browser":"chromium","preflight_first":1,"preflight_second":1,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W2","system":"star","desc":"Allow-Headers が * + Authorization なし（x-probe のみ）","browser":"chromium","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W3","system":"credential","desc":"明示列挙 + Authorization あり + credentials: include","browser":"chromium","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+measured-at: 2026-08-08T05:24:38.676Z
+scenario: 008-wildcard-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録（生ログのカウントのみ・予測は入れない）
+---
+{"case":"W0","system":"explicit","desc":"Allow-Headers に authorization を明示列挙 + Authorization あり","browser":"firefox","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W1","system":"star","desc":"Allow-Headers が * + Authorization あり","browser":"firefox","preflight_first":1,"preflight_second":1,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W2","system":"star","desc":"Allow-Headers が * + Authorization なし（x-probe のみ）","browser":"firefox","preflight_first":1,"preflight_second":1,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W3","system":"credential","desc":"明示列挙 + Authorization あり + credentials: include","browser":"firefox","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+measured-at: 2026-08-08T05:25:03.678Z
+scenario: 008-wildcard-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録（生ログのカウントのみ・予測は入れない）
+---
+{"case":"W0","system":"explicit","desc":"Allow-Headers に authorization を明示列挙 + Authorization あり","browser":"webkit","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W1","system":"star","desc":"Allow-Headers が * + Authorization あり","browser":"webkit","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W2","system":"star","desc":"Allow-Headers が * + Authorization なし（x-probe のみ）","browser":"webkit","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}
+{"case":"W3","system":"credential","desc":"明示列挙 + Authorization あり + credentials: include","browser":"webkit","preflight_first":1,"preflight_second":0,"fetch_first_ok":true,"fetch_first":{"ok":true,"status":200},"fetch_second_ok":true,"fetch_second":{"ok":true,"status":200}}

@@ -1,0 +1,30 @@
+measured-at: 2026-08-09T15:27:44.359Z
+scenario: 008-preflight-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録とそのステータス（生ログのみ・予測は入れない）
+---
+{"case":"B0","zone":"guarded","desc":"auth_basic を location 全体にかける（OPTIONS も認証対象）","browser":"chromium","preflight_count":1,"preflight_statuses":[401],"fetch_ok":false,"fetch_status":null,"fetch_error":"Failed to fetch"}
+{"case":"B1","zone":"exempt","desc":"OPTIONS のときだけ auth_basic を off にする","browser":"chromium","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}
+{"case":"B2","zone":"shortcut","desc":"auth_basic + return を content handler にした設定","browser":"chromium","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}
+measured-at: 2026-08-09T15:27:58.497Z
+scenario: 008-preflight-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録とそのステータス（生ログのみ・予測は入れない）
+---
+{"case":"B0","zone":"guarded","desc":"auth_basic を location 全体にかける（OPTIONS も認証対象）","browser":"firefox","preflight_count":1,"preflight_statuses":[401],"fetch_ok":false,"fetch_status":null,"fetch_error":"NetworkError when attempting to fetch resource."}
+{"case":"B1","zone":"exempt","desc":"OPTIONS のときだけ auth_basic を off にする","browser":"firefox","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}
+{"case":"B2","zone":"shortcut","desc":"auth_basic + return を content handler にした設定","browser":"firefox","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}
+measured-at: 2026-08-09T15:28:08.319Z
+scenario: 008-preflight-auth
+mode: M2
+page-origin: http://localhost:8080/008/
+api-origin: http://localhost:8081
+judgement: サーバ側の OPTIONS 到着記録とそのステータス（生ログのみ・予測は入れない）
+---
+{"case":"B0","zone":"guarded","desc":"auth_basic を location 全体にかける（OPTIONS も認証対象）","browser":"webkit","preflight_count":2,"preflight_statuses":[401,401],"fetch_ok":false,"fetch_status":null,"fetch_error":"Load failed"}
+{"case":"B1","zone":"exempt","desc":"OPTIONS のときだけ auth_basic を off にする","browser":"webkit","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}
+{"case":"B2","zone":"shortcut","desc":"auth_basic + return を content handler にした設定","browser":"webkit","preflight_count":1,"preflight_statuses":[204],"fetch_ok":true,"fetch_status":200,"fetch_error":null}

@@ -1,0 +1,11 @@
+{
+  "name": "http-examples-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Express 5 バックエンド。記事で扱う挙動をそのまま観測するため、既定動作を上書きしない",
+  "dependencies": {
+    "express": "5.2.1"
+  }
+}

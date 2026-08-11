@@ -1,0 +1,18 @@
+measured-at: 2026-08-10T05:33:24.083Z
+scenario: 006-staleness
+mode: M2
+base: https://localhost:8444
+judgement: サーバ側の到着記録 + ブラウザが適用している CSS の版（--rev）
+---
+{"scenario":"006-staleness","browser":"chromium","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}
+{"scenario":"006-staleness","browser":"firefox","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}
+{"scenario":"006-staleness","browser":"webkit","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}
+measured-at: 2026-08-10T05:35:16.315Z
+scenario: 006-staleness
+mode: M2
+base: https://localhost:8444
+judgement: サーバ側の到着記録 + ブラウザが適用している CSS の版（--rev）
+---
+{"scenario":"006-staleness","browser":"chromium","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}
+{"scenario":"006-staleness","browser":"firefox","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}
+{"scenario":"006-staleness","browser":"webkit","first_load":{"rev_seen":"1","hits":1},"after_server_fix":{"rev_seen":"1","hits":0},"after_cache_busting":{"rev_seen":"2","hits":1},"stale_reproduced":true,"busting_worked":true}

@@ -1,0 +1,86 @@
+[
+  {
+    "case": "R0",
+    "desc": "リダイレクトなし（対照）",
+    "browser": "firefox",
+    "fetch_ok": true,
+    "fetch": {
+      "ok": true,
+      "status": 200,
+      "redirected": false,
+      "url": "http://localhost:8081/008/redirect/direct"
+    },
+    "preflight_count": 1,
+    "third_origin_preflights": 0,
+    "third_origin_actual": 0,
+    "third_origin_origins": [],
+    "authorization_survived_redirect": null
+  },
+  {
+    "case": "R1",
+    "desc": "単純リクエストが同一オリジン内で 301",
+    "browser": "firefox",
+    "fetch_ok": true,
+    "fetch": {
+      "ok": true,
+      "status": 200,
+      "redirected": true,
+      "url": "http://localhost:8081/008/redirect/simple-target"
+    },
+    "preflight_count": 0,
+    "third_origin_preflights": 0,
+    "third_origin_actual": 0,
+    "third_origin_origins": [],
+    "authorization_survived_redirect": null
+  },
+  {
+    "case": "R2",
+    "desc": "preflight を伴うリクエストの本番送信が 301",
+    "browser": "firefox",
+    "fetch_ok": true,
+    "fetch": {
+      "ok": true,
+      "status": 200,
+      "redirected": true,
+      "url": "http://localhost:8081/008/redirect/preflighted-target"
+    },
+    "preflight_count": 2,
+    "third_origin_preflights": 0,
+    "third_origin_actual": 0,
+    "third_origin_origins": [],
+    "authorization_survived_redirect": null
+  },
+  {
+    "case": "R3",
+    "desc": "preflight（OPTIONS）自体が 301 を返す",
+    "browser": "firefox",
+    "fetch_ok": false,
+    "fetch": {
+      "ok": false,
+      "error": "NetworkError when attempting to fetch resource."
+    },
+    "preflight_count": 1,
+    "third_origin_preflights": 0,
+    "third_origin_actual": 0,
+    "third_origin_origins": [],
+    "authorization_survived_redirect": null
+  },
+  {
+    "case": "R4",
+    "desc": "別オリジン（:8083）へリダイレクト + Authorization",
+    "browser": "firefox",
+    "fetch_ok": false,
+    "fetch": {
+      "ok": false,
+      "error": "NetworkError when attempting to fetch resource."
+    },
+    "preflight_count": 1,
+    "third_origin_preflights": 1,
+    "third_origin_actual": 1,
+    "third_origin_origins": [
+      "http://localhost:8080",
+      "null"
+    ],
+    "authorization_survived_redirect": false
+  }
+]

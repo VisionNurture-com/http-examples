@@ -1,0 +1,17 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "both_cache_control": [
+    "max-age=3600",
+    "no-store"
+  ],
+  "both_cache_control_count": 2,
+  "write_order_changes_headers": false,
+  "nested_child_own_cache_control_count": 0,
+  "nested_child_none_cache_control_count": 2,
+  "browser_refetch_when_two_headers": true,
+  "browser_caches_when_parent_header_dropped": true
+}

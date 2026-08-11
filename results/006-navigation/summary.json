@@ -1,0 +1,23 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "plain_reload_hits": 0,
+  "must_revalidate_reload_hits": 0,
+  "no_cache_reload_statuses": [
+    304
+  ],
+  "bfcache_browser": "Google Chrome 151.0.7922.76 (macOS)",
+  "bfcache_restored_no_cache_page": true,
+  "bfcache_restored_no_store_page": true,
+  "bfcache_page_arrivals_on_back": 0,
+  "playwright_can_measure_bfcache": false,
+  "bfcache_restored_no_store_page_http": true,
+  "bfcache_restored_no_store_page_https": true,
+  "bfcache_restored_no_cache_page_http": true,
+  "bfcache_restored_no_cache_page_https": true,
+  "bfcache_restored_when_cookie_changed": false,
+  "bfcache_page_arrivals_on_back_when_cookie_changed": 1
+}

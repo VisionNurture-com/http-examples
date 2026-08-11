@@ -1,0 +1,38 @@
+measured-at: 2026-08-08T03:11:43Z
+scenario: 008-header-always
+mode: M1
+nginx: nginx version: nginx/1.31.3
+base: http://localhost:8082
+---
+## /008/always/ok
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:8080
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: x-probe
+
+## /008/always/err
+HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: http://localhost:8080
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: x-probe
+
+## /008/noalways/ok
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:8080
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: x-probe
+
+## /008/noalways/err
+HTTP/1.1 500 Internal Server Error
+
+## /008/inherit/off
+HTTP/1.1 200 OK
+X-Extra: 1
+
+## /008/inherit/merge
+HTTP/1.1 200 OK
+X-Extra: 1
+Access-Control-Allow-Origin: http://localhost:8080
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: x-probe
+

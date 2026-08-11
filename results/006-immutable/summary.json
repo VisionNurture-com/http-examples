@@ -1,0 +1,19 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "cases_measured": 24,
+  "plain_second_hits_max": 0,
+  "immutable_second_hits_max": 0,
+  "cases_where_immutable_differs": 0,
+  "schemes_measured": [
+    "http",
+    "https"
+  ],
+  "routes_measured": [
+    "nav",
+    "reload"
+  ]
+}

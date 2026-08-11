@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>008 preflight probe</title>
+</head>
+<body>
+<h1>008 preflight probe</h1>
+<p>このページ自身は <code>http://localhost:8080</code>、API は <code>http://localhost:8081</code> です。ポートが違うので別オリジンになり、CORS の対象になります。</p>
+<pre id="log"></pre>
+<script>
+// 非単純リクエスト（独自ヘッダ x-probe）を出して preflight を強制する。
+// preflight が実際に飛んだかはブラウザ内部からは観測できないため、
+// 判定はサーバ側の到着記録（preflight.log）で行う。
+const API = "http://localhost:8081";
+const log = (m) => { document.getElementById("log").textContent += m + "\n"; };
+
+window.probe = async function (path) {
+  const t0 = performance.now();
+  try {
+    const res = await fetch(`${API}${path}`, { headers: { "x-probe": "1" } });
+    const ms = Math.round(performance.now() - t0);
+    log(`${new Date().toISOString()} ${path} -> ${res.status} (${ms}ms)`);
+    return { ok: true, status: res.status };
+  } catch (e) {
+    log(`${new Date().toISOString()} ${path} -> ERROR ${e.message}`);
+    return { ok: false, error: String(e) };
+  }
+};
+</script>
+</body>
+</html>

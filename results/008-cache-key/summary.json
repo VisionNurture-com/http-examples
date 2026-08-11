@@ -1,0 +1,34 @@
+{
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "case_count": 8,
+  "systems": [
+    "echo",
+    "fixed"
+  ],
+  "echo_K0_second_fired": false,
+  "echo_K1_second_fired": true,
+  "echo_K2_second_fired": true,
+  "echo_K3_second_fired": true,
+  "echo_K4_second_fired": true,
+  "echo_K5_second_fired": false,
+  "echo_K6_second_fired": true,
+  "echo_K7_second_fired": "browsers_disagree",
+  "echo_K7_second_fired_chromium": false,
+  "echo_K7_second_fired_firefox": true,
+  "echo_K7_second_fired_webkit": false,
+  "fixed_K0_second_fired": false,
+  "fixed_K1_second_fired": true,
+  "fixed_K2_second_fired": true,
+  "fixed_K3_second_fired": false,
+  "fixed_K4_second_fired": false,
+  "fixed_K5_second_fired": false,
+  "fixed_K6_second_fired": true,
+  "fixed_K7_second_fired": "browsers_disagree",
+  "fixed_K7_second_fired_chromium": false,
+  "fixed_K7_second_fired_firefox": true,
+  "fixed_K7_second_fired_webkit": false
+}

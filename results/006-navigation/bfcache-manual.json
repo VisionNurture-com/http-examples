@@ -1,0 +1,97 @@
+{
+  "note": "履歴ナビゲーション（戻る）は Playwright では測れないため、実 Chrome を chrome-devtools 経由で操作して測った。判定は pageshow の persisted（ブラウザ内）とサーバ側の到着記録の 2 系統。",
+  "why_not_playwright": "Chromium 自身が Page.backForwardCacheNotUsed で BackForwardCacheDisabledForDelegate を返す。既定 args の --disable-back-forward-cache を除去しても解消しない（除去が効いていることは起動引数を実測して確認済み）。",
+  "measured_at": "2026-08-10T08:20:00Z",
+  "browser": "Google Chrome 151.0.7922.76 (macOS)",
+  "remeasured_reason": "初回測定はスキーム（http / https）と Cookie の状態を記録していなかった。Chrome 公式（developer.chrome.com/docs/web-platform/bfcache-ccns）が復元条件に Cookie の不変を挙げており、blink-dev の Intent 表題が HTTPS pages であるため、条件を落とした断定になっていた。2026-08-10 に両スキーム + Cookie 変更の対照を加えて測り直した。",
+  "method": {
+    "page": "/006/page?asset=/006/asset/app.css&cc=<指定>&n=<一意>",
+    "steps": "対象ページを開く → 同一オリジンの別 URL へ遷移 → 戻る → window.__ps（pageshow の persisted 履歴）と results/006-cache/access.log の到着回数を読む",
+    "restored_criterion": "__ps の末尾が true かつ戻り時のサーバ到着が 0 件（2 系統一致）",
+    "not_restored_criterion": "__ps が [false] にリセット（ページが作り直された）かつ戻り時のサーバ到着が 1 件"
+  },
+  "cases": [
+    {
+      "case": "re1",
+      "scheme": "http",
+      "origin": "http://localhost:8084",
+      "page_cache_control": "no-store",
+      "cookie_before": "",
+      "cookie_after": "",
+      "cookie_changed": false,
+      "pageshow_persisted": [false, true],
+      "restored_from_bfcache": true,
+      "page_arrivals_total": 1,
+      "page_arrivals_on_back": 0
+    },
+    {
+      "case": "re2",
+      "scheme": "https",
+      "origin": "https://localhost:8444",
+      "page_cache_control": "no-store",
+      "cookie_before": "",
+      "cookie_after": "",
+      "cookie_changed": false,
+      "pageshow_persisted": [false, true],
+      "restored_from_bfcache": true,
+      "page_arrivals_total": 1,
+      "page_arrivals_on_back": 0
+    },
+    {
+      "case": "re3",
+      "scheme": "http",
+      "origin": "http://localhost:8084",
+      "page_cache_control": "no-cache",
+      "cookie_before": "",
+      "cookie_after": "",
+      "cookie_changed": false,
+      "pageshow_persisted": [false, true],
+      "restored_from_bfcache": true,
+      "page_arrivals_total": 1,
+      "page_arrivals_on_back": 0
+    },
+    {
+      "case": "re4",
+      "scheme": "https",
+      "origin": "https://localhost:8444",
+      "page_cache_control": "no-cache",
+      "cookie_before": "",
+      "cookie_after": "",
+      "cookie_changed": false,
+      "pageshow_persisted": [false, true],
+      "restored_from_bfcache": true,
+      "page_arrivals_total": 1,
+      "page_arrivals_on_back": 0
+    },
+    {
+      "case": "re5",
+      "role": "陰性対照（公式が挙げる退避条件を意図的に踏む）",
+      "scheme": "https",
+      "origin": "https://localhost:8444",
+      "page_cache_control": "no-store",
+      "cookie_before": "bfc=1",
+      "cookie_after": "bfc=2",
+      "cookie_changed": true,
+      "pageshow_persisted": [false],
+      "restored_from_bfcache": false,
+      "page_arrivals_total": 2,
+      "page_arrivals_on_back": 1
+    }
+  ],
+  "controls": {
+    "negative_control": "re5。Cookie を書き換えると復元されない。これが崩れる（常に true が返る）なら、この装置は復元と非復元を区別できていないことになるため、値を採用しない。",
+    "result": "成立。re5 のみ pageshow が [false] にリセットされ、サーバ到着も 1 件増えた。ブラウザ内とサーバ側の 2 系統が一致した。"
+  },
+  "not_measured": [
+    "3 分のタイムアウト（公式記載。no-store でないページの 10 分から短縮）— 自分では測っていない",
+    "WebSocket / WebTransport / WebRTC を使ったページ",
+    "fetch / XHR の応答に no-store が含まれる場合",
+    "Firefox / WebKit の bfcache（Playwright では測れず、実ブラウザ測定は Chrome のみ実施）"
+  ],
+  "playwright_comparison": {
+    "engines": ["chromium", "firefox", "webkit"],
+    "restored_from_bfcache": false,
+    "page_arrivals_on_back": 0,
+    "note": "復元されないのにサーバへも届かない。HTTP キャッシュからの履歴再利用（RFC 9111 が履歴機構を仕様の外に置いている）。到着 0 件だけでは bfcache と区別できない。"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "browser": "firefox",
+  "browser_version": "153.0",
+  "measured_at": "2026-08-07T12:12:03.923Z",
+  "cases": [
+    {
+      "id": "get-plain",
+      "description": "GET・独自ヘッダなし",
+      "method": "GET",
+      "request_headers": {},
+      "preflighted": false,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "get-custom-header",
+      "description": "GET・独自ヘッダ x-probe あり",
+      "method": "GET",
+      "request_headers": {
+        "x-probe": "1"
+      },
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "post-text-plain",
+      "description": "POST・Content-Type: text/plain",
+      "method": "POST",
+      "request_headers": {
+        "content-type": "text/plain"
+      },
+      "preflighted": false,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "post-form-urlencoded",
+      "description": "POST・Content-Type: application/x-www-form-urlencoded",
+      "method": "POST",
+      "request_headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "preflighted": false,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "post-multipart",
+      "description": "POST・Content-Type: multipart/form-data",
+      "method": "POST",
+      "request_headers": {
+        "content-type": "multipart/form-data; boundary=X"
+      },
+      "preflighted": false,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "post-json",
+      "description": "POST・Content-Type: application/json",
+      "method": "POST",
+      "request_headers": {
+        "content-type": "application/json"
+      },
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "put-plain",
+      "description": "PUT・独自ヘッダなし",
+      "method": "PUT",
+      "request_headers": {},
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "delete-plain",
+      "description": "DELETE・独自ヘッダなし",
+      "method": "DELETE",
+      "request_headers": {},
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
+    }
+  ],
+  "preflighted_count": 4
+}

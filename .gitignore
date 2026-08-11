@@ -1,0 +1,16 @@
+node_modules/
+
+# 証明書は生成物。リポジトリに含めない（tools/gen-certs.sh で再生成する）
+certs/*
+!certs/.gitkeep
+
+# 一時出力
+*.tmp
+.DS_Store
+
+# 資格情報はリポジトリへ置かない（測定用アカウントも履歴に残さない）
+# 作り方は scenarios/008-preflight-auth/README.md を参照
+nginx/conf.d/*.htpasswd
+
+# 006 の差し替え測定で使う生成物（測定のたびに作り直す）
+public/006/gen/

@@ -1,0 +1,8 @@
+{
+  "etag_on_second_status": 304,
+  "etag_off_second_status": 200,
+  "etag_off_has_validator": false,
+  "cache_control_both": [
+    "no-cache"
+  ]
+}

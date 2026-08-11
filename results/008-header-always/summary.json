@@ -1,0 +1,17 @@
+{
+  "case_count": 6,
+  "always_ok_status": 200,
+  "always_ok_cors_header_count": 3,
+  "always_err_status": 500,
+  "always_err_cors_header_count": 3,
+  "noalways_ok_status": 200,
+  "noalways_ok_cors_header_count": 3,
+  "noalways_err_status": 500,
+  "noalways_err_cors_header_count": 0,
+  "inherit_off_status": 200,
+  "inherit_off_cors_header_count": 0,
+  "inherit_off_x_extra": true,
+  "inherit_merge_status": 200,
+  "inherit_merge_cors_header_count": 3,
+  "inherit_merge_x_extra": true
+}

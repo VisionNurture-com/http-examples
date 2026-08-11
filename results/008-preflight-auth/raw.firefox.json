@@ -1,0 +1,41 @@
+[
+  {
+    "case": "B0",
+    "zone": "guarded",
+    "desc": "auth_basic を location 全体にかける（OPTIONS も認証対象）",
+    "browser": "firefox",
+    "preflight_count": 1,
+    "preflight_statuses": [
+      401
+    ],
+    "fetch_ok": false,
+    "fetch_status": null,
+    "fetch_error": "NetworkError when attempting to fetch resource."
+  },
+  {
+    "case": "B1",
+    "zone": "exempt",
+    "desc": "OPTIONS のときだけ auth_basic を off にする",
+    "browser": "firefox",
+    "preflight_count": 1,
+    "preflight_statuses": [
+      204
+    ],
+    "fetch_ok": true,
+    "fetch_status": 200,
+    "fetch_error": null
+  },
+  {
+    "case": "B2",
+    "zone": "shortcut",
+    "desc": "auth_basic + return を content handler にした設定",
+    "browser": "firefox",
+    "preflight_count": 1,
+    "preflight_statuses": [
+      204
+    ],
+    "fetch_ok": true,
+    "fetch_status": 200,
+    "fetch_error": null
+  }
+]

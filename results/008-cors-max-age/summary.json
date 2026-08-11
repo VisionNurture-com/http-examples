@@ -1,0 +1,28 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "measured_at": "2026-08-08T05:20:50.409Z",
+  "clamp_chromium_preflight_count": 2,
+  "clamp_chromium_gap_median_s": 7202,
+  "clamp_firefox_preflight_count": 1,
+  "clamp_firefox_gap_median_s": null,
+  "clamp_webkit_preflight_count": 13,
+  "clamp_webkit_gap_median_s": 600,
+  "default_chromium_preflight_count": 5,
+  "default_chromium_gap_median_s": 5,
+  "default_firefox_preflight_count": 5,
+  "default_firefox_gap_median_s": 5,
+  "default_webkit_preflight_count": 6,
+  "default_webkit_gap_median_s": 5,
+  "maxage_2_chromium_preflight_count": 7,
+  "maxage_2_chromium_gap_median_s": 2,
+  "maxage_2_firefox_preflight_count": 7,
+  "maxage_2_firefox_gap_median_s": 2,
+  "maxage_2_webkit_preflight_count": 15,
+  "maxage_2_webkit_gap_median_s": 2,
+  "webkit_pre_60_webkit_preflight_count": 3,
+  "webkit_pre_60_webkit_gap_median_s": 60
+}

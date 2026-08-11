@@ -1,0 +1,318 @@
+[
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "control": "negative"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "nostore",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "control": "positive"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "nocache",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "control": "conditional"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "control": "negative"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "nostore",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "control": "positive"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "nocache",
+    "route": "nav",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "control": "conditional"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain5",
+    "route": "stale",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain5",
+    "route": "restart",
+    "persistent": true,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain5",
+    "route": "fetch-nocache",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "plain5",
+    "route": "fetch-reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable5",
+    "route": "stale",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable5",
+    "route": "restart",
+    "persistent": true,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable5",
+    "route": "fetch-nocache",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "http",
+    "variant": "immutable5",
+    "route": "fetch-reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain5",
+    "route": "stale",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain5",
+    "route": "restart",
+    "persistent": true,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain5",
+    "route": "fetch-nocache",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "plain5",
+    "route": "fetch-reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "label": "plain5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable5",
+    "route": "stale",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      304
+    ],
+    "silent_on_second": false,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable5",
+    "route": "restart",
+    "persistent": true,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable5",
+    "route": "fetch-nocache",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 0,
+    "second_statuses": [],
+    "silent_on_second": true,
+    "label": "immutable5"
+  },
+  {
+    "scenario": "006-immutable-boundary",
+    "browser": "firefox",
+    "scheme": "https",
+    "variant": "immutable5",
+    "route": "fetch-reload",
+    "persistent": false,
+    "first_hits": 1,
+    "second_hits": 1,
+    "second_statuses": [
+      200
+    ],
+    "silent_on_second": false,
+    "label": "immutable5"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "cases_measured": 6,
+  "plain5_stale_statuses": [
+    304
+  ],
+  "must_revalidate_stale_statuses": [
+    304
+  ],
+  "plain5_stale_hits": [
+    1
+  ],
+  "must_revalidate_stale_hits": [
+    1
+  ],
+  "must_revalidate_changes_stale_behaviour": false,
+  "engines_agree": true
+}

@@ -1,0 +1,56 @@
+# compose.yaml — M1 / M2 の基盤
+#
+# M1: サーバ ↔ curl（CI で回る）
+# M2: 上記 + ホストの実ブラウザ（手動）
+#
+# 起動前に証明書を用意すること:
+#   bash tools/gen-certs.sh
+#
+# 版は固定する。実測値の出典を残すため、版が動いたら results/ を測り直す。
+
+services:
+  edge:
+    # nginx mainline（HTTP/3 を扱うため stable ではなく mainline）
+    image: nginx:1.31.3-alpine
+    container_name: http-examples-edge
+    depends_on:
+      - app
+    ports:
+      - "8080:80"
+      # 別オリジン（ポート違い）。008 の CORS 測定に使う
+      - "8081:81"
+      # add_header の落ち方を測るサーバ（008 シナリオ 3・curl のみ）
+      - "8082:82"
+      # 第 3 のオリジン（008 シナリオ 4 のクロスオリジン リダイレクト先）
+      - "8083:83"
+      # 記事 006 専用の入口。同じ設定を http と https の両方で出す
+      # （Firefox は immutable を https でのみ honor するため対照が要る）
+      - "8084:84"
+      - "8444:444"
+      - "8443:443"
+      # HTTP/3 は同じ 443 を UDP で使う。Docker Desktop の UDP 転送が
+      # 測定に耐えるかは vm/README.md の判定結果を参照。
+      - "8443:443/udp"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./public:/usr/share/nginx/public:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ./results:/results
+    networks:
+      - httpnet
+
+  app:
+    # Express 5 の既定挙動そのものが観測対象のため、依存を持つビルドにする
+    # （node_modules が要るので volume マウントでは動かない）
+    build:
+      context: ./app
+    container_name: http-examples-app
+    environment:
+      PORT: "3000"
+      NODE_ENV: "production"
+    networks:
+      - httpnet
+
+networks:
+  httpnet:
+    driver: bridge

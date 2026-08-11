@@ -1,0 +1,10 @@
+{
+  "public_stored": true,
+  "private_stored": false,
+  "no_store_stored": false,
+  "no_directive_stored": true,
+  "private_upstream_hits": 2,
+  "public_second_cache_status": [
+    "HIT"
+  ]
+}

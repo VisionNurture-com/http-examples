@@ -1,0 +1,72 @@
+measured-at: 2026-08-07T12:09:19.869Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-default/cr  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 5, 11, 16, 21]  gaps(s)=[5, 6, 5, 5]
+---
+measured-at: 2026-08-07T12:09:54.396Z
+browser: firefox 153.0
+path: /008/maxage-default/ff  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 5, 10, 15, 20]  gaps(s)=[5, 5, 5, 5]
+---
+measured-at: 2026-08-07T12:10:19.161Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-2/cr  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 10, 12]  gaps(s)=[2, 2, 2, 2, 2, 2]
+---
+measured-at: 2026-08-07T12:10:34.510Z
+browser: firefox 153.0
+path: /008/maxage-2/ff  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 10, 12]  gaps(s)=[2, 2, 2, 2, 2, 2]
+---
+measured-at: 2026-08-07T12:16:14.547Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-86400/cr  duration=7500s interval=30s
+probes: 250 (failed 0)
+preflight arrivals: 2  offsets(s)=[0, 7202]  gaps(s)=[7202]
+---
+measured-at: 2026-08-07T12:16:15.491Z
+browser: firefox 153.0
+path: /008/maxage-86400/ff  duration=7500s interval=30s
+probes: 250 (failed 0)
+preflight arrivals: 1  offsets(s)=[0]  gaps(s)=[]
+---
+measured-at: 2026-08-08T00:12:00.493Z
+browser: webkit 26.5
+path: /008/maxage-60/wk-pre  duration=150s interval=5s
+probes: 30 (failed 0)
+preflight arrivals: 3  offsets(s)=[0, 60, 120]  gaps(s)=[60, 60]
+---
+measured-at: 2026-08-08T03:08:55.432Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-86400/cr  duration=7500s interval=30s
+probes: 250 (failed 0)
+preflight arrivals: 2  offsets(s)=[0, 7202]  gaps(s)=[7202]
+---
+measured-at: 2026-08-08T03:08:55.811Z
+browser: webkit 26.5
+path: /008/maxage-86400/wk  duration=7500s interval=30s
+probes: 250 (failed 0)
+preflight arrivals: 13  offsets(s)=[0, 601, 1201, 1801, 2401, 3002, 3602, 4202, 4803, 5403, 6003, 6603, 7204]  gaps(s)=[601, 600, 600, 600, 601, 600, 600, 601, 600, 600, 600, 601]
+---
+measured-at: 2026-08-08T03:08:56.362Z
+browser: firefox 153.0
+path: /008/maxage-86400/ff  duration=7500s interval=30s
+probes: 250 (failed 0)
+preflight arrivals: 1  offsets(s)=[0]  gaps(s)=[]
+---
+measured-at: 2026-08-08T05:20:19.279Z
+browser: webkit 26.5
+path: /008/maxage-default/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 6  offsets(s)=[0, 5, 10, 15, 20, 25]  gaps(s)=[5, 5, 5, 5, 5]
+---
+measured-at: 2026-08-08T05:20:50.409Z
+browser: webkit 26.5
+path: /008/maxage-2/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 15  offsets(s)=[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28]  gaps(s)=[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+---

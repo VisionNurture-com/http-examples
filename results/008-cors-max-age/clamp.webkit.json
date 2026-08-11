@@ -1,0 +1,41 @@
+{
+  "label": "clamp",
+  "browser": "webkit",
+  "browser_version": "26.5",
+  "path": "/008/maxage-86400/wk",
+  "duration_s": 7500,
+  "interval_s": 30,
+  "probes_sent": 250,
+  "probes_failed": 0,
+  "preflight_count": 13,
+  "preflight_offsets_s": [
+    0,
+    601,
+    1201,
+    1801,
+    2401,
+    3002,
+    3602,
+    4202,
+    4803,
+    5403,
+    6003,
+    6603,
+    7204
+  ],
+  "preflight_gaps_s": [
+    601,
+    600,
+    600,
+    600,
+    601,
+    600,
+    600,
+    601,
+    600,
+    600,
+    600,
+    601
+  ],
+  "started_at": "2026-08-08T03:08:55.811Z"
+}

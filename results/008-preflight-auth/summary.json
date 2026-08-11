@@ -1,0 +1,29 @@
+{
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "case_count": 3,
+  "B0_fetch_ok": false,
+  "B0_preflight_status": 401,
+  "B0_preflight_count": "browsers_disagree",
+  "B0_preflight_count_chromium": 1,
+  "B0_preflight_count_firefox": 1,
+  "B0_preflight_count_webkit": 2,
+  "B1_fetch_ok": true,
+  "B1_preflight_status": 204,
+  "B1_preflight_count": 1,
+  "B2_fetch_ok": true,
+  "B2_preflight_status": 204,
+  "B2_preflight_count": 1,
+  "curl_guarded_options_noauth": 401,
+  "curl_guarded_get_noauth": 401,
+  "curl_guarded_get_auth": 200,
+  "curl_exempt_options_noauth": 204,
+  "curl_exempt_get_noauth": 401,
+  "curl_exempt_get_auth": 200,
+  "curl_shortcut_options_noauth": 204,
+  "curl_shortcut_get_noauth": 200,
+  "curl_shortcut_get_auth": 200
+}

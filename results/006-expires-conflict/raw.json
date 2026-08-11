@@ -1,0 +1,87 @@
+[
+  {
+    "case": "expires のみ",
+    "path": "/006/exp/expires-only.css",
+    "status": 200,
+    "cache_control": [
+      "max-age=3600"
+    ],
+    "cache_control_count": 1,
+    "expires": [
+      "Mon, 10 Aug 2026 06:25:21 GMT"
+    ],
+    "x_parent": [],
+    "x_child": []
+  },
+  {
+    "case": "add_header のみ",
+    "path": "/006/exp/addheader-only.css",
+    "status": 200,
+    "cache_control": [
+      "no-store"
+    ],
+    "cache_control_count": 1,
+    "expires": [],
+    "x_parent": [],
+    "x_child": []
+  },
+  {
+    "case": "両方（expires → add_header の順に書く）",
+    "path": "/006/exp/both.css",
+    "status": 200,
+    "cache_control": [
+      "max-age=3600",
+      "no-store"
+    ],
+    "cache_control_count": 2,
+    "expires": [
+      "Mon, 10 Aug 2026 06:25:21 GMT"
+    ],
+    "x_parent": [],
+    "x_child": []
+  },
+  {
+    "case": "両方（add_header → expires の順に書く）",
+    "path": "/006/exp/both-reverse.css",
+    "status": 200,
+    "cache_control": [
+      "max-age=3600",
+      "no-store"
+    ],
+    "cache_control_count": 2,
+    "expires": [
+      "Mon, 10 Aug 2026 06:25:21 GMT"
+    ],
+    "x_parent": [],
+    "x_child": []
+  },
+  {
+    "case": "入れ子・子が自前の add_header を持つ",
+    "path": "/006/exp/nest/child-own.css",
+    "status": 200,
+    "cache_control": [],
+    "cache_control_count": 0,
+    "expires": [],
+    "x_parent": [],
+    "x_child": [
+      "1"
+    ]
+  },
+  {
+    "case": "入れ子・子が add_header を持たない",
+    "path": "/006/exp/nest/child-none.css",
+    "status": 200,
+    "cache_control": [
+      "max-age=3600",
+      "no-store"
+    ],
+    "cache_control_count": 2,
+    "expires": [
+      "Mon, 10 Aug 2026 06:25:21 GMT"
+    ],
+    "x_parent": [
+      "1"
+    ],
+    "x_child": []
+  }
+]

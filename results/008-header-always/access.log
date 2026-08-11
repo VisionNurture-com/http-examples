@@ -1,0 +1,12 @@
+2026-08-07T23:55:58+00:00 GET /008/always/ok status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-07T23:55:58+00:00 GET /008/always/err status=500 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-07T23:55:58+00:00 GET /008/noalways/ok status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-07T23:55:58+00:00 GET /008/noalways/err status=500 max_age=- acao=- auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-07T23:55:58+00:00 GET /008/inherit/off status=200 max_age=- acao=- auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-07T23:55:58+00:00 GET /008/inherit/merge status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:43+00:00 GET /008/always/ok status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:43+00:00 GET /008/always/err status=500 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:43+00:00 GET /008/noalways/ok status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:43+00:00 GET /008/noalways/err status=500 max_age=- acao=- auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:43+00:00 GET /008/inherit/off status=200 max_age=- acao=- auth=no origin=http://localhost:8080 req_method=- req_headers=-
+2026-08-08T03:11:44+00:00 GET /008/inherit/merge status=200 max_age=- acao=http://localhost:8080 auth=no origin=http://localhost:8080 req_method=- req_headers=-

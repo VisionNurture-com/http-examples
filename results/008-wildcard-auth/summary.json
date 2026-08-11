@@ -1,0 +1,22 @@
+{
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "case_count": 4,
+  "W0_fetch_ok": true,
+  "W0_second_preflight_fired": false,
+  "W1_fetch_ok": true,
+  "W1_second_preflight_fired": "browsers_disagree",
+  "W1_second_preflight_fired_chromium": true,
+  "W1_second_preflight_fired_firefox": true,
+  "W1_second_preflight_fired_webkit": false,
+  "W2_fetch_ok": true,
+  "W2_second_preflight_fired": "browsers_disagree",
+  "W2_second_preflight_fired_chromium": false,
+  "W2_second_preflight_fired_firefox": true,
+  "W2_second_preflight_fired_webkit": false,
+  "W3_fetch_ok": true,
+  "W3_second_preflight_fired": false
+}

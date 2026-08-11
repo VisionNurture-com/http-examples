@@ -1,0 +1,19 @@
+{
+  "label": "clamp",
+  "browser": "chromium",
+  "browser_version": "151.0.7922.34",
+  "path": "/008/maxage-86400/cr",
+  "duration_s": 7500,
+  "interval_s": 30,
+  "probes_sent": 250,
+  "probes_failed": 0,
+  "preflight_count": 2,
+  "preflight_offsets_s": [
+    0,
+    7202
+  ],
+  "preflight_gaps_s": [
+    7202
+  ],
+  "started_at": "2026-08-08T03:08:55.432Z"
+}

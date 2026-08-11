@@ -1,0 +1,50 @@
+[
+  {
+    "case": "public, max-age=60",
+    "upstream_cache_control": "public, max-age=60",
+    "first_cache_status": [
+      "MISS"
+    ],
+    "second_cache_status": [
+      "HIT"
+    ],
+    "upstream_hits": 1,
+    "stored_by_shared_cache": true
+  },
+  {
+    "case": "private, max-age=60",
+    "upstream_cache_control": "private, max-age=60",
+    "first_cache_status": [
+      "MISS"
+    ],
+    "second_cache_status": [
+      "MISS"
+    ],
+    "upstream_hits": 2,
+    "stored_by_shared_cache": false
+  },
+  {
+    "case": "no-store",
+    "upstream_cache_control": "no-store",
+    "first_cache_status": [
+      "MISS"
+    ],
+    "second_cache_status": [
+      "MISS"
+    ],
+    "upstream_hits": 2,
+    "stored_by_shared_cache": false
+  },
+  {
+    "case": "指定なし",
+    "upstream_cache_control": null,
+    "first_cache_status": [
+      "MISS"
+    ],
+    "second_cache_status": [
+      "HIT"
+    ],
+    "upstream_hits": 1,
+    "stored_by_shared_cache": true
+  }
+]

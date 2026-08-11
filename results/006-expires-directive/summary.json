@@ -1,0 +1,21 @@
+{
+  "expires_1h_cache_control": [
+    "max-age=3600"
+  ],
+  "expires_max_cache_control": [
+    "max-age=315360000"
+  ],
+  "expires_max_expires": [
+    "Thu, 31 Dec 2037 23:55:55 GMT"
+  ],
+  "expires_minus1_cache_control": [
+    "no-cache"
+  ],
+  "expires_epoch_expires": [
+    "Thu, 01 Jan 1970 00:00:01 GMT"
+  ],
+  "expires_off_cache_control_count": 0,
+  "expires_error500_status": 500,
+  "expires_error500_cache_control_count": 0,
+  "expires_error500_expires_count": 0
+}

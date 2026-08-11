@@ -1,0 +1,13 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0"
+  },
+  "normal_reload_asset_hits_max": 0,
+  "hard_reload_statuses": [
+    200
+  ],
+  "hard_reload_asset_hits_min": 1,
+  "immutable_changes_hard_reload": false,
+  "key_delivered_all_cases": true
+}

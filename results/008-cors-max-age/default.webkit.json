@@ -1,0 +1,27 @@
+{
+  "label": "default",
+  "browser": "webkit",
+  "browser_version": "26.5",
+  "path": "/008/maxage-default/wk",
+  "duration_s": 30,
+  "interval_s": 1,
+  "probes_sent": 30,
+  "probes_failed": 0,
+  "preflight_count": 6,
+  "preflight_offsets_s": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25
+  ],
+  "preflight_gaps_s": [
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "started_at": "2026-08-08T05:20:19.279Z"
+}

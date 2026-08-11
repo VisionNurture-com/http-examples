@@ -1,0 +1,21 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "no_store_with_max_age_statuses": [
+    200
+  ],
+  "no_cache_with_max_age_statuses": [
+    304
+  ],
+  "no_store_with_no_cache_statuses": [
+    200
+  ],
+  "mdn_conflicted_example_statuses": [
+    200
+  ],
+  "must_revalidate_fresh_hits": 0,
+  "engines_agree": true
+}

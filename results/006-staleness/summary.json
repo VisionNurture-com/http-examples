@@ -1,0 +1,16 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "hits_after_server_fix": 0,
+  "rev_seen_after_server_fix": [
+    "1"
+  ],
+  "rev_seen_after_cache_busting": [
+    "2"
+  ],
+  "stale_reproduced_all_engines": true,
+  "busting_worked_all_engines": true
+}

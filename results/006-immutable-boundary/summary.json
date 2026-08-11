@@ -1,0 +1,25 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "firefox_https_plain_fetch_nocache_hits": 1,
+  "firefox_https_immutable_fetch_nocache_hits": 0,
+  "chromium_https_immutable_fetch_nocache_hits": 1,
+  "webkit_https_immutable_fetch_nocache_hits": 1,
+  "firefox_http_plain_fetch_nocache_hits": 1,
+  "firefox_http_immutable_fetch_nocache_hits": 1,
+  "firefox_http_immutable_fetch_nocache_statuses": [
+    304
+  ],
+  "schemes_measured": [
+    "http",
+    "https"
+  ],
+  "stale_second_statuses": [
+    304
+  ],
+  "restart_hits_chromium": 0,
+  "restart_hits_webkit": 1
+}

@@ -1,0 +1,20 @@
+{
+  "name": "http-examples",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "HTTP の通説を実機で検証するための伴走サンプル（visionnurture.com の HTTP 入門シリーズ）",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check:structure": "node tools/check-structure.mjs",
+    "check:provenance": "node tools/check-provenance.mjs",
+    "check": "npm run check:structure && npm run check:provenance && npm run check:neutrality",
+    "check:neutrality": "node tools/check-neutrality.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

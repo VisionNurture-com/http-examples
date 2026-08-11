@@ -1,0 +1,42 @@
+[
+  {
+    "case": "B0",
+    "zone": "guarded",
+    "desc": "auth_basic を location 全体にかける（OPTIONS も認証対象）",
+    "browser": "webkit",
+    "preflight_count": 2,
+    "preflight_statuses": [
+      401,
+      401
+    ],
+    "fetch_ok": false,
+    "fetch_status": null,
+    "fetch_error": "Load failed"
+  },
+  {
+    "case": "B1",
+    "zone": "exempt",
+    "desc": "OPTIONS のときだけ auth_basic を off にする",
+    "browser": "webkit",
+    "preflight_count": 1,
+    "preflight_statuses": [
+      204
+    ],
+    "fetch_ok": true,
+    "fetch_status": 200,
+    "fetch_error": null
+  },
+  {
+    "case": "B2",
+    "zone": "shortcut",
+    "desc": "auth_basic + return を content handler にした設定",
+    "browser": "webkit",
+    "preflight_count": 1,
+    "preflight_statuses": [
+      204
+    ],
+    "fetch_ok": true,
+    "fetch_status": 200,
+    "fetch_error": null
+  }
+]

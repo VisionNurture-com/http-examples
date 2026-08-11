@@ -1,0 +1,16 @@
+{
+  "label": "clamp",
+  "browser": "firefox",
+  "browser_version": "153.0",
+  "path": "/008/maxage-86400/ff",
+  "duration_s": 7500,
+  "interval_s": 30,
+  "probes_sent": 250,
+  "probes_failed": 0,
+  "preflight_count": 1,
+  "preflight_offsets_s": [
+    0
+  ],
+  "preflight_gaps_s": [],
+  "started_at": "2026-08-08T03:08:56.362Z"
+}
