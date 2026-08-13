@@ -1,0 +1,33 @@
+measured-at: 2026-08-12T03:04:56.978Z
+scenario: 003-delete-repeat
+mode: M1
+base: http://localhost:8085
+nginx: 
+node: 24.19.0
+curl: 8.21.0
+---
+
+## strict 送信 1/2
+status=204 body=""
+state.items={"b":{"name":"bravo"},"c":{"name":"charlie"}}
+
+## strict 送信 2/2
+status=404 body="{\"error\":\"not_found\"}"
+state.items={"b":{"name":"bravo"},"c":{"name":"charlie"}}
+
+## lenient 送信 1/2
+status=204 body=""
+state.items={"a":{"name":"alpha"},"c":{"name":"charlie"}}
+
+## lenient 送信 2/2
+status=204 body=""
+state.items={"a":{"name":"alpha"},"c":{"name":"charlie"}}
+
+## echo 送信 1/2
+status=200 body="{\"deleted\":true}"
+state.items={"a":{"name":"alpha"},"b":{"name":"bravo"}}
+
+## echo 送信 2/2
+status=200 body="{\"deleted\":false}"
+state.items={"a":{"name":"alpha"},"b":{"name":"bravo"}}
+

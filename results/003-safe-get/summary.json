@@ -1,0 +1,11 @@
+{
+  "get_sends": 3,
+  "consumed_after_get_sends": 3,
+  "head_sends": 1,
+  "consumed_after_head": 1,
+  "head_status": 200,
+  "head_response_body_bytes": 0,
+  "control_safe_get_changed_state": false,
+  "client": "curl",
+  "curl_version": "8.21.0"
+}

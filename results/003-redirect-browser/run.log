@@ -1,0 +1,31 @@
+measured-at: 2026-08-12T07:06:30.027Z
+scenario: 003-redirect-browser
+mode: M2
+base: http://localhost:8085
+engines: chromium 151.0.7922.34 / firefox 153.0 / webkit 26.5
+---
+
+## chromium 151.0.7922.34
+  fetch POST → /003/redirect/301
+  fetch POST → /003/redirect/302
+  fetch POST → /003/redirect/303
+  fetch POST → /003/redirect/307
+  fetch POST → /003/redirect/308
+  nginx が受けたメソッド: {"fetch301":"GET","fetch302":"GET","fetch303":"GET","fetch307":"POST","fetch308":"POST"}
+
+## firefox 153.0
+  fetch POST → /003/redirect/301
+  fetch POST → /003/redirect/302
+  fetch POST → /003/redirect/303
+  fetch POST → /003/redirect/307
+  fetch POST → /003/redirect/308
+  nginx が受けたメソッド: {"fetch301":"GET","fetch302":"GET","fetch303":"GET","fetch307":"POST","fetch308":"POST"}
+
+## webkit 26.5
+  fetch POST → /003/redirect/301
+  fetch POST → /003/redirect/302
+  fetch POST → /003/redirect/303
+  fetch POST → /003/redirect/307
+  fetch POST → /003/redirect/308
+  nginx が受けたメソッド: {"fetch301":"GET","fetch302":"GET","fetch303":"GET","fetch307":"POST","fetch308":"POST"}
+

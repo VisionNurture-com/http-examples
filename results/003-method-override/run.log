@@ -1,0 +1,28 @@
+measured-at: 2026-08-12T07:06:33.425Z
+scenario: 003-method-override
+mode: M2
+base: http://localhost:8085
+engines: chromium 151.0.7922.34 / firefox 153.0 / webkit 26.5
+---
+
+## chromium 151.0.7922.34
+  submit form_post_override → http://localhost:8085/003/override/target?_method=PUT&cs=form_post_override
+  submit form_put_attr → http://localhost:8085/003/override/target?cs=form_put_attr
+  submit form_post_plain → http://localhost:8085/003/override/target?cs=form_post_plain
+  submit form_get_plain → http://localhost:8085/003/override/target?cs=form_get_plain
+  nginx が受けたメソッド: {"form_post_override":"POST","form_put_attr":"GET","form_post_plain":"POST","form_get_plain":"GET","fetch_put":"PUT"}
+
+## firefox 153.0
+  submit form_post_override → http://localhost:8085/003/override/target?_method=PUT&cs=form_post_override
+  submit form_put_attr → http://localhost:8085/003/override/target?cs=form_put_attr
+  submit form_post_plain → http://localhost:8085/003/override/target?cs=form_post_plain
+  submit form_get_plain → http://localhost:8085/003/override/target?cs=form_get_plain
+  nginx が受けたメソッド: {"form_post_override":"POST","form_put_attr":"GET","form_post_plain":"POST","form_get_plain":"GET","fetch_put":"PUT"}
+
+## webkit 26.5
+  submit form_post_override → http://localhost:8085/003/override/target?_method=PUT&cs=form_post_override
+  submit form_put_attr → http://localhost:8085/003/override/target?cs=form_put_attr
+  submit form_post_plain → http://localhost:8085/003/override/target?cs=form_post_plain
+  submit form_get_plain → http://localhost:8085/003/override/target?cs=form_get_plain
+  nginx が受けたメソッド: {"form_post_override":"POST","form_put_attr":"GET","form_post_plain":"POST","form_get_plain":"GET","fetch_put":"PUT"}
+

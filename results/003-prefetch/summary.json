@@ -1,0 +1,26 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "wire_method_seen_by_nginx": {
+    "chromium": {
+      "prefetch": "GET"
+    },
+    "firefox": {
+      "prefetch": "GET"
+    },
+    "webkit": {}
+  },
+  "prefetch_fired": {
+    "chromium": true,
+    "firefox": true,
+    "webkit": false
+  },
+  "consumed_by_prefetch": {
+    "chromium": 1,
+    "firefox": 1,
+    "webkit": 0
+  }
+}

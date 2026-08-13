@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>003 — form が実際に送るメソッド</title>
+  </head>
+  <body>
+    <h1>form が実際に送るメソッド</h1>
+
+    <!--
+      🔴 GET として送られる form は、action に書いたクエリを捨ててフォームデータで置き換える。
+         そのため ② と ④ のケース識別子は hidden で持たせている（action のクエリでは消える）。
+    -->
+
+    <!-- ① 広く使われる _method 偽装。ワイヤに何が出るか -->
+    <form id="f-post-override" method="post" action="/003/override/target?_method=PUT&amp;cs=form_post_override">
+      <button type="submit">① POST + _method=PUT</button>
+    </form>
+
+    <!-- ② HTML の method 属性に PUT と書いたとき -->
+    <form id="f-put-attr" method="PUT" action="/003/override/target">
+      <input type="hidden" name="cs" value="form_put_attr" />
+      <button type="submit">② method="PUT"</button>
+    </form>
+
+    <!-- ③ 対照: ふつうの POST -->
+    <form id="f-post-plain" method="post" action="/003/override/target?cs=form_post_plain">
+      <button type="submit">③ POST</button>
+    </form>
+
+    <!-- ④ 対照: ふつうの GET -->
+    <form id="f-get-plain" method="get" action="/003/override/target">
+      <input type="hidden" name="cs" value="form_get_plain" />
+      <button type="submit">④ GET</button>
+    </form>
+  </body>
+</html>

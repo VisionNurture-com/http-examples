@@ -1,0 +1,19 @@
+measured-at: 2026-08-12T07:06:11.321Z
+scenario: 003-prefetch
+mode: M2
+base: http://localhost:8085
+engines: chromium 151.0.7922.34 / firefox 153.0 / webkit 26.5
+---
+
+## chromium 151.0.7922.34
+  quota.prefetch=1
+  nginx が受けたメソッド: {"prefetch":"GET"}
+
+## firefox 153.0
+  quota.prefetch=1
+  nginx が受けたメソッド: {"prefetch":"GET"}
+
+## webkit 26.5
+  quota.prefetch=0
+  nginx が受けたメソッド: {}
+

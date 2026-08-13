@@ -1,0 +1,9 @@
+{
+  "engine": "webkit",
+  "version": "26.5",
+  "values": {
+    "prefetch_fired": false,
+    "consumed_by_prefetch": 0
+  },
+  "nginx": {}
+}

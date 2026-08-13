@@ -1,0 +1,30 @@
+{
+  "sends_per_variant": 2,
+  "variants_measured": 3,
+  "status_sequence": {
+    "strict": [
+      204,
+      404
+    ],
+    "lenient": [
+      204,
+      204
+    ],
+    "echo": [
+      200,
+      200
+    ]
+  },
+  "state_same_after_repeat": {
+    "strict": true,
+    "lenient": true,
+    "echo": true
+  },
+  "response_same_after_repeat": {
+    "strict": false,
+    "lenient": true,
+    "echo": false
+  },
+  "client": "curl",
+  "curl_version": "8.21.0"
+}

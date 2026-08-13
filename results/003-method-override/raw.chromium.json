@@ -1,0 +1,28 @@
+{
+  "engine": "chromium",
+  "version": "151.0.7922.34",
+  "values": {
+    "handler_reached": {
+      "form_post_override": "PUT",
+      "form_put_attr": "GET",
+      "form_post_plain": "POST",
+      "form_get_plain": "GET",
+      "fetch_put": "PUT"
+    },
+    "wire_method_seen_by_app": {
+      "form_post_override": "POST",
+      "form_put_attr": "GET",
+      "form_post_plain": "POST",
+      "form_get_plain": "GET",
+      "fetch_put": "PUT"
+    },
+    "overrides_recorded": 5
+  },
+  "nginx": {
+    "form_post_override": "POST",
+    "form_put_attr": "GET",
+    "form_post_plain": "POST",
+    "form_get_plain": "GET",
+    "fetch_put": "PUT"
+  }
+}

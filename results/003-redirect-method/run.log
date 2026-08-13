@@ -1,0 +1,84 @@
+measured-at: 2026-08-12T03:04:59.200Z
+scenario: 003-redirect-method
+mode: M1
+base: http://localhost:8085
+nginx: 
+node: 24.19.0
+curl: 8.21.0
+---
+
+## implicit / 301
+curl-args=["-L","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"301","method":"GET","cs":"implicit","br":null,"body_length":0,"content_type":"text/plain"}
+
+## implicit / 302
+curl-args=["-L","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"302","method":"GET","cs":"implicit","br":null,"body_length":0,"content_type":"text/plain"}
+
+## implicit / 303
+curl-args=["-L","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"303","method":"GET","cs":"implicit","br":null,"body_length":0,"content_type":"text/plain"}
+
+## implicit / 307
+curl-args=["-L","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"307","method":"POST","cs":"implicit","br":null,"body_length":11,"content_type":"text/plain"}
+
+## implicit / 308
+curl-args=["-L","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"308","method":"POST","cs":"implicit","br":null,"body_length":11,"content_type":"text/plain"}
+
+## forced / 301
+curl-args=["-L","-X","POST","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"301","method":"POST","cs":"forced","br":null,"body_length":0,"content_type":"text/plain"}
+
+## forced / 302
+curl-args=["-L","-X","POST","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"302","method":"POST","cs":"forced","br":null,"body_length":0,"content_type":"text/plain"}
+
+## forced / 303
+curl-args=["-L","-X","POST","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"303","method":"POST","cs":"forced","br":null,"body_length":0,"content_type":"text/plain"}
+
+## forced / 307
+curl-args=["-L","-X","POST","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"307","method":"POST","cs":"forced","br":null,"body_length":11,"content_type":"text/plain"}
+
+## forced / 308
+curl-args=["-L","-X","POST","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"308","method":"POST","cs":"forced","br":null,"body_length":11,"content_type":"text/plain"}
+
+## post30x / 301
+curl-args=["-L","--post301","--post302","--post303","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"301","method":"POST","cs":"post30x","br":null,"body_length":11,"content_type":"text/plain"}
+
+## post30x / 302
+curl-args=["-L","--post301","--post302","--post303","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"302","method":"POST","cs":"post30x","br":null,"body_length":11,"content_type":"text/plain"}
+
+## post30x / 303
+curl-args=["-L","--post301","--post302","--post303","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"303","method":"POST","cs":"post30x","br":null,"body_length":11,"content_type":"text/plain"}
+
+## post30x / 307
+curl-args=["-L","--post301","--post302","--post303","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"307","method":"POST","cs":"post30x","br":null,"body_length":11,"content_type":"text/plain"}
+
+## post30x / 308
+curl-args=["-L","--post301","--post302","--post303","--data-binary","amount=1000"]
+final-status=200
+arrival={"code":"308","method":"POST","cs":"post30x","br":null,"body_length":11,"content_type":"text/plain"}
+

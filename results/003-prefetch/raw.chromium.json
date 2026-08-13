@@ -1,0 +1,11 @@
+{
+  "engine": "chromium",
+  "version": "151.0.7922.34",
+  "values": {
+    "prefetch_fired": true,
+    "consumed_by_prefetch": 1
+  },
+  "nginx": {
+    "prefetch": "GET"
+  }
+}

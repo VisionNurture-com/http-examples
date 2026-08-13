@@ -27,6 +27,8 @@ services:
       # （Firefox は immutable を https でのみ honor するため対照が要る）
       - "8084:84"
       - "8444:444"
+      # 記事 003 専用の入口。ワイヤに出たメソッドを専用の到着記録で読む
+      - "8085:85"
       - "8443:443"
       # HTTP/3 は同じ 443 を UDP で使う。Docker Desktop の UDP 転送が
       # 測定に耐えるかは vm/README.md の判定結果を参照。

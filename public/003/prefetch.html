@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>003 — 先読みが GET を踏むか</title>
+    <!--
+      状態を変える GET を先読みの対象にする。踏まれれば消費数が増える。
+      🔴 リンクは静的に置く。JavaScript で後から差し込むと、踏まれなかったときに
+         「エンジンが先読みしない」のか「動的挿入が効かない」のか分けられなくなる。
+      エンジンごとの区別は、測定スクリプトが 1 エンジンごとに状態をリセットして取る。
+    -->
+    <link rel="prefetch" href="/003/unsafe/consume?token=prefetch&amp;cs=prefetch" />
+  </head>
+  <body>
+    <h1>先読みが GET を踏むか</h1>
+    <p>このページは、状態を変える GET を <code>rel="prefetch"</code> の対象にしています。</p>
+  </body>
+</html>

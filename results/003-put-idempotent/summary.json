@@ -1,0 +1,37 @@
+{
+  "sends_per_variant": 3,
+  "variants_measured": 4,
+  "distinct_states_after_sends": {
+    "replace": 1,
+    "stamped": 3,
+    "append": 3,
+    "numbered": 3
+  },
+  "status_sequence": {
+    "replace": [
+      200,
+      200,
+      200
+    ],
+    "stamped": [
+      200,
+      200,
+      200
+    ],
+    "append": [
+      200,
+      200,
+      200
+    ],
+    "numbered": [
+      200,
+      200,
+      200
+    ]
+  },
+  "control_post_distinct_states": 3,
+  "control_post_created_count": 3,
+  "repeats_rejected_by_stack": 0,
+  "client": "curl",
+  "curl_version": "8.21.0"
+}

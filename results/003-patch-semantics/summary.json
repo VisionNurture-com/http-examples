@@ -1,0 +1,66 @@
+{
+  "sends_per_case": 3,
+  "cases_measured": 4,
+  "media_types_measured": [
+    "application/json-patch+json",
+    "application/merge-patch+json"
+  ],
+  "distinct_states_after_sends": {
+    "merge_set": 1,
+    "merge_delete": 1,
+    "json_replace": 1,
+    "json_add_append": 3
+  },
+  "final_state": {
+    "merge_set": {
+      "title": "final",
+      "tags": [
+        "http"
+      ]
+    },
+    "merge_delete": {
+      "tags": [
+        "http"
+      ]
+    },
+    "json_replace": {
+      "title": "final",
+      "tags": [
+        "http"
+      ]
+    },
+    "json_add_append": {
+      "title": "draft",
+      "tags": [
+        "http",
+        "rest",
+        "rest",
+        "rest"
+      ]
+    }
+  },
+  "status_sequence": {
+    "merge_set": [
+      200,
+      200,
+      200
+    ],
+    "merge_delete": [
+      200,
+      200,
+      200
+    ],
+    "json_replace": [
+      200,
+      200,
+      200
+    ],
+    "json_add_append": [
+      200,
+      200,
+      200
+    ]
+  },
+  "client": "curl",
+  "curl_version": "8.21.0"
+}

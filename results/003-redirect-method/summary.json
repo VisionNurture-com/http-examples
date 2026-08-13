@@ -1,0 +1,58 @@
+{
+  "codes_measured": [
+    301,
+    302,
+    303,
+    307,
+    308
+  ],
+  "request_body_bytes_sent": 11,
+  "method_at_destination": {
+    "implicit": {
+      "301": "GET",
+      "302": "GET",
+      "303": "GET",
+      "307": "POST",
+      "308": "POST"
+    },
+    "forced": {
+      "301": "POST",
+      "302": "POST",
+      "303": "POST",
+      "307": "POST",
+      "308": "POST"
+    },
+    "post30x": {
+      "301": "POST",
+      "302": "POST",
+      "303": "POST",
+      "307": "POST",
+      "308": "POST"
+    }
+  },
+  "body_bytes_at_destination": {
+    "implicit": {
+      "301": 0,
+      "302": 0,
+      "303": 0,
+      "307": 11,
+      "308": 11
+    },
+    "forced": {
+      "301": 0,
+      "302": 0,
+      "303": 0,
+      "307": 11,
+      "308": 11
+    },
+    "post30x": {
+      "301": 11,
+      "302": 11,
+      "303": 11,
+      "307": 11,
+      "308": 11
+    }
+  },
+  "client": "curl",
+  "curl_version": "8.21.0"
+}
