@@ -1,0 +1,25 @@
+measured-at: 2026-08-13T15:54:21Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu)
+note: M3（手動・CI 対象外）。RTT は設定値でなく実効値を記録する
+label: L2
+
+### 条件: rate=100mbit rtt設定=20ms loss=0.1% object=20m.bin limit=2000pkt
+qdisc(veth-h): qdisc netem 802d: root refcnt 5 limit 2000 delay 10ms seed 14159888753066571978
+qdisc(veth-s): qdisc netem 802e: root refcnt 5 limit 2000 delay 10ms loss 0.1% rate 100Mbit seed 13250096915428134237
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":20.10,"median":20.21,"p90":63.23,"max":68.10}
+  http3-only run1 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":350725,"t_connect":0.001746,"t_appconnect":0.088260,"t_starttransfer":0.232686,"t_total":59.794659}
+  http3-only run2 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":354210,"t_connect":0.002704,"t_appconnect":0.050586,"t_starttransfer":0.173669,"t_total":59.206404}
+  http3-only run3 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":525880,"t_connect":0.002903,"t_appconnect":0.024235,"t_starttransfer":0.133072,"t_total":39.878856}
+
+### 条件: rate=100mbit rtt設定=20ms loss=0.5% object=20m.bin limit=2000pkt
+qdisc(veth-h): qdisc netem 802f: root refcnt 5 limit 2000 delay 10ms seed 10680911445737988259
+qdisc(veth-s): qdisc netem 8030: root refcnt 5 limit 2000 delay 10ms loss 0.5% rate 100Mbit seed 3606942733032782780
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":20.14,"median":36.69,"p90":73.73,"max":85.43}
+  http3-only run1 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+  http3-only run2 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+  http3-only run3 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+
+### netem 撤去後: qdisc noqueue 0: root refcnt 2 
+[done] /home/ubuntu/results-011-buf4m/crossover-L2-h3.jsonl

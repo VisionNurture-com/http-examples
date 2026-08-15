@@ -1,0 +1,35 @@
+measured-at: 2026-08-13T16:35:19Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu) / http3_stream_buffer_size=64k
+note: M3（手動・CI 対象外）。判定は全オブジェクトが揃うまでの実時間
+
+### rate=100mbit rtt設定=100ms loss=1% limit=2500pkt  cfg=64k
+qdisc(veth-s): qdisc netem 803e: root refcnt 5 limit 2500 delay 50ms loss 1% rate 100Mbit seed 17389437433963652276
+実効RTT: {"n":10,"min":139.20,"median":264.10,"max":365.75}
+  N=6 h1-seq run1 rc=0 elapsed=2.5266s
+  N=6 h1-seq run2 rc=0 elapsed=2.2979s
+  N=6 h1-seq run3 rc=0 elapsed=2.4576s
+  N=6 h1-par6 run1 rc=0 elapsed=0.7438s
+  N=6 h1-par6 run2 rc=0 elapsed=1.0893s
+  N=6 h1-par6 run3 rc=0 elapsed=0.9189s
+  N=6 h2 run1 rc=0 elapsed=1.2192s
+  N=6 h2 run2 rc=0 elapsed=1.3689s
+  N=6 h2 run3 rc=0 elapsed=1.399s
+  N=6 h3 run1 rc=0 elapsed=0.691s
+  N=6 h3 run2 rc=0 elapsed=0.6542s
+  N=6 h3 run3 rc=0 elapsed=0.6898s
+  N=25 h1-seq run1 rc=0 elapsed=7.9348s
+  N=25 h1-seq run2 rc=0 elapsed=8.4731s
+  N=25 h1-seq run3 rc=0 elapsed=8.3183s
+  N=25 h1-par6 run1 rc=0 elapsed=2.1394s
+  N=25 h1-par6 run2 rc=0 elapsed=2.0849s
+  N=25 h1-par6 run3 rc=0 elapsed=2.2377s
+  N=25 h2 run1 rc=0 elapsed=1.5004s
+  N=25 h2 run2 rc=0 elapsed=1.5001s
+  N=25 h2 run3 rc=0 elapsed=1.7169s
+  N=25 h3 run1 rc=0 elapsed=0.6022s
+  N=25 h3 run2 rc=0 elapsed=0.6177s
+  N=25 h3 run3 rc=0 elapsed=0.5527s
+
+[done] /home/ubuntu/results-011-mux/mux-64k-loss1.jsonl

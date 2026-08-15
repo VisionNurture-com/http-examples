@@ -1,0 +1,37 @@
+measured-at: 2026-08-13T12:41:19Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu)
+note: M3（手動・CI 対象外）。RTT は設定値でなく実効値を記録する
+label: T2a
+
+### 条件: rate=100mbit rtt設定=20ms loss=0% object=20m.bin limit=2000pkt
+qdisc(veth-h): qdisc netem 8015: root refcnt 5 limit 2000 delay 10ms seed 10167506224856610511
+qdisc(veth-s): qdisc netem 8016: root refcnt 5 limit 2000 delay 10ms rate 100Mbit seed 15754773112184842882
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":20.12,"median":20.24,"p90":40.05,"max":42.80}
+  http1.1 run1 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":8584214,"t_connect":0.020093,"t_appconnect":0.078773,"t_starttransfer":0.188353,"t_total":2.443033}
+  http1.1 run2 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":7596469,"t_connect":0.025992,"t_appconnect":0.070739,"t_starttransfer":0.237893,"t_total":2.760693}
+  http1.1 run3 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":7543193,"t_connect":0.020106,"t_appconnect":0.058354,"t_starttransfer":0.163059,"t_total":2.780191}
+  http2 run1 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":5632967,"t_connect":0.038274,"t_appconnect":0.107892,"t_starttransfer":0.195118,"t_total":3.722997}
+  http2 run2 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":8222100,"t_connect":0.020087,"t_appconnect":0.068402,"t_starttransfer":0.123036,"t_total":2.550628}
+  http2 run3 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":8541907,"t_connect":0.020095,"t_appconnect":0.063806,"t_starttransfer":0.119250,"t_total":2.455133}
+  http3-only run1 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":721485,"t_connect":0.001618,"t_appconnect":0.140475,"t_starttransfer":0.316158,"t_total":29.067142}
+  http3-only run2 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":1228866,"t_connect":0.002497,"t_appconnect":0.043816,"t_starttransfer":0.095200,"t_total":17.065743}
+  http3-only run3 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":1230335,"t_connect":0.002328,"t_appconnect":0.062297,"t_starttransfer":0.092174,"t_total":17.045360}
+
+### 条件: rate=100mbit rtt設定=100ms loss=0% object=20m.bin limit=2500pkt
+qdisc(veth-h): qdisc netem 8017: root refcnt 5 limit 2500 delay 50ms seed 14043915148668350458
+qdisc(veth-s): qdisc netem 8018: root refcnt 5 limit 2500 delay 50ms rate 100Mbit seed 11134948043275067911
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":108.50,"median":170.59,"p90":210.31,"max":233.47}
+  http1.1 run1 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":4501234,"t_connect":0.126645,"t_appconnect":0.353927,"t_starttransfer":0.675113,"t_total":4.659060}
+  http1.1 run2 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":2581789,"t_connect":0.151083,"t_appconnect":0.307886,"t_starttransfer":0.697032,"t_total":8.122861}
+  http1.1 run3 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":2330018,"t_connect":0.143603,"t_appconnect":0.265483,"t_starttransfer":0.639182,"t_total":9.000579}
+  http2 run1 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":2226988,"t_connect":0.200498,"t_appconnect":0.361407,"t_starttransfer":0.540770,"t_total":9.416986}
+  http2 run2 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":2230278,"t_connect":0.200622,"t_appconnect":0.362988,"t_starttransfer":0.545887,"t_total":9.403094}
+  http2 run3 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":1757542,"t_connect":0.154575,"t_appconnect":0.374192,"t_starttransfer":0.593141,"t_total":11.932295}
+  http3-only run1 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":347772,"t_connect":0.001663,"t_appconnect":0.151084,"t_starttransfer":0.312578,"t_total":60.302399}
+  http3-only run2 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+  http3-only run3 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+
+### netem 撤去後: qdisc noqueue 0: root refcnt 2 
+[done] /home/ubuntu/results-011/crossover-T2a.jsonl

@@ -1,0 +1,20 @@
+measured-at: 2026-08-13T15:10:34Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu)
+note: M3（手動・CI 対象外）。RTT は設定値でなく実効値を記録する
+label: T2b
+
+### 条件: rate=100mbit rtt設定=20ms loss=1% object=20m.bin limit=2000pkt
+qdisc(veth-h): qdisc netem 801d: root refcnt 5 limit 2000 delay 10ms seed 4680443269865510709
+qdisc(veth-s): qdisc netem 801e: root refcnt 5 limit 2000 delay 10ms loss 1% rate 100Mbit seed 1098889972224472581
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":20.08,"median":20.21,"p90":47.10,"max":58.05}
+  http1.1 run1 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":373528,"t_connect":0.020081,"t_appconnect":0.080906,"t_starttransfer":0.178217,"t_total":56.144381}
+  http1.1 run2 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":363489,"t_connect":0.027473,"t_appconnect":0.100501,"t_starttransfer":0.186008,"t_total":57.695005}
+  http1.1 run3 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":372325,"t_connect":0.033097,"t_appconnect":0.095952,"t_starttransfer":0.224195,"t_total":56.325727}
+  http2 run1 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+  http2 run2 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":233025,"t_connect":0.020141,"t_appconnect":0.115663,"t_starttransfer":0.224270,"t_total":89.996580}
+  http2 run3 rc=28 {"http_version":"-","code":0,"size":0,"speed_bps":0,"t_connect":0,"t_appconnect":0,"t_starttransfer":0,"t_total":0}
+
+### netem 撤去後: qdisc noqueue 0: root refcnt 2 
+[done] /home/ubuntu/results-011-buf4m/crossover-T2b-tcp.jsonl

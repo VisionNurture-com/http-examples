@@ -1,0 +1,55 @@
+measured-at: 2026-08-13T12:15:44Z
+host: multipass Ubuntu 24.04.4 LTS / kernel 6.8.0-136-generic / arm64 / 2 vCPU
+note: カード③ = apt 版の HTTP/3 ビルド有無。M3（手動・CI 対象外）
+
+## 1. apt-cache policy curl
+curl:
+  Installed: 8.5.0-2ubuntu10.11
+  Candidate: 8.5.0-2ubuntu10.11
+  Version table:
+ *** 8.5.0-2ubuntu10.11 500
+        500 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages
+        500 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages
+        100 /var/lib/dpkg/status
+     8.5.0-2ubuntu10 500
+        500 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 Packages
+
+## 2. curl -V（apt 版）
+curl 8.5.0 (aarch64-unknown-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.10
+Release-Date: 2023-12-06, security patched: 8.5.0-2ubuntu10.11
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM PSL SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd
+
+## 3. curl の Features に HTTP3 が含まれるか（1=あり / 0=なし）
+0
+
+## 4. apt-cache policy nginx
+nginx:
+  Installed: 1.24.0-2ubuntu7.15
+  Candidate: 1.24.0-2ubuntu7.15
+  Version table:
+ *** 1.24.0-2ubuntu7.15 500
+        500 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages
+        500 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages
+        100 /var/lib/dpkg/status
+     1.24.0-2ubuntu7 500
+        500 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 Packages
+
+## 5. nginx -v / -V のビルドオプション
+nginx version: nginx/1.24.0 (Ubuntu)
+with-http_v2_module: 1
+with-http_v3_module: 0
+
+## 6. QUIC ライブラリの在庫（apt-cache search）
+libngtcp2-9 - implementation of QUIC protocol (library)
+libngtcp2-crypto-gnutls-dev - implementation of QUIC protocol (development)
+libngtcp2-crypto-gnutls2 - implementation of QUIC protocol (library)
+libngtcp2-dev - implementation of QUIC protocol (development)
+libnghttp3-3 - HTTP/3 library with QUIC and QPACK (library)
+libnghttp3-dev - HTTP/3 library with QUIC and QPACK (development)
+
+## 7. OpenSSL
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+
+## 8. ソースビルドした curl（存在する場合のみ）
+（この VM ではソースビルドしていない）

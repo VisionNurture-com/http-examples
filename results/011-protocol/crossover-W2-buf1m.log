@@ -1,0 +1,23 @@
+measured-at: 2026-08-13T16:15:52Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu)
+note: M3（手動・CI 対象外）。RTT は設定値でなく実効値を記録する
+label: W2
+
+### 条件: rate=100mbit rtt設定=100ms loss=0% object=20m.bin limit=2500pkt
+qdisc(veth-h): qdisc netem 8037: root refcnt 5 limit 2500 delay 50ms seed 7226791983661072646
+qdisc(veth-s): qdisc netem 8038: root refcnt 5 limit 2500 delay 50ms rate 100Mbit seed 13628780461025290921
+実効RTT(TCPハンドシェイク 15回・ms): {"n":15,"min":210.46,"median":264.37,"p90":350.92,"max":354.22}
+  http1.1 run1 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":1435067,"t_connect":0.167549,"t_appconnect":0.546765,"t_starttransfer":1.279504,"t_total":14.613609}
+  http1.1 run2 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":1449119,"t_connect":0.103983,"t_appconnect":0.425738,"t_starttransfer":1.077627,"t_total":14.471908}
+  http1.1 run3 rc=0 {"http_version":"1.1","code":200,"size":20971520,"speed_bps":1443594,"t_connect":0.326062,"t_appconnect":0.582941,"t_starttransfer":1.196391,"t_total":14.527288}
+  http2 run1 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":1068841,"t_connect":0.119119,"t_appconnect":0.377788,"t_starttransfer":0.683594,"t_total":19.620793}
+  http2 run2 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":1344222,"t_connect":0.192504,"t_appconnect":0.525164,"t_starttransfer":0.856451,"t_total":15.601223}
+  http2 run3 rc=0 {"http_version":"2","code":200,"size":20971520,"speed_bps":1138938,"t_connect":0.222734,"t_appconnect":0.573500,"t_starttransfer":0.943953,"t_total":18.413210}
+  http3-only run1 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":251324,"t_connect":0.001805,"t_appconnect":0.130725,"t_starttransfer":0.387170,"t_total":83.444056}
+  http3-only run2 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":268708,"t_connect":0.002652,"t_appconnect":0.368018,"t_starttransfer":0.688493,"t_total":78.045701}
+  http3-only run3 rc=0 {"http_version":"3","code":200,"size":20971520,"speed_bps":250800,"t_connect":0.003040,"t_appconnect":0.356096,"t_starttransfer":0.643120,"t_total":83.618480}
+
+### netem 撤去後: qdisc noqueue 0: root refcnt 2 
+[done] /home/ubuntu/results-011-bufsweep/crossover-W2-buf1m.jsonl

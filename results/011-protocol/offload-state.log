@@ -1,0 +1,14 @@
+=== オフロード ON へ切替（2026-08-13T16:38:12Z）
+veth-h: tcp-segmentation-offload: on
+generic-segmentation-offload: on
+generic-receive-offload: on
+veth-s: tcp-segmentation-offload: on
+generic-segmentation-offload: on
+generic-receive-offload: on
+=== オフロード OFF へ戻す（2026-08-13T16:38:25Z）
+veth-h: tcp-segmentation-offload: off
+generic-segmentation-offload: off
+generic-receive-offload: off
+veth-s: tcp-segmentation-offload: off
+generic-segmentation-offload: off
+generic-receive-offload: off

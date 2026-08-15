@@ -1,0 +1,87 @@
+measured-at: 2026-08-13T13:07:09Z
+host: multipass Ubuntu 26.04 LTS / kernel 7.0.0-28-generic / 4 vCPU
+client: curl 8.18.0 (aarch64-unknown-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 libpsl/0.21.2 nghttp2/1.68.0 ngtcp2/1.16.0 nghttp3/1.12.0
+server: nginx version: nginx/1.28.3 (Ubuntu) / http3_stream_buffer_size=4m
+note: M3（手動・CI 対象外）。判定は全オブジェクトが揃うまでの実時間
+
+### rate=100mbit rtt設定=20ms limit=2000pkt  cfg=4m
+qdisc(veth-s): qdisc netem 8026: root refcnt 5 limit 2000 delay 10ms rate 100Mbit seed 14801110265751629823
+実効RTT: {"n":10,"min":20.09,"median":20.21,"max":39.24}
+  N=6 h1-seq run1 rc=0 elapsed=0.4323s
+  N=6 h1-seq run2 rc=0 elapsed=0.5879s
+  N=6 h1-seq run3 rc=0 elapsed=0.5497s
+  N=6 h1-par6 run1 rc=0 elapsed=0.1292s
+  N=6 h1-par6 run2 rc=0 elapsed=0.1412s
+  N=6 h1-par6 run3 rc=0 elapsed=0.134s
+  N=6 h2 run1 rc=0 elapsed=0.2538s
+  N=6 h2 run2 rc=0 elapsed=0.2257s
+  N=6 h2 run3 rc=0 elapsed=0.289s
+  N=6 h3 run1 rc=0 elapsed=0.1102s
+  N=6 h3 run2 rc=0 elapsed=0.0769s
+  N=6 h3 run3 rc=0 elapsed=0.7472s
+  N=25 h1-seq run1 rc=0 elapsed=1.6278s
+  N=25 h1-seq run2 rc=0 elapsed=1.746s
+  N=25 h1-seq run3 rc=0 elapsed=1.6063s
+  N=25 h1-par6 run1 rc=0 elapsed=0.3879s
+  N=25 h1-par6 run2 rc=0 elapsed=0.3697s
+  N=25 h1-par6 run3 rc=0 elapsed=0.4825s
+  N=25 h2 run1 rc=0 elapsed=0.2618s
+  N=25 h2 run2 rc=0 elapsed=0.2287s
+  N=25 h2 run3 rc=0 elapsed=0.2076s
+  N=25 h3 run1 rc=0 elapsed=0.0686s
+  N=25 h3 run2 rc=0 elapsed=0.1519s
+  N=25 h3 run3 rc=0 elapsed=1.0864s
+  N=100 h1-seq run1 rc=0 elapsed=6.3813s
+  N=100 h1-seq run2 rc=0 elapsed=6.6754s
+  N=100 h1-seq run3 rc=0 elapsed=6.7896s
+  N=100 h1-par6 run1 rc=0 elapsed=1.1957s
+  N=100 h1-par6 run2 rc=0 elapsed=1.3788s
+  N=100 h1-par6 run3 rc=0 elapsed=1.0546s
+  N=100 h2 run1 rc=0 elapsed=0.8023s
+  N=100 h2 run2 rc=0 elapsed=1.1254s
+  N=100 h2 run3 rc=0 elapsed=0.9817s
+  N=100 h3 run1 rc=0 elapsed=0.3194s
+  N=100 h3 run2 rc=0 elapsed=0.5423s
+  N=100 h3 run3 rc=0 elapsed=0.3865s
+
+### rate=100mbit rtt設定=100ms limit=2500pkt  cfg=4m
+qdisc(veth-s): qdisc netem 8028: root refcnt 5 limit 2500 delay 50ms rate 100Mbit seed 3287138129625074595
+実効RTT: {"n":10,"min":134.95,"median":185.46,"max":217.22}
+  N=6 h1-seq run1 rc=0 elapsed=1.5499s
+  N=6 h1-seq run2 rc=0 elapsed=1.5771s
+  N=6 h1-seq run3 rc=0 elapsed=1.4507s
+  N=6 h1-par6 run1 rc=0 elapsed=0.6711s
+  N=6 h1-par6 run2 rc=0 elapsed=0.5925s
+  N=6 h1-par6 run3 rc=0 elapsed=0.5669s
+  N=6 h2 run1 rc=0 elapsed=0.7771s
+  N=6 h2 run2 rc=0 elapsed=0.7482s
+  N=6 h2 run3 rc=0 elapsed=0.6868s
+  N=6 h3 run1 rc=0 elapsed=0.4071s
+  N=6 h3 run2 rc=0 elapsed=0.4337s
+  N=6 h3 run3 rc=0 elapsed=0.3766s
+  N=25 h1-seq run1 rc=0 elapsed=4.784s
+  N=25 h1-seq run2 rc=0 elapsed=4.9812s
+  N=25 h1-seq run3 rc=0 elapsed=5.1302s
+  N=25 h1-par6 run1 rc=0 elapsed=1.2531s
+  N=25 h1-par6 run2 rc=0 elapsed=1.3833s
+  N=25 h1-par6 run3 rc=0 elapsed=1.389s
+  N=25 h2 run1 rc=0 elapsed=1.0003s
+  N=25 h2 run2 rc=0 elapsed=1.0799s
+  N=25 h2 run3 rc=0 elapsed=0.958s
+  N=25 h3 run1 rc=0 elapsed=0.3747s
+  N=25 h3 run2 rc=0 elapsed=0.3159s
+  N=25 h3 run3 rc=0 elapsed=0.4801s
+  N=100 h1-seq run1 rc=0 elapsed=19.5336s
+  N=100 h1-seq run2 rc=0 elapsed=18.9145s
+  N=100 h1-seq run3 rc=0 elapsed=19.9545s
+  N=100 h1-par6 run1 rc=0 elapsed=4.2745s
+  N=100 h1-par6 run2 rc=0 elapsed=4.4069s
+  N=100 h1-par6 run3 rc=0 elapsed=4.0885s
+  N=100 h2 run1 rc=0 elapsed=2.8436s
+  N=100 h2 run2 rc=0 elapsed=3.2476s
+  N=100 h2 run3 rc=0 elapsed=2.1923s
+  N=100 h3 run1 rc=0 elapsed=2.9006s
+  N=100 h3 run2 rc=0 elapsed=1.8788s
+  N=100 h3 run3 rc=0 elapsed=1.9818s
+
+[done] /home/ubuntu/results-011-mux/mux-4m.jsonl
