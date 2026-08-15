@@ -6,6 +6,7 @@
   "license": "MIT",
   "description": "Express 5 バックエンド。記事で扱う挙動をそのまま観測するため、既定動作を上書きしない",
   "dependencies": {
-    "express": "5.2.1"
+    "express": "5.2.1",
+    "method-override": "3.0.0"
   }
 }
