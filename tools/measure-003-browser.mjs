@@ -6,7 +6,7 @@
 //   003-redirect-browser  … 301〜308 をブラウザの fetch が追ったときのメソッドとボディ
 //   003-prefetch          … 状態を変える GET を先読みが踏むか
 //
-// 🔴 判定は 2 系統で取る（value-factcheck G3 の D3 / 008 の欠陥 2 と同型）。
+// 🔴 判定は 2 系統で取る。
 //    ① アプリ側の到着記録（GET /003/state）
 //    ② nginx の到着記録（results/003-methods/access.log の $request_method）
 //    片方だけでは「届いたが別の理由で失敗した」と「そもそも届いていない」を分けられない。

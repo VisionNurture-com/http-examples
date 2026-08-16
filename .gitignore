@@ -14,3 +14,12 @@ nginx/conf.d/*.htpasswd
 
 # 006 の差し替え測定で使う生成物（測定のたびに作り直す）
 public/006/gen/
+
+
+# 012 の圧縮済み配信物（tools/make-012-artifacts.mjs で作り直す）
+# 元になる bundle-v1.js / bundle-v2.js はフィクスチャなのでコミットする
+public/012/bundle-v2.js.gz
+public/012/bundle-v2.js.br
+public/012/bundle-v2.js.zst
+public/012/bundle-v2.js.dcb
+public/012/bundle-v2.js.dcz

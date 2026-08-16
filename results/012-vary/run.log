@@ -1,0 +1,8 @@
+measured-at: 1970-01-01T00:00:00.000Z
+scenario: 012-vary
+mode: M1
+judgement: 2 人目が受け取ったバイト列が元のファイルと一致するか（復号可否では判定しない）
+---
+{"original_bytes":100814,"original_sha256":"60c544701f1302033b4c43e987c2dfade6812324d8f8bc7301f5488b18a352c3"}
+{"variant":"novary","path":"/012/novary.js?case=r1786837297","first":{"bytes":573,"sha256":"cdd9814a5dec0c1dcfd16397c65c7803ace4d0a7f04177b3023e2a7e89d0c169","contentEncoding":"dcb","cacheStatus":"MISS","servedFile":"bundle-v2.js.dcb","vary":null,"matchesOriginal":false},"second":{"bytes":573,"sha256":"cdd9814a5dec0c1dcfd16397c65c7803ace4d0a7f04177b3023e2a7e89d0c169","contentEncoding":"dcb","cacheStatus":"HIT","servedFile":"bundle-v2.js.dcb","vary":null,"matchesOriginal":false}}
+{"variant":"withvary","path":"/012/withvary.js?case=r1786837297","first":{"bytes":573,"sha256":"cdd9814a5dec0c1dcfd16397c65c7803ace4d0a7f04177b3023e2a7e89d0c169","contentEncoding":"dcb","cacheStatus":"MISS","servedFile":"bundle-v2.js.dcb","vary":"Accept-Encoding, Available-Dictionary","matchesOriginal":false},"second":{"bytes":100814,"sha256":"60c544701f1302033b4c43e987c2dfade6812324d8f8bc7301f5488b18a352c3","contentEncoding":null,"cacheStatus":"MISS","servedFile":"bundle-v2.js","vary":"Accept-Encoding, Available-Dictionary","matchesOriginal":true}}

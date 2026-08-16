@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-08-15T15:22:16.922Z",
+  "tools": {
+    "node": "v24.18.0",
+    "brotliCli": "brotli 1.2.0",
+    "zstdCli": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
+  },
+  "dictionary": {
+    "file": "public/012/bundle-v1.js",
+    "bytes": 99465,
+    "sha256Base64": "waMBlW5oPJ8orWCX6X3OEk82TM6QsDY3P7oauiTTUqo=",
+    "sha256Hex": "c1a301956e683c9f28ad6097e97dce124f364cce90b036373fba1aba24d352aa"
+  },
+  "target": {
+    "file": "public/012/bundle-v2.js",
+    "bytes": 100814
+  },
+  "encodings": {
+    "identity": {
+      "bytes": 100814,
+      "dictionary": false
+    },
+    "gzip": {
+      "bytes": 30951,
+      "dictionary": false
+    },
+    "br": {
+      "bytes": 26081,
+      "dictionary": false
+    },
+    "zstd": {
+      "bytes": 27919,
+      "dictionary": false
+    },
+    "dcb": {
+      "bytes": 573,
+      "dictionary": true,
+      "payloadBytes": 537,
+      "headerBytes": 36
+    },
+    "dcz": {
+      "bytes": 591,
+      "dictionary": true,
+      "payloadBytes": 551,
+      "headerBytes": 40
+    }
+  }
+}

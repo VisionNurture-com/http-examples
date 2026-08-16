@@ -1,0 +1,120 @@
+{
+  "probedAt": "2026-08-15T15:22:16.720Z",
+  "names": [
+    "requestStart",
+    "responseStart",
+    "firstInterimResponseStart",
+    "finalResponseHeadersStart",
+    "firstResponseHeadersStart"
+  ],
+  "results": [
+    {
+      "label": "chromium (playwright 同梱)",
+      "version": "151.0.7922.34",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "surface": {
+        "requestStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "responseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstInterimResponseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "finalResponseHeadersStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstResponseHeadersStart": {
+          "resourceTiming": false,
+          "navigationTiming": false
+        }
+      }
+    },
+    {
+      "label": "Google Chrome (installed / channel=chrome)",
+      "version": "151.0.7922.138",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "surface": {
+        "requestStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "responseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstInterimResponseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "finalResponseHeadersStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstResponseHeadersStart": {
+          "resourceTiming": false,
+          "navigationTiming": false
+        }
+      }
+    },
+    {
+      "label": "firefox (playwright 同梱)",
+      "version": "153.0",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+      "surface": {
+        "requestStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "responseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstInterimResponseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "finalResponseHeadersStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstResponseHeadersStart": {
+          "resourceTiming": false,
+          "navigationTiming": false
+        }
+      }
+    },
+    {
+      "label": "webkit (playwright 同梱)",
+      "version": "26.5",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+      "surface": {
+        "requestStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "responseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstInterimResponseStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "finalResponseHeadersStart": {
+          "resourceTiming": true,
+          "navigationTiming": true
+        },
+        "firstResponseHeadersStart": {
+          "resourceTiming": false,
+          "navigationTiming": false
+        }
+      }
+    }
+  ]
+}

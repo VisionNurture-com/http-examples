@@ -12,6 +12,7 @@ import { register as registerIdempotency } from "./005-idempotency/routes.mjs";
 import { register as registerCache } from "./006-cache/routes.mjs";
 import { register as registerContentType } from "./007-content-type/routes.mjs";
 import { register as registerAuth } from "./009-auth/routes.mjs";
+import { register as registerCompression } from "./012-compression/routes.mjs";
 
 const app = express();
 const PORT = Number(process.env.PORT ?? 3000);
@@ -31,6 +32,7 @@ registerIdempotency(app);
 registerCache(app);
 registerContentType(app);
 registerAuth(app);
+registerCompression(app);
 
 app.listen(PORT, () => {
   console.log(`[app] listening on ${PORT} (node ${process.versions.node})`);

@@ -8,10 +8,10 @@
 #   netns "srv"（サーバ: apt 版 nginx --with-http_v3_module）
 #         netem はここに「下り（rate / loss）」を当てる
 #
-# G3（測定前レビュー）で検出した欠陥を最初から織り込む:
-#   欠陥 2: 整形インタフェースのオフロード（GSO/GRO/TSO）を切る
-#   欠陥 4: nginx の fd 上限を worker_connections に見合う値まで上げる
-#   欠陥 5: 高帯域側を上から詰めるため 100 MiB のファイルを置く
+# 測定が歪まないよう、最初から織り込んであること:
+#   - 整形インタフェースのオフロード（GSO/GRO/TSO）を切る
+#   - nginx の fd 上限を worker_connections に見合う値まで上げる
+#   - 高帯域側を上から詰めるため 100 MiB のファイルを置く
 
 set -euo pipefail
 

@@ -44,7 +44,7 @@ function main() {
   console.log("==========================================");
 
   if (ids.length === 0) {
-    console.log("シナリオ 0 個。骨格のみの状態です（各「測る回」で追加します）。");
+    console.log("シナリオ 0 個。骨格のみの状態です（測定を追加すると増えます）。");
     console.log("\n✅ PASS [check-structure] 検査対象なし");
     return 0;
   }

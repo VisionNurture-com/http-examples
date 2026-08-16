@@ -48,6 +48,10 @@ jobs:
         run: |
           npm ci
           npx playwright install --with-deps chromium firefox webkit
+      # 012 の差分ファイル（.dcb / .dcz）を作るのに要る。
+      # 辞書付きの圧縮は node:zlib では作れないため CLI に頼る。
+      - name: 圧縮 CLI を入れる（辞書付き圧縮に要る）
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq brotli zstd
       - name: 証明書を用意する（CI に mkcert は無いので自己署名になる）
         run: bash tools/gen-certs.sh
       - name: compose を起動する

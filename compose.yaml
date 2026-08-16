@@ -33,6 +33,11 @@ services:
       # HTTP/3 は同じ 443 を UDP で使う。Docker Desktop の UDP 転送が
       # 測定に耐えるかは vm/README.md の判定結果を参照。
       - "8443:443/udp"
+      # 記事 012 専用の入口。443 は 000-base.conf が localhost を取っているため、
+      # 名前解決を上書きできないブラウザ（firefox / webkit）からも測れる口を分ける。
+      - "8445:445"
+      # 記事 012 の Vary 事故再現（共有キャッシュを前段に置く）
+      - "8448:446"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro
@@ -50,6 +55,28 @@ services:
     environment:
       PORT: "3000"
       NODE_ENV: "production"
+    ports:
+      # 🔴 記事 012 の 103 Early Hints 測定で、nginx を挟まない対照を取るために直接開ける。
+      #    「103 が届かない」のがアプリ側の問題かプロキシの問題かを分けるため。
+      - "8086:3000"
+    networks:
+      - httpnet
+
+  # 103 を HTTP/2 + TLS で出す対照。Express 直結は HTTP/1.1 の平文になるため、
+  # 「ブラウザが 103 を活かさない」のが条件のせいかどうかを分けられない。
+  h2:
+    build:
+      context: ./app
+    container_name: http-examples-h2
+    command: ["node", "012-compression/h2-server.mjs"]
+    environment:
+      H2_PORT: "3443"
+      CERT_DIR: "/etc/certs"
+      NODE_ENV: "production"
+    volumes:
+      - ./certs:/etc/certs:ro
+    ports:
+      - "8447:3443"
     networks:
       - httpnet
 

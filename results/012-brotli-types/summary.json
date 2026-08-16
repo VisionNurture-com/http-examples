@@ -1,0 +1,49 @@
+{
+  "scenario": "012-brotli-types",
+  "mode": "M1",
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "image": "http-examples-brotli:1.28.3-r7",
+  "nginx_package": "nginx-1.28.3-r7 (alpine 3.22)",
+  "brotli_module_package": "nginx-mod-http-brotli-1.28.3-r7",
+  "rows": [
+    {
+      "case": "a",
+      "conf": "nginx-a.conf",
+      "note": "text/html を明示的に書く（常に対象の型を重ねる）",
+      "raw": "nginx: [warn] duplicate MIME type \"text/html\" in /conf/nginx-a.conf:11\nnginx: the configuration file /conf/nginx-a.conf syntax is ok\nnginx: configuration file /conf/nginx-a.conf test is successful",
+      "warnings": [
+        "nginx: [warn] duplicate MIME type \"text/html\" in /conf/nginx-a.conf:11"
+      ],
+      "warning_count": 1,
+      "duplicated_types": [
+        "text/html"
+      ]
+    },
+    {
+      "case": "b",
+      "conf": "nginx-b.conf",
+      "note": "同じ型を 2 回書く",
+      "raw": "nginx: [warn] duplicate MIME type \"text/css\" in /conf/nginx-b.conf:11\nnginx: the configuration file /conf/nginx-b.conf syntax is ok\nnginx: configuration file /conf/nginx-b.conf test is successful",
+      "warnings": [
+        "nginx: [warn] duplicate MIME type \"text/css\" in /conf/nginx-b.conf:11"
+      ],
+      "warning_count": 1,
+      "duplicated_types": [
+        "text/css"
+      ]
+    },
+    {
+      "case": "c",
+      "conf": "nginx-c.conf",
+      "note": "対照。重複なし",
+      "raw": "nginx: the configuration file /conf/nginx-c.conf syntax is ok\nnginx: configuration file /conf/nginx-c.conf test is successful",
+      "warnings": [],
+      "warning_count": 0,
+      "duplicated_types": []
+    }
+  ],
+  "warns_on_implicit_text_html": true,
+  "warns_on_repeated_type": true,
+  "no_warning_without_duplication": true,
+  "severity": "warn"
+}

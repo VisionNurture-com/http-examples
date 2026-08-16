@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // check-provenance.mjs — 記事に載せる値と実測ログの突合（M0・docker 不要・ネットワーク不要）
 //
-// 突合の経路（設計書 §6）:
+// 突合の経路（README「数値の出どころ」と同じ）:
 //   run.sh 実行 → results/<id>/run.log（生ログ）
 //                → results/<id>/summary.json（実効値・機械が読む）
 //                → scenarios/<id>/expected.md（記事に載せる値の正本）
@@ -11,7 +11,7 @@
 //
 // あわせて config_refs（nginx/conf.d/*.conf 等）の実在と、引用断片が
 // 実際にその設定ファイルへ含まれるかを検査する。記事に書いたが通していない
-// 設定を構造的に防ぐため（設計書 §5）。
+// 設定を構造的に防ぐため。
 //
 // リポジトリ内のファイル同士を突き合わせるだけなので clean clone で確実に動く。
 //
@@ -84,7 +84,7 @@ function listScenarios() {
 }
 
 // 引数解析。**未知の引数は落とす**（黙って無視すると「絞ったつもりで全件」または
-// 「全件のつもりで 0 件」を PASS として出してしまう。read-stuff の「沈黙する検出器」と同じ轍）。
+// 「全件のつもりで 0 件」を PASS として出してしまう。黙って通る検査は無いのと同じ）。
 function parseArgs(argv) {
   let prefix = null;
   for (let i = 0; i < argv.length; i++) {
@@ -125,7 +125,7 @@ function main() {
   }
 
   if (ids.length === 0) {
-    console.log("シナリオ 0 個。骨格のみの状態です（各「測る回」で追加します）。");
+    console.log("シナリオ 0 個。骨格のみの状態です（測定を追加すると増えます）。");
     console.log("\n✅ PASS [check-provenance] 検査対象なし");
     return 0;
   }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>012 圧縮辞書 — 手順 2': dcz で受け取る</title>
+</head>
+<body>
+<h1>手順 2': dcz で受け取る</h1>
+<p>
+  中身は <code>/012/bundle-v2.js</code> と同じです。違うのは<strong>サーバがどちらの方式を選ぶか</strong>だけで、
+  こちらは <code>dcz</code>（Zstandard）を返します。
+</p>
+<script src="/012/bundle-v2-dcz.js"></script>
+<pre id="log"></pre>
+<script>
+  const log = (s) => (document.getElementById("log").textContent += s + "\n");
+  addEventListener("load", () => {
+    for (const r of performance.getEntriesByType("resource")) {
+      if (!r.name.includes("bundle-v2-dcz.js")) continue;
+      log(`encodedBodySize=${r.encodedBodySize} decodedBodySize=${r.decodedBodySize}`);
+    }
+  });
+</script>
+</body>
+</html>

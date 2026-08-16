@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>012 圧縮辞書 — 手順 2: 次の版を取りにいく</title>
+</head>
+<body>
+<h1>手順 2: 次の版を取りにいく</h1>
+<p>
+  <code>/012/bundle-v2.js</code> を読み込みます。手順 1 で辞書が登録できていれば、
+  ブラウザは <code>Available-Dictionary</code> と <code>Accept-Encoding: dcb, dcz</code> を付けて要求し、
+  サーバは差分（<code>Content-Encoding: dcb</code>）を返します。
+</p>
+
+<!-- 🔴 dest=script で取りにいく。match-dest=("script") に一致させるため
+     preload ではなく実際の script 要素を使う（中身は ESM なので実行時に落ちるが、
+     応答はその前に届いており、測りたいのはワイヤに出たヘッダと大きさ）-->
+<script src="/012/bundle-v2.js"></script>
+
+<pre id="log"></pre>
+<script>
+  const log = (s) => (document.getElementById("log").textContent += s + "\n");
+  addEventListener("load", () => {
+    for (const r of performance.getEntriesByType("resource")) {
+      if (!r.name.includes("bundle-v2.js")) continue;
+      log(`bundle-v2.js  transferSize=${r.transferSize}  encodedBodySize=${r.encodedBodySize}  decodedBodySize=${r.decodedBodySize}`);
+      log(`  responseStart=${r.responseStart.toFixed(1)}  finalResponseHeadersStart=${(r.finalResponseHeadersStart ?? 0).toFixed(1)}`);
+    }
+  });
+</script>
+</body>
+</html>

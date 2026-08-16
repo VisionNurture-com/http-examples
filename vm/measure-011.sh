@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # measure-011.sh — カード① HTTP/2 vs HTTP/3 の交差点
 #
-# G3（測定前レビュー）の反映:
-#   欠陥 1: netem の limit を BDP から計算して明示する
-#   欠陥 3: ハンドシェイク（t_appconnect）と転送（speed）を分けて記録する
-#   欠陥 6: 条件ごとに clear → apply → tc qdisc show をログへ落とす
-#   RTT 精度: 設定値でラベルせず、条件ごとに実効 RTT を実測してラベルにする
+# 測定を成立させるために必要だったこと:
+#   - netem の limit を BDP から計算して明示する
+#   - ハンドシェイク（t_appconnect）と転送（speed）を分けて記録する
+#   - 条件ごとに clear → apply → tc qdisc show をログへ落とす
+#   - RTT 精度: 設定値でラベルせず、条件ごとに実効 RTT を実測してラベルにする
 #
 # 使い方: sudo bash measure-011.sh <label> <out_dir>
 #   長い条件はプロトコルを分けて回せる（既定は 3 プロトコルを続けて回す）:

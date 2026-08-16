@@ -1,0 +1,64 @@
+{
+  "scenario": "012-early-hints",
+  "mode": "M2",
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "web_vitals_version": "6.1.1",
+  "think_ms": 200,
+  "engines": {
+    "chrome": {
+      "version": "151.0.7922.138",
+      "interim_seen_via_nginx": false,
+      "interim_seen_direct": true,
+      "reported_ttfb_none_ms": 212.1,
+      "reported_ttfb_bare_ms": 2,
+      "server_think_none_ms": 207.2,
+      "server_think_bare_ms": 203.4,
+      "web_vitals_matches_reported": true,
+      "final_headers_separable": true,
+      "preload_helps": {
+        "direct/no-store": false,
+        "direct/public": false,
+        "h2direct/no-store": false,
+        "h2direct/public": true
+      }
+    },
+    "firefox": {
+      "version": "153.0",
+      "interim_seen_via_nginx": false,
+      "interim_seen_direct": true,
+      "reported_ttfb_none_ms": 208,
+      "reported_ttfb_bare_ms": 2,
+      "server_think_none_ms": 204.7,
+      "server_think_bare_ms": 210.3,
+      "web_vitals_matches_reported": true,
+      "final_headers_separable": true,
+      "preload_helps": {
+        "direct/no-store": true,
+        "direct/public": true,
+        "h2direct/no-store": true,
+        "h2direct/public": true
+      }
+    },
+    "webkit": {
+      "version": "26.5",
+      "interim_seen_via_nginx": false,
+      "interim_seen_direct": true,
+      "reported_ttfb_none_ms": 207,
+      "reported_ttfb_bare_ms": 2,
+      "server_think_none_ms": 200.9,
+      "server_think_bare_ms": 205.8,
+      "web_vitals_matches_reported": true,
+      "final_headers_separable": false,
+      "preload_helps": {
+        "direct/no-store": false,
+        "direct/public": false,
+        "h2direct/no-store": false,
+        "h2direct/public": false
+      }
+    }
+  },
+  "nginx_drops_interim": true,
+  "web_vitals_reports_interim_as_ttfb": true,
+  "webkit_cannot_separate_final_headers": true,
+  "engines_measured": 3
+}

@@ -3,7 +3,7 @@
 //           同じ PUT が 2 回届いたことを止めないし、GET が状態を変えても止めない。
 //
 // 🔴 状態はプロセス内。再実行で前回の残りを測らないよう、各 run.sh の冒頭で
-//    POST /003/__reset を叩く（value-factcheck G3 の欠陥 D6 への対処）。
+//    POST /003/__reset を叩く。
 
 import express from "express";
 import methodOverride from "method-override";

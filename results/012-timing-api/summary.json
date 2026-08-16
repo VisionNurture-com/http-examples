@@ -1,0 +1,34 @@
+{
+  "scenario": "012-timing-api",
+  "mode": "M0",
+  "generatedAt": "2026-08-15T15:22:16.720Z",
+  "engines": {
+    "chromium (playwright 同梱)": {
+      "version": "151.0.7922.34",
+      "hasFirstInterimResponseStart": true,
+      "hasFinalResponseHeadersStart": true,
+      "hasFirstResponseHeadersStart": false
+    },
+    "Google Chrome (installed / channel=chrome)": {
+      "version": "151.0.7922.138",
+      "hasFirstInterimResponseStart": true,
+      "hasFinalResponseHeadersStart": true,
+      "hasFirstResponseHeadersStart": false
+    },
+    "firefox (playwright 同梱)": {
+      "version": "153.0",
+      "hasFirstInterimResponseStart": true,
+      "hasFinalResponseHeadersStart": true,
+      "hasFirstResponseHeadersStart": false
+    },
+    "webkit (playwright 同梱)": {
+      "version": "26.5",
+      "hasFirstInterimResponseStart": true,
+      "hasFinalResponseHeadersStart": true,
+      "hasFirstResponseHeadersStart": false
+    }
+  },
+  "final_response_headers_start_everywhere": true,
+  "first_response_headers_start_nowhere": true,
+  "engines_probed": 4
+}

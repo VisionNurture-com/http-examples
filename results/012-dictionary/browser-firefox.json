@@ -1,0 +1,98 @@
+{
+  "measuredAt": "2026-08-15T15:22:25.892Z",
+  "engine": "firefox",
+  "version": "153.0",
+  "requireKnownRootCert": false,
+  "base": "https://localhost:8445",
+  "verdict": {
+    "辞書の応答にUseAsDictionaryが付いたか": true,
+    "次の版の要求にAvailableDictionaryが付いたか": false,
+    "要求のAcceptEncodingにdcbまたはdczがあるか": false,
+    "応答のContentEncoding": "(なし)",
+    "nginxが返したファイル": "bundle-v2.js",
+    "復号後の大きさが元に戻ったか": false
+  },
+  "timing": {
+    "name": "https://localhost:8445/012/bundle-v2.js",
+    "transferSize": 101114,
+    "encodedBodySize": 100814,
+    "decodedBodySize": 100814
+  },
+  "observed": [
+    {
+      "phase": "request",
+      "url": "https://localhost:8445/012/bundle-v1.js",
+      "headers": {
+        "host": "localhost:8445",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+        "accept": "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "referer": "https://localhost:8445/012/index.html",
+        "connection": "keep-alive",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin"
+      }
+    },
+    {
+      "phase": "response",
+      "url": "https://localhost:8445/012/bundle-v1.js",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Sat, 15 Aug 2026 15:22:23 GMT",
+        "content-type": "application/javascript",
+        "content-length": "99465",
+        "last-modified": "Sat, 15 Aug 2026 15:03:52 GMT",
+        "etag": "\"6a807fd8-18489\"",
+        "use-as-dictionary": "match=\"/012/bundle-*.js\", match-dest=(\"script\"), id=\"bundle-v1\"",
+        "cache-control": "public, max-age=3600",
+        "x-served-file": "bundle-v1.js",
+        "accept-ranges": "bytes",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    {
+      "phase": "request",
+      "url": "https://localhost:8445/012/bundle-v2.js",
+      "headers": {
+        "host": "localhost:8445",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+        "accept": "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "connection": "keep-alive",
+        "referer": "https://localhost:8445/012/v2.html",
+        "sec-fetch-dest": "script",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-site": "same-origin"
+      }
+    },
+    {
+      "phase": "response",
+      "url": "https://localhost:8445/012/bundle-v2.js",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Sat, 15 Aug 2026 15:22:25 GMT",
+        "content-type": "application/javascript",
+        "content-length": "100814",
+        "last-modified": "Sat, 15 Aug 2026 15:04:10 GMT",
+        "etag": "\"6a807fea-189ce\"",
+        "vary": "Accept-Encoding, Available-Dictionary",
+        "x-served-file": "bundle-v2.js",
+        "cache-control": "no-store",
+        "accept-ranges": "bytes",
+        "x-firefox-spdy": "h2"
+      }
+    }
+  ],
+  "nginxAccessLog": [
+    "2026-08-15T15:22:23+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-08-15T15:22:23+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99465 status=200",
+    "2026-08-15T15:22:23+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=153 status=404",
+    "2026-08-15T15:22:25+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-08-15T15:22:25+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100814 status=200"
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>012 圧縮辞書 — 手順 1: 辞書を配る</title>
+</head>
+<body>
+<h1>手順 1: 辞書を配る</h1>
+<p>
+  このページは <code>/012/bundle-v1.js</code> を読み込みます。応答に
+  <code>Use-As-Dictionary</code> が付いているため、ブラウザはこれを辞書として登録します。
+</p>
+<p>登録できたかどうかは、次のページ（<a href="/012/v2.html">手順 2</a>）の要求ヘッダで分かります。</p>
+
+<pre id="log"></pre>
+<script>
+  const log = (s) => (document.getElementById("log").textContent += s + "\n");
+
+  // 🔴 preload では登録されない。ブラウザは「本文を読める応答」だけを辞書にする。
+  //    同一オリジンの fetch は読めるため、これで取りにいく。
+  (async () => {
+    const res = await fetch("/012/bundle-v1.js");
+    const body = await res.text();
+    log(`bundle-v1.js  status=${res.status}  bytes=${body.length}`);
+    log(`Use-As-Dictionary: ${res.headers.get("use-as-dictionary") ?? "(なし)"}`);
+    const e = performance.getEntriesByType("resource").find((r) => r.name.includes("bundle-v1.js"));
+    if (e) log(`transferSize=${e.transferSize} encodedBodySize=${e.encodedBodySize} decodedBodySize=${e.decodedBodySize}`);
+    log("辞書の登録はブラウザ側で行われます。次に /012/v2.html を開いてください。");
+    document.title = "ready";
+  })();
+</script>
+</body>
+</html>

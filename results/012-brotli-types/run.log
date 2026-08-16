@@ -1,0 +1,17 @@
+measured-at: 1970-01-01T00:00:00.000Z
+scenario: 012-brotli-types
+mode: M1
+judgement: nginx -t の出力をそのまま残し、警告文と MIME 型を実物から取る
+image: http-examples-brotli:1.28.3-r7 / nginx-1.28.3-r7 (alpine 3.22) / nginx-mod-http-brotli-1.28.3-r7
+---
+[case a] text/html を明示的に書く（常に対象の型を重ねる）
+nginx: [warn] duplicate MIME type "text/html" in /conf/nginx-a.conf:11
+nginx: the configuration file /conf/nginx-a.conf syntax is ok
+nginx: configuration file /conf/nginx-a.conf test is successful
+[case b] 同じ型を 2 回書く
+nginx: [warn] duplicate MIME type "text/css" in /conf/nginx-b.conf:11
+nginx: the configuration file /conf/nginx-b.conf syntax is ok
+nginx: configuration file /conf/nginx-b.conf test is successful
+[case c] 対照。重複なし
+nginx: the configuration file /conf/nginx-c.conf syntax is ok
+nginx: configuration file /conf/nginx-c.conf test is successful
