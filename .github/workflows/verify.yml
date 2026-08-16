@@ -29,6 +29,30 @@ jobs:
           node-version: "24"
       - run: npm run check:provenance
 
+  # 公開用リポジトリでのみ走る。コミットの author / committer が公開用 identity かを見る。
+  # 公開用は移管のたびに使い捨てクローンから push するため、リポジトリローカルの
+  # git config が無く、検証用の identity のまま入りやすい（2026-08-16 に実際に混入）。
+  identity:
+    name: commit identity
+    if: github.repository_owner == 'VisionNurture-com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: 公開用 identity 以外のコミットが無いことを確かめる
+        run: |
+          set -euo pipefail
+          expected='TechBizPlusD <blog@techbizplusd.com>'
+          bad="$(git log --format='%H%x09%an <%ae>%x09%cn <%ce>' \
+                 | awk -F'\t' -v e="$expected" '$2 != e || $3 != e')"
+          if [ -n "$bad" ]; then
+            echo "::error::公開用 identity 以外のコミットがあります（期待: $expected）"
+            echo "$bad"
+            exit 1
+          fi
+          echo "全コミットが $expected です"
+
   # M1 — compose 上でシナリオを再実行し summary.json と比較する
   # 設定値の陳腐化（nginx / Node / Express の版進行）を検出する
   scenarios:
