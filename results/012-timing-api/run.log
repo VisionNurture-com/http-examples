@@ -1,4 +1,4 @@
-measured-at: 2026-08-15T15:22:16.720Z
+measured-at: 2026-08-16T08:53:21.429Z
 scenario: 012-timing-api
 mode: M0
 judgement: prototype への in で属性の実在を見る（インスタンスの値では判定しない）

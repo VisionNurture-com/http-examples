@@ -25,6 +25,14 @@ const SKIP_FILES = new Set(["check-neutrality.mjs", "package-lock.json"]);
 // 例: Multipass の ubuntu / GitHub Actions の runner / コンテナの root・node。
 const NEUTRAL_ACCOUNTS = ["ubuntu", "root", "runner", "node", "user", "app", "alice", "bob"];
 
+// 公開が前提のアドレスは対象外にする。
+// 本検出器が捕まえたいのは「誰の環境で測ったか」が残る情報であって、
+// 公開物に載ることが決まっている発行者のアドレスではない。
+// blog@techbizplusd.com は公開用コミットの author / committer として
+// 全コミットのメタデータに載るため、隠す対象になりえない
+// （.github/workflows/verify.yml の identity ジョブが期待値として持つ）。
+const PUBLIC_ADDRESSES = ["blog@techbizplusd.com"];
+
 const PATTERNS = [
   {
     name: "ホームディレクトリの絶対パス",
@@ -35,6 +43,13 @@ const PATTERNS = [
   {
     name: "実在しうるメールアドレス",
     re: /\b[A-Za-z0-9._%+-]+@(?!example\.(?:com|test|org)\b)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/,
+    // 🔴 除外は「その行に公開前提のアドレスしか無いとき」に限る。
+    //    行に別のアドレスが混ざっていれば、そちらは従来どおり検出する。
+    allow: (hit, line) =>
+      PUBLIC_ADDRESSES.includes(hit) &&
+      (line.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g) ?? []).every((a) =>
+        PUBLIC_ADDRESSES.includes(a),
+      ),
   },
 ];
 
@@ -71,9 +86,11 @@ function main() {
     if (!isProbablyText(buf)) continue;
     const lines = buf.toString("utf8").split("\n");
     lines.forEach((line, i) => {
-      for (const { name, re } of PATTERNS) {
+      for (const { name, re, allow } of PATTERNS) {
         const m = line.match(re);
-        if (m) hits.push({ file: relative(ROOT, file), line: i + 1, name, sample: m[0] });
+        if (!m) continue;
+        if (allow && allow(m[0], line)) continue;
+        hits.push({ file: relative(ROOT, file), line: i + 1, name, sample: m[0] });
       }
     });
   }

@@ -1,0 +1,16 @@
+measured-at: 2026-08-16T09:02:49.677Z
+base=https://localhost:8445 think_ms=200 cache-control=no-store warmup=1 samples=3
+
+chrome   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=204.6 最終ヘッダ=204.6 CSS到着=365.8
+chrome   enabled  proto=h2 103届く=YES 103到着=3.6 報告TTFB=3.6 最終ヘッダ=206.3 CSS到着=370.0
+firefox  default  proto=h2 103届く=no  103到着=0.0 報告TTFB=208.0 最終ヘッダ=208.0 CSS到着=381.0
+firefox  enabled  proto=h2 103届く=YES 103到着=3.0 報告TTFB=3.0 最終ヘッダ=209.0 CSS到着=159.0
+webkit   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=206.0 最終ヘッダ=206.0 CSS到着=371.0
+webkit   enabled  proto=h2 103届く=YES 103到着=3.0 報告TTFB=3.0 最終ヘッダ=3.0 CSS到着=372.0
+
+既定で 103 が届いたエンジン: なし
+early_hints を書くと全エンジンで届く: YES
+  chrome: 資源の到着が早まったか = no
+  firefox: 資源の到着が早まったか = YES
+  webkit: 資源の到着が早まったか = no
+webkit は最終ヘッダを分離できるか: できない
