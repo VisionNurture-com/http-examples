@@ -1,0 +1,41 @@
+{
+  "scenario": "012-lighthouse-ttfb",
+  "mode": "M1",
+  "measured_at": "2026-08-16T10:51:50.110Z",
+  "base": "http://localhost:8086",
+  "think_ms": 200,
+  "cache_control": "no-store",
+  "samples": 3,
+  "lighthouse_version": "13.4.1",
+  "server_response_time_collapses_with_interim": true,
+  "paint_metrics_improve_with_interim": false,
+  "report_breaks_with_interim": false,
+  "cases": {
+    "none": {
+      "label": "103 を送らない（対照）",
+      "url": "http://localhost:8086/012/eh?hints=none&ms=200&cc=no-store",
+      "runtime_error": null,
+      "server_response_time_ms": [
+        205,
+        204,
+        208
+      ],
+      "server_response_time_median_ms": 205,
+      "first_contentful_paint_median_ms": 1061,
+      "largest_contentful_paint_median_ms": 1211
+    },
+    "preload": {
+      "label": "103 で実際に使う資源を先読みさせる",
+      "url": "http://localhost:8086/012/eh?hints=preload&ms=200&cc=no-store",
+      "runtime_error": null,
+      "server_response_time_ms": [
+        1,
+        1,
+        1
+      ],
+      "server_response_time_median_ms": 1,
+      "first_contentful_paint_median_ms": 1070,
+      "largest_contentful_paint_median_ms": 1220
+    }
+  }
+}
