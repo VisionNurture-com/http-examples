@@ -1,0 +1,27 @@
+{
+  "nginx_default_is_gzip_off": true,
+  "bytes_gzip_nginx_static": 886,
+  "bytes_plain_nginx_static": 1511,
+  "status_unchanged": true,
+  "vary_present": false,
+  "per_target": {
+    "nginx_static": {
+      "status_with": 200,
+      "status_without": 200,
+      "bytes_with": 886,
+      "bytes_without": 1511,
+      "content_encoding_with": "gzip",
+      "content_encoding_without": null,
+      "vary": null
+    },
+    "via_nginx_app": {
+      "status_with": 200,
+      "status_without": 200,
+      "bytes_with": 503,
+      "bytes_without": 672,
+      "content_encoding_with": "gzip",
+      "content_encoding_without": null,
+      "vary": null
+    }
+  }
+}

@@ -10,7 +10,7 @@ MDN が「実質 `no-store` と等価」と説明している `private, no-cache
 
 `max-age=600, must-revalidate` を入れているのは、**`must-revalidate` が「毎回訊きに行く」指定ではない**ことを確かめるためです。
 
-## 埋める欄
+## 記事のどこに出るか
 
 決定表の「ディレクティブの組み合わせ」列。
 

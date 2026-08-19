@@ -1,0 +1,55 @@
+{
+  "sizes_tested": [
+    1024,
+    1048576,
+    1048577,
+    2097152
+  ],
+  "expect_auto_threshold_bytes": 1048577,
+  "default_limit_status_at_2mb": 413,
+  "raised_limit_status_at_2mb": 200,
+  "raised_limit_sent_100_at_2mb": true,
+  "default_limit_sent_100_at_2mb": false,
+  "per_case": {
+    "default_limit:1024": {
+      "expect_sent_by_curl": false,
+      "server_sent_100": false,
+      "final_status": 200
+    },
+    "default_limit:1048576": {
+      "expect_sent_by_curl": false,
+      "server_sent_100": false,
+      "final_status": 200
+    },
+    "default_limit:1048577": {
+      "expect_sent_by_curl": true,
+      "server_sent_100": false,
+      "final_status": 413
+    },
+    "default_limit:2097152": {
+      "expect_sent_by_curl": true,
+      "server_sent_100": false,
+      "final_status": 413
+    },
+    "raised_limit:1024": {
+      "expect_sent_by_curl": false,
+      "server_sent_100": false,
+      "final_status": 200
+    },
+    "raised_limit:1048576": {
+      "expect_sent_by_curl": false,
+      "server_sent_100": false,
+      "final_status": 200
+    },
+    "raised_limit:1048577": {
+      "expect_sent_by_curl": true,
+      "server_sent_100": true,
+      "final_status": 200
+    },
+    "raised_limit:2097152": {
+      "expect_sent_by_curl": true,
+      "server_sent_100": true,
+      "final_status": 200
+    }
+  }
+}

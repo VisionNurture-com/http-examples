@@ -1,0 +1,38 @@
+{
+  "connection_specific_headers_tested": [
+    "Connection",
+    "Keep-Alive",
+    "Upgrade",
+    "Transfer-Encoding"
+  ],
+  "dropped_by_curl_before_send": [
+    "Connection",
+    "Keep-Alive",
+    "Transfer-Encoding",
+    "Upgrade"
+  ],
+  "reached_server": [],
+  "h1_control_status": 200,
+  "per_header": {
+    "Connection": {
+      "sent_in_h2_frame": false,
+      "status": 200,
+      "dropped_by_curl": true
+    },
+    "Keep-Alive": {
+      "sent_in_h2_frame": false,
+      "status": 200,
+      "dropped_by_curl": true
+    },
+    "Upgrade": {
+      "sent_in_h2_frame": false,
+      "status": 200,
+      "dropped_by_curl": true
+    },
+    "Transfer-Encoding": {
+      "sent_in_h2_frame": false,
+      "status": 200,
+      "dropped_by_curl": true
+    }
+  }
+}

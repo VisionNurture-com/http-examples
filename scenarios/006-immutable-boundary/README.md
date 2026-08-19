@@ -11,9 +11,9 @@
 | `fetch-nocache` | スクリプトから `fetch(url, { cache: "no-cache" })` で明示的に再検証を要求したとき |
 | `fetch-reload` | 同じく `{ cache: "reload" }` |
 
-## 埋める欄
+## 記事のどこに出るか
 
-実効値カード「immutable は今も効くのか」の条件欄。
+実効値の表「immutable は今も効くのか」の条件欄。
 
 ## 判定
 

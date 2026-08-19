@@ -1,0 +1,28 @@
+{
+  "browser": "webkit",
+  "version": "26.5",
+  "note": "nginx 経由で /002/api/echo に届いた集合。hop-by-hop は中継で消える",
+  "headerCount": 9,
+  "headers": {
+    "host": "localhost",
+    "sec-fetch-site": "none",
+    "upgrade-insecure-requests": "1",
+    "sec-fetch-mode": "navigate",
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+    "accept-language": "en-US,en;q=0.9",
+    "sec-fetch-dest": "document",
+    "accept-encoding": "gzip, deflate"
+  },
+  "rawHeaderOrder": [
+    "Host",
+    "Sec-Fetch-Site",
+    "Upgrade-Insecure-Requests",
+    "Sec-Fetch-Mode",
+    "Accept",
+    "User-Agent",
+    "Accept-Language",
+    "Sec-Fetch-Dest",
+    "Accept-Encoding"
+  ]
+}

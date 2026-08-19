@@ -1,0 +1,375 @@
+{
+  "nginx_default_large_client_header_buffers": "4 8k",
+  "node_default_max_http_header_size_bytes": 16384,
+  "single_header_sizes_tested": [
+    4096,
+    8000,
+    8192,
+    9000,
+    16384,
+    20000
+  ],
+  "status_single_4096_nginx_static": 200,
+  "status_single_9000_nginx_static": 400,
+  "status_single_9000_via_nginx": 400,
+  "status_single_9000_app_direct": 200,
+  "status_single_9000_raised": 200,
+  "status_single_20000_app_direct": 431,
+  "first_failing_single_value_bytes_nginx_static": 8192,
+  "first_failing_single_value_bytes_app_direct": 16384,
+  "reached_upstream_single_9000_via_nginx": false,
+  "header_counts_tested": [
+    4,
+    8,
+    16,
+    32,
+    40
+  ],
+  "first_failing_count_nginx_static": 40,
+  "first_failing_count_app_direct": 32,
+  "first_failing_count_raised": null,
+  "status_many_32_via_nginx": 431,
+  "status_many_40_via_nginx": 400,
+  "error_page_bytes_with_ua": 233,
+  "error_page_bytes_without_ua": 233,
+  "boundary_nginx_line_8192_status": 200,
+  "boundary_nginx_line_8193_status": 400,
+  "boundary_app_line_16384_status": 431,
+  "boundary_app_line_16385_status": 431,
+  "app_direct_last_ok_value_bytes": 16347,
+  "app_direct_first_431_value_bytes": 16348,
+  "per_edge": {
+    "nginx_static": [
+      {
+        "value_bytes": 8183,
+        "line_bytes": 8192,
+        "status": 200
+      },
+      {
+        "value_bytes": 8184,
+        "line_bytes": 8193,
+        "status": 400
+      }
+    ],
+    "app_direct": [
+      {
+        "value_bytes": 16375,
+        "line_bytes": 16384,
+        "status": 431
+      },
+      {
+        "value_bytes": 16376,
+        "line_bytes": 16385,
+        "status": 431
+      }
+    ]
+  },
+  "per_single": {
+    "nginx_static": [
+      {
+        "value_bytes": 4096,
+        "line_bytes": 4105,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 8000,
+        "line_bytes": 8009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 8192,
+        "line_bytes": 8201,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 9000,
+        "line_bytes": 9009,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 16384,
+        "line_bytes": 16393,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 20000,
+        "line_bytes": 20009,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": null
+      }
+    ],
+    "via_nginx": [
+      {
+        "value_bytes": 4096,
+        "line_bytes": 4105,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 8000,
+        "line_bytes": 8009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 8192,
+        "line_bytes": 8201,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": false
+      },
+      {
+        "value_bytes": 9000,
+        "line_bytes": 9009,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": false
+      },
+      {
+        "value_bytes": 16384,
+        "line_bytes": 16393,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": false
+      },
+      {
+        "value_bytes": 20000,
+        "line_bytes": 20009,
+        "status": 400,
+        "curl_exit": 0,
+        "reached_upstream": false
+      }
+    ],
+    "app_direct": [
+      {
+        "value_bytes": 4096,
+        "line_bytes": 4105,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 8000,
+        "line_bytes": 8009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 8192,
+        "line_bytes": 8201,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 9000,
+        "line_bytes": 9009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": true
+      },
+      {
+        "value_bytes": 16384,
+        "line_bytes": 16393,
+        "status": 431,
+        "curl_exit": 0,
+        "reached_upstream": false
+      },
+      {
+        "value_bytes": 20000,
+        "line_bytes": 20009,
+        "status": 431,
+        "curl_exit": 0,
+        "reached_upstream": false
+      }
+    ],
+    "raised": [
+      {
+        "value_bytes": 4096,
+        "line_bytes": 4105,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 8000,
+        "line_bytes": 8009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 8192,
+        "line_bytes": 8201,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 9000,
+        "line_bytes": 9009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 16384,
+        "line_bytes": 16393,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      },
+      {
+        "value_bytes": 20000,
+        "line_bytes": 20009,
+        "status": 200,
+        "curl_exit": 0,
+        "reached_upstream": null
+      }
+    ]
+  },
+  "per_many": {
+    "nginx_static": [
+      {
+        "count": 4,
+        "approx_total_bytes": 4048,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 8,
+        "approx_total_bytes": 8096,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 16,
+        "approx_total_bytes": 16192,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 32,
+        "approx_total_bytes": 32384,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 40,
+        "approx_total_bytes": 40480,
+        "status": 400,
+        "curl_exit": 0
+      }
+    ],
+    "via_nginx": [
+      {
+        "count": 4,
+        "approx_total_bytes": 4048,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 8,
+        "approx_total_bytes": 8096,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 16,
+        "approx_total_bytes": 16192,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 32,
+        "approx_total_bytes": 32384,
+        "status": 431,
+        "curl_exit": 0
+      },
+      {
+        "count": 40,
+        "approx_total_bytes": 40480,
+        "status": 400,
+        "curl_exit": 0
+      }
+    ],
+    "app_direct": [
+      {
+        "count": 4,
+        "approx_total_bytes": 4048,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 8,
+        "approx_total_bytes": 8096,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 16,
+        "approx_total_bytes": 16192,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 32,
+        "approx_total_bytes": 32384,
+        "status": 431,
+        "curl_exit": 0
+      },
+      {
+        "count": 40,
+        "approx_total_bytes": 40480,
+        "status": 431,
+        "curl_exit": 0
+      }
+    ],
+    "raised": [
+      {
+        "count": 4,
+        "approx_total_bytes": 4048,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 8,
+        "approx_total_bytes": 8096,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 16,
+        "approx_total_bytes": 16192,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 32,
+        "approx_total_bytes": 32384,
+        "status": 200,
+        "curl_exit": 0
+      },
+      {
+        "count": 40,
+        "approx_total_bytes": 40480,
+        "status": 200,
+        "curl_exit": 0
+      }
+    ]
+  }
+}

@@ -23,7 +23,7 @@
 | W2 | `*` | `x-probe` のみ | 成功 | **Chromium 飛ばない / Firefox 飛ぶ / WebKit 飛ばない** |
 | W3 | `authorization, x-probe` + `Allow-Credentials` | `Authorization` + credentials: include | 成功 | 飛ばない（3 エンジン一致）|
 
-## 🔴 仕様との食い違い
+## 仕様との食い違い
 
 仕様は `*` と `Authorization` の組み合わせを **network error** と定めています。
 

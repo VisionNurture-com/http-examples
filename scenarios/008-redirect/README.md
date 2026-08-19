@@ -7,9 +7,9 @@
 1. preflight のエントリ作成条件は「CORS check が成功し、かつ `response's status is an ok status`」。**301 は ok status ではない**
 2. > I.e., the moment another origin is seen after the initial request, the `Authorization` header is removed.
 
-## 埋める欄
+## 記事のどこに出るか
 
-実効値カード「リダイレクトを挟むと何が起きるか」の**実効値**欄。
+実効値の表「リダイレクトを挟むと何が起きるか」の**実効値**欄。
 
 ## 判定
 

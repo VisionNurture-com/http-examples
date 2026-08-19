@@ -1,0 +1,12 @@
+# 002-duplicate-order
+measured-at: 2026-08-19T09:51:05.888Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: 同名ヘッダの重複と、並びの入れ替えが結果を変えるか（生ソケットで組む）
+  並び替え      : status 200 → 200
+    受信順 ["Host","X-Sample","Accept-Language"]
+        → ["Host","Accept-Language","X-Sample"]
+  重複(X-Sample): status=200 / サーバが見た値="one, two"
+  重複(Host)    : status=400（RFC 9112 §3.2 のとおり拒否）
+

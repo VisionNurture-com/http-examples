@@ -1,0 +1,79 @@
+# 002-minimize
+measured-at: 2026-08-17T14:49:21.586Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: ブラウザが送ったヘッダ集合を curl で再現し、1 本ずつ削って 4 点比較する
+ブラウザが送ったヘッダ: 12 本
+  host, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform, upgrade-insecure-requests, user-agent, accept, sec-fetch-site, sec-fetch-mode, sec-fetch-user, sec-fetch-dest, accept-encoding
+
+## 静的 GET × nginx 単独
+baseline: status=200 bytes=886
+  - host                     A  status=400 wire=559B
+  - sec-ch-ua                C  status=200 wire=886B
+  - sec-ch-ua-mobile         C  status=200 wire=886B
+  - sec-ch-ua-platform       C  status=200 wire=886B
+  - upgrade-insecure-requests C  status=200 wire=886B
+  - user-agent               C  status=200 wire=886B
+  - accept                   C  status=200 wire=886B
+  - sec-fetch-site           C  status=200 wire=886B
+  - sec-fetch-mode           C  status=200 wire=886B
+  - sec-fetch-user           C  status=200 wire=886B
+  - sec-fetch-dest           C  status=200 wire=886B
+  - accept-encoding          B  status=200 wire=1511B
+  → 壊れる 1 / 変わる 1 / 変わらない 10
+  → C を全部落としても baseline と同じか: はい
+
+## 静的 GET × nginx→Express
+baseline: status=200 bytes=503
+  - host                     A  status=400 wire=559B
+  - sec-ch-ua                C  status=200 wire=503B
+  - sec-ch-ua-mobile         C  status=200 wire=503B
+  - sec-ch-ua-platform       C  status=200 wire=503B
+  - upgrade-insecure-requests C  status=200 wire=503B
+  - user-agent               C  status=200 wire=503B
+  - accept                   C  status=200 wire=503B
+  - sec-fetch-site           C  status=200 wire=503B
+  - sec-fetch-mode           C  status=200 wire=503B
+  - sec-fetch-user           C  status=200 wire=503B
+  - sec-fetch-dest           C  status=200 wire=503B
+  - accept-encoding          B  status=200 wire=672B
+  → 壊れる 1 / 変わる 1 / 変わらない 10
+  → C を全部落としても baseline と同じか: はい
+
+## JSON POST × nginx 単独
+baseline: status=405 bytes=559
+  - host                     A  status=400 wire=559B
+  - sec-ch-ua                C  status=405 wire=559B
+  - sec-ch-ua-mobile         C  status=405 wire=559B
+  - sec-ch-ua-platform       C  status=405 wire=559B
+  - upgrade-insecure-requests C  status=405 wire=559B
+  - user-agent               B  status=405 wire=157B
+  - accept                   C  status=405 wire=559B
+  - sec-fetch-site           C  status=405 wire=559B
+  - sec-fetch-mode           C  status=405 wire=559B
+  - sec-fetch-user           C  status=405 wire=559B
+  - sec-fetch-dest           C  status=405 wire=559B
+  - accept-encoding          C  status=405 wire=559B
+  - Content-Type             C  status=405 wire=559B
+  → 壊れる 1 / 変わる 1 / 変わらない 11
+  → C を全部落としても baseline と同じか: はい
+
+## JSON POST × nginx→Express
+baseline: status=200 bytes=25
+  - host                     A  status=400 wire=559B
+  - sec-ch-ua                C  status=200 wire=575B
+  - sec-ch-ua-mobile         C  status=200 wire=603B
+  - sec-ch-ua-platform       C  status=200 wire=596B
+  - upgrade-insecure-requests C  status=200 wire=592B
+  - user-agent               C  status=200 wire=514B
+  - accept                   C  status=200 wire=541B
+  - sec-fetch-site           C  status=200 wire=602B
+  - sec-fetch-mode           C  status=200 wire=599B
+  - sec-fetch-user           C  status=200 wire=601B
+  - sec-fetch-dest           C  status=200 wire=599B
+  - accept-encoding          B  status=200 wire=1023B
+  - Content-Type             B  status=200 wire=597B
+  → 壊れる 1 / 変わる 2 / 変わらない 10
+  → C を全部落としても baseline と同じか: はい
+

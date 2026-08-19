@@ -1,0 +1,10 @@
+{
+  "body_bytes_sent": 25,
+  "status_default": 200,
+  "status_without_content_length": 200,
+  "status_with_chunked": 200,
+  "arrived_bytes_default": 25,
+  "arrived_bytes_without_content_length": 0,
+  "arrived_bytes_with_chunked": 25,
+  "curl_switched_to_chunked": true
+}

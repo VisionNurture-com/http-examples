@@ -8,9 +8,9 @@
 
 Firefox は immutable を https のときだけ honor すると報告されているため、**http と https の両方**で測ります。
 
-## 埋める欄
+## 記事のどこに出るか
 
-実効値カード「immutable は今も効くのか」の実効値欄。
+実効値の表「immutable は今も効くのか」の実効値欄。
 
 ## 判定
 

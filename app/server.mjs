@@ -6,6 +6,7 @@
 
 import express from "express";
 
+import { register as registerMinimal } from "./002-minimal/routes.mjs";
 import { register as registerMethods } from "./003-methods/routes.mjs";
 import { register as registerStatus } from "./004-status/routes.mjs";
 import { register as registerIdempotency } from "./005-idempotency/routes.mjs";
@@ -26,6 +27,7 @@ app.get("/__meta", (_req, res) => {
   });
 });
 
+registerMinimal(app);
 registerMethods(app);
 registerStatus(app);
 registerIdempotency(app);

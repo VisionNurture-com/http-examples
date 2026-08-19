@@ -1,0 +1,57 @@
+# 002-header-size
+measured-at: 2026-08-19T09:51:06.824Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: 1 本が長いヘッダ / 本数の多いヘッダを、上限の違う 3 経路 + 対照へ送る
+## A nginx 単独（静的） value=4096B line=4105B -> status=200
+## A nginx 単独（静的） value=8000B line=8009B -> status=200
+## A nginx 単独（静的） value=8192B line=8201B -> status=400
+## A nginx 単独（静的） value=9000B line=9009B -> status=400
+## A nginx 単独（静的） value=16384B line=16393B -> status=400
+## A nginx 単独（静的） value=20000B line=20009B -> status=400
+## A nginx→Express value=4096B line=4105B -> status=200 reached_upstream=true
+## A nginx→Express value=8000B line=8009B -> status=200 reached_upstream=true
+## A nginx→Express value=8192B line=8201B -> status=400 reached_upstream=false
+## A nginx→Express value=9000B line=9009B -> status=400 reached_upstream=false
+## A nginx→Express value=16384B line=16393B -> status=400 reached_upstream=false
+## A nginx→Express value=20000B line=20009B -> status=400 reached_upstream=false
+## A Express 直結 value=4096B line=4105B -> status=200 reached_upstream=true
+## A Express 直結 value=8000B line=8009B -> status=200 reached_upstream=true
+## A Express 直結 value=8192B line=8201B -> status=200 reached_upstream=true
+## A Express 直結 value=9000B line=9009B -> status=200 reached_upstream=true
+## A Express 直結 value=16384B line=16393B -> status=431 reached_upstream=false
+## A Express 直結 value=20000B line=20009B -> status=431 reached_upstream=false
+## A 上限を上げた server（対照） value=4096B line=4105B -> status=200
+## A 上限を上げた server（対照） value=8000B line=8009B -> status=200
+## A 上限を上げた server（対照） value=8192B line=8201B -> status=200
+## A 上限を上げた server（対照） value=9000B line=9009B -> status=200
+## A 上限を上げた server（対照） value=16384B line=16393B -> status=200
+## A 上限を上げた server（対照） value=20000B line=20009B -> status=200
+## B nginx 単独（静的） count=4 approx_total=4048B -> status=200
+## B nginx 単独（静的） count=8 approx_total=8096B -> status=200
+## B nginx 単独（静的） count=16 approx_total=16192B -> status=200
+## B nginx 単独（静的） count=32 approx_total=32384B -> status=200
+## B nginx 単独（静的） count=40 approx_total=40480B -> status=400
+## B nginx→Express count=4 approx_total=4048B -> status=200
+## B nginx→Express count=8 approx_total=8096B -> status=200
+## B nginx→Express count=16 approx_total=16192B -> status=200
+## B nginx→Express count=32 approx_total=32384B -> status=431
+## B nginx→Express count=40 approx_total=40480B -> status=400
+## B Express 直結 count=4 approx_total=4048B -> status=200
+## B Express 直結 count=8 approx_total=8096B -> status=200
+## B Express 直結 count=16 approx_total=16192B -> status=200
+## B Express 直結 count=32 approx_total=32384B -> status=431
+## B Express 直結 count=40 approx_total=40480B -> status=431
+## B 上限を上げた server（対照） count=4 approx_total=4048B -> status=200
+## B 上限を上げた server（対照） count=8 approx_total=8096B -> status=200
+## B 上限を上げた server（対照） count=16 approx_total=16192B -> status=200
+## B 上限を上げた server（対照） count=32 approx_total=32384B -> status=200
+## B 上限を上げた server（対照） count=40 approx_total=40480B -> status=200
+## D nginx 単独（静的） value=8183B line=8192B -> status=200
+## D nginx 単独（静的） value=8184B line=8193B -> status=400
+## D Express 直結 value=16375B line=16384B -> status=431
+## D Express 直結 value=16376B line=16385B -> status=431
+## E Express 直結の 431 境界  最後に通った値=16347B  最初に落ちた値=16348B
+## C 400 ページの大きさ  UA あり=233B  UA なし=233B
+

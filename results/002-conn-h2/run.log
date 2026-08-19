@@ -1,0 +1,13 @@
+# 002-conn-h2
+measured-at: 2026-08-19T09:51:05.364Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: h1 用にコピーしたヘッダを h2 で送る（RFC 9113 §8.2.2 は接続固有ヘッダを malformed と定める）
+  Connection         h2 フレームに入った=false  status=200  → curl が送信前に落とした
+  Keep-Alive         h2 フレームに入った=false  status=200  → curl が送信前に落とした
+  Upgrade            h2 フレームに入った=false  status=200  → curl が送信前に落とした
+  Transfer-Encoding  h2 フレームに入った=false  status=200  → curl が送信前に落とした
+  （参考）フレームに実際に入った名前: ["user-agent","accept"]
+  （対照）h1 で Connection: keep-alive → status=200
+

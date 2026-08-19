@@ -1,0 +1,6 @@
+{
+  "status_without_host_nginx_static": 400,
+  "status_without_host_via_nginx": 400,
+  "status_without_host_app_direct": 400,
+  "curl_refused_to_send": false
+}

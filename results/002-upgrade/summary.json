@@ -1,0 +1,8 @@
+{
+  "status_without_upgrade": 200,
+  "status_with_upgrade_via_nginx": 200,
+  "status_with_upgrade_direct": 200,
+  "upgrade_forwarded_by_nginx": false,
+  "upgrade_seen_when_direct": true,
+  "switched_protocols": false
+}

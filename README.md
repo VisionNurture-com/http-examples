@@ -1,6 +1,6 @@
 # http-examples
 
-HTTP の通説を実機で確かめるための伴走サンプルです。記事に載せる数値は、すべてこのリポジトリで測ったログに裏づけられています。
+HTTP の通説を実機で確かめるためのサンプル集です。記事に載せる数値は、すべてこのリポジトリで測ったログに裏づけられています。
 
 ## 4 つの実行モード
 
@@ -35,7 +35,7 @@ docker compose up -d --wait
 bash scenarios/000-smoke/run.sh  # 土台の確認
 ```
 
-停止します。
+測り終えたら停止します。
 
 <!-- repro:down -->
 ```bash
@@ -54,6 +54,29 @@ brew install mkcert   # macOS
 
 生成した証明書は `certs/` に置かれ、リポジトリには含めません。
 
+## 002 — ヘッダを削って測る
+
+記事 002（HTTP ヘッダ）が使うシナリオは 9 本です。記事に載せた値だけを確かめたいなら、docker を立てずにこれだけで足ります。
+
+```bash
+npm ci
+npm run check:provenance -- --prefix 002
+```
+
+| シナリオ | 測るもの | モード |
+|---|---|:--:|
+| `002-minimize` | ブラウザが送った集合を 1 本ずつ落とし、応答が変わる点を探す。最後にまとめて落として検算する | M2 |
+| `002-host` | `Host` を落として 3 経路へ送る。削ると壊れるのはこの 1 本だけか | M1 |
+| `002-length` | `Content-Length` を落としたときに、本文がサーバへ何バイト届くか | M1 |
+| `002-accept-encoding` | `Accept-Encoding` を落としたときの転送量。応答コードは変わらない側 | M1 |
+| `002-duplicate-order` | ヘッダの並び順と、同じ名前を 2 本送ったときの扱い | M1 |
+| `002-header-size` | 1 本を長くする場合と本数を増やす場合で、どこが弾くか（400 と 431 の境界）| M1 |
+| `002-expect` | curl が `Expect: 100-continue` を自分で足し始める本文の大きさ | M1 |
+| `002-conn-h2` | HTTP/2 で接続固有ヘッダを送ったとき、実際にワイヤへ流れるか | M1 |
+| `002-upgrade` | `Upgrade` が中継を越えるか。経路を 1 段減らすと結果が変わるか | M1 |
+
+`002-minimize` だけは実ブラウザからの採取（`node tools/capture-002-browser.mjs`）が先に必要なため CI では回りません。採取結果を置いたあとは `run.sh` だけで再現できます。
+
 ## minimal/ — 記事 008 sec07 の最小構成
 
 記事 008（CORS）の sec07 は、ページ側と API 側の 2 つのオリジンを手元に立てる手順を扱います。そこで使う設定 1 本とページ 1 枚を `minimal/` に置いてあります。**記事から写しても、ここから使っても同じもの**です（`check:provenance` が記事に載せた断片と突合します）。
@@ -71,7 +94,7 @@ docker run --rm -p 8080:80 -p 8081:81 \
 
 ## 012/ — 圧縮辞書と Early Hints を測る
 
-記事 012（TTFB）が使うシナリオは 8 本です。記事に載せた値だけを確かめたいなら、docker を立てずにこれだけで足ります。
+記事 012（TTFB）が使うシナリオは 10 本です。記事に載せた値だけを確かめたいなら、docker を立てずにこれだけで足ります。
 
 ```bash
 npm ci
@@ -87,7 +110,9 @@ npm run check:provenance -- --prefix 012
 | `012-brotli-types` | `brotli_types` に重複を書いたときの警告と、その重大度 |
 | `012-vary` | `Vary` を落としたときに共有キャッシュが次の利用者へ何を配るか |
 | `012-early-hints` | 103 を送ったときに報告 TTFB とサーバの処理時間がそれぞれどう動くか |
+| `012-early-hints-enabled` | nginx に `early_hints` を書くと 103 が届くようになるか。何が変わって何が変わらないか |
 | `012-timing-api` | 最終ヘッダの時刻を取る属性が、どのエンジンに実在するか |
+| `012-lighthouse-ttfb` | Lighthouse の「サーバ応答時間」が 103 の有無でどう変わるか |
 
 素材は `public/012/` の 2 つのフィクスチャです。**編集しないでください**（理由は [`public/012/README.md`](public/012/README.md)）。
 
@@ -99,14 +124,14 @@ npm run check:provenance -- --prefix 012
 
 ### 103 を確かめる経路
 
-既定の設定の nginx は、上流から受け取った 103 を客へ渡しません（[`early_hints`](https://nginx.org/en/docs/http/ngx_http_core_module.html) を書かない限り止まります）。そのため 103 の測定には、nginx を通さない口を 2 つ開けてあります。
+既定の設定の nginx は、上流から受け取った 103 をクライアントへ渡しません（[`early_hints`](https://nginx.org/en/docs/http/ngx_http_core_module.html) を書かない限り止まります）。そのため 103 の測定には、nginx を通さない口を 2 つ開けてあります。下の表は、その 2 つと、012 で使う nginx 側の口を並べたものです。
 
-| ポート | 中身 |
-|---|---|
-| `8086` | アプリへ直結（HTTP/1.1）|
-| `8447` | HTTP/2 + TLS で 103 を出す対照サーバ |
-| `8445` | 012 専用の入口（辞書の配信・どのエンジンからでも測れます）|
-| `8448` | 共有キャッシュを前段に置いた `Vary` の再現用 |
+| ポート | 中身 | nginx |
+|---|---|:--:|
+| `8086` | アプリへ直結（HTTP/1.1）| 通さない |
+| `8447` | HTTP/2 + TLS で 103 を出す対照サーバ | 通さない |
+| `8445` | 012 専用の入口（辞書の配信・どのエンジンからでも測れます）| 通す |
+| `8448` | 共有キャッシュを前段に置いた `Vary` の再現用 | 通す |
 
 ## M3 — VM で測る
 
@@ -118,7 +143,7 @@ npm run check:provenance -- --prefix 012
 nginx/conf.d/   ★ 記事に載せる設定の正本。記事側はここから引用する
 minimal/        記事 008 sec07 の最小構成（compose なしで 2 オリジンを立てる）
 app/            Express 5 バックエンド（既定の挙動そのものが観測対象）
-scenarios/      シナリオ 1 つ = 実効値カード 1 枚。run.sh と expected.md を持つ
+scenarios/      シナリオ 1 つ = 実効値の表 1 枚。run.sh と expected.md を持つ
 results/        実測ログ。run.log（生ログ）と summary.json（実効値）
 tools/          M0 の検証スクリプト（Node のみ）
 vm/             M3 の手順と netem スクリプト
@@ -141,7 +166,7 @@ scenarios/<id>/expected.md  ★ 記事に載せる値の正本
 
 CI で回らない M2 / M3 は、`run.log` の先頭に `measured-at:` として測定日時と環境を記録します。`check:provenance` がその有無を検査します。
 
-### 観測チャネルが死ぬ経路（008 系）
+### ログが書けなくなると測定が嘘になる
 
 008 の測定は、preflight が飛んだかどうかを**サーバ側の到着記録**で判定します。ブラウザから preflight のキャッシュを覗く API がないためです。
 

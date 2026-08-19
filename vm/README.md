@@ -42,7 +42,7 @@ make -j4 && sudo make install
 | `capture-011-card3.sh` | apt 版の HTTP/3 ビルド有無を生ログに落とす |
 | `netem.sh` | 回線条件を手で振るときの薄いラッパー |
 
-集計は伴走リポ側の `node tools/aggregate-011.mjs [crossover|control|mux|offload]` で行います（完走した回だけで中央値を出し、タイムアウトは別立てで数える規約）。
+集計はこのリポジトリの `node tools/aggregate-011.mjs [crossover|control|mux|offload]` で行います（完走した回だけで中央値を出し、タイムアウトは別立てで数える規約）。
 
 ### 条件を絞る・分けて回す
 
@@ -56,7 +56,7 @@ sudo PROTOS=http3-only TAG=-h3 bash measure-011.sh T2c /home/ubuntu/results-011
 sudo LOSS=1% RTTS=100 NLIST="6 25" TAG=-loss1 bash measure-011-mux.sh 64k /home/ubuntu/results-011-mux
 ```
 
-## 🔴 測定するときの注意（011 で踏んだもの）
+## 測定するときの注意（011 で踏んだもの）
 
 1. **測定のたびに結果をホストへ退避する。** VM を作り直すと生ログごと消えます（011 の前半で全損しました）。
    ```bash

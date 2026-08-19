@@ -1,0 +1,9 @@
+{
+  "order_changes_status": false,
+  "order_preserved_on_wire": true,
+  "duplicate_joined_value": "one, two",
+  "duplicate_x_sample_status": 200,
+  "duplicate_host_status": 400,
+  "status_order_base": 200,
+  "status_order_swapped": 200
+}

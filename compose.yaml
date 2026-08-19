@@ -38,6 +38,10 @@ services:
       - "8445:445"
       # 記事 012 の Vary 事故再現（共有キャッシュを前段に置く）
       - "8448:446"
+      # 記事 002 専用の入口。静的配信（nginx 単独）と転送（nginx→Express）を
+      # 別の location に分け、削ったヘッダがどの層で効いたかを分離する。
+      # 🔴 コンテナ側は 87。86 は 012 が使っている（衝突すると相手が黙って壊れる）。
+      - "8087:87"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro

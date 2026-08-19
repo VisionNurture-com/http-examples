@@ -29,7 +29,7 @@
 
 ## 読み方
 
-- **`nginx_drops_interim`**: nginx（1.31.3・追加設定なし）は上流の 103 を客へ渡しません。直結では 3 エンジンとも 103 が届くのに、nginx を挟むと**全条件で届きません**。リバースプロキシに nginx を置いている限り、Early Hints は存在しないのと同じです
+- **`nginx_drops_interim`**: nginx（1.31.3・追加設定なし）は上流の 103 をクライアントへ渡しません。直結では 3 エンジンとも 103 が届くのに、nginx を挟むと**全条件で届きません**。リバースプロキシに nginx を置いている限り、Early Hints は存在しないのと同じです
 - **`web_vitals_reports_interim_as_ttfb`**: `web-vitals` 6.1.1 が返す TTFB は**報告 TTFB とミリ秒単位で一致**します。つまり RUM のダッシュボードには 103 の到着時刻が TTFB として並びます
 - **`webkit_cannot_separate_final_headers`**: WebKit 26.5 は `finalResponseHeadersStart` を持っていますが、103 があるとき **`responseStart` と同じ値**を返します。2 つの時刻を分離できません
 - **preload の実利得はエンジンと条件で変わります**（`summary.json` の `engines.<name>.preload_helps`）

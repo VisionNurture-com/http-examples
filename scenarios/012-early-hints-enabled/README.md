@@ -2,7 +2,7 @@
 
 ## 何を測るか
 
-`012-early-hints` は、追加設定のない nginx が上流の 103 を客へ渡さないことを 18 通りで示しました。本シナリオはその続きです。nginx 1.29.0 で入った [`early_hints`](https://nginx.org/en/docs/http/ngx_http_core_module.html) ディレクティブを書いたとき、**何が変わって何が変わらないか**を見ます。
+`012-early-hints` は、追加設定のない nginx が上流の 103 をクライアントへ渡さないことを 18 通りで示しました。本シナリオはその続きです。nginx 1.29.0 で入った [`early_hints`](https://nginx.org/en/docs/http/ngx_http_core_module.html) ディレクティブを書いたとき、**何が変わって何が変わらないか**を見ます。
 
 違いは nginx の設定 1 行だけにしてあります。
 
@@ -11,7 +11,7 @@
 | `/012/eh` | `early_hints` を書かない（既定）|
 | `/012/ehon` | `early_hints $early_hints_on;` を書く。ほかは同一で、同じアプリの同じ経路へ回す |
 
-## 埋める欄
+## 記事のどこに出るか
 
 決定表「その改善は本物か」の、自分の構成で先読みを入れるかどうかの判断材料。
 

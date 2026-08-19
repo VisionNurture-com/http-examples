@@ -1,0 +1,59 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "browser_header_count": 12,
+  "passes": {
+    "static-nginx": {
+      "breaks": [
+        "host"
+      ],
+      "changes": [
+        "accept-encoding"
+      ],
+      "no_effect_count": 10,
+      "minimal_header_count": 2,
+      "minimal_set_verified": true,
+      "baseline_status": 200
+    },
+    "static-app": {
+      "breaks": [
+        "host"
+      ],
+      "changes": [
+        "accept-encoding"
+      ],
+      "no_effect_count": 10,
+      "minimal_header_count": 2,
+      "minimal_set_verified": true,
+      "baseline_status": 200
+    },
+    "json-nginx": {
+      "breaks": [
+        "host"
+      ],
+      "changes": [
+        "user-agent"
+      ],
+      "no_effect_count": 11,
+      "minimal_header_count": 2,
+      "minimal_set_verified": true,
+      "baseline_status": 405
+    },
+    "json-app": {
+      "breaks": [
+        "host"
+      ],
+      "changes": [
+        "Content-Type",
+        "accept-encoding"
+      ],
+      "no_effect_count": 10,
+      "minimal_header_count": 3,
+      "minimal_set_verified": true,
+      "baseline_status": 200
+    }
+  }
+}
