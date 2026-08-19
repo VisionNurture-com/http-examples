@@ -11,6 +11,7 @@ jobs:
   structure:
     name: structure (M0)
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -22,6 +23,7 @@ jobs:
   provenance:
     name: provenance (M0)
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -36,6 +38,7 @@ jobs:
     name: commit identity
     if: github.repository_owner == 'VisionNurture-com'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
         with:
@@ -58,6 +61,7 @@ jobs:
   scenarios:
     name: scenarios (M1)
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     needs: [structure, provenance]
     steps:
       - uses: actions/checkout@v7
