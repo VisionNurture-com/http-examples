@@ -1,0 +1,24 @@
+# 004-browser-render
+measured-at: 2026-08-20T11:39:24.556Z
+
+chromium	200	status=200	body=true	script=true
+chromium	403	status=403	body=true	script=true
+chromium	404	status=404	body=true	script=true
+chromium	410	status=410	body=true	script=true
+chromium	429	status=429	body=true	script=true
+chromium	500	status=500	body=true	script=true
+chromium	503	status=503	body=true	script=true
+firefox	200	status=200	body=true	script=true
+firefox	403	status=403	body=true	script=true
+firefox	404	status=404	body=true	script=true
+firefox	410	status=410	body=true	script=true
+firefox	429	status=429	body=true	script=true
+firefox	500	status=500	body=true	script=true
+firefox	503	status=503	body=true	script=true
+webkit	200	status=200	body=true	script=true
+webkit	403	status=403	body=true	script=true
+webkit	404	status=404	body=true	script=true
+webkit	410	status=410	body=true	script=true
+webkit	429	status=429	body=true	script=true
+webkit	500	status=500	body=true	script=true
+webkit	503	status=503	body=true	script=true

@@ -1,0 +1,34 @@
+# 004-auth-challenge
+measured-at: 2026-08-20T11:34:41.437Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+node(host): 24.18.0
+undici: 8.10.0
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: 401 を返した先で何が変わるか。challenge の有無とスキームを振る
+app_none	http://localhost:8086/004/api/auth/none?cs=auth&cl=curl
+  status=401 www-authenticate=null
+  content-type="application/json; charset=utf-8"
+app_basic	http://localhost:8086/004/api/auth/basic?cs=auth&cl=curl
+  status=401 www-authenticate="Basic realm=\"004\""
+  content-type="application/json; charset=utf-8"
+app_bearer	http://localhost:8086/004/api/auth/bearer?cs=auth&cl=curl
+  status=401 www-authenticate="Bearer realm=\"004\""
+  content-type="application/json; charset=utf-8"
+app_forbidden	http://localhost:8086/004/api/auth/forbidden?cs=auth&cl=curl
+  status=403 www-authenticate=null
+  content-type="application/json; charset=utf-8"
+edge_basic	http://localhost:8088/004/api/auth/basic?cs=auth&cl=curl
+  status=401 www-authenticate="Basic realm=\"004\""
+  content-type="application/json; charset=utf-8"
+stripped_basic	http://localhost:8088/004/stripped/auth/basic?cs=auth&cl=curl
+  status=401 www-authenticate=null
+  content-type="application/json; charset=utf-8"
+nginx_basic	http://localhost:8088/004/nginx/basic/index.html?cs=auth&cl=curl
+  status=401 www-authenticate="Basic realm=\"004\""
+  content-type="text/html"
+nginx_deny	http://localhost:8088/004/nginx/deny/index.html?cs=auth&cl=curl
+  status=403 www-authenticate=null
+  content-type="text/html"
+
+401 のアーム 6 本のうち challenge つきは 4 本

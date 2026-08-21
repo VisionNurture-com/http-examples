@@ -1,0 +1,18 @@
+{
+  "retry_after_seconds": 3,
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "arrivals_chromium": 1,
+  "status_chromium": 429,
+  "retry_after_seen_chromium": "3",
+  "arrivals_firefox": 1,
+  "status_firefox": 429,
+  "retry_after_seen_firefox": "3",
+  "arrivals_webkit": 1,
+  "status_webkit": 429,
+  "retry_after_seen_webkit": "3",
+  "engines_with_auto_retry": []
+}

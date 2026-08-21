@@ -1,0 +1,26 @@
+# 004-cache-varnish
+measured-at: 2026-08-20T11:37:22.743Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+node(host): 24.18.0
+undici: 8.10.0
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+varnish: varnishd (varnish-9.0.3 revision 0a625649cd40af4b6c10be5e58a2e89a5e275baa)
+note: 同じ応答を nginx と Varnish に通し、保存の判断がコードで変わるかを見る
+200	varnish=HIT	nginx=HIT
+201	varnish=MISS	nginx=HIT
+400	varnish=MISS	nginx=HIT
+401	varnish=MISS	nginx=HIT
+403	varnish=MISS	nginx=HIT
+404	varnish=HIT	nginx=HIT
+410	varnish=HIT	nginx=HIT
+418	varnish=MISS	nginx=HIT
+422	varnish=MISS	nginx=HIT
+429	varnish=MISS	nginx=HIT
+451	varnish=MISS	nginx=HIT
+500	varnish=MISS	nginx=HIT
+502	varnish=MISS	nginx=HIT
+503	varnish=MISS	nginx=HIT
+
+varnish が保存したコード: [200,404,410]
+nginx が保存したコード: [200,201,400,401,403,404,410,418,422,429,451,500,502,503]

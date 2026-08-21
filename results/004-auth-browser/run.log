@@ -1,0 +1,18 @@
+# 004-auth-browser
+measured-at: 2026-08-20T02:33:57.668Z
+
+chromium	none	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
+chromium	basic	fetch.resolved=true status=401 wwwAuth="Basic realm=\"004\""	nav.returned=true status=401
+chromium	bearer	fetch.resolved=true status=401 wwwAuth="Bearer realm=\"004\""	nav.returned=true status=401
+chromium	forbidden	fetch.resolved=true status=403 wwwAuth=null	nav.returned=true status=403
+chromium	stripped_basic	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
+firefox	none	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
+firefox	basic	fetch.resolved=true status=401 wwwAuth="Basic realm=\"004\""	nav.returned=true status=401
+firefox	bearer	fetch.resolved=true status=401 wwwAuth="Bearer realm=\"004\""	nav.returned=true status=401
+firefox	forbidden	fetch.resolved=true status=403 wwwAuth=null	nav.returned=true status=403
+firefox	stripped_basic	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
+webkit	none	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
+webkit	basic	fetch.resolved=true status=401 wwwAuth="Basic realm=\"004\""	nav.returned=true status=401
+webkit	bearer	fetch.resolved=true status=401 wwwAuth="Bearer realm=\"004\""	nav.returned=true status=401
+webkit	forbidden	fetch.resolved=true status=403 wwwAuth=null	nav.returned=true status=403
+webkit	stripped_basic	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401

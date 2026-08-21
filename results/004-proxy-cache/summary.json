@@ -1,0 +1,26 @@
+{
+  "status_200": 200,
+  "cache_first_200": "MISS",
+  "cache_second_200": "HIT",
+  "status_404": 404,
+  "cache_first_404": "MISS",
+  "cache_second_404": "HIT",
+  "status_429": 429,
+  "cache_first_429": "MISS",
+  "cache_second_429": "HIT",
+  "status_503": 503,
+  "cache_first_503": "MISS",
+  "cache_second_503": "HIT",
+  "codes_cached": [
+    200,
+    404,
+    429,
+    503
+  ],
+  "cc_cache_first_200": "MISS",
+  "cc_cache_second_200": "HIT",
+  "cc_header_200": "max-age=60",
+  "cc_cache_first_429": "MISS",
+  "cc_cache_second_429": "HIT",
+  "cc_header_429": "max-age=60"
+}

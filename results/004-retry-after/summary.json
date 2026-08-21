@@ -1,0 +1,22 @@
+{
+  "retry_after_seconds": 3,
+  "curl_version": "8.21.0",
+  "arrivals_curl-plain": 1,
+  "gaps_curl-plain": [],
+  "verdict_curl-plain": "no_retry",
+  "arrivals_curl-retry": 3,
+  "gaps_curl-retry": [
+    3,
+    3
+  ],
+  "verdict_curl-retry": "waited",
+  "arrivals_node-fetch": 1,
+  "gaps_node-fetch": [],
+  "verdict_node-fetch": "no_retry",
+  "arrivals_undici-retry": 3,
+  "gaps_undici-retry": [
+    3,
+    3
+  ],
+  "verdict_undici-retry": "waited"
+}

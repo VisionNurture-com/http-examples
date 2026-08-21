@@ -1,0 +1,25 @@
+# 004-auth-dialog
+measured-at: 2026-08-20（JST）
+os: macOS 26.5.2
+手段: 実アプリ（自動化なし）。Chrome / Firefox は一時プロファイルの別インスタンス、Safari は新規ウィンドウ
+撮影: screencapture -x -R 80,80,1000,700
+
+## 実アプリの版（自動化ブラウザとは別物）
+Google Chrome 151.0.7922.140   （Playwright の Chromium は 151.0.7922.34）
+Firefox        154.0            （Playwright の Firefox は 153.0）
+Safari         26.5.2           （Playwright の WebKit は 26.5）
+
+## 判定（目視）
+chrome  basic     ダイアログあり（"Sign in" / Username / Password・画面中央）本文は表示されない  -> chrome-basic.png
+chrome  bearer    ダイアログなし・JSON 本文が表示される                                          -> chrome-bearer.png
+chrome  stripped  ダイアログなし・JSON 本文が表示される（プロキシで challenge を剥がした経路）   -> chrome-stripped.png
+firefox basic     ダイアログあり（"This site is asking you to sign in."・URL バー直下の tab-modal）-> firefox-basic.png
+firefox bearer    ダイアログなし・JSON ビューアで本文が表示される                                 -> firefox-bearer.png
+safari  basic     ダイアログあり（"Sign in to localhost:8088 / Your password will be sent unencrypted."）-> safari-basic.png
+safari  bearer    ダイアログなし・JSON 本文が表示される                                           -> safari-bearer.png
+
+## 自動化との差（記録）
+Playwright の headless では basic でも 401 の本文がページへ渡り、ダイアログは存在しない。
+headed の Chromium だけがナビゲーションを net::ERR_INVALID_AUTH_CREDENTIALS で打ち切った
+（= プロンプトを自前でキャンセルした跡）。Firefox / WebKit は headed でも打ち切らなかったため、
+自動化の結果からは「出さない」とは言えなかった。実アプリでは 3 エンジンとも出した。

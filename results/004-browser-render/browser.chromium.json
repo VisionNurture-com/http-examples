@@ -1,0 +1,41 @@
+{
+  "browser": "chromium",
+  "version": "151.0.7922.34",
+  "codes": {
+    "200": {
+      "status": 200,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "403": {
+      "status": 403,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "404": {
+      "status": 404,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "410": {
+      "status": 410,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "429": {
+      "status": 429,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "500": {
+      "status": 500,
+      "bodyRendered": true,
+      "scriptRan": true
+    },
+    "503": {
+      "status": 503,
+      "bodyRendered": true,
+      "scriptRan": true
+    }
+  }
+}

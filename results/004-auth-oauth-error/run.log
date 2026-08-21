@@ -1,0 +1,34 @@
+# 004-auth-oauth-error
+measured-at: 2026-08-20T23:50:18.981Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+node(host): 24.18.0
+undici: 8.10.0
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: Bearer の 401 / 403 が challenge に載せるものと、前段を越えて残るか
+app_401_invalid_token	http://localhost:8086/004/api/oauth/invalid-token?cs=oauth&cl=curl
+  status=401 www-authenticate="Bearer realm=\"004\", error=\"invalid_token\", error_description=\"The access token expired\""
+  content-type="application/problem+json; charset=utf-8"
+  body: {"type":"https://example.com/probs/invalid-token","title":"The access token is not valid.","status":401,"detail":"The access token expired at 2026-08-21T00:00:00Z. Request a new one and retry.","insta
+app_403_insufficient_scope	http://localhost:8086/004/api/oauth/insufficient-scope?cs=oauth&cl=curl
+  status=403 www-authenticate="Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\""
+  content-type="application/problem+json; charset=utf-8"
+  body: {"type":"https://example.com/probs/insufficient-scope","title":"The access token lacks the required scope.","status":403,"detail":"This endpoint requires msgs:read and msgs:write. The token carries ms
+app_403_plain	http://localhost:8086/004/api/auth/forbidden?cs=oauth&cl=curl
+  status=403 www-authenticate=null
+  content-type="application/json; charset=utf-8"
+  body: {"error":"forbidden","arm":"forbidden"}
+edge_403_insufficient_scope	http://localhost:8088/004/api/oauth/insufficient-scope?cs=oauth&cl=curl
+  status=403 www-authenticate="Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\""
+  content-type="application/problem+json; charset=utf-8"
+  body: {"type":"https://example.com/probs/insufficient-scope","title":"The access token lacks the required scope.","status":403,"detail":"This endpoint requires msgs:read and msgs:write. The token carries ms
+waf_403_insufficient_scope	http://localhost:8090/004/api/oauth/insufficient-scope?cs=oauth&cl=curl
+  status=403 www-authenticate="Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\""
+  content-type="text/html; charset=utf-8"
+  body: {"type":"https://example.com/probs/insufficient-scope","title":"The access token lacks the required scope.","status":403,"detail":"This endpoint requires msgs:read and msgs:write. The token carries ms
+stripped_403_insufficient_scope	http://localhost:8088/004/stripped/oauth/insufficient-scope?cs=oauth&cl=curl
+  status=403 www-authenticate=null
+  content-type="application/problem+json; charset=utf-8"
+  body: {"type":"https://example.com/probs/insufficient-scope","title":"The access token lacks the required scope.","status":403,"detail":"This endpoint requires msgs:read and msgs:write. The token carries ms
+
+403 のアーム 5 本のうち challenge つきは 3 本

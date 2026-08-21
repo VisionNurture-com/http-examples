@@ -1,0 +1,35 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "codes_tested": [
+    200,
+    403,
+    404,
+    410,
+    429,
+    500,
+    503
+  ],
+  "codes_body_rendered_all_engines": [
+    200,
+    403,
+    404,
+    410,
+    429,
+    500,
+    503
+  ],
+  "codes_script_ran_all_engines": [
+    200,
+    403,
+    404,
+    410,
+    429,
+    500,
+    503
+  ],
+  "engines_agree": true
+}

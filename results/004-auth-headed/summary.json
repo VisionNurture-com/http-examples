@@ -1,0 +1,20 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "arms_tested": [
+    "none",
+    "basic",
+    "bearer",
+    "forbidden",
+    "stripped_basic"
+  ],
+  "not_delivered_to_page": [
+    "chromium:headed_basic"
+  ],
+  "headless_headed_differs": true,
+  "native_dialog_pixels": "未測定（実 Chrome を占有できないため。自動化はプロンプトを自前で打ち切る）",
+  "firefox_webkit_dialog": "未測定（プロンプトを出さなかったのか、自動化が抑止したのか本装置では分けられない）"
+}

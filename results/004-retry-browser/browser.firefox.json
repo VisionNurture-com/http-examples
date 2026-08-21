@@ -1,0 +1,11 @@
+{
+  "browser": "firefox",
+  "version": "153.0",
+  "first": {
+    "status": 429,
+    "retryAfter": "3"
+  },
+  "arrivals": [
+    "1787193267.171 2026-08-20T02:34:27+00:00 GET 429 uri=\"/004/api/limited?cs=retryb&cl=browser-retry-firefox&after=0&ra=3\" cs=retryb cl=browser-retry-firefox wa=\"-\" ra=\"3\" cache=-"
+  ]
+}

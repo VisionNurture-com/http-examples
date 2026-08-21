@@ -1,0 +1,33 @@
+{
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "arms_tested": [
+    "none",
+    "basic",
+    "bearer",
+    "forbidden",
+    "stripped_basic"
+  ],
+  "arms_fetch_resolved_all_engines": [
+    "none",
+    "basic",
+    "bearer",
+    "forbidden",
+    "stripped_basic"
+  ],
+  "arms_www_authenticate_readable": [
+    "basic",
+    "bearer"
+  ],
+  "arms_navigation_returned_all_engines": [
+    "none",
+    "basic",
+    "bearer",
+    "forbidden",
+    "stripped_basic"
+  ],
+  "native_dialog_observed": "未測定（自動化ブラウザからは観測できない・実 Chrome の手動確認へ切り出す）"
+}

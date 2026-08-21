@@ -42,6 +42,10 @@ services:
       # 別の location に分け、削ったヘッダがどの層で効いたかを分離する。
       # 🔴 コンテナ側は 87。86 は 012 が使っている（衝突すると相手が黙って壊れる）。
       - "8087:87"
+      # 記事 004 専用の入口。素の転送 / ヘッダを剥がす / エラーを差し替える /
+      # キャッシュを挟む の 4 経路を同じポートの別 location に並べ、
+      # プロキシがステータスコードを見て何を変えるかを測る。
+      - "8088:88"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro
@@ -81,6 +85,42 @@ services:
       - ./certs:/etc/certs:ro
     ports:
       - "8447:3443"
+    networks:
+      - httpnet
+
+  # 記事 004 の対照。nginx とは別実装のキャッシュがステータスコードをどう扱うかを測る。
+  # nginx 側は proxy_cache_valid で保存を命じられるが、こちらは既定 VCL の判断に委ねる。
+  cache:
+    image: varnish:9.0
+    container_name: http-examples-cache
+    depends_on:
+      - app
+    volumes:
+      - ./varnish/default.vcl:/etc/varnish/default.vcl:ro
+    environment:
+      VARNISH_SIZE: "32M"
+    ports:
+      - "8089:80"
+    networks:
+      - httpnet
+
+  # 記事 004 の対照。同じ状況でサーバ・プロキシ・WAF がそれぞれ何を返すか、の
+  # WAF 側。OWASP CRS を遮断モードで前段に置き、返すコードと本文を測る。
+  waf:
+    image: owasp/modsecurity-crs:nginx
+    container_name: http-examples-waf
+    depends_on:
+      - app
+    environment:
+      BACKEND: "http://app:3000"
+      PORT: "8080"
+      MODSEC_RULE_ENGINE: "On"
+      BLOCKING_PARANOIA: "1"
+      # 遮断時に返すコード。既定は 403。「WAF は何を返すか」の観測対象そのもの
+      MODSEC_DEFAULT_PHASE1_ACTION: "phase:1,log,auditlog,deny,status:403"
+      MODSEC_DEFAULT_PHASE2_ACTION: "phase:2,log,auditlog,deny,status:403"
+    ports:
+      - "8090:8080"
     networks:
       - httpnet
 

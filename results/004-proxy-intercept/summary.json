@@ -1,0 +1,11 @@
+{
+  "status_direct": 403,
+  "content_type_direct": "application/problem+json; charset=utf-8",
+  "detail_kept_direct": true,
+  "status_intercepted": 403,
+  "content_type_intercepted": "text/html",
+  "detail_kept_intercepted": false,
+  "body_replaced_marker": true,
+  "mismatch_actual_status": 403,
+  "mismatch_body_status": 500
+}

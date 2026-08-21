@@ -1,0 +1,21 @@
+{
+  "status_app_none": 401,
+  "challenge_app_none": null,
+  "status_app_basic": 401,
+  "challenge_app_basic": "Basic realm=\"004\"",
+  "status_app_bearer": 401,
+  "challenge_app_bearer": "Bearer realm=\"004\"",
+  "status_app_forbidden": 403,
+  "challenge_app_forbidden": null,
+  "status_edge_basic": 401,
+  "challenge_edge_basic": "Basic realm=\"004\"",
+  "status_stripped_basic": 401,
+  "challenge_stripped_basic": null,
+  "status_nginx_basic": 401,
+  "challenge_nginx_basic": "Basic realm=\"004\"",
+  "status_nginx_deny": 403,
+  "challenge_nginx_deny": null,
+  "arms_total": 8,
+  "arms_401": 6,
+  "arms_401_with_challenge": 4
+}

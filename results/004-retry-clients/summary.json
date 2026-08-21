@@ -1,0 +1,43 @@
+{
+  "retry_after_seconds": 3,
+  "arrivals_python-urllib3-retry": 3,
+  "gaps_python-urllib3-retry": [
+    3,
+    3
+  ],
+  "verdict_python-urllib3-retry": "waited",
+  "arrivals_python-requests": 1,
+  "gaps_python-requests": [],
+  "verdict_python-requests": "no_retry",
+  "arrivals_java-httpclient": 1,
+  "gaps_java-httpclient": [],
+  "verdict_java-httpclient": "no_retry",
+  "arrivals_go-nethttp": 1,
+  "gaps_go-nethttp": [],
+  "verdict_go-nethttp": "no_retry",
+  "arrivals_ruby-nethttp": 1,
+  "gaps_ruby-nethttp": [],
+  "verdict_ruby-nethttp": "no_retry",
+  "arrivals_bun-fetch": 1,
+  "gaps_bun-fetch": [],
+  "verdict_bun-fetch": "no_retry",
+  "clients_tested": [
+    "python-urllib3-retry",
+    "python-requests",
+    "java-httpclient",
+    "go-nethttp",
+    "ruby-nethttp",
+    "bun-fetch"
+  ],
+  "clients_waited": [
+    "python-urllib3-retry"
+  ],
+  "runtime_versions": {
+    "python-urllib3-retry": "urllib3=2.7.0",
+    "python-requests": "requests=2.34.2",
+    "java-httpclient": "java=25.0.3+9-LTS",
+    "go-nethttp": "go=go1.26.6",
+    "ruby-nethttp": "ruby=3.4.8",
+    "bun-fetch": "bun=1.3.13"
+  }
+}

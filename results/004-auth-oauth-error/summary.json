@@ -1,0 +1,23 @@
+{
+  "status_app_401_invalid_token": 401,
+  "challenge_app_401_invalid_token": "Bearer realm=\"004\", error=\"invalid_token\", error_description=\"The access token expired\"",
+  "content_type_app_401_invalid_token": "application/problem+json; charset=utf-8",
+  "status_app_403_insufficient_scope": 403,
+  "challenge_app_403_insufficient_scope": "Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\"",
+  "content_type_app_403_insufficient_scope": "application/problem+json; charset=utf-8",
+  "status_app_403_plain": 403,
+  "challenge_app_403_plain": null,
+  "content_type_app_403_plain": "application/json; charset=utf-8",
+  "status_edge_403_insufficient_scope": 403,
+  "challenge_edge_403_insufficient_scope": "Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\"",
+  "content_type_edge_403_insufficient_scope": "application/problem+json; charset=utf-8",
+  "status_waf_403_insufficient_scope": 403,
+  "challenge_waf_403_insufficient_scope": "Bearer realm=\"004\", error=\"insufficient_scope\", scope=\"msgs:read msgs:write\"",
+  "content_type_waf_403_insufficient_scope": "text/html; charset=utf-8",
+  "status_stripped_403_insufficient_scope": 403,
+  "challenge_stripped_403_insufficient_scope": null,
+  "content_type_stripped_403_insufficient_scope": "application/problem+json; charset=utf-8",
+  "arms_total": 6,
+  "arms_403": 5,
+  "arms_403_with_challenge": 3
+}

@@ -1,0 +1,18 @@
+# 004-proxy-cache
+measured-at: 2026-08-20T11:34:43.239Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+node(host): 24.18.0
+undici: 8.10.0
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+note: 前段のキャッシュはコードを見て保存を変えるか（RFC 6585 §4 は 429 を MUST NOT store）
+200	1回目=MISS	2回目=HIT
+404	1回目=MISS	2回目=HIT
+429	1回目=MISS	2回目=HIT
+503	1回目=MISS	2回目=HIT
+
+proxy_cache_valid any で 2 回目が HIT になったコード: [200,404,429,503]
+
+-- 対照: proxy_cache_valid なし（保存の判断は上流の Cache-Control）--
+200	cache-control=max-age=60	1回目=MISS	2回目=HIT
+429	cache-control=max-age=60	1回目=MISS	2回目=HIT

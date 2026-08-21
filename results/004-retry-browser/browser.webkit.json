@@ -1,0 +1,11 @@
+{
+  "browser": "webkit",
+  "version": "26.5",
+  "first": {
+    "status": 429,
+    "retryAfter": "3"
+  },
+  "arrivals": [
+    "1787193276.835 2026-08-20T02:34:36+00:00 GET 429 uri=\"/004/api/limited?cs=retryb&cl=browser-retry-webkit&after=0&ra=3\" cs=retryb cl=browser-retry-webkit wa=\"-\" ra=\"3\" cache=-"
+  ]
+}

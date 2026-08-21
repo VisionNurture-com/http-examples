@@ -1,0 +1,16 @@
+{
+  "status_passthrough": 200,
+  "status_app_forbidden": 403,
+  "content_type_app_forbidden": "text/html; charset=utf-8",
+  "status_waf_blocked": 403,
+  "content_type_waf_blocked": "text/html",
+  "same_status_app_and_waf": true,
+  "app_body_has_own_marker": true,
+  "waf_body_has_own_marker": true,
+  "content_type_401_through_waf": "application/json; charset=utf-8",
+  "cors_added_on_403": "*",
+  "cors_added_on_401": null,
+  "challenge_through_waf": "Basic realm=\"004\"",
+  "retry_after_through_waf": "3",
+  "problem_detail_through_waf": true
+}

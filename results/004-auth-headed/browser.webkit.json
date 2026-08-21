@@ -1,0 +1,46 @@
+{
+  "browser": "webkit",
+  "version": "26.5",
+  "results": {
+    "headless_none": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_basic": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_bearer": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_forbidden": {
+      "delivered": true,
+      "status": 403
+    },
+    "headless_stripped_basic": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_none": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_basic": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_bearer": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_forbidden": {
+      "delivered": true,
+      "status": 403
+    },
+    "headed_stripped_basic": {
+      "delivered": true,
+      "status": 401
+    }
+  }
+}

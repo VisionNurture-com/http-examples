@@ -1,0 +1,13 @@
+{
+  "retry_after_seconds": 3,
+  "undici_version": "8.10.0",
+  "arrivals_u-node-fetch": 1,
+  "gaps_u-node-fetch": [],
+  "verdict_u-node-fetch": "no_retry",
+  "arrivals_u-undici-retry": 3,
+  "gaps_u-undici-retry": [
+    3,
+    3
+  ],
+  "verdict_u-undici-retry": "waited"
+}

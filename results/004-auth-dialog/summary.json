@@ -1,0 +1,26 @@
+{
+  "measured_at": "2026-08-20",
+  "os": "macOS 26.5.2",
+  "engines": {
+    "chrome": "151.0.7922.140",
+    "firefox": "154.0",
+    "safari": "26.5.2"
+  },
+  "dialog_shown_basic": ["chrome", "firefox", "safari"],
+  "dialog_shown_bearer": [],
+  "dialog_shown_stripped": [],
+  "body_visible_basic": [],
+  "body_visible_bearer": ["chrome", "firefox", "safari"],
+  "body_visible_stripped": ["chrome"],
+  "firefox_dialog_style": "tab-modal（URL バーの下に出る）",
+  "chrome_safari_dialog_style": "window-modal（画面中央に出る）",
+  "evidence": [
+    "chrome-basic.png",
+    "chrome-bearer.png",
+    "chrome-stripped.png",
+    "firefox-basic.png",
+    "firefox-bearer.png",
+    "safari-basic.png",
+    "safari-bearer.png"
+  ]
+}

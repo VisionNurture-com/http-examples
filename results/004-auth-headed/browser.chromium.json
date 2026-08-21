@@ -1,0 +1,46 @@
+{
+  "browser": "chromium",
+  "version": "151.0.7922.34",
+  "results": {
+    "headless_none": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_basic": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_bearer": {
+      "delivered": true,
+      "status": 401
+    },
+    "headless_forbidden": {
+      "delivered": true,
+      "status": 403
+    },
+    "headless_stripped_basic": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_none": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_basic": {
+      "delivered": false,
+      "error": "net::ERR_INVALID_AUTH_CREDENTIALS at http://localhost:8088/004/api/auth/basic?cs=headed&cl=headed-chromium"
+    },
+    "headed_bearer": {
+      "delivered": true,
+      "status": 401
+    },
+    "headed_forbidden": {
+      "delivered": true,
+      "status": 403
+    },
+    "headed_stripped_basic": {
+      "delivered": true,
+      "status": 401
+    }
+  }
+}

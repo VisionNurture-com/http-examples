@@ -1,0 +1,61 @@
+{
+  "browser": "firefox",
+  "version": "153.0",
+  "arms": {
+    "none": {
+      "fetch": {
+        "resolved": true,
+        "status": 401,
+        "wwwAuth": null
+      },
+      "navigation": {
+        "returned": true,
+        "status": 401
+      }
+    },
+    "basic": {
+      "fetch": {
+        "resolved": true,
+        "status": 401,
+        "wwwAuth": "Basic realm=\"004\""
+      },
+      "navigation": {
+        "returned": true,
+        "status": 401
+      }
+    },
+    "bearer": {
+      "fetch": {
+        "resolved": true,
+        "status": 401,
+        "wwwAuth": "Bearer realm=\"004\""
+      },
+      "navigation": {
+        "returned": true,
+        "status": 401
+      }
+    },
+    "forbidden": {
+      "fetch": {
+        "resolved": true,
+        "status": 403,
+        "wwwAuth": null
+      },
+      "navigation": {
+        "returned": true,
+        "status": 403
+      }
+    },
+    "stripped_basic": {
+      "fetch": {
+        "resolved": true,
+        "status": 401,
+        "wwwAuth": null
+      },
+      "navigation": {
+        "returned": true,
+        "status": 401
+      }
+    }
+  }
+}

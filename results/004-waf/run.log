@@ -1,0 +1,25 @@
+# 004-waf
+measured-at: 2026-08-20T11:37:45.306Z
+curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+node(host): 24.18.0
+undici: 8.10.0
+nginx: nginx version: nginx/1.31.3
+node(app): v24.19.0
+crs: OWASP_CRS/3.3.10
+nginx(waf): nginx version: nginx/1.30.4
+note: WAF の 403 と、アプリの 403 をクライアントから見分けられるか
+素通し           status=200
+アプリの 403     status=403 ct=text/html; charset=utf-8
+  body: {"error":"forbidden","arm":"forbidden"}
+WAF の 403       status=403 ct=text/html
+  body: <html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+WAF 越しの challenge     = "Basic realm=\"004\""
+WAF 越しの Retry-After   = "3"
+WAF 越しの Problem 本文  = true

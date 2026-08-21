@@ -1,0 +1,33 @@
+# 004-auth-headed
+measured-at: 2026-08-20T02:36:29.670Z
+
+chromium	headless=true	none	{"delivered":true,"status":401}
+chromium	headless=true	basic	{"delivered":true,"status":401}
+chromium	headless=true	bearer	{"delivered":true,"status":401}
+chromium	headless=true	forbidden	{"delivered":true,"status":403}
+chromium	headless=true	stripped_basic	{"delivered":true,"status":401}
+chromium	headless=false	none	{"delivered":true,"status":401}
+chromium	headless=false	basic	{"delivered":false,"error":"net::ERR_INVALID_AUTH_CREDENTIALS at http://localhost:8088/004/api/auth/basic?cs=headed&cl=headed-chromium"}
+chromium	headless=false	bearer	{"delivered":true,"status":401}
+chromium	headless=false	forbidden	{"delivered":true,"status":403}
+chromium	headless=false	stripped_basic	{"delivered":true,"status":401}
+firefox	headless=true	none	{"delivered":true,"status":401}
+firefox	headless=true	basic	{"delivered":true,"status":401}
+firefox	headless=true	bearer	{"delivered":true,"status":401}
+firefox	headless=true	forbidden	{"delivered":true,"status":403}
+firefox	headless=true	stripped_basic	{"delivered":true,"status":401}
+firefox	headless=false	none	{"delivered":true,"status":401}
+firefox	headless=false	basic	{"delivered":true,"status":401}
+firefox	headless=false	bearer	{"delivered":true,"status":401}
+firefox	headless=false	forbidden	{"delivered":true,"status":403}
+firefox	headless=false	stripped_basic	{"delivered":true,"status":401}
+webkit	headless=true	none	{"delivered":true,"status":401}
+webkit	headless=true	basic	{"delivered":true,"status":401}
+webkit	headless=true	bearer	{"delivered":true,"status":401}
+webkit	headless=true	forbidden	{"delivered":true,"status":403}
+webkit	headless=true	stripped_basic	{"delivered":true,"status":401}
+webkit	headless=false	none	{"delivered":true,"status":401}
+webkit	headless=false	basic	{"delivered":true,"status":401}
+webkit	headless=false	bearer	{"delivered":true,"status":401}
+webkit	headless=false	forbidden	{"delivered":true,"status":403}
+webkit	headless=false	stripped_basic	{"delivered":true,"status":401}

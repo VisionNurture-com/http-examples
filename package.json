@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "playwright": "^1.62.1",
+    "undici": "^8.10.0",
     "web-vitals": "^6.1.1"
   }
 }
