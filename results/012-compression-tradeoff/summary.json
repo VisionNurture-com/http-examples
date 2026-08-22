@@ -4,96 +4,96 @@
   "generatedAt": "1970-01-01T00:00:00.000Z",
   "node": "v24.18.0",
   "level_target_file": "public/012/bundle-v2.js",
-  "level_target_bytes": 100814,
+  "level_target_bytes": 100702,
   "level_rows": [
     {
       "algo": "gzip",
       "level": 1,
-      "bytes": 35567,
-      "ms": 0.557,
-      "ratio": 0.3528
+      "bytes": 35448,
+      "ms": 0.499,
+      "ratio": 0.352
     },
     {
       "algo": "gzip",
       "level": 6,
-      "bytes": 30992,
-      "ms": 1.343,
-      "ratio": 0.3074
+      "bytes": 30877,
+      "ms": 1.025,
+      "ratio": 0.3066
     },
     {
       "algo": "gzip",
       "level": 9,
-      "bytes": 30951,
-      "ms": 1.658,
-      "ratio": 0.307
+      "bytes": 30834,
+      "ms": 1.35,
+      "ratio": 0.3062
     },
     {
       "algo": "br",
       "level": 0,
-      "bytes": 37040,
-      "ms": 0.174,
-      "ratio": 0.3674
+      "bytes": 36896,
+      "ms": 0.128,
+      "ratio": 0.3664
     },
     {
       "algo": "br",
       "level": 4,
-      "bytes": 31840,
-      "ms": 0.642,
-      "ratio": 0.3158
+      "bytes": 31790,
+      "ms": 0.527,
+      "ratio": 0.3157
     },
     {
       "algo": "br",
       "level": 5,
-      "bytes": 28536,
-      "ms": 1.185,
-      "ratio": 0.2831
+      "bytes": 28455,
+      "ms": 0.992,
+      "ratio": 0.2826
     },
     {
       "algo": "br",
       "level": 9,
-      "bytes": 27821,
-      "ms": 1.513,
-      "ratio": 0.276
+      "bytes": 27741,
+      "ms": 1.33,
+      "ratio": 0.2755
     },
     {
       "algo": "br",
       "level": 11,
-      "bytes": 26081,
-      "ms": 72.391,
-      "ratio": 0.2587
+      "bytes": 25961,
+      "ms": 69.045,
+      "ratio": 0.2578
     },
     {
       "algo": "zstd",
       "level": 1,
-      "bytes": 35996,
-      "ms": 0.136,
-      "ratio": 0.3571
+      "bytes": 35884,
+      "ms": 0.117,
+      "ratio": 0.3563
     },
     {
       "algo": "zstd",
       "level": 3,
-      "bytes": 32685,
-      "ms": 0.164,
-      "ratio": 0.3242
+      "bytes": 32595,
+      "ms": 0.177,
+      "ratio": 0.3237
     },
     {
       "algo": "zstd",
       "level": 9,
-      "bytes": 29517,
-      "ms": 0.958,
-      "ratio": 0.2928
+      "bytes": 29424,
+      "ms": 0.985,
+      "ratio": 0.2922
     },
     {
       "algo": "zstd",
       "level": 19,
-      "bytes": 27919,
-      "ms": 14.793,
-      "ratio": 0.2769
+      "bytes": 27823,
+      "ms": 14.798,
+      "ratio": 0.2763
     }
   ],
-  "br11_vs_br5_bytes_saved": 2455,
-  "br11_vs_br5_ms_added": 71.206,
-  "br11_vs_br5_times_slower": 61.1,
+  "br11_vs_br5_bytes_saved": 2494,
+  "br11_vs_br5_ms_added": 68.053,
+  "br11_vs_br5_times_slower": 69.6,
   "small_rows": [
     {
       "kind": "compressible",
@@ -308,33 +308,33 @@
     },
     "JavaScript": {
       "samples": 4,
-      "ratio_min": 0.2812,
-      "ratio_median": 0.3564,
+      "ratio_min": 0.28,
+      "ratio_median": 0.3554,
       "ratio_max": 0.4637
     },
     "JSON（手書き）": {
       "samples": 2,
-      "ratio_min": 0.3424,
+      "ratio_min": 0.3361,
       "ratio_median": 0.7448,
       "ratio_max": 0.7448
     },
     "JSON（機械生成）": {
       "samples": 3,
-      "ratio_min": 0.2502,
-      "ratio_median": 0.4058,
+      "ratio_min": 0.2465,
+      "ratio_median": 0.4067,
       "ratio_max": 0.6846
     },
     "Markdown": {
       "samples": 3,
-      "ratio_min": 0.4616,
-      "ratio_median": 0.58,
-      "ratio_max": 0.621
+      "ratio_min": 0.4299,
+      "ratio_median": 0.5801,
+      "ratio_max": 0.6205
     },
     "既圧縮": {
       "samples": 3,
       "ratio_min": 1.0001,
       "ratio_median": 1.0002,
-      "ratio_max": 1.007
+      "ratio_max": 1.0069
     }
   },
   "type_samples": {
@@ -367,21 +367,21 @@
     "JavaScript": [
       {
         "file": "tools/check-provenance.mjs",
-        "bytes": 11459,
-        "br": 4084,
-        "ratio": 0.3564
+        "bytes": 11458,
+        "br": 4072,
+        "ratio": 0.3554
       },
       {
         "file": "tools/aggregate-006.mjs",
-        "bytes": 13389,
-        "br": 3765,
-        "ratio": 0.2812
+        "bytes": 13380,
+        "br": 3746,
+        "ratio": 0.28
       },
       {
         "file": "tools/measure-003.mjs",
-        "bytes": 12686,
-        "br": 4437,
-        "ratio": 0.3498
+        "bytes": 12641,
+        "br": 4201,
+        "ratio": 0.3323
       },
       {
         "file": "app/006-cache/routes.mjs",
@@ -393,9 +393,9 @@
     "JSON（手書き）": [
       {
         "file": "package-lock.json",
-        "bytes": 2158,
-        "br": 739,
-        "ratio": 0.3424
+        "bytes": 2541,
+        "br": 854,
+        "ratio": 0.3361
       },
       {
         "file": "app/package.json",
@@ -408,14 +408,14 @@
       {
         "file": "results/012-dictionary/sizes.json",
         "bytes": 1040,
-        "br": 422,
-        "ratio": 0.4058
+        "br": 423,
+        "ratio": 0.4067
       },
       {
         "file": "results/012-crossover/summary.json",
         "bytes": 3018,
-        "br": 755,
-        "ratio": 0.2502
+        "br": 744,
+        "ratio": 0.2465
       },
       {
         "file": "results/006-etag/summary.json",
@@ -427,41 +427,41 @@
     "Markdown": [
       {
         "file": "README.md",
-        "bytes": 6244,
-        "br": 2882,
-        "ratio": 0.4616
+        "bytes": 11079,
+        "br": 4763,
+        "ratio": 0.4299
       },
       {
         "file": "scenarios/012-dictionary/README.md",
-        "bytes": 2393,
-        "br": 1388,
-        "ratio": 0.58
+        "bytes": 2403,
+        "br": 1394,
+        "ratio": 0.5801
       },
       {
         "file": "scenarios/006-etag/README.md",
-        "bytes": 686,
-        "br": 426,
-        "ratio": 0.621
+        "bytes": 701,
+        "br": 435,
+        "ratio": 0.6205
       }
     ],
     "既圧縮": [
       {
         "file": "public/012/bundle-v2.js.br",
-        "bytes": 26081,
-        "br": 26085,
+        "bytes": 25961,
+        "br": 25965,
         "ratio": 1.0002
       },
       {
         "file": "public/012/bundle-v2.js.zst",
-        "bytes": 27919,
-        "br": 27923,
+        "bytes": 27823,
+        "br": 27827,
         "ratio": 1.0001
       },
       {
         "file": "public/012/bundle-v2.js.dcb",
-        "bytes": 573,
-        "br": 577,
-        "ratio": 1.007
+        "bytes": 578,
+        "br": 582,
+        "ratio": 1.0069
       }
     ]
   },

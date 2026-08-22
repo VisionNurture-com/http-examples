@@ -7,7 +7,7 @@
   "scenario": "012-crossover",
   "mode": "M0",
   "values": {
-    "dictionary_bytes": 99465,
+    "dictionary_bytes": 99353,
     "dictionary_lines": 2372,
     "crossover_ratio_dcb_over_br": 1,
     "crossover_ratio_dcz_over_zstd": 1,

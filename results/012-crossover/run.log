@@ -1,15 +1,15 @@
-measured-at: 2026-08-15T15:24:09.973Z
+measured-at: 2026-08-22T10:55:54.066Z
 scenario: 012-crossover
 mode: M0
 judgement: 変更率を振り、辞書あり（dcb/dcz）が辞書なし（br/zstd）を上回る点を探す
 ---
-{"changed_ratio":0,"changed_lines":0,"identity":99465,"gzip":30440,"br":25678,"zstd":27499,"dcb":51,"dcz":64,"dcb_vs_br":0.002,"dcz_vs_zstd":0.0023}
-{"changed_ratio":0.01,"changed_lines":24,"identity":99469,"gzip":30653,"br":25638,"zstd":27601,"dcb":348,"dcz":384,"dcb_vs_br":0.0136,"dcz_vs_zstd":0.0139}
-{"changed_ratio":0.02,"changed_lines":47,"identity":99471,"gzip":30730,"br":25584,"zstd":27649,"dcb":518,"dcz":569,"dcb_vs_br":0.0202,"dcz_vs_zstd":0.0206}
-{"changed_ratio":0.05,"changed_lines":119,"identity":99477,"gzip":31001,"br":25470,"zstd":27534,"dcb":1081,"dcz":1187,"dcb_vs_br":0.0424,"dcz_vs_zstd":0.0431}
-{"changed_ratio":0.1,"changed_lines":237,"identity":99500,"gzip":31316,"br":25388,"zstd":27482,"dcb":1932,"dcz":2138,"dcb_vs_br":0.0761,"dcz_vs_zstd":0.0778}
-{"changed_ratio":0.2,"changed_lines":474,"identity":99522,"gzip":31532,"br":24622,"zstd":26861,"dcb":3628,"dcz":4176,"dcb_vs_br":0.1473,"dcz_vs_zstd":0.1555}
-{"changed_ratio":0.35,"changed_lines":830,"identity":99552,"gzip":31882,"br":23371,"zstd":25802,"dcb":6274,"dcz":7213,"dcb_vs_br":0.2685,"dcz_vs_zstd":0.2796}
-{"changed_ratio":0.5,"changed_lines":1186,"identity":99587,"gzip":33005,"br":22844,"zstd":25805,"dcb":8976,"dcz":10483,"dcb_vs_br":0.3929,"dcz_vs_zstd":0.4062}
-{"changed_ratio":0.75,"changed_lines":1779,"identity":99644,"gzip":32129,"br":20652,"zstd":23541,"dcb":13119,"dcz":15299,"dcb_vs_br":0.6352,"dcz_vs_zstd":0.6499}
-{"changed_ratio":1,"changed_lines":2372,"identity":99702,"gzip":30838,"br":17326,"zstd":20105,"dcb":17362,"dcz":20226,"dcb_vs_br":1.0021,"dcz_vs_zstd":1.006}
+{"changed_ratio":0,"changed_lines":0,"identity":99353,"gzip":30330,"br":25637,"zstd":27413,"dcb":51,"dcz":64,"dcb_vs_br":0.002,"dcz_vs_zstd":0.0023}
+{"changed_ratio":0.01,"changed_lines":24,"identity":99357,"gzip":30547,"br":25616,"zstd":27522,"dcb":348,"dcz":384,"dcb_vs_br":0.0136,"dcz_vs_zstd":0.014}
+{"changed_ratio":0.02,"changed_lines":47,"identity":99359,"gzip":30628,"br":25545,"zstd":27578,"dcb":518,"dcz":569,"dcb_vs_br":0.0203,"dcz_vs_zstd":0.0206}
+{"changed_ratio":0.05,"changed_lines":119,"identity":99365,"gzip":30910,"br":25480,"zstd":27455,"dcb":1076,"dcz":1182,"dcb_vs_br":0.0422,"dcz_vs_zstd":0.0431}
+{"changed_ratio":0.1,"changed_lines":237,"identity":99388,"gzip":31227,"br":25359,"zstd":27406,"dcb":1896,"dcz":2136,"dcb_vs_br":0.0748,"dcz_vs_zstd":0.0779}
+{"changed_ratio":0.2,"changed_lines":474,"identity":99410,"gzip":31437,"br":24560,"zstd":26762,"dcb":3627,"dcz":4164,"dcb_vs_br":0.1477,"dcz_vs_zstd":0.1556}
+{"changed_ratio":0.35,"changed_lines":830,"identity":99440,"gzip":31790,"br":23304,"zstd":25785,"dcb":6253,"dcz":7202,"dcb_vs_br":0.2683,"dcz_vs_zstd":0.2793}
+{"changed_ratio":0.5,"changed_lines":1186,"identity":99475,"gzip":32927,"br":22819,"zstd":25766,"dcb":8972,"dcz":10467,"dcb_vs_br":0.3932,"dcz_vs_zstd":0.4062}
+{"changed_ratio":0.75,"changed_lines":1779,"identity":99532,"gzip":32060,"br":20586,"zstd":23507,"dcb":13090,"dcz":15288,"dcb_vs_br":0.6359,"dcz_vs_zstd":0.6504}
+{"changed_ratio":1,"changed_lines":2372,"identity":99590,"gzip":30794,"br":17324,"zstd":20085,"dcb":17349,"dcz":20208,"dcb_vs_br":1.0014,"dcz_vs_zstd":1.0061}

@@ -7,8 +7,8 @@
   "scenario": "012-compression-tradeoff",
   "mode": "M0",
   "values": {
-    "level_target_bytes": 100814,
-    "br11_vs_br5_bytes_saved": 2455,
+    "level_target_bytes": 100702,
+    "br11_vs_br5_bytes_saved": 2494,
     "gzip_min_length_default_spec": 20,
     "gzip_first_win_bytes_compressible": 64,
     "gzip_first_win_bytes_incompressible": 96,
@@ -30,9 +30,9 @@
 
 ### ①-g 水準を上げると何を買っているか
 
-`br -q 5` から `-q 11` へ上げて減るのは **2,455 バイト（対象の 2.4%）**です。その代わり圧縮時間は桁で増えます。
+`br -q 5` から `-q 11` へ上げて減るのは **2,494 バイト（対象の 2.5%）**です。その代わり圧縮時間は桁で増えます。
 
-🔴 **時間の値は `values` に入れていません。**実行のたびに変わるため、突合すると再現できないからです。実測の並びは `summary.json` の `level_rows` にあります（本セッションの実測では `br 5` = 1.156 ms に対し `br 11` = 72.165 ms・**62.4 倍**）。
+🔴 **時間の値は `values` に入れていません。**実行のたびに変わるため、突合すると再現できないからです。実測の並びは `summary.json` の `level_rows` にあります（本セッションの実測では `br 11` が `br 5` より 68.053 ms 遅く・**69.6 倍**）。
 
 🔴 ここで測ったのは**同じ入力に対する圧縮アルゴリズムの費用**です。**サーバの処理能力ではありません**。同時接続下のスループットは測っていません。
 

@@ -46,7 +46,7 @@ app.listen(PORT, () => {
 //           同じ PUT が 2 回届いたことを止めないし、GET が状態を変えても止めない。
 //
 // 🔴 状態はプロセス内。再実行で前回の残りを測らないよう、各 run.sh の冒頭で
-//    POST /003/__reset を叩く（value-factcheck G3 の欠陥 D6 への対処）。
+//    POST /003/__reset を叩く。
 
 import express from "express";
 import methodOverride from "method-override";
@@ -469,7 +469,7 @@ function main() {
   console.log("==========================================");
 
   if (ids.length === 0) {
-    console.log("シナリオ 0 個。骨格のみの状態です（各「測る回」で追加します）。");
+    console.log("シナリオ 0 個。骨格のみの状態です（測定を追加すると増えます）。");
     console.log("\n✅ PASS [check-structure] 検査対象なし");
     return 0;
   }
@@ -523,7 +523,7 @@ process.exit(main());
 #!/usr/bin/env node
 // check-provenance.mjs — 記事に載せる値と実測ログの突合（M0・docker 不要・ネットワーク不要）
 //
-// 突合の経路（設計書 §6）:
+// 突合の経路（README「数値の出どころ」と同じ）:
 //   run.sh 実行 → results/<id>/run.log（生ログ）
 //                → results/<id>/summary.json（実効値・機械が読む）
 //                → scenarios/<id>/expected.md（記事に載せる値の正本）
@@ -533,7 +533,7 @@ process.exit(main());
 //
 // あわせて config_refs（nginx/conf.d/*.conf 等）の実在と、引用断片が
 // 実際にその設定ファイルへ含まれるかを検査する。記事に書いたが通していない
-// 設定を構造的に防ぐため（設計書 §5）。
+// 設定を構造的に防ぐため。
 //
 // リポジトリ内のファイル同士を突き合わせるだけなので clean clone で確実に動く。
 //
@@ -607,7 +607,7 @@ function listScenarios() {
 }
 
 // 引数解析。**未知の引数は落とす**（黙って無視すると「絞ったつもりで全件」または
-// 「全件のつもりで 0 件」を PASS として出してしまう。read-stuff の「沈黙する検出器」と同じ轍）。
+// 「全件のつもりで 0 件」を PASS として出してしまう。黙って通る検査は無いのと同じ）。
 function parseArgs(argv) {
   let prefix = null;
   for (let i = 0; i < argv.length; i++) {
@@ -648,7 +648,7 @@ function main() {
   }
 
   if (ids.length === 0) {
-    console.log("シナリオ 0 個。骨格のみの状態です（各「測る回」で追加します）。");
+    console.log("シナリオ 0 個。骨格のみの状態です（測定を追加すると増えます）。");
     console.log("\n✅ PASS [check-provenance] 検査対象なし");
     return 0;
   }
@@ -1052,7 +1052,7 @@ const BUILDERS = {
     };
   },
 
-  // must-revalidate の「期限が切れたあと」（2026-08-11・ENHANCE-02 C1）。
+  // must-revalidate の「期限が切れたあと」（2026-08-11 追加）。
   // 🔴 one() は使わない。(browser, variant, route) が一意でも、先勝ちで黙って 1 行しか
   //    見ない書き方は測定軸を足したときに壊れる（006-immutable-boundary の前例）。
   //    ここは全行を集合へ畳んでから比べる。
@@ -1453,7 +1453,7 @@ if (!what || what === "offload") {
 //   003-safe-get       … 状態を変える GET を HEAD が踏むか
 //   003-redirect-method… 301〜308 でメソッドとボディがどうなるか（クライアント = curl）
 //
-// 🔴 判定方針（value-factcheck G3 の D3）: 冪等性は**サーバ状態**で判定する。
+// 🔴 判定方針: 冪等性は**サーバ状態**で判定する。
 //    「2 回目も同じ応答か」では定義とずれるため、応答は別の欄に記録するだけにする。
 //
 // 🔴 予測を書かない（G3 問 5）。集計は観測値から機械的に作る。
@@ -1859,7 +1859,7 @@ const SCENARIOS = {
   // immutable が「まだ効く経路」が残っていないかを潰しにいく。
   // 通常ナビゲーションとリロードで差が出なかったため、fresh でなくなった後・
   // プロファイル再起動後・スクリプトから明示的に再検証した場合を足す。
-  // 🔴 schemes に http を足した（2026-08-10・VERIFY-02）。Firefox が immutable を
+  // 🔴 schemes に http を足した（2026-08-10）。Firefox が immutable を
   //    https でのみ honor する（Bugzilla 1267474）ことは、https だけ測っても言えない。
   //    「http では差が出ない」という対照が要る。それまで本シナリオは https のみで、
   //    記事が書いていた http 側の記述に対応する記録が results に無かった。
@@ -1890,7 +1890,7 @@ const SCENARIOS = {
     routes: ["nav", "reload"],
     schemes: ["https"],
   },
-  // 🔴 must-revalidate の「期限が切れたあと」を測る（2026-08-11・ENHANCE-02 C1）。
+  // 🔴 must-revalidate の「期限が切れたあと」を測る（2026-08-11 追加）。
   //    006-contradictory は max-age=600 と併記した fresh のあいだしか見ておらず、
   //    記事は 3 か所で「期限が切れたあとの動きは測っていない」と書いていた。
   //    仕様（RFC 9111）が must-revalidate に与えている意味は stale 側にあるので、

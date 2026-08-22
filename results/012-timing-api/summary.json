@@ -1,7 +1,7 @@
 {
   "scenario": "012-timing-api",
   "mode": "M0",
-  "generatedAt": "2026-08-15T15:22:16.720Z",
+  "generatedAt": "2026-08-22T10:56:21.791Z",
   "engines": {
     "chromium (playwright 同梱)": {
       "version": "151.0.7922.34",
@@ -10,7 +10,7 @@
       "hasFirstResponseHeadersStart": false
     },
     "Google Chrome (installed / channel=chrome)": {
-      "version": "151.0.7922.138",
+      "version": "151.0.7922.170",
       "hasFirstInterimResponseStart": true,
       "hasFinalResponseHeadersStart": true,
       "hasFirstResponseHeadersStart": false

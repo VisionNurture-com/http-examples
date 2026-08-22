@@ -3,18 +3,18 @@ base=http://localhost:8086 think_ms=200 cache_control=no-store samples=3
 
 ## 103 を送らない（対照）
    http://localhost:8086/012/eh?hints=none&ms=200&cc=no-store
-   #1 server-response-time=205ms first-contentful-paint=1058ms largest-contentful-paint=1208ms
-   #2 server-response-time=204ms first-contentful-paint=1067ms largest-contentful-paint=1217ms
-   #3 server-response-time=208ms first-contentful-paint=1061ms largest-contentful-paint=1211ms
+   #1 server-response-time=217ms first-contentful-paint=1072ms largest-contentful-paint=1222ms
+   #2 server-response-time=210ms first-contentful-paint=1057ms largest-contentful-paint=1207ms
+   #3 server-response-time=207ms first-contentful-paint=1065ms largest-contentful-paint=1215ms
 
 ## 103 で実際に使う資源を先読みさせる
    http://localhost:8086/012/eh?hints=preload&ms=200&cc=no-store
-   #1 server-response-time=1ms first-contentful-paint=1073ms largest-contentful-paint=1223ms
-   #2 server-response-time=1ms first-contentful-paint=1061ms largest-contentful-paint=1211ms
-   #3 server-response-time=1ms first-contentful-paint=1070ms largest-contentful-paint=1220ms
+   #1 server-response-time=2ms first-contentful-paint=1058ms largest-contentful-paint=1208ms
+   #2 server-response-time=2ms first-contentful-paint=1076ms largest-contentful-paint=1226ms
+   #3 server-response-time=2ms first-contentful-paint=1067ms largest-contentful-paint=1217ms
 
-server-response-time: 205ms（103 なし）→ 1ms（103 あり）
+server-response-time: 210ms（103 なし）→ 2ms（103 あり）
 server-response-time は 103 で落ちるか: YES
-largest-contentful-paint: 1211ms → 1220ms
+largest-contentful-paint: 1215ms → 1217ms
 画面の指標も動いたか: no
 103 でレポートが壊れるか: no

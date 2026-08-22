@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T15:22:16.922Z",
+  "generatedAt": "2026-08-22T10:59:00.730Z",
   "tools": {
     "node": "v24.18.0",
     "brotliCli": "brotli 1.2.0",
@@ -7,41 +7,41 @@
   },
   "dictionary": {
     "file": "public/012/bundle-v1.js",
-    "bytes": 99465,
-    "sha256Base64": "waMBlW5oPJ8orWCX6X3OEk82TM6QsDY3P7oauiTTUqo=",
-    "sha256Hex": "c1a301956e683c9f28ad6097e97dce124f364cce90b036373fba1aba24d352aa"
+    "bytes": 99353,
+    "sha256Base64": "nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=",
+    "sha256Hex": "9e13e3404405f2ee0c0be618fedb372be3c51d521f3c32f131962c752cb44c6f"
   },
   "target": {
     "file": "public/012/bundle-v2.js",
-    "bytes": 100814
+    "bytes": 100702
   },
   "encodings": {
     "identity": {
-      "bytes": 100814,
+      "bytes": 100702,
       "dictionary": false
     },
     "gzip": {
-      "bytes": 30951,
+      "bytes": 30834,
       "dictionary": false
     },
     "br": {
-      "bytes": 26081,
+      "bytes": 25961,
       "dictionary": false
     },
     "zstd": {
-      "bytes": 27919,
+      "bytes": 27823,
       "dictionary": false
     },
     "dcb": {
-      "bytes": 573,
+      "bytes": 578,
       "dictionary": true,
-      "payloadBytes": 537,
+      "payloadBytes": 542,
       "headerBytes": 36
     },
     "dcz": {
-      "bytes": 591,
+      "bytes": 592,
       "dictionary": true,
-      "payloadBytes": 551,
+      "payloadBytes": 552,
       "headerBytes": 40
     }
   }
