@@ -1,0 +1,42 @@
+{
+  "scenario": "007-real-browsers",
+  "mode": "M2",
+  "real_browsers": {
+    "chrome": "151.0.7922.170",
+    "firefox": "154.0",
+    "safari": "26.5.2"
+  },
+  "non_js_loaded_chrome": 5,
+  "D1_executed_chrome": true,
+  "D2_executed_chrome": false,
+  "D5_executed_chrome": false,
+  "D7_executed_chrome": false,
+  "D9_executed_chrome": true,
+  "D10_executed_chrome": false,
+  "D11_parsed_as_html_chrome": false,
+  "D12_parsed_as_html_chrome": false,
+  "non_js_loaded_firefox": 0,
+  "D1_executed_firefox": true,
+  "D2_executed_firefox": false,
+  "D5_executed_firefox": false,
+  "D7_executed_firefox": false,
+  "D9_executed_firefox": false,
+  "D10_executed_firefox": false,
+  "D11_parsed_as_html_firefox": false,
+  "D12_parsed_as_html_firefox": false,
+  "non_js_loaded_safari": 0,
+  "D1_executed_safari": true,
+  "D2_executed_safari": false,
+  "D5_executed_safari": false,
+  "D7_executed_safari": false,
+  "D9_executed_safari": false,
+  "D10_executed_safari": false,
+  "D11_parsed_as_html_safari": false,
+  "D12_parsed_as_html_safari": false,
+  "non_js_types_total": 6,
+  "browsers_measured": [
+    "chrome",
+    "firefox",
+    "safari"
+  ]
+}

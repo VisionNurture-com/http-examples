@@ -1,0 +1,117 @@
+{
+  "version": "26.5",
+  "rows": {
+    "D1": {
+      "id": "D1",
+      "dest": "classic script",
+      "kind": "js",
+      "ct": "text/html",
+      "nosniff": 0,
+      "event": "load",
+      "executed": true
+    },
+    "D2": {
+      "id": "D2",
+      "dest": "classic script",
+      "kind": "js",
+      "ct": "text/html",
+      "nosniff": 1,
+      "event": "error",
+      "executed": false
+    },
+    "D3": {
+      "id": "D3",
+      "dest": "classic script",
+      "kind": "js",
+      "ct": "text/plain",
+      "nosniff": 0,
+      "event": "load",
+      "executed": true
+    },
+    "D4": {
+      "id": "D4",
+      "dest": "classic script",
+      "kind": "js",
+      "ct": "text/plain",
+      "nosniff": 1,
+      "event": "error",
+      "executed": false
+    },
+    "D5": {
+      "id": "D5",
+      "dest": "module script",
+      "kind": "js",
+      "ct": "text/html",
+      "nosniff": 0,
+      "event": "error",
+      "executed": false
+    },
+    "D6": {
+      "id": "D6",
+      "dest": "module script",
+      "kind": "js",
+      "ct": "text/html",
+      "nosniff": 1,
+      "event": "error",
+      "executed": false
+    },
+    "D7": {
+      "id": "D7",
+      "dest": "style",
+      "kind": "css",
+      "ct": "text/plain",
+      "nosniff": 0,
+      "event": "error",
+      "executed": false
+    },
+    "D8": {
+      "id": "D8",
+      "dest": "style",
+      "kind": "css",
+      "ct": "text/plain",
+      "nosniff": 1,
+      "event": "error",
+      "executed": false
+    },
+    "D9": {
+      "id": "D9",
+      "dest": "classic worker",
+      "kind": "worker",
+      "ct": "text/html",
+      "nosniff": 0,
+      "event": "error",
+      "executed": false
+    },
+    "D10": {
+      "id": "D10",
+      "dest": "classic worker",
+      "kind": "worker",
+      "ct": "text/html",
+      "nosniff": 1,
+      "event": "error",
+      "executed": false
+    },
+    "D11": {
+      "id": "D11",
+      "dest": "document",
+      "kind": "doc",
+      "ct": "text/plain",
+      "nosniff": 0,
+      "contentType": "text/plain",
+      "hasBoldElement": false,
+      "bodyText": "<b>bold</b>",
+      "status": 200
+    },
+    "D12": {
+      "id": "D12",
+      "dest": "document",
+      "kind": "doc",
+      "ct": "text/plain",
+      "nosniff": 1,
+      "contentType": "text/plain",
+      "hasBoldElement": false,
+      "bodyText": "<b>bold</b>",
+      "status": 200
+    }
+  }
+}

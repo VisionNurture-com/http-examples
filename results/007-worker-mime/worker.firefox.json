@@ -1,0 +1,47 @@
+{
+  "version": "153.0",
+  "rows": {
+    "W1": {
+      "ct": "text/javascript",
+      "is_javascript_mime": true,
+      "served": "text/javascript; charset=utf-8",
+      "result": "loaded"
+    },
+    "W2": {
+      "ct": "text/html",
+      "is_javascript_mime": false,
+      "served": "text/html; charset=utf-8",
+      "result": "blocked"
+    },
+    "W3": {
+      "ct": "text/plain",
+      "is_javascript_mime": false,
+      "served": "text/plain; charset=utf-8",
+      "result": "blocked"
+    },
+    "W4": {
+      "ct": "application/json",
+      "is_javascript_mime": false,
+      "served": "application/json; charset=utf-8",
+      "result": "blocked"
+    },
+    "W5": {
+      "ct": "text/css",
+      "is_javascript_mime": false,
+      "served": "text/css; charset=utf-8",
+      "result": "blocked"
+    },
+    "W6": {
+      "ct": "image/png",
+      "is_javascript_mime": false,
+      "served": "image/png; charset=utf-8",
+      "result": "blocked"
+    },
+    "W7": {
+      "ct": "application/octet-stream",
+      "is_javascript_mime": false,
+      "served": "application/octet-stream; charset=utf-8",
+      "result": "blocked"
+    }
+  }
+}

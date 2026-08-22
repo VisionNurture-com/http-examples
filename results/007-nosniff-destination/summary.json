@@ -1,0 +1,23 @@
+{
+  "scenario": "007-nosniff-destination",
+  "mode": "M2",
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "D1_executed_all": "all",
+  "D2_executed_all": "none",
+  "D3_executed_all": "all",
+  "D4_executed_all": "none",
+  "D5_executed_all": "none",
+  "D6_executed_all": "none",
+  "D7_executed_all": "none",
+  "D8_executed_all": "none",
+  "D9_executed_all": "split",
+  "D10_executed_all": "none",
+  "D11_content_type_all": "text/plain",
+  "D11_parsed_as_html_any": false,
+  "D12_content_type_all": "text/plain",
+  "D12_parsed_as_html_any": false
+}

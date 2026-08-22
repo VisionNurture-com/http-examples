@@ -1,0 +1,164 @@
+{
+  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15",
+  "at": "2026-08-21T13:38:14.657Z",
+  "data": {
+    "destination": {
+      "D1": {
+        "id": "D1",
+        "dest": "classic script",
+        "kind": "js",
+        "ct": "text/html",
+        "nosniff": 0,
+        "event": "load",
+        "executed": true
+      },
+      "D2": {
+        "id": "D2",
+        "dest": "classic script",
+        "kind": "js",
+        "ct": "text/html",
+        "nosniff": 1,
+        "event": "error",
+        "executed": false
+      },
+      "D3": {
+        "id": "D3",
+        "dest": "classic script",
+        "kind": "js",
+        "ct": "text/plain",
+        "nosniff": 0,
+        "event": "load",
+        "executed": true
+      },
+      "D4": {
+        "id": "D4",
+        "dest": "classic script",
+        "kind": "js",
+        "ct": "text/plain",
+        "nosniff": 1,
+        "event": "error",
+        "executed": false
+      },
+      "D5": {
+        "id": "D5",
+        "dest": "module script",
+        "kind": "js",
+        "ct": "text/html",
+        "nosniff": 0,
+        "event": "error",
+        "executed": false
+      },
+      "D6": {
+        "id": "D6",
+        "dest": "module script",
+        "kind": "js",
+        "ct": "text/html",
+        "nosniff": 1,
+        "event": "error",
+        "executed": false
+      },
+      "D7": {
+        "id": "D7",
+        "dest": "style",
+        "kind": "css",
+        "ct": "text/plain",
+        "nosniff": 0,
+        "event": "error",
+        "executed": false
+      },
+      "D8": {
+        "id": "D8",
+        "dest": "style",
+        "kind": "css",
+        "ct": "text/plain",
+        "nosniff": 1,
+        "event": "error",
+        "executed": false
+      },
+      "D9": {
+        "id": "D9",
+        "dest": "classic worker",
+        "kind": "worker",
+        "ct": "text/html",
+        "nosniff": 0,
+        "event": "blocked",
+        "executed": false
+      },
+      "D10": {
+        "id": "D10",
+        "dest": "classic worker",
+        "kind": "worker",
+        "ct": "text/html",
+        "nosniff": 1,
+        "event": "blocked",
+        "executed": false
+      }
+    },
+    "worker": {
+      "W1": {
+        "id": "W1",
+        "ct": "text/javascript",
+        "js": true,
+        "served": "text/javascript; charset=utf-8",
+        "result": "loaded"
+      },
+      "W2": {
+        "id": "W2",
+        "ct": "text/html",
+        "js": false,
+        "served": "text/html; charset=utf-8",
+        "result": "blocked"
+      },
+      "W3": {
+        "id": "W3",
+        "ct": "text/plain",
+        "js": false,
+        "served": "text/plain; charset=utf-8",
+        "result": "blocked"
+      },
+      "W4": {
+        "id": "W4",
+        "ct": "application/json",
+        "js": false,
+        "served": "application/json; charset=utf-8",
+        "result": "blocked"
+      },
+      "W5": {
+        "id": "W5",
+        "ct": "text/css",
+        "js": false,
+        "served": "text/css; charset=utf-8",
+        "result": "blocked"
+      },
+      "W6": {
+        "id": "W6",
+        "ct": "image/png",
+        "js": false,
+        "served": "image/png; charset=utf-8",
+        "result": "blocked"
+      },
+      "W7": {
+        "id": "W7",
+        "ct": "application/octet-stream",
+        "js": false,
+        "served": "application/octet-stream; charset=utf-8",
+        "result": "blocked"
+      }
+    },
+    "doc": {
+      "D11": {
+        "contentType": "text/plain",
+        "hasBoldElement": false
+      },
+      "D12": {
+        "contentType": "text/plain",
+        "hasBoldElement": false
+      }
+    },
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15"
+  },
+  "detected": {
+    "name": "safari",
+    "version": "26.5.2"
+  }
+}

@@ -1,0 +1,32 @@
+# 007-worker-mime (M2)
+measured-at: 2026-08-21T13:27:30.522Z
+host: darwin arm64 / node v24.18.0
+base: http://localhost:8080
+nosniff は付けない（classic worker 自身の MIME 検査を分離するため）
+
+--- chromium 151.0.7922.34 ---
+W1 ct=text/javascript            served=text/javascript; charset=utf-8 loaded
+W2 ct=text/html                  served=text/html; charset=utf-8       loaded
+W3 ct=text/plain                 served=text/plain; charset=utf-8      loaded
+W4 ct=application/json           served=application/json; charset=utf-8 loaded
+W5 ct=text/css                   served=text/css; charset=utf-8        loaded
+W6 ct=image/png                  served=image/png; charset=utf-8       blocked
+W7 ct=application/octet-stream   served=application/octet-stream; charset=utf-8 loaded
+
+--- firefox 153.0 ---
+W1 ct=text/javascript            served=text/javascript; charset=utf-8 loaded
+W2 ct=text/html                  served=text/html; charset=utf-8       blocked
+W3 ct=text/plain                 served=text/plain; charset=utf-8      blocked
+W4 ct=application/json           served=application/json; charset=utf-8 blocked
+W5 ct=text/css                   served=text/css; charset=utf-8        blocked
+W6 ct=image/png                  served=image/png; charset=utf-8       blocked
+W7 ct=application/octet-stream   served=application/octet-stream; charset=utf-8 blocked
+
+--- webkit 26.5 ---
+W1 ct=text/javascript            served=text/javascript; charset=utf-8 loaded
+W2 ct=text/html                  served=text/html; charset=utf-8       blocked
+W3 ct=text/plain                 served=text/plain; charset=utf-8      blocked
+W4 ct=application/json           served=application/json; charset=utf-8 blocked
+W5 ct=text/css                   served=text/css; charset=utf-8        blocked
+W6 ct=image/png                  served=image/png; charset=utf-8       blocked
+W7 ct=application/octet-stream   served=application/octet-stream; charset=utf-8 blocked

@@ -1,0 +1,46 @@
+# 007-content-type-parse (M1)
+measured-at: 2026-08-22T07:26:49.321Z
+node: v24.18.0
+via-nginx: http://localhost:8080 / direct-app: http://localhost:8086
+
+## /007/echo — 既定の express.json()（先回りの検査を足していない）
+C1   application/json             nginx=200 parsed=true  direct=200 parsed=true  一致
+C2   application/json; charset=utf-8 nginx=200 parsed=true  direct=200 parsed=true  一致
+C3   大文字 APPLICATION/JSON         nginx=200 parsed=true  direct=200 parsed=true  一致
+C4   +json 接尾辞                    nginx=200 parsed=false  direct=200 parsed=false  一致
+C5   text/plain                   nginx=200 parsed=false  direct=200 parsed=false  一致
+C6   form エンコード                   nginx=200 parsed=false  direct=200 parsed=false  一致
+C7   Content-Type なし              nginx=200 parsed=false  direct=200 parsed=false  一致
+C8   型は正しいが壊れた JSON               nginx=400 parsed=false  direct=400 parsed=false  一致
+C9   未知の Content-Encoding         nginx=415 parsed=false  direct=415 parsed=false  一致
+C10  未対応 charset                  nginx=415 parsed=false  direct=415 parsed=false  一致
+
+## /007/echo-strict — 受信側で自分で検査を書いた対照
+C1   application/json             status=200
+C5   text/plain                   status=415
+C4   +json 接尾辞                    status=415
+
+415 応答の Accept ヘッダ: application/json
+
+## /007/echo-typed — 型が合わなかったとき req.body に何が入っているか
+C1   application/json             status=200 typeof=object isUndefined=false
+C2   application/json; charset=utf-8 status=200 typeof=object isUndefined=false
+C3   大文字 APPLICATION/JSON         status=200 typeof=object isUndefined=false
+C4   +json 接尾辞                    status=200 typeof=undefined isUndefined=true
+C5   text/plain                   status=200 typeof=undefined isUndefined=true
+C6   form エンコード                   status=200 typeof=undefined isUndefined=true
+C7   Content-Type なし              status=200 typeof=undefined isUndefined=true
+C8   型は正しいが壊れた JSON               status=400 typeof=（JSON 応答なし）
+C9   未知の Content-Encoding         status=415 typeof=（JSON 応答なし）
+C10  未対応 charset                  status=415 typeof=（JSON 応答なし）
+
+## /007/echo-naive — req.body.name と直接書いた対照
+C1   application/json             status=200
+C5   text/plain                   status=500 error=TypeError
+
+## 配信側 — 型が text/html になる代表原因（パスが実在しない）
+存在しないパス   /007/does-not-exist.js        status=404 content-type=text/html; charset=utf-8
+対照（正しい配信）/007/asset?ct=text/javascript status=200 content-type=text/javascript; charset=utf-8
+
+全 10 ケース中 415 = 2 件 / 200 = 7 件
+うち「型の不一致」4 ケースで 415 になったのは 0 件

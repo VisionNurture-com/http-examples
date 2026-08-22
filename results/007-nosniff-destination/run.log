@@ -1,0 +1,71 @@
+# 007-nosniff-destination (M2)
+measured-at: 2026-08-21T13:24:15.167Z
+host: darwin arm64 / node v24.18.0
+playwright: 1.62.1
+base: http://localhost:8080
+
+--- chromium 151.0.7922.34 ---
+D1   classic script  ct=text/html   nosniff=0  event=load executed=true
+D2   classic script  ct=text/html   nosniff=1  event=error executed=false
+D3   classic script  ct=text/plain  nosniff=0  event=load executed=true
+D4   classic script  ct=text/plain  nosniff=1  event=error executed=false
+D5   module script   ct=text/html   nosniff=0  event=error executed=false
+D6   module script   ct=text/html   nosniff=1  event=error executed=false
+D7   style           ct=text/plain  nosniff=0  event=load executed=false
+D8   style           ct=text/plain  nosniff=1  event=error executed=false
+D9   classic worker  ct=text/html   nosniff=0  event=message executed=true
+D10  classic worker  ct=text/html   nosniff=1  event=error executed=false
+D11  document        ct=text/plain  nosniff=0  contentType=text/plain hasBold=false
+D12  document        ct=text/plain  nosniff=1  contentType=text/plain hasBold=false
+
+--- firefox 153.0 ---
+D1   classic script  ct=text/html   nosniff=0  event=load executed=true
+D2   classic script  ct=text/html   nosniff=1  event=error executed=false
+D3   classic script  ct=text/plain  nosniff=0  event=load executed=true
+D4   classic script  ct=text/plain  nosniff=1  event=error executed=false
+D5   module script   ct=text/html   nosniff=0  event=error executed=false
+D6   module script   ct=text/html   nosniff=1  event=error executed=false
+D7   style           ct=text/plain  nosniff=0  event=error executed=false
+D8   style           ct=text/plain  nosniff=1  event=error executed=false
+D9   classic worker  ct=text/html   nosniff=0  event=error executed=false
+D10  classic worker  ct=text/html   nosniff=1  event=error executed=false
+D11  document        ct=text/plain  nosniff=0  contentType=text/plain hasBold=false
+D12  document        ct=text/plain  nosniff=1  contentType=text/plain hasBold=false
+
+--- webkit 26.5 ---
+D1   classic script  ct=text/html   nosniff=0  event=load executed=true
+D2   classic script  ct=text/html   nosniff=1  event=error executed=false
+D3   classic script  ct=text/plain  nosniff=0  event=load executed=true
+D4   classic script  ct=text/plain  nosniff=1  event=error executed=false
+D5   module script   ct=text/html   nosniff=0  event=error executed=false
+D6   module script   ct=text/html   nosniff=1  event=error executed=false
+D7   style           ct=text/plain  nosniff=0  event=error executed=false
+D8   style           ct=text/plain  nosniff=1  event=error executed=false
+D9   classic worker  ct=text/html   nosniff=0  event=error executed=false
+D10  classic worker  ct=text/html   nosniff=1  event=error executed=false
+D11  document        ct=text/plain  nosniff=0  contentType=text/plain hasBold=false
+D12  document        ct=text/plain  nosniff=1  contentType=text/plain hasBold=false
+
+{
+  "scenario": "007-nosniff-destination",
+  "mode": "M2",
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "D1_executed_all": "all",
+  "D2_executed_all": "none",
+  "D3_executed_all": "all",
+  "D4_executed_all": "none",
+  "D5_executed_all": "none",
+  "D6_executed_all": "none",
+  "D7_executed_all": "none",
+  "D8_executed_all": "none",
+  "D9_executed_all": "split",
+  "D10_executed_all": "none",
+  "D11_content_type_all": "text/plain",
+  "D11_parsed_as_html_any": false,
+  "D12_content_type_all": "text/plain",
+  "D12_parsed_as_html_any": false
+}
