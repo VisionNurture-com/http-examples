@@ -159,7 +159,7 @@ const BUILDERS = {
     };
   },
 
-  // must-revalidate の「期限が切れたあと」（2026-08-11・ENHANCE-02 C1）。
+  // must-revalidate の「期限が切れたあと」（2026-08-11 追加）。
   // 🔴 one() は使わない。(browser, variant, route) が一意でも、先勝ちで黙って 1 行しか
   //    見ない書き方は測定軸を足したときに壊れる（006-immutable-boundary の前例）。
   //    ここは全行を集合へ畳んでから比べる。

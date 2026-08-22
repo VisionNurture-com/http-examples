@@ -56,7 +56,7 @@ const SCENARIOS = {
   // immutable が「まだ効く経路」が残っていないかを潰しにいく。
   // 通常ナビゲーションとリロードで差が出なかったため、fresh でなくなった後・
   // プロファイル再起動後・スクリプトから明示的に再検証した場合を足す。
-  // 🔴 schemes に http を足した（2026-08-10・VERIFY-02）。Firefox が immutable を
+  // 🔴 schemes に http を足した（2026-08-10）。Firefox が immutable を
   //    https でのみ honor する（Bugzilla 1267474）ことは、https だけ測っても言えない。
   //    「http では差が出ない」という対照が要る。それまで本シナリオは https のみで、
   //    記事が書いていた http 側の記述に対応する記録が results に無かった。
@@ -87,7 +87,7 @@ const SCENARIOS = {
     routes: ["nav", "reload"],
     schemes: ["https"],
   },
-  // 🔴 must-revalidate の「期限が切れたあと」を測る（2026-08-11・ENHANCE-02 C1）。
+  // 🔴 must-revalidate の「期限が切れたあと」を測る（2026-08-11 追加）。
   //    006-contradictory は max-age=600 と併記した fresh のあいだしか見ておらず、
   //    記事は 3 か所で「期限が切れたあとの動きは測っていない」と書いていた。
   //    仕様（RFC 9111）が must-revalidate に与えている意味は stale 側にあるので、
