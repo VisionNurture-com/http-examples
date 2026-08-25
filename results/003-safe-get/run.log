@@ -1,4 +1,4 @@
-measured-at: 2026-08-12T03:04:58.530Z
+measured-at: 2026-08-23T13:04:32.326Z
 scenario: 003-safe-get
 mode: M1
 base: http://localhost:8085
@@ -18,8 +18,8 @@ status=200 body={"token":"curl","consumed":3}
 
 ## HEAD 1/1
 HTTP/1.1 200 OK
-Server: nginx/1.31.3
-Date: Wed, 12 Aug 2026 03:04:58 GMT
+Server: nginx/1.31.4
+Date: Sun, 23 Aug 2026 13:04:32 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 29
 Connection: keep-alive

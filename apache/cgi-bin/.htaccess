@@ -1,0 +1,9 @@
+# このファイルは中身を持ちません。P6 / P7 の .htaccess を重ねるための足場です。
+#
+# compose.yaml は本ディレクトリを 4 つの URL 空間へ配り、そのうち 2 つ
+# （cgi-bin-rewrite / cgi-bin-setenvif）には apache/htaccess-*/ の .htaccess を
+# さらに上へ重ねます。重ねる先のファイルが無いと docker が mountpoint を
+# 作れないため、空のまま置いています。
+#
+# P4 / P5（cgi-bin-off / cgi-bin-on）は AllowOverride None なので、
+# Apache は本ファイルを読みません。

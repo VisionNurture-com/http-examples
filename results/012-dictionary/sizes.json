@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-22T10:59:00.730Z",
+  "generatedAt": "2026-08-23T13:51:14.018Z",
   "tools": {
-    "node": "v24.18.0",
+    "node": "v24.19.0",
     "brotliCli": "brotli 1.2.0",
     "zstdCli": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
   },

@@ -1,0 +1,27 @@
+# 009-redirect-origin (M1)
+measured-at: 2026-08-23T15:25:58.941Z
+client: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+base: http://localhost:8080
+
+判定は終端 /009/whoami が報告した到着内容のみで行う。値そのものは記録しない。
+
+## curl -L（既定）
+B0  対照（リダイレクトなし）                   軸=—                status=200 hops=0 auth=yes scheme=Bearer host=localhost
+B1  同一オリジン・パス差                     軸=パス               status=200 hops=1 auth=yes scheme=Bearer host=localhost
+B2  ポートだけ違う                        軸=ポート              status=200 hops=1 auth=no scheme=- host=localhost
+B3  ホストだけ違う                        軸=ホスト              status=200 hops=1 auth=no scheme=- host=127.0.0.1
+B4  http → https                   軸=スキーム + ポート       status=200 hops=1 auth=no scheme=- host=localhost
+B5  元のオリジンへ復帰（A→B→A）               軸=2 ホップ            status=200 hops=2 auth=yes scheme=Bearer host=localhost
+B6  同一→別（A1→A2→B）                  軸=2 ホップ            status=200 hops=2 auth=no scheme=- host=localhost
+
+## curl --location-trusted
+B0  対照（リダイレクトなし）                   軸=—                status=200 hops=0 auth=yes scheme=Bearer host=localhost
+B1  同一オリジン・パス差                     軸=パス               status=200 hops=1 auth=yes scheme=Bearer host=localhost
+B2  ポートだけ違う                        軸=ポート              status=200 hops=1 auth=yes scheme=Bearer host=localhost
+B3  ホストだけ違う                        軸=ホスト              status=200 hops=1 auth=yes scheme=Bearer host=127.0.0.1
+B4  http → https                   軸=スキーム + ポート       status=200 hops=1 auth=yes scheme=Bearer host=localhost
+B5  元のオリジンへ復帰（A→B→A）               軸=2 ホップ            status=200 hops=2 auth=yes scheme=Bearer host=localhost
+B6  同一→別（A1→A2→B）                  軸=2 ホップ            status=200 hops=2 auth=yes scheme=Bearer host=localhost
+
+全 7 ケース中、curl -L（既定）で届いたのは 3 件: B0, B1, B5
+--location-trusted では 7 件

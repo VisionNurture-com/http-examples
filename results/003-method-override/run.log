@@ -1,4 +1,4 @@
-measured-at: 2026-08-12T07:06:33.425Z
+measured-at: 2026-08-23T13:25:37.720Z
 scenario: 003-method-override
 mode: M2
 base: http://localhost:8085

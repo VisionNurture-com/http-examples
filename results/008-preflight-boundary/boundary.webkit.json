@@ -1,7 +1,7 @@
 {
   "browser": "webkit",
   "browser_version": "26.5",
-  "measured_at": "2026-08-08T00:11:46.675Z",
+  "measured_at": "2026-08-23T13:49:30.732Z",
   "cases": [
     {
       "id": "get-plain",

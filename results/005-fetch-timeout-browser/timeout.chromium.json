@@ -1,0 +1,10 @@
+{
+  "elapsed_ms": 330003.60000002384,
+  "outcome": "上限まで切れなかった",
+  "error": {
+    "name": "AbortError",
+    "message": "signal is aborted without reason"
+  },
+  "capped_by_us": true,
+  "version": "151.0.7922.34"
+}

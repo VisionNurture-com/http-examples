@@ -70,3 +70,57 @@ judgement: サーバ側の到着記録と status（生ログのカウントの�
 {"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p1","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"add_header のみ（no-store）","asset_path":"/006/exp/addheader-only.css"}
 {"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p2","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"両方（2 行届く）","asset_path":"/006/exp/both.css"}
 {"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p3","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"入れ子・親の no-store が落ちる","asset_path":"/006/exp/nest/child-own.css"}
+measured-at: 2026-08-23T13:28:01.045Z
+scenario: 006-expires-conflict
+mode: M1
+base: http://localhost:8084
+judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめない）
+---
+{"case":"expires のみ","path":"/006/exp/expires-only.css","status":200,"cache_control":["max-age=3600"],"cache_control_count":1,"expires":["Sun, 23 Aug 2026 14:28:01 GMT"],"x_parent":[],"x_child":[]}
+{"case":"add_header のみ","path":"/006/exp/addheader-only.css","status":200,"cache_control":["no-store"],"cache_control_count":1,"expires":[],"x_parent":[],"x_child":[]}
+{"case":"両方（expires → add_header の順に書く）","path":"/006/exp/both.css","status":200,"cache_control":["max-age=3600","no-store"],"cache_control_count":2,"expires":["Sun, 23 Aug 2026 14:28:01 GMT"],"x_parent":[],"x_child":[]}
+{"case":"両方（add_header → expires の順に書く）","path":"/006/exp/both-reverse.css","status":200,"cache_control":["max-age=3600","no-store"],"cache_control_count":2,"expires":["Sun, 23 Aug 2026 14:28:01 GMT"],"x_parent":[],"x_child":[]}
+{"case":"入れ子・子が自前の add_header を持つ","path":"/006/exp/nest/child-own.css","status":200,"cache_control":[],"cache_control_count":0,"expires":[],"x_parent":[],"x_child":["1"]}
+{"case":"入れ子・子が add_header を持たない","path":"/006/exp/nest/child-none.css","status":200,"cache_control":["max-age=3600","no-store"],"cache_control_count":2,"expires":["Sun, 23 Aug 2026 14:28:01 GMT"],"x_parent":["1"],"x_child":[]}
+measured-at: 2026-08-23T13:28:01.364Z
+scenario: 006-expires-conflict
+mode: M2
+browser: chromium 151.0.7922.34
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"p0","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"expires のみ（max-age=3600）","asset_path":"/006/exp/expires-only.css"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"p1","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"add_header のみ（no-store）","asset_path":"/006/exp/addheader-only.css"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"p2","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"両方（2 行届く）","asset_path":"/006/exp/both.css"}
+{"scenario":"006-expires-conflict","browser":"chromium","scheme":"https","variant":"p3","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"入れ子・親の no-store が落ちる","asset_path":"/006/exp/nest/child-own.css"}
+measured-at: 2026-08-23T13:28:14.423Z
+scenario: 006-expires-conflict
+mode: M2
+browser: firefox 153.0
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"p0","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"expires のみ（max-age=3600）","asset_path":"/006/exp/expires-only.css"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"p1","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"add_header のみ（no-store）","asset_path":"/006/exp/addheader-only.css"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"p2","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"両方（2 行届く）","asset_path":"/006/exp/both.css"}
+{"scenario":"006-expires-conflict","browser":"firefox","scheme":"https","variant":"p3","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"入れ子・親の no-store が落ちる","asset_path":"/006/exp/nest/child-own.css"}
+measured-at: 2026-08-23T13:28:35.652Z
+scenario: 006-expires-conflict
+mode: M2
+browser: webkit 26.5
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p0","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"expires のみ（max-age=3600）","asset_path":"/006/exp/expires-only.css"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p1","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"add_header のみ（no-store）","asset_path":"/006/exp/addheader-only.css"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p2","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"両方（2 行届く）","asset_path":"/006/exp/both.css"}
+{"scenario":"006-expires-conflict","browser":"webkit","scheme":"https","variant":"p3","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"入れ子・親の no-store が落ちる","asset_path":"/006/exp/nest/child-own.css"}

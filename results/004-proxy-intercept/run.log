@@ -1,9 +1,9 @@
 # 004-proxy-intercept
-measured-at: 2026-08-20T11:34:42.063Z
+measured-at: 2026-08-23T13:04:36.659Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-node(host): 24.18.0
+node(host): 24.19.0
 undici: 8.10.0
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: 本文へ書いた詳細（RFC 9457）が、経路の途中で残るか消えるか
 direct      status=403 ct=application/problem+json; charset=utf-8 detail=true

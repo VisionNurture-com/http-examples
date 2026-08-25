@@ -1,7 +1,7 @@
 {
   "browser": "chromium",
   "browser_version": "151.0.7922.34",
-  "measured_at": "2026-08-07T12:11:44.790Z",
+  "measured_at": "2026-08-23T13:49:21.232Z",
   "cases": [
     {
       "id": "get-plain",

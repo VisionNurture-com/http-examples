@@ -1,5 +1,5 @@
 # 004-browser-render
-measured-at: 2026-08-20T11:39:24.556Z
+measured-at: 2026-08-23T13:26:10.160Z
 
 chromium	200	status=200	body=true	script=true
 chromium	403	status=403	body=true	script=true

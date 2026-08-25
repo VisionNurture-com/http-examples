@@ -1,21 +1,21 @@
 # 004-retry-after
-measured-at: 2026-08-20T11:39:57.275Z
+measured-at: 2026-08-23T13:26:12.577Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-node(host): 24.18.0
+node(host): 24.19.0
 undici: 8.10.0
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: 429 + Retry-After: 3 に従うのは誰か。判定はサーバ側の到着間隔
 undici RetryAgent threw after retries: Request failed
 curl-plain	到着 1 回	gaps=[]	判定=no_retry
-  1787225997.518 2026-08-20T11:39:57+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-plain&after=0&ra=3" cs=retry cl=curl-plain wa="-" ra="3" cache=-
+  1787491572.817 2026-08-23T13:26:12+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-plain&after=0&ra=3" cs=retry cl=curl-plain wa="-" ra="3" cache=-
 curl-retry	到着 3 回	gaps=[3,3]	判定=waited
-  1787225997.552 2026-08-20T11:39:57+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
-  1787226000.560 2026-08-20T11:40:00+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
-  1787226003.567 2026-08-20T11:40:03+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+  1787491572.850 2026-08-23T13:26:12+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+  1787491575.856 2026-08-23T13:26:15+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+  1787491578.866 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
 node-fetch	到着 1 回	gaps=[]	判定=no_retry
-  1787226003.593 2026-08-20T11:40:03+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=node-fetch&after=0&ra=3" cs=retry cl=node-fetch wa="-" ra="3" cache=-
+  1787491578.895 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=node-fetch&after=0&ra=3" cs=retry cl=node-fetch wa="-" ra="3" cache=-
 undici-retry	到着 3 回	gaps=[3,3]	判定=waited
-  1787226003.602 2026-08-20T11:40:03+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
-  1787226006.607 2026-08-20T11:40:06+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
-  1787226009.612 2026-08-20T11:40:09+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+  1787491578.902 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+  1787491581.912 2026-08-23T13:26:21+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+  1787491584.919 2026-08-23T13:26:24+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-

@@ -1,7 +1,7 @@
 {
   "scenario": "012-lighthouse-ttfb",
   "mode": "M1",
-  "measured_at": "2026-08-22T10:58:49.732Z",
+  "measured_at": "2026-08-23T13:06:07.162Z",
   "base": "http://localhost:8086",
   "think_ms": 200,
   "cache_control": "no-store",
@@ -16,26 +16,26 @@
       "url": "http://localhost:8086/012/eh?hints=none&ms=200&cc=no-store",
       "runtime_error": null,
       "server_response_time_ms": [
-        217,
-        210,
-        207
+        206,
+        206,
+        208
       ],
-      "server_response_time_median_ms": 210,
-      "first_contentful_paint_median_ms": 1065,
-      "largest_contentful_paint_median_ms": 1215
+      "server_response_time_median_ms": 206,
+      "first_contentful_paint_median_ms": 1073,
+      "largest_contentful_paint_median_ms": 1223
     },
     "preload": {
       "label": "103 で実際に使う資源を先読みさせる",
       "url": "http://localhost:8086/012/eh?hints=preload&ms=200&cc=no-store",
       "runtime_error": null,
       "server_response_time_ms": [
-        2,
-        2,
-        2
+        1,
+        1,
+        1
       ],
-      "server_response_time_median_ms": 2,
-      "first_contentful_paint_median_ms": 1067,
-      "largest_contentful_paint_median_ms": 1217
+      "server_response_time_median_ms": 1,
+      "first_contentful_paint_median_ms": 1068,
+      "largest_contentful_paint_median_ms": 1218
     }
   }
 }

@@ -43,3 +43,48 @@ judgement: サーバ側の到着記録と status（生ログのカウントの�
 {"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"ns-nc","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-nc"}
 {"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"conflicted","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"conflicted"}
 {"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+measured-at: 2026-08-23T13:27:02.992Z
+scenario: 006-contradictory
+mode: M2
+browser: chromium 151.0.7922.34
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"ns-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-max"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"nc-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nc-max"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"ns-nc","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-nc"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"conflicted","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"conflicted"}
+{"scenario":"006-contradictory","browser":"chromium","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+measured-at: 2026-08-23T13:27:17.863Z
+scenario: 006-contradictory
+mode: M2
+browser: firefox 153.0
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"ns-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-max"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"nc-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nc-max"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"ns-nc","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-nc"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"conflicted","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"conflicted"}
+{"scenario":"006-contradictory","browser":"firefox","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}
+measured-at: 2026-08-23T13:27:42.048Z
+scenario: 006-contradictory
+mode: M2
+browser: webkit 26.5
+profile: isolated-context
+judgement: サーバ側の到着記録と status（生ログのカウントのみ・予測は入れない）
+---
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"plain","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"control":"negative"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"nostore","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"control":"positive"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"nocache","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"control":"conditional"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"ns-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-max"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"nc-max","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[304],"silent_on_second":false,"label":"nc-max"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"ns-nc","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"ns-nc"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"conflicted","route":"nav","persistent":false,"first_hits":1,"second_hits":1,"second_statuses":[200],"silent_on_second":false,"label":"conflicted"}
+{"scenario":"006-contradictory","browser":"webkit","scheme":"https","variant":"mustrev","route":"nav","persistent":false,"first_hits":1,"second_hits":0,"second_statuses":[],"silent_on_second":true,"label":"mustrev"}

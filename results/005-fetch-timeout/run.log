@@ -1,0 +1,23 @@
+==========================================
+005-fetch-timeout (M1) — node 24.19.0 / undici 8.10.0
+curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+measured-at: 2026-08-24T23:34:09.021Z / 上限 330.0 秒
+==========================================
+
+足場: GET /005/never-responds（接続は成立・応答は返さない）
+🔴 測っているのは応答待ちのタイムアウトのみ。接続タイムアウトは未測定。
+
+  Node 組み込みの fetch（undici）
+    経過 301.1 秒 — クライアント側で切れた
+    エラー: TypeError / code=UND_ERR_HEADERS_TIMEOUT / Headers Timeout Error
+
+  undici を直接
+    経過 301.2 秒 — クライアント側で切れた
+    エラー: HeadersTimeoutError / code=UND_ERR_HEADERS_TIMEOUT / Headers Timeout Error
+
+  curl 既定（--max-time なし）
+    経過 330.0 秒 — 上限 330.0 秒まで切れなかった
+    エラーなし
+
+--- 読み取り ---
+3 種のうち、既定で切れたのは 2 種（node_fetch, undici）

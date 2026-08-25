@@ -1,0 +1,24 @@
+{
+  "scenario": "005-fetch-timeout",
+  "mode": "M2",
+  "measured_at": "2026-08-24T23:34:09.021Z",
+  "cap_ms": 330000,
+  "node": "24.19.0",
+  "curl": "curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple",
+  "undici": "8.10.0",
+  "node_fetch_elapsed_s": 301.1,
+  "node_fetch_outcome": "クライアント側で切れた",
+  "node_fetch_error": "TypeError / UND_ERR_HEADERS_TIMEOUT",
+  "undici_elapsed_s": 301.2,
+  "undici_outcome": "クライアント側で切れた",
+  "undici_error": "HeadersTimeoutError / UND_ERR_HEADERS_TIMEOUT",
+  "curl_elapsed_s": 330,
+  "curl_outcome": "上限 330.0 秒まで切れなかった",
+  "curl_error": null,
+  "timed_out_clients": [
+    "node_fetch",
+    "undici"
+  ],
+  "timed_out_count": 2,
+  "clients_total": 3
+}

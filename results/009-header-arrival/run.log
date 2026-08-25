@@ -1,0 +1,27 @@
+# 009-header-arrival (M1)
+measured-at: 2026-08-24T10:40:36.572Z
+node: v24.19.0
+
+同じ Authorization を 11 経路へ送り、終端に届いたかだけを読む。値そのものは記録しない。
+
+P0  対照     Express 直（対照）                                  app              status=200 auth=yes scheme=Bearer via=-
+P1  既定     nginx proxy_pass（既定）                           nginx → app      status=200 auth=yes scheme=Bearer via=-
+P2  落とす設定  nginx + proxy_set_header Authorization ""      nginx → app      status=200 auth=no scheme=- via=-
+P3  既定     nginx fastcgi_pass → PHP-FPM                   nginx → php-fpm  status=200 auth=yes scheme=Bearer via=nginx-fastcgi-php-fpm
+P4  既定     Apache mod_cgid（CGIPassAuth 既定 Off）            httpd → cgi      status=200 auth=no scheme=- via=apache-cgi
+P5  直す設定   Apache mod_cgid（CGIPassAuth On）                httpd → cgi      status=200 auth=yes scheme=Bearer via=apache-cgi
+P6  直す設定   同上 + .htaccess の mod_rewrite（E=HTTP_AUTHORIZATION） httpd → cgi      status=200 auth=yes scheme=Bearer via=apache-cgi
+P7  直す設定   同上 + .htaccess の SetEnvIf                      httpd → cgi      status=200 auth=yes scheme=Bearer via=apache-cgi
+P8  直す設定   同上 + .htaccess の CGIPassAuth On                httpd → cgi      status=200 auth=yes scheme=Bearer via=apache-cgi
+P9  既定     Apache mod_proxy_fcgi → PHP-FPM（CGIPassAuth 既定 Off） httpd → php-fpm  status=200 auth=no scheme=- via=apache-proxy-fcgi
+P10 直す設定   Apache mod_proxy_fcgi → PHP-FPM（CGIPassAuth On） httpd → php-fpm  status=200 auth=yes scheme=Bearer via=apache-proxy-fcgi
+
+対照（Authorization を付けずに同じ URL へ）:
+P6  auth=no（Authorization なし）
+P7  auth=no（Authorization なし）
+P8  auth=no（Authorization なし）
+P10 auth=no（Authorization なし）
+
+全 11 経路中、届いたのは 8 件（P0, P1, P3, P5, P6, P7, P8, P10）／落ちたのは 3 件（P2, P4, P9）
+既定の経路は 4 件（P1, P3, P4, P9）で、そのうち落ちたのは 2 件（P4, P9）
+落ちたあとに入れる対処は 5 件（P5, P6, P7, P8, P10）で、届いたのは 5 件（P5, P6, P7, P8, P10）

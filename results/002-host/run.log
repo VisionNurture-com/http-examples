@@ -1,7 +1,7 @@
 # 002-host
-measured-at: 2026-08-20T03:11:06.370Z
+measured-at: 2026-08-23T13:04:25.060Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: Host を削ると誰が弾くか（RFC 9112 §3.2 は HTTP/1.1 で必須と定める）
 ## nginx 単独（静的）

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>009 authorization probe</title>
+</head>
+<body>
+<h1>009 authorization probe</h1>
+<p>このページ自身のオリジンは <code>http://localhost:8080</code> です。ここから <code>Authorization</code> を付けて fetch し、リダイレクトを越えた先へ届くかを測ります。</p>
+<p>判定はサーバ側の到着記録で行います。ブラウザの <code>fetch</code> が成功したかどうかだけでは、CORS で落ちたのか資格情報が消えたのかを区別できないためです。</p>
+<pre id="log"></pre>
+</body>
+</html>

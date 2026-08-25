@@ -1,4 +1,4 @@
-measured-at: 2026-08-12T03:04:56.978Z
+measured-at: 2026-08-23T13:04:26.758Z
 scenario: 003-delete-repeat
 mode: M1
 base: http://localhost:8085

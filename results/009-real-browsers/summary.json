@@ -1,0 +1,45 @@
+{
+  "scenario": "009-real-browsers",
+  "mode": "M2",
+  "real_browsers": {
+    "chrome": "151.0.0.0",
+    "firefox": "154.0",
+    "safari": "26.5.2"
+  },
+  "B0_auth": "yes",
+  "B0_agree": true,
+  "B0_preflight": "chrome:0 firefox:0 safari:0",
+  "B1_auth": "yes",
+  "B1_agree": true,
+  "B1_preflight": "chrome:0 firefox:0 safari:0",
+  "B2_auth": "no",
+  "B2_agree": true,
+  "B2_preflight": "chrome:0 firefox:1 safari:1",
+  "B3_auth": "no",
+  "B3_agree": true,
+  "B3_preflight": "chrome:0 firefox:1 safari:1",
+  "B4_auth": "no",
+  "B4_agree": true,
+  "B4_preflight": "chrome:0 firefox:1 safari:1",
+  "B5_auth": [
+    "no",
+    "no",
+    "unreached"
+  ],
+  "B5_agree": false,
+  "B5_preflight": "chrome:0 firefox:2 safari:2",
+  "B6_auth": "no",
+  "B6_agree": true,
+  "B6_preflight": "chrome:0 firefox:1 safari:1",
+  "arrived_cases": [
+    "B0",
+    "B1"
+  ],
+  "arrived_count": 2,
+  "cases_total": 7,
+  "browsers_measured": [
+    "chrome",
+    "firefox",
+    "safari"
+  ]
+}

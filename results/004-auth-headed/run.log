@@ -1,5 +1,5 @@
 # 004-auth-headed
-measured-at: 2026-08-20T02:36:29.670Z
+measured-at: 2026-08-23T13:26:00.402Z
 
 chromium	headless=true	none	{"delivered":true,"status":401}
 chromium	headless=true	basic	{"delivered":true,"status":401}

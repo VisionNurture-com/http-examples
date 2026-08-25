@@ -1,0 +1,15 @@
+# 009-real-browsers (M2)
+measured-at: 2026-08-23T13:11:22.372Z
+browsers: chrome 151.0.0.0 / firefox 154.0 / safari 26.5.2
+
+🔴 Playwright 同梱版ではなくホストの実ブラウザ。判定はサーバ側の到着記録。
+
+B0  chrome=yes firefox=yes safari=yes  一致
+B1  chrome=yes firefox=yes safari=yes  一致
+B2  chrome=no firefox=no safari=no  一致
+B3  chrome=no firefox=no safari=no  一致
+B4  chrome=no firefox=no safari=no  一致
+B5  chrome=no firefox=no safari=unreached  🔴 乖離
+B6  chrome=no firefox=no safari=no  一致
+
+届いたのは 2 件: B0, B1

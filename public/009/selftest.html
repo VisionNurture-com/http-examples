@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>009 selftest — Authorization はリダイレクトを越えるか</title>
+</head>
+<body>
+<h1>009 selftest</h1>
+<p>このページは、開いたブラウザ自身で 7 ケースを測り、結果をサーバへ送ります。終わると下に「送信しました」と出ます。</p>
+<pre id="log">測定中…</pre>
+<script>
+// 🔴 判定はサーバ側の到着記録で行う。fetch の成否だけでは、CORS で落ちたのか
+//    Authorization が消えたのかを区別できない。
+// 🔴 preflight（OPTIONS）は資格情報を載せずに飛ぶ。本番リクエストと数え違えないよう
+//    到着記録のメソッドで分けて数える。
+const ORIGIN = location.origin;
+const TOKEN = "Bearer MEASUREMENT-TOKEN";
+const CASES = [
+  ["B0", "/009/whoami", "対照（リダイレクトなし）"],
+  ["B1", "/009/redirect/same", "同一オリジン・パス差"],
+  ["B2", "/009/redirect/port", "ポートだけ違う"],
+  ["B3", "/009/redirect/host", "ホストだけ違う"],
+  ["B4", "/009/redirect/scheme", "http → https"],
+  ["B5", "/009/redirect/back", "元のオリジンへ復帰（A→B→A）"],
+  ["B6", "/009/redirect/same-then-cross", "同一→別（A1→A2→B）"],
+];
+
+const out = document.getElementById("log");
+const say = (s) => { out.textContent += "\n" + s; };
+
+async function runCase(id, path, desc) {
+  await fetch(ORIGIN + "/009/api/__reset", { method: "POST" });
+  let result = { id, desc, fetch_ok: false, fetch_error: null };
+  try {
+    const res = await fetch(ORIGIN + path, { headers: { Authorization: TOKEN } });
+    result.fetch_ok = res.ok;
+    result.status = res.status;
+  } catch (e) {
+    result.fetch_error = String(e && e.message ? e.message : e);
+  }
+  const rows = (await (await fetch(ORIGIN + "/009/api/arrivals")).json()).arrivals || [];
+  const finals = rows.filter((r) => r.method !== "OPTIONS" && r.path.indexOf("/009/whoami") === 0);
+  const last = finals.length ? finals[finals.length - 1] : null;
+  result.reached_end = last !== null;
+  result.auth = last ? last.auth : null;
+  result.preflight_count = rows.filter((r) => r.method === "OPTIONS").length;
+  result.hops_recorded = rows.filter((r) => r.method !== "OPTIONS").length;
+  return result;
+}
+
+(async () => {
+  out.textContent = "測定中…";
+  const cases = [];
+  for (const [id, path, desc] of CASES) {
+    const r = await runCase(id, path, desc);
+    cases.push(r);
+    say(`${id} ${desc} → auth=${r.auth} pf=${r.preflight_count} ok=${r.fetch_ok}`);
+  }
+  await fetch(ORIGIN + "/009/report", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cases }),
+  });
+  say("");
+  say("送信しました。このタブは閉じてかまいません。");
+})();
+</script>
+</body>
+</html>

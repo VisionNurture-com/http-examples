@@ -1,9 +1,9 @@
 # 004-auth-oauth-error
-measured-at: 2026-08-20T23:50:18.981Z
+measured-at: 2026-08-23T13:04:33.682Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-node(host): 24.18.0
+node(host): 24.19.0
 undici: 8.10.0
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: Bearer の 401 / 403 が challenge に載せるものと、前段を越えて残るか
 app_401_invalid_token	http://localhost:8086/004/api/oauth/invalid-token?cs=oauth&cl=curl

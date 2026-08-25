@@ -457,3 +457,182 @@
 1787226075.328 2026-08-20T11:41:15+00:00 GET 403 uri="/004/intercept/problem?cs=verify&cl=curl" cs=- cl=- wa="-" ra="-" cache=-
 1787269819.456 2026-08-20T23:50:19+00:00 GET 403 uri="/004/api/oauth/insufficient-scope?cs=oauth&cl=curl" cs=oauth cl=curl wa="Bearer realm=\x22004\x22, error=\x22insufficient_scope\x22, scope=\x22msgs:read msgs:write\x22" ra="-" cache=-
 1787269819.531 2026-08-20T23:50:19+00:00 GET 403 uri="/004/stripped/oauth/insufficient-scope?cs=oauth&cl=curl" cs=oauth cl=curl wa="-" ra="-" cache=-
+1787490273.499 2026-08-23T13:04:33+00:00 GET 401 uri="/004/api/auth/basic?cs=auth&cl=curl" cs=auth cl=curl wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787490273.530 2026-08-23T13:04:33+00:00 GET 401 uri="/004/stripped/auth/basic?cs=auth&cl=curl" cs=auth cl=curl wa="-" ra="-" cache=-
+1787490273.558 2026-08-23T13:04:33+00:00 GET 401 uri="/004/nginx/basic/index.html?cs=auth&cl=curl" cs=auth cl=curl wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787490273.587 2026-08-23T13:04:33+00:00 GET 403 uri="/004/nginx/deny/index.html?cs=auth&cl=curl" cs=auth cl=curl wa="-" ra="-" cache=-
+1787490273.954 2026-08-23T13:04:33+00:00 GET 403 uri="/004/api/oauth/insufficient-scope?cs=oauth&cl=curl" cs=oauth cl=curl wa="Bearer realm=\x22004\x22, error=\x22insufficient_scope\x22, scope=\x22msgs:read msgs:write\x22" ra="-" cache=-
+1787490274.022 2026-08-23T13:04:34+00:00 GET 403 uri="/004/stripped/oauth/insufficient-scope?cs=oauth&cl=curl" cs=oauth cl=curl wa="-" ra="-" cache=-
+1787490274.433 2026-08-23T13:04:34+00:00 GET 200 uri="/004/cached-cc/codes/200?cc=1&n=1787490274333200&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490274.466 2026-08-23T13:04:34+00:00 GET 200 uri="/004/cached-cc/codes/200?cc=1&n=1787490274333200&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490274.568 2026-08-23T13:04:34+00:00 GET 201 uri="/004/cached-cc/codes/201?cc=1&n=1787490274469201&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490274.597 2026-08-23T13:04:34+00:00 GET 201 uri="/004/cached-cc/codes/201?cc=1&n=1787490274469201&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490274.689 2026-08-23T13:04:34+00:00 GET 400 uri="/004/cached-cc/codes/400?cc=1&n=1787490274600400&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490274.719 2026-08-23T13:04:34+00:00 GET 400 uri="/004/cached-cc/codes/400?cc=1&n=1787490274600400&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490274.813 2026-08-23T13:04:34+00:00 GET 401 uri="/004/cached-cc/codes/401?cc=1&n=1787490274723401&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="Bearer realm=\x22004\x22" ra="-" cache=MISS
+1787490274.843 2026-08-23T13:04:34+00:00 GET 401 uri="/004/cached-cc/codes/401?cc=1&n=1787490274723401&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="Bearer realm=\x22004\x22" ra="-" cache=HIT
+1787490274.934 2026-08-23T13:04:34+00:00 GET 403 uri="/004/cached-cc/codes/403?cc=1&n=1787490274847403&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490274.961 2026-08-23T13:04:34+00:00 GET 403 uri="/004/cached-cc/codes/403?cc=1&n=1787490274847403&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.045 2026-08-23T13:04:35+00:00 GET 404 uri="/004/cached-cc/codes/404?cc=1&n=1787490274965404&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.072 2026-08-23T13:04:35+00:00 GET 404 uri="/004/cached-cc/codes/404?cc=1&n=1787490274965404&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.155 2026-08-23T13:04:35+00:00 GET 410 uri="/004/cached-cc/codes/410?cc=1&n=1787490275076410&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.182 2026-08-23T13:04:35+00:00 GET 410 uri="/004/cached-cc/codes/410?cc=1&n=1787490275076410&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.265 2026-08-23T13:04:35+00:00 GET 418 uri="/004/cached-cc/codes/418?cc=1&n=1787490275186418&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.290 2026-08-23T13:04:35+00:00 GET 418 uri="/004/cached-cc/codes/418?cc=1&n=1787490275186418&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.367 2026-08-23T13:04:35+00:00 GET 422 uri="/004/cached-cc/codes/422?cc=1&n=1787490275293422&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.392 2026-08-23T13:04:35+00:00 GET 422 uri="/004/cached-cc/codes/422?cc=1&n=1787490275293422&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.473 2026-08-23T13:04:35+00:00 GET 429 uri="/004/cached-cc/codes/429?cc=1&n=1787490275396429&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="3" cache=MISS
+1787490275.500 2026-08-23T13:04:35+00:00 GET 429 uri="/004/cached-cc/codes/429?cc=1&n=1787490275396429&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="3" cache=HIT
+1787490275.579 2026-08-23T13:04:35+00:00 GET 451 uri="/004/cached-cc/codes/451?cc=1&n=1787490275504451&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.601 2026-08-23T13:04:35+00:00 GET 451 uri="/004/cached-cc/codes/451?cc=1&n=1787490275504451&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.679 2026-08-23T13:04:35+00:00 GET 500 uri="/004/cached-cc/codes/500?cc=1&n=1787490275605500&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.705 2026-08-23T13:04:35+00:00 GET 500 uri="/004/cached-cc/codes/500?cc=1&n=1787490275605500&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.787 2026-08-23T13:04:35+00:00 GET 502 uri="/004/cached-cc/codes/502?cc=1&n=1787490275709502&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=MISS
+1787490275.821 2026-08-23T13:04:35+00:00 GET 502 uri="/004/cached-cc/codes/502?cc=1&n=1787490275709502&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="-" cache=HIT
+1787490275.896 2026-08-23T13:04:35+00:00 GET 503 uri="/004/cached-cc/codes/503?cc=1&n=1787490275824503&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="3" cache=MISS
+1787490275.920 2026-08-23T13:04:35+00:00 GET 503 uri="/004/cached-cc/codes/503?cc=1&n=1787490275824503&cs=cachecmp&cl=curl" cs=cachecmp cl=curl wa="-" ra="3" cache=HIT
+1787490276.247 2026-08-23T13:04:36+00:00 GET 200 uri="/004/cached/codes/200?n=1787490276216200&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="-" cache=MISS
+1787490276.279 2026-08-23T13:04:36+00:00 GET 200 uri="/004/cached/codes/200?n=1787490276216200&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="-" cache=HIT
+1787490276.309 2026-08-23T13:04:36+00:00 GET 404 uri="/004/cached/codes/404?n=1787490276282404&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="-" cache=MISS
+1787490276.337 2026-08-23T13:04:36+00:00 GET 404 uri="/004/cached/codes/404?n=1787490276282404&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="-" cache=HIT
+1787490276.367 2026-08-23T13:04:36+00:00 GET 429 uri="/004/cached/codes/429?n=1787490276340429&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="3" cache=MISS
+1787490276.396 2026-08-23T13:04:36+00:00 GET 429 uri="/004/cached/codes/429?n=1787490276340429&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="3" cache=HIT
+1787490276.426 2026-08-23T13:04:36+00:00 GET 503 uri="/004/cached/codes/503?n=1787490276400503&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="3" cache=MISS
+1787490276.454 2026-08-23T13:04:36+00:00 GET 503 uri="/004/cached/codes/503?n=1787490276400503&cs=cache&cl=curl" cs=cache cl=curl wa="-" ra="3" cache=HIT
+1787490276.485 2026-08-23T13:04:36+00:00 GET 200 uri="/004/cached-cc/codes/200?cc=1&n=1787490276458200&cs=cachecc&cl=curl" cs=cachecc cl=curl wa="-" ra="-" cache=MISS
+1787490276.514 2026-08-23T13:04:36+00:00 GET 200 uri="/004/cached-cc/codes/200?cc=1&n=1787490276458200&cs=cachecc&cl=curl" cs=cachecc cl=curl wa="-" ra="-" cache=HIT
+1787490276.547 2026-08-23T13:04:36+00:00 GET 429 uri="/004/cached-cc/codes/429?cc=1&n=1787490276518429&cs=cachecc&cl=curl" cs=cachecc cl=curl wa="-" ra="3" cache=MISS
+1787490276.575 2026-08-23T13:04:36+00:00 GET 429 uri="/004/cached-cc/codes/429?cc=1&n=1787490276518429&cs=cachecc&cl=curl" cs=cachecc cl=curl wa="-" ra="3" cache=HIT
+1787490276.844 2026-08-23T13:04:36+00:00 GET 403 uri="/004/api/problem?cs=intercept&cl=curl" cs=intercept cl=curl wa="-" ra="-" cache=-
+1787490276.876 2026-08-23T13:04:36+00:00 GET 403 uri="/004/intercept/problem?cs=intercept&cl=curl" cs=- cl=- wa="-" ra="-" cache=-
+1787490276.907 2026-08-23T13:04:36+00:00 GET 403 uri="/004/api/problem?mismatch=1&cs=intercept&cl=curl" cs=intercept cl=curl wa="-" ra="-" cache=-
+1787490277.269 2026-08-23T13:04:37+00:00 POST 204 uri="/004/api/__reset" cs=- cl=- wa="-" ra="-" cache=-
+1787490277.292 2026-08-23T13:04:37+00:00 GET 429 uri="/004/api/limited?cs=retryu&cl=u-node-fetch&after=0&ra=3" cs=retryu cl=u-node-fetch wa="-" ra="3" cache=-
+1787490277.297 2026-08-23T13:04:37+00:00 GET 429 uri="/004/api/limited?cs=retryu&cl=u-undici-retry&after=0&ra=3" cs=retryu cl=u-undici-retry wa="-" ra="3" cache=-
+1787490280.304 2026-08-23T13:04:40+00:00 GET 429 uri="/004/api/limited?cs=retryu&cl=u-undici-retry&after=0&ra=3" cs=retryu cl=u-undici-retry wa="-" ra="3" cache=-
+1787490283.312 2026-08-23T13:04:43+00:00 GET 429 uri="/004/api/limited?cs=retryu&cl=u-undici-retry&after=0&ra=3" cs=retryu cl=u-undici-retry wa="-" ra="3" cache=-
+1787491558.155 2026-08-23T13:25:58+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491558.165 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/none?cs=authb&cl=browser-chromium" cs=authb cl=browser-chromium wa="-" ra="-" cache=-
+1787491558.170 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/none?cs=authnav&cl=browser-chromium" cs=authnav cl=browser-chromium wa="-" ra="-" cache=-
+1787491558.183 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/basic?cs=authb&cl=browser-chromium" cs=authb cl=browser-chromium wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491558.187 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/basic?cs=authnav&cl=browser-chromium" cs=authnav cl=browser-chromium wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491558.194 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/bearer?cs=authb&cl=browser-chromium" cs=authb cl=browser-chromium wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491558.197 2026-08-23T13:25:58+00:00 GET 401 uri="/004/api/auth/bearer?cs=authnav&cl=browser-chromium" cs=authnav cl=browser-chromium wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491558.205 2026-08-23T13:25:58+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authb&cl=browser-chromium" cs=authb cl=browser-chromium wa="-" ra="-" cache=-
+1787491558.208 2026-08-23T13:25:58+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authnav&cl=browser-chromium" cs=authnav cl=browser-chromium wa="-" ra="-" cache=-
+1787491558.215 2026-08-23T13:25:58+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authb&cl=browser-chromium" cs=authb cl=browser-chromium wa="-" ra="-" cache=-
+1787491558.217 2026-08-23T13:25:58+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authnav&cl=browser-chromium" cs=authnav cl=browser-chromium wa="-" ra="-" cache=-
+1787491559.245 2026-08-23T13:25:59+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491559.318 2026-08-23T13:25:59+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491559.323 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/none?cs=authb&cl=browser-firefox" cs=authb cl=browser-firefox wa="-" ra="-" cache=-
+1787491559.328 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/none?cs=authnav&cl=browser-firefox" cs=authnav cl=browser-firefox wa="-" ra="-" cache=-
+1787491559.388 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/basic?cs=authb&cl=browser-firefox" cs=authb cl=browser-firefox wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491559.394 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/basic?cs=authnav&cl=browser-firefox" cs=authnav cl=browser-firefox wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491559.413 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/bearer?cs=authb&cl=browser-firefox" cs=authb cl=browser-firefox wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491559.421 2026-08-23T13:25:59+00:00 GET 401 uri="/004/api/auth/bearer?cs=authnav&cl=browser-firefox" cs=authnav cl=browser-firefox wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491559.437 2026-08-23T13:25:59+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authb&cl=browser-firefox" cs=authb cl=browser-firefox wa="-" ra="-" cache=-
+1787491559.444 2026-08-23T13:25:59+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authnav&cl=browser-firefox" cs=authnav cl=browser-firefox wa="-" ra="-" cache=-
+1787491559.462 2026-08-23T13:25:59+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authb&cl=browser-firefox" cs=authb cl=browser-firefox wa="-" ra="-" cache=-
+1787491559.469 2026-08-23T13:25:59+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authnav&cl=browser-firefox" cs=authnav cl=browser-firefox wa="-" ra="-" cache=-
+1787491560.123 2026-08-23T13:26:00+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491560.134 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/none?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.139 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/none?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.151 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/basic?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491560.154 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/basic?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491560.157 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/basic?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491560.163 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/basic?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491560.170 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/bearer?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491560.179 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/bearer?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491560.188 2026-08-23T13:26:00+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.192 2026-08-23T13:26:00+00:00 GET 403 uri="/004/api/auth/forbidden?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.199 2026-08-23T13:26:00+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authb&cl=browser-webkit" cs=authb cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.202 2026-08-23T13:26:00+00:00 GET 401 uri="/004/stripped/auth/basic?cs=authnav&cl=browser-webkit" cs=authnav cl=browser-webkit wa="-" ra="-" cache=-
+1787491560.526 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491560.575 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491560.621 2026-08-23T13:26:00+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491560.666 2026-08-23T13:26:00+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491560.710 2026-08-23T13:26:00+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491561.903 2026-08-23T13:26:01+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491562.192 2026-08-23T13:26:02+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491562.430 2026-08-23T13:26:02+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491562.673 2026-08-23T13:26:02+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491562.906 2026-08-23T13:26:02+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-chromium" cs=headed cl=headed-chromium wa="-" ra="-" cache=-
+1787491564.022 2026-08-23T13:26:04+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491564.088 2026-08-23T13:26:04+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491564.235 2026-08-23T13:26:04+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491564.245 2026-08-23T13:26:04+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491564.378 2026-08-23T13:26:04+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491564.395 2026-08-23T13:26:04+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491564.511 2026-08-23T13:26:04+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491564.517 2026-08-23T13:26:04+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491564.756 2026-08-23T13:26:04+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491564.762 2026-08-23T13:26:04+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491566.123 2026-08-23T13:26:06+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491566.206 2026-08-23T13:26:06+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491566.498 2026-08-23T13:26:06+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491566.512 2026-08-23T13:26:06+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491566.747 2026-08-23T13:26:06+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491566.756 2026-08-23T13:26:06+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491566.980 2026-08-23T13:26:06+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491566.989 2026-08-23T13:26:06+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491567.213 2026-08-23T13:26:07+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-firefox" cs=headed cl=headed-firefox wa="-" ra="-" cache=-
+1787491567.220 2026-08-23T13:26:07+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491567.872 2026-08-23T13:26:07+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491568.031 2026-08-23T13:26:08+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491568.035 2026-08-23T13:26:08+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491568.192 2026-08-23T13:26:08+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491568.348 2026-08-23T13:26:08+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491568.502 2026-08-23T13:26:08+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491569.109 2026-08-23T13:26:09+00:00 GET 401 uri="/004/api/auth/none?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491569.391 2026-08-23T13:26:09+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491569.394 2026-08-23T13:26:09+00:00 GET 401 uri="/004/api/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Basic realm=\x22004\x22" ra="-" cache=-
+1787491569.583 2026-08-23T13:26:09+00:00 GET 401 uri="/004/api/auth/bearer?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="Bearer realm=\x22004\x22" ra="-" cache=-
+1787491569.777 2026-08-23T13:26:09+00:00 GET 403 uri="/004/api/auth/forbidden?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491569.961 2026-08-23T13:26:09+00:00 GET 401 uri="/004/stripped/auth/basic?cs=headed&cl=headed-webkit" cs=headed cl=headed-webkit wa="-" ra="-" cache=-
+1787491570.289 2026-08-23T13:26:10+00:00 GET 200 uri="/004/api/codes/200?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="-" cache=-
+1787491570.315 2026-08-23T13:26:10+00:00 GET 403 uri="/004/api/codes/403?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="-" cache=-
+1787491570.328 2026-08-23T13:26:10+00:00 GET 404 uri="/004/api/codes/404?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="-" cache=-
+1787491570.343 2026-08-23T13:26:10+00:00 GET 410 uri="/004/api/codes/410?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="-" cache=-
+1787491570.358 2026-08-23T13:26:10+00:00 GET 429 uri="/004/api/codes/429?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="3" cache=-
+1787491570.370 2026-08-23T13:26:10+00:00 GET 500 uri="/004/api/codes/500?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="-" cache=-
+1787491570.387 2026-08-23T13:26:10+00:00 GET 503 uri="/004/api/codes/503?cs=render&cl=browser-chromium" cs=render cl=browser-chromium wa="-" ra="3" cache=-
+1787491571.371 2026-08-23T13:26:11+00:00 GET 200 uri="/004/api/codes/200?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="-" cache=-
+1787491571.434 2026-08-23T13:26:11+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491571.490 2026-08-23T13:26:11+00:00 GET 403 uri="/004/api/codes/403?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="-" cache=-
+1787491571.526 2026-08-23T13:26:11+00:00 GET 404 uri="/004/api/codes/404?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="-" cache=-
+1787491571.565 2026-08-23T13:26:11+00:00 GET 410 uri="/004/api/codes/410?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="-" cache=-
+1787491571.593 2026-08-23T13:26:11+00:00 GET 429 uri="/004/api/codes/429?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="3" cache=-
+1787491571.618 2026-08-23T13:26:11+00:00 GET 500 uri="/004/api/codes/500?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="-" cache=-
+1787491571.638 2026-08-23T13:26:11+00:00 GET 503 uri="/004/api/codes/503?cs=render&cl=browser-firefox" cs=render cl=browser-firefox wa="-" ra="3" cache=-
+1787491572.344 2026-08-23T13:26:12+00:00 GET 200 uri="/004/api/codes/200?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="-" cache=-
+1787491572.368 2026-08-23T13:26:12+00:00 GET 403 uri="/004/api/codes/403?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="-" cache=-
+1787491572.384 2026-08-23T13:26:12+00:00 GET 404 uri="/004/api/codes/404?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="-" cache=-
+1787491572.402 2026-08-23T13:26:12+00:00 GET 410 uri="/004/api/codes/410?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="-" cache=-
+1787491572.417 2026-08-23T13:26:12+00:00 GET 429 uri="/004/api/codes/429?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="3" cache=-
+1787491572.431 2026-08-23T13:26:12+00:00 GET 500 uri="/004/api/codes/500?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="-" cache=-
+1787491572.444 2026-08-23T13:26:12+00:00 GET 503 uri="/004/api/codes/503?cs=render&cl=browser-webkit" cs=render cl=browser-webkit wa="-" ra="3" cache=-
+1787491572.783 2026-08-23T13:26:12+00:00 POST 204 uri="/004/api/__reset" cs=- cl=- wa="-" ra="-" cache=-
+1787491572.817 2026-08-23T13:26:12+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-plain&after=0&ra=3" cs=retry cl=curl-plain wa="-" ra="3" cache=-
+1787491572.850 2026-08-23T13:26:12+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+1787491575.856 2026-08-23T13:26:15+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+1787491578.866 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=curl-retry&after=0&ra=3" cs=retry cl=curl-retry wa="-" ra="3" cache=-
+1787491578.895 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=node-fetch&after=0&ra=3" cs=retry cl=node-fetch wa="-" ra="3" cache=-
+1787491578.902 2026-08-23T13:26:18+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+1787491581.912 2026-08-23T13:26:21+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+1787491584.919 2026-08-23T13:26:24+00:00 GET 429 uri="/004/api/limited?cs=retry&cl=undici-retry&after=0&ra=3" cs=retry cl=undici-retry wa="-" ra="3" cache=-
+1787491585.365 2026-08-23T13:26:25+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491585.375 2026-08-23T13:26:25+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-chromium&after=0&ra=3" cs=retryb cl=browser-retry-chromium wa="-" ra="3" cache=-
+1787491595.374 2026-08-23T13:26:35+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491595.450 2026-08-23T13:26:35+00:00 GET 404 uri="/favicon.ico" cs=- cl=- wa="-" ra="-" cache=-
+1787491595.454 2026-08-23T13:26:35+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-firefox&after=0&ra=3" cs=retryb cl=browser-retry-firefox wa="-" ra="3" cache=-
+1787491605.111 2026-08-23T13:26:45+00:00 GET 200 uri="/004/page/" cs=- cl=- wa="-" ra="-" cache=-
+1787491605.123 2026-08-23T13:26:45+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-webkit&after=0&ra=3" cs=retryb cl=browser-retry-webkit wa="-" ra="3" cache=-
+1787491614.257 2026-08-23T13:26:54+00:00 POST 204 uri="/004/api/__reset" cs=- cl=- wa="-" ra="-" cache=-
+1787491614.325 2026-08-23T13:26:54+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=python-urllib3-retry&after=0&ra=3" cs=clients cl=python-urllib3-retry wa="-" ra="3" cache=-
+1787491617.333 2026-08-23T13:26:57+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=python-urllib3-retry&after=0&ra=3" cs=clients cl=python-urllib3-retry wa="-" ra="3" cache=-
+1787491620.343 2026-08-23T13:27:00+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=python-urllib3-retry&after=0&ra=3" cs=clients cl=python-urllib3-retry wa="-" ra="3" cache=-
+1787491620.477 2026-08-23T13:27:00+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=python-requests&after=0&ra=3" cs=clients cl=python-requests wa="-" ra="3" cache=-
+1787491620.787 2026-08-23T13:27:00+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=java-httpclient&after=0&ra=3" cs=clients cl=java-httpclient wa="-" ra="3" cache=-
+1787491622.302 2026-08-23T13:27:02+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=go-nethttp&after=0&ra=3" cs=clients cl=go-nethttp wa="-" ra="3" cache=-
+1787491622.663 2026-08-23T13:27:02+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=ruby-nethttp&after=0&ra=3" cs=clients cl=ruby-nethttp wa="-" ra="3" cache=-
+1787491622.680 2026-08-23T13:27:02+00:00 GET 429 uri="/004/api/limited?cs=clients&cl=bun-fetch&after=0&ra=3" cs=clients cl=bun-fetch wa="-" ra="3" cache=-

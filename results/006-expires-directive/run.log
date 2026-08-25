@@ -21,3 +21,15 @@ judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめ�
 {"case":"expires epoch","path":"/006/exp/epoch.css","status":200,"cache_control":["no-cache"],"expires":["Thu, 01 Jan 1970 00:00:01 GMT"]}
 {"case":"expires off","path":"/006/exp/off.css","status":200,"cache_control":[],"expires":[]}
 {"case":"expires 1h + 500 応答","path":"/006/exp/error.css","status":500,"cache_control":[],"expires":[]}
+measured-at: 2026-08-23T13:04:44.457Z
+scenario: 006-expires-directive
+mode: M1
+base: http://localhost:8084
+judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめない）
+---
+{"case":"expires 1h","path":"/006/exp/expires-only.css","status":200,"cache_control":["max-age=3600"],"expires":["Sun, 23 Aug 2026 14:04:44 GMT"]}
+{"case":"expires max","path":"/006/exp/max.css","status":200,"cache_control":["max-age=315360000"],"expires":["Thu, 31 Dec 2037 23:55:55 GMT"]}
+{"case":"expires -1","path":"/006/exp/minus.css","status":200,"cache_control":["no-cache"],"expires":["Sun, 23 Aug 2026 13:04:43 GMT"]}
+{"case":"expires epoch","path":"/006/exp/epoch.css","status":200,"cache_control":["no-cache"],"expires":["Thu, 01 Jan 1970 00:00:01 GMT"]}
+{"case":"expires off","path":"/006/exp/off.css","status":200,"cache_control":[],"expires":[]}
+{"case":"expires 1h + 500 応答","path":"/006/exp/error.css","status":500,"cache_control":[],"expires":[]}

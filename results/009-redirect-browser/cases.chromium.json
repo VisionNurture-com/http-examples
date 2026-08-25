@@ -1,0 +1,86 @@
+{
+  "browser": "chromium",
+  "version": "151.0.7922.34",
+  "cases": [
+    {
+      "id": "B0",
+      "desc": "対照（リダイレクトなし）",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "yes",
+      "preflight_count": 0,
+      "hops_recorded": 1
+    },
+    {
+      "id": "B1",
+      "desc": "同一オリジン・パス差",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "yes",
+      "preflight_count": 0,
+      "hops_recorded": 2
+    },
+    {
+      "id": "B2",
+      "desc": "ポートだけ違う",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 2
+    },
+    {
+      "id": "B3",
+      "desc": "ホストだけ違う",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 2
+    },
+    {
+      "id": "B4",
+      "desc": "http → https",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 2
+    },
+    {
+      "id": "B5",
+      "desc": "元のオリジンへ復帰（A→B→A）",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 3
+    },
+    {
+      "id": "B6",
+      "desc": "同一→別（A1→A2→B）",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 3
+    },
+    {
+      "id": "B7",
+      "desc": "サブドメイン（localhost→sub.localhost）",
+      "fetch_ok": true,
+      "fetch_error": null,
+      "reached_end": true,
+      "auth": "no",
+      "preflight_count": 0,
+      "hops_recorded": 2
+    }
+  ]
+}

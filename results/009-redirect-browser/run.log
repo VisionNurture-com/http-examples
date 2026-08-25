@@ -1,0 +1,26 @@
+# 009-redirect-browser (M2)
+measured-at: 2026-08-23T15:25:04.766Z
+page-origin: http://localhost:8080
+browsers: chromium 151.0.7922.34 / firefox 153.0 / webkit 26.5
+
+判定はサーバ側の到着記録。OPTIONS（preflight）は除いて数える。
+
+B0  対照（リダイレクトなし）                   chromium=yes firefox=yes webkit=yes  一致
+    preflight: chromium=0 firefox=0 webkit=0
+B1  同一オリジン・パス差                     chromium=yes firefox=yes webkit=yes  一致
+    preflight: chromium=0 firefox=0 webkit=0
+B2  ポートだけ違う                        chromium=no firefox=no webkit=no  一致
+    preflight: chromium=0 firefox=1 webkit=1
+B3  ホストだけ違う                        chromium=no firefox=no webkit=no  一致
+    preflight: chromium=0 firefox=1 webkit=1
+B4  http → https                   chromium=no firefox=no webkit=no  一致
+    preflight: chromium=0 firefox=1 webkit=1
+B5  元のオリジンへ復帰（A→B→A）               chromium=no firefox=no webkit=unreached  🔴 乖離
+    preflight: chromium=0 firefox=2 webkit=2
+B6  同一→別（A1→A2→B）                  chromium=no firefox=no webkit=no  一致
+    preflight: chromium=0 firefox=1 webkit=1
+B7  サブドメイン（localhost→sub.localhost） chromium=no firefox=no webkit=no  一致
+    preflight: chromium=0 firefox=1 webkit=1
+
+全 8 ケース中、Authorization が終端まで届いたのは 2 件: B0, B1
+3 エンジンの判定は🔴 一部が乖離

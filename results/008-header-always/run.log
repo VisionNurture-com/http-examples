@@ -1,7 +1,7 @@
-measured-at: 2026-08-08T03:11:43Z
+measured-at: 2026-08-23T13:04:45Z
 scenario: 008-header-always
 mode: M1
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 base: http://localhost:8082
 ---
 ## /008/always/ok

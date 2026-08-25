@@ -1,5 +1,5 @@
 # 004-auth-browser
-measured-at: 2026-08-20T02:33:57.668Z
+measured-at: 2026-08-23T13:25:58.005Z
 
 chromium	none	fetch.resolved=true status=401 wwwAuth=null	nav.returned=true status=401
 chromium	basic	fetch.resolved=true status=401 wwwAuth="Basic realm=\"004\""	nav.returned=true status=401

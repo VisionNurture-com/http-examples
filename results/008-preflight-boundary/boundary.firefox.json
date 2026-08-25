@@ -1,7 +1,7 @@
 {
   "browser": "firefox",
   "browser_version": "153.0",
-  "measured_at": "2026-08-07T12:12:03.923Z",
+  "measured_at": "2026-08-23T13:49:26.291Z",
   "cases": [
     {
       "id": "get-plain",

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# mode: M1
+# 009-redirect-origin — オリジンの境界はどこで切れるか（curl）
+#
+# 前提: docker compose up -d --wait
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+cd "$ROOT"
+
+curl --silent --show-error --max-time 10 -X POST http://localhost:8080/009/api/__reset
+node tools/measure-009-redirect.mjs

@@ -1,0 +1,27 @@
+# 009-redirect-clients (M2)
+measured-at: 2026-08-23T15:22:12.908Z
+base: http://localhost:8080
+
+## 測ったランタイムの版
+  curl               curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+  python-requests    Python 3.14.7
+  java-httpclient    openjdk 25.0.4 2026-07-21 LTS
+  go-nethttp         go version go1.27.0 darwin/arm64
+  ruby-openuri       ruby 3.4.10 (2026-06-30 revision 2b0b7728dc) +PRISM [arm64-darwin25]
+  ruby-openuri-guarded ruby 3.4.10 (2026-06-30 revision 2b0b7728dc) +PRISM [arm64-darwin25]
+  node-fetch         v24.19.0
+  bun-fetch          1.4.0
+
+判定は終端 /009/whoami が報告した到着内容のみ。値そのものは記録しない。
+
+B0  対照（リダイレクトなし）                   curl=yes python-requests=yes java-httpclient=yes go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=yes node-fetch=yes bun-fetch=yes  一致
+B1  同一オリジン・パス差                     curl=yes python-requests=yes java-httpclient=yes go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=yes node-fetch=yes bun-fetch=yes  一致
+B2  ポートだけ違う                        curl=no python-requests=no java-httpclient=no go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=no node-fetch=no bun-fetch=no  🔴 乖離
+B3  ホストだけ違う                        curl=no python-requests=no java-httpclient=no go-nethttp=no ruby-openuri=yes ruby-openuri-guarded=no node-fetch=no bun-fetch=no  🔴 乖離
+B4  http → https                   curl=no python-requests=no java-httpclient=no go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=no node-fetch=no bun-fetch=no  🔴 乖離
+B5  元のオリジンへ復帰（A→B→A）               curl=yes python-requests=no java-httpclient=no go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=yes node-fetch=no bun-fetch=no  🔴 乖離
+B6  同一→別（A1→A2→B）                  curl=no python-requests=no java-httpclient=no go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=no node-fetch=no bun-fetch=no  🔴 乖離
+B7  サブドメイン（localhost→sub.localhost） curl=no python-requests=no java-httpclient=no go-nethttp=yes ruby-openuri=yes ruby-openuri-guarded=no node-fetch=no bun-fetch=no  🔴 乖離
+
+全 8 ケース / 8 クライアント。判定が割れたのは 6 ケース: B2, B3, B4, B5, B6, B7
+ホストだけが違うリダイレクト（B3）で資格情報を送ったのは: ruby-openuri

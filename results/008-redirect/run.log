@@ -1,4 +1,4 @@
-measured-at: 2026-08-08T05:25:24.431Z
+measured-at: 2026-08-23T13:49:31.055Z
 scenario: 008-redirect
 mode: M2
 page-origin: http://localhost:8080/008/
@@ -10,7 +10,7 @@ judgement: サーバ側の OPTIONS 到着記録（生ログのカウントのみ
 {"case":"R2","desc":"preflight を伴うリクエストの本番送信が 301","browser":"chromium","fetch_ok":true,"fetch":{"ok":true,"status":200,"redirected":true,"url":"http://localhost:8081/008/redirect/preflighted-target"},"preflight_count":2,"third_origin_preflights":0,"third_origin_actual":0,"third_origin_origins":[],"authorization_survived_redirect":null}
 {"case":"R3","desc":"preflight（OPTIONS）自体が 301 を返す","browser":"chromium","fetch_ok":false,"fetch":{"ok":false,"error":"Failed to fetch"},"preflight_count":1,"third_origin_preflights":0,"third_origin_actual":0,"third_origin_origins":[],"authorization_survived_redirect":null}
 {"case":"R4","desc":"別オリジン（:8083）へリダイレクト + Authorization","browser":"chromium","fetch_ok":false,"fetch":{"ok":false,"error":"Failed to fetch"},"preflight_count":1,"third_origin_preflights":1,"third_origin_actual":0,"third_origin_origins":["null"],"authorization_survived_redirect":null}
-measured-at: 2026-08-08T05:25:33.312Z
+measured-at: 2026-08-23T13:49:39.605Z
 scenario: 008-redirect
 mode: M2
 page-origin: http://localhost:8080/008/
@@ -22,7 +22,7 @@ judgement: サーバ側の OPTIONS 到着記録（生ログのカウントのみ
 {"case":"R2","desc":"preflight を伴うリクエストの本番送信が 301","browser":"firefox","fetch_ok":true,"fetch":{"ok":true,"status":200,"redirected":true,"url":"http://localhost:8081/008/redirect/preflighted-target"},"preflight_count":2,"third_origin_preflights":0,"third_origin_actual":0,"third_origin_origins":[],"authorization_survived_redirect":null}
 {"case":"R3","desc":"preflight（OPTIONS）自体が 301 を返す","browser":"firefox","fetch_ok":false,"fetch":{"ok":false,"error":"NetworkError when attempting to fetch resource."},"preflight_count":1,"third_origin_preflights":0,"third_origin_actual":0,"third_origin_origins":[],"authorization_survived_redirect":null}
 {"case":"R4","desc":"別オリジン（:8083）へリダイレクト + Authorization","browser":"firefox","fetch_ok":false,"fetch":{"ok":false,"error":"NetworkError when attempting to fetch resource."},"preflight_count":1,"third_origin_preflights":1,"third_origin_actual":1,"third_origin_origins":["http://localhost:8080","null"],"authorization_survived_redirect":false}
-measured-at: 2026-08-08T05:25:48.552Z
+measured-at: 2026-08-23T13:49:53.762Z
 scenario: 008-redirect
 mode: M2
 page-origin: http://localhost:8080/008/

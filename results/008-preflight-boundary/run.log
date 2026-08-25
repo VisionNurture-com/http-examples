@@ -31,3 +31,36 @@ browser: webkit 26.5
   preflight あり  put-plain — PUT・独自ヘッダなし -> 200
   preflight あり  delete-plain — DELETE・独自ヘッダなし -> 200
 ---
+measured-at: 2026-08-23T13:49:21.232Z
+browser: chromium 151.0.7922.34
+  preflight なし  get-plain — GET・独自ヘッダなし -> 200
+  preflight あり  get-custom-header — GET・独自ヘッダ x-probe あり -> 200
+  preflight なし  post-text-plain — POST・Content-Type: text/plain -> 200
+  preflight なし  post-form-urlencoded — POST・Content-Type: application/x-www-form-urlencoded -> 200
+  preflight なし  post-multipart — POST・Content-Type: multipart/form-data -> 200
+  preflight あり  post-json — POST・Content-Type: application/json -> 200
+  preflight あり  put-plain — PUT・独自ヘッダなし -> 200
+  preflight あり  delete-plain — DELETE・独自ヘッダなし -> 200
+---
+measured-at: 2026-08-23T13:49:26.291Z
+browser: firefox 153.0
+  preflight なし  get-plain — GET・独自ヘッダなし -> 200
+  preflight あり  get-custom-header — GET・独自ヘッダ x-probe あり -> 200
+  preflight なし  post-text-plain — POST・Content-Type: text/plain -> 200
+  preflight なし  post-form-urlencoded — POST・Content-Type: application/x-www-form-urlencoded -> 200
+  preflight なし  post-multipart — POST・Content-Type: multipart/form-data -> 200
+  preflight あり  post-json — POST・Content-Type: application/json -> 200
+  preflight あり  put-plain — PUT・独自ヘッダなし -> 200
+  preflight あり  delete-plain — DELETE・独自ヘッダなし -> 200
+---
+measured-at: 2026-08-23T13:49:30.732Z
+browser: webkit 26.5
+  preflight なし  get-plain — GET・独自ヘッダなし -> 200
+  preflight あり  get-custom-header — GET・独自ヘッダ x-probe あり -> 200
+  preflight なし  post-text-plain — POST・Content-Type: text/plain -> 200
+  preflight なし  post-form-urlencoded — POST・Content-Type: application/x-www-form-urlencoded -> 200
+  preflight なし  post-multipart — POST・Content-Type: multipart/form-data -> 200
+  preflight あり  post-json — POST・Content-Type: application/json -> 200
+  preflight あり  put-plain — PUT・独自ヘッダなし -> 200
+  preflight あり  delete-plain — DELETE・独自ヘッダなし -> 200
+---

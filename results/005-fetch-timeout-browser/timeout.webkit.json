@@ -1,0 +1,10 @@
+{
+  "elapsed_ms": 330005,
+  "outcome": "上限まで切れなかった",
+  "error": {
+    "name": "AbortError",
+    "message": "Fetch is aborted"
+  },
+  "capped_by_us": true,
+  "version": "26.5"
+}

@@ -1,0 +1,22 @@
+==========================================
+005-fetch-timeout-browser (M2)
+measured-at: 2026-08-24T23:46:23.161Z / 上限 330.0 秒
+==========================================
+
+足場: GET /005/never-responds（接続は成立・応答は返さない）
+🔴 Playwright 同梱のブラウザで測った値。実ブラウザは未測定。
+
+  chromium 151.0.7922.34
+    経過 330.0 秒 — 上限まで切れなかった
+    （上限で当方が中断。エンジンが返した文言は AbortError / signal is aborted without reason）
+
+  firefox 153.0
+    経過 330.0 秒 — 上限まで切れなかった
+    （上限で当方が中断。エンジンが返した文言は AbortError / The operation was aborted. ）
+
+  webkit 26.5
+    経過 330.0 秒 — 上限まで切れなかった
+    （上限で当方が中断。エンジンが返した文言は AbortError / Fetch is aborted）
+
+--- 読み取り ---
+3 エンジンのうち、既定で切れたのは 0 件（なし）

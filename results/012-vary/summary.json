@@ -7,7 +7,7 @@
   "cases": [
     {
       "variant": "novary",
-      "path": "/012/novary.js?case=run-9f1bde7-72185",
+      "path": "/012/novary.js?case=run-ddc24c8-63049",
       "first": {
         "bytes": 578,
         "sha256": "4c26dba36da6315134bd6f4ad30755d0fa5a284e327912e710dd503d95c32e71",
@@ -29,7 +29,7 @@
     },
     {
       "variant": "withvary",
-      "path": "/012/withvary.js?case=run-9f1bde7-72185",
+      "path": "/012/withvary.js?case=run-ddc24c8-63049",
       "first": {
         "bytes": 578,
         "sha256": "4c26dba36da6315134bd6f4ad30755d0fa5a284e327912e710dd503d95c32e71",

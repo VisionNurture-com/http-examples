@@ -1,0 +1,11 @@
+# P6 — 国内でもっとも広く案内されている対処（mod_rewrite で環境変数へ写す）
+#
+# CGIPassAuth Off のままでも、Authorization の値を HTTP_AUTHORIZATION という
+# 環境変数へ自分で入れておけば CGI から読める。WordPress の REST API が
+# 401 を返すときの定番の手当てで、レンタルサーバーの管理画面から .htaccess を
+# 編集して入れることが多い。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

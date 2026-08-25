@@ -1,0 +1,9 @@
+# P8 — CGIPassAuth そのものを .htaccess に置く
+#
+# 公式ドキュメントは CGIPassAuth の Context を directory と .htaccess、
+# Override を AuthConfig と定めている。つまりサーバ全体の設定ファイルを
+# 触れなくても、事業者が AllowOverride AuthConfig を許していれば
+# 利用者自身が 1 行で解除できる。P6 / P7 の環境変数へ写す手より直接的。
+#
+# 🔴 効かない環境があるとすれば、原因は書き方ではなく AllowOverride の許可。
+CGIPassAuth On

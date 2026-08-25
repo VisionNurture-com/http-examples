@@ -11,10 +11,13 @@
 services:
   edge:
     # nginx mainline（HTTP/3 を扱うため stable ではなく mainline）
-    image: nginx:1.31.3-alpine
+    image: nginx:1.31.4-alpine
     container_name: http-examples-edge
     depends_on:
       - app
+      # 🔴 fastcgi_pass は起動時に名前を解決する。php が居ないと nginx が
+      #    "host not found in upstream" で起動に失敗する（記事 009 の P3）。
+      - php
     ports:
       - "8080:80"
       # 別オリジン（ポート違い）。008 の CORS 測定に使う
@@ -46,6 +49,11 @@ services:
       # キャッシュを挟む の 4 経路を同じポートの別 location に並べ、
       # プロキシがステータスコードを見て何を変えるかを測る。
       - "8088:88"
+      # 記事 009 専用の入口。
+      #   91 = カード①の「別オリジン」（localhost:8080 とポートだけ違う）
+      #   92 = カード②の「構成別の到着」（素の転送 / 空文字剥がし / FastCGI）
+      - "8091:91"
+      - "8092:92"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro
@@ -121,6 +129,47 @@ services:
       MODSEC_DEFAULT_PHASE2_ACTION: "phase:2,log,auditlog,deny,status:403"
     ports:
       - "8090:8080"
+    networks:
+      - httpnet
+
+  # 記事 009 の対照。nginx の fastcgi_pass 越しに Authorization が届くかを測る。
+  # 公式ドキュメントでは fastcgi_pass_request_headers が既定 on で、クライアントの
+  # ヘッダーは HTTP_AUTHORIZATION として渡るはず。それを実測で確かめる側。
+  php:
+    image: php:8.5.9-fpm-alpine
+    container_name: http-examples-php
+    volumes:
+      - ./php:/var/www/html:ro
+    networks:
+      - httpnet
+
+  # 記事 009 の対照。CGIPassAuth の既定は Off で、Apache は Authorization を
+  # CGI から隠す。同じスクリプトを Off / On の 2 つの URL 空間へ置いて差を測る。
+  #
+  # 🔴 httpd-foreground は引数をそのまま httpd へ渡す。追加設定は -c で読ませ、
+  #    イメージ同梱の httpd.conf には触らない（版が動いても壊れないようにする）。
+  httpd:
+    image: httpd:2.4.68-alpine
+    container_name: http-examples-httpd
+    command: ["httpd-foreground", "-c", "Include conf/extra/009-auth.conf"]
+    volumes:
+      - ./apache/009-auth.conf:/usr/local/apache2/conf/extra/009-auth.conf:ro
+      - ./apache/cgi-bin:/usr/local/apache2/cgi-bin-off:ro
+      - ./apache/cgi-bin:/usr/local/apache2/cgi-bin-on:ro
+      # P6 / P7 は P4 / P5 と同じ CGI を .htaccess つきの URL 空間に置く。
+      # 🔴 終端のスクリプトを複製しない（同じケース定義を 2 箇所に書かない）。
+      #    ディレクトリを敷いてから .htaccess を重ねるため、
+      #    外側のディレクトリ側だけ :ro を外す（内側の mountpoint を作れるようにする）。
+      #    .htaccess 自体は :ro。コンテナから書き戻す経路は使わない。
+      - ./apache/cgi-bin:/usr/local/apache2/cgi-bin-rewrite
+      - ./apache/htaccess-rewrite/.htaccess:/usr/local/apache2/cgi-bin-rewrite/.htaccess:ro
+      - ./apache/cgi-bin:/usr/local/apache2/cgi-bin-setenvif
+      - ./apache/htaccess-setenvif/.htaccess:/usr/local/apache2/cgi-bin-setenvif/.htaccess:ro
+      # P8 は CGIPassAuth そのものを .htaccess に置く（AllowOverride AuthConfig）。
+      - ./apache/cgi-bin:/usr/local/apache2/cgi-bin-htaccess
+      - ./apache/htaccess-cgipassauth/.htaccess:/usr/local/apache2/cgi-bin-htaccess/.htaccess:ro
+    ports:
+      - "8093:80"
     networks:
       - httpnet
 

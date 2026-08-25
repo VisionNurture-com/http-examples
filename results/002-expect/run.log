@@ -1,7 +1,7 @@
 # 002-expect
-measured-at: 2026-08-19T09:51:06.215Z
+measured-at: 2026-08-23T13:04:22.259Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: 自分では書いていない Expect: 100-continue を curl が足す条件と、上限の違う 2 つの口での返り方
 ## 既定の上限（client_max_body_size 未指定 = 1m）

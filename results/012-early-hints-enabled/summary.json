@@ -1,7 +1,7 @@
 {
   "scenario": "012-early-hints-enabled",
   "mode": "M2",
-  "measured_at": "2026-08-22T11:04:10.096Z",
+  "measured_at": "2026-08-23T13:51:48.631Z",
   "base": "https://localhost:8445",
   "think_ms": 200,
   "cache_control": "no-store",
@@ -25,19 +25,19 @@
           "protocol": "h2",
           "interim_delivered": false,
           "interim_ms": 0,
-          "reported_ttfb_ms": 204.40000000596046,
-          "final_headers_ms": 204.40000000596046,
-          "css_response_end_ms": 364.59999999403954
+          "reported_ttfb_ms": 208.09999999403954,
+          "final_headers_ms": 208.09999999403954,
+          "css_response_end_ms": 369.30000001192093
         },
         "enabled": {
           "label": "early_hints を書いた",
           "path": "/012/ehon",
           "protocol": "h2",
           "interim_delivered": true,
-          "interim_ms": 2.2000000029802322,
-          "reported_ttfb_ms": 2.2000000029802322,
-          "final_headers_ms": 206.3999999910593,
-          "css_response_end_ms": 367.90000000596046
+          "interim_ms": 3.0999999940395355,
+          "reported_ttfb_ms": 3.0999999940395355,
+          "final_headers_ms": 208.30000001192093,
+          "css_response_end_ms": 368.5
         }
       }
     },
@@ -52,17 +52,17 @@
           "interim_ms": 0,
           "reported_ttfb_ms": 210,
           "final_headers_ms": 210,
-          "css_response_end_ms": 383
+          "css_response_end_ms": 388
         },
         "enabled": {
           "label": "early_hints を書いた",
           "path": "/012/ehon",
           "protocol": "h2",
           "interim_delivered": true,
-          "interim_ms": 3,
-          "reported_ttfb_ms": 3,
-          "final_headers_ms": 210,
-          "css_response_end_ms": 162
+          "interim_ms": 4,
+          "reported_ttfb_ms": 4,
+          "final_headers_ms": 208,
+          "css_response_end_ms": 158
         }
       }
     },
@@ -75,9 +75,9 @@
           "protocol": "h2",
           "interim_delivered": false,
           "interim_ms": 0,
-          "reported_ttfb_ms": 210,
-          "final_headers_ms": 210,
-          "css_response_end_ms": 377
+          "reported_ttfb_ms": 207,
+          "final_headers_ms": 207,
+          "css_response_end_ms": 374
         },
         "enabled": {
           "label": "early_hints を書いた",
@@ -87,7 +87,7 @@
           "interim_ms": 4,
           "reported_ttfb_ms": 4,
           "final_headers_ms": 4,
-          "css_response_end_ms": 372
+          "css_response_end_ms": 379
         }
       }
     }

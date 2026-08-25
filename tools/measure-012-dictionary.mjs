@@ -136,7 +136,7 @@ const timing = await page.evaluate((target) => {
 
 await context.close();
 
-// --- nginx 側の到着記録（本セッションぶんだけ切り出す）---
+// --- nginx 側の到着記録（この実行ぶんだけ切り出す）---
 const accessLines = existsSync(ACCESS_LOG)
   ? readFileSync(ACCESS_LOG, "utf8").split("\n").filter(Boolean).slice(Math.max(0, accessLogBefore - 1))
   : [];

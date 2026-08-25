@@ -1,4 +1,4 @@
-measured-at: 2026-08-12T07:06:30.027Z
+measured-at: 2026-08-23T13:25:57.827Z
 scenario: 003-redirect-browser
 mode: M2
 base: http://localhost:8085

@@ -1,7 +1,7 @@
 # 002-minimize
-measured-at: 2026-08-17T14:49:21.586Z
+measured-at: 2026-08-23T13:25:32.267Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 note: ブラウザが送ったヘッダ集合を curl で再現し、1 本ずつ削って 4 点比較する
 ブラウザが送ったヘッダ: 12 本

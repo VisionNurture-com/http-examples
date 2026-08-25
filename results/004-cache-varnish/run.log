@@ -1,9 +1,9 @@
 # 004-cache-varnish
-measured-at: 2026-08-20T11:37:22.743Z
+measured-at: 2026-08-23T13:04:34.162Z
 curl: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
-node(host): 24.18.0
+node(host): 24.19.0
 undici: 8.10.0
-nginx: nginx version: nginx/1.31.3
+nginx: nginx version: nginx/1.31.4
 node(app): v24.19.0
 varnish: varnishd (varnish-9.0.3 revision 0a625649cd40af4b6c10be5e58a2e89a5e275baa)
 note: 同じ応答を nginx と Varnish に通し、保存の判断がコードで変わるかを見る

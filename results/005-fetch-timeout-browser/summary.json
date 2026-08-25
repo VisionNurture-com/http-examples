@@ -1,0 +1,23 @@
+{
+  "scenario": "005-fetch-timeout-browser",
+  "mode": "M2",
+  "measured_at": "2026-08-24T23:46:23.161Z",
+  "cap_ms": 330000,
+  "chromium_elapsed_s": 330,
+  "chromium_outcome": "上限まで切れなかった",
+  "chromium_error": null,
+  "firefox_elapsed_s": 330,
+  "firefox_outcome": "上限まで切れなかった",
+  "firefox_error": null,
+  "webkit_elapsed_s": 330,
+  "webkit_outcome": "上限まで切れなかった",
+  "webkit_error": null,
+  "browsers": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "timed_out_engines": [],
+  "timed_out_count": 0,
+  "engines_total": 3
+}

@@ -1,6 +1,6 @@
 # 007-content-type-parse (M1)
-measured-at: 2026-08-22T07:26:49.321Z
-node: v24.18.0
+measured-at: 2026-08-23T13:04:45.436Z
+node: v24.19.0
 via-nginx: http://localhost:8080 / direct-app: http://localhost:8086
 
 ## /007/echo — 既定の express.json()（先回りの検査を足していない）

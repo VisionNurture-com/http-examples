@@ -1,0 +1,5 @@
+# P7 — 同じ目的をもう 1 つの書き方で（mod_setenvif）
+#
+# mod_rewrite を使わずに Authorization を環境変数へ写す。こちらも国内の
+# 解説記事で併記されることが多い。mod_setenvif は既定で読み込まれている。
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
