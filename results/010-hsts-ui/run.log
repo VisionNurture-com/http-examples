@@ -1,0 +1,75 @@
+# 010-hsts-ui (M2)
+measured-at: 2026-08-25T13:13:08.881Z
+browser: 実 Chrome（channel:chrome・一時プロファイル） Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36
+
+🔴 判定は Query の出力フィールド（static_* / dynamic_*）。画面の Not found 表示ではない。
+🔴 github.com は所有していない。状態を読んだだけで通信はしていない。
+
+## K2 dynamic（ヘッダ由来）の削除
+### 削除前
+Found:
+static_sts_domain:
+static_upgrade_mode: UNKNOWN
+static_sts_include_subdomains:
+static_sts_observed:
+static_pkp_domain:
+static_pkp_include_subdomains:
+static_pkp_observed:
+static_spki_hashes:
+dynamic_sts_domain: example.test
+dynamic_upgrade_mode: FORCE_HTTPS
+dynamic_sts_include_subdomains: false
+dynamic_sts_observed: 1787663583.523654
+dynamic_sts_expiry: 1787664183.523648
+static_sts_domain:
+static_upgrade_mode: UNKNOWN
+static_sts_include_subdomains:
+static_sts_observed:
+static_pkp_domain:
+
+### 削除後
+Not found
+http 到達: 削除前=https昇格 / 削除後=http到達
+
+## K5 static（preload 由来）の削除
+### 削除前
+Found:
+static_sts_domain: github.com
+static_upgrade_mode: FORCE_HTTPS
+static_sts_include_subdomains: true
+static_sts_observed: 1787169453
+static_pkp_domain:
+static_pkp_include_subdomains:
+static_pkp_observed:
+static_spki_hashes:
+dynamic_sts_domain:
+dynamic_upgrade_mode: UNKNOWN
+dynamic_sts_include_subdomains:
+dynamic_sts_observed:
+dynamic_sts_expiry:
+static_sts_domain: github.com
+static_upgrade_mode: FORCE_HTTPS
+static_sts_include_subdomains: true
+static_sts_observed: 1787169453
+static_pkp_domai
+### 削除後
+Found:
+static_sts_domain: github.com
+static_upgrade_mode: FORCE_HTTPS
+static_sts_include_subdomains: true
+static_sts_observed: 1787169453
+static_pkp_domain:
+static_pkp_include_subdomains:
+static_pkp_observed:
+static_spki_hashes:
+dynamic_sts_domain:
+dynamic_upgrade_mode: UNKNOWN
+dynamic_sts_include_subdomains:
+dynamic_sts_observed:
+dynamic_sts_expiry:
+static_sts_domain: github.com
+static_upgrade_mode: FORCE_HTTPS
+static_sts_include_subdomains: true
+static_sts_observed: 1787169453
+static_pkp_domai
+

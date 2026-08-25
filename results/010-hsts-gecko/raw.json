@@ -1,0 +1,119 @@
+{
+  "測定日": "2026-08-25",
+  "プロキシ": "http://127.0.0.1:49394",
+  "結果": {
+    "bundled": {
+      "エンジン": "同梱 Firefox（Playwright）",
+      "ケース": [
+        {
+          "ケース": "G0 対照（登録なし）",
+          "プロファイル": "(破棄)",
+          "応答": [
+            {
+              "url": "http://example.test/",
+              "本文": "plain-http"
+            }
+          ],
+          "状態": {
+            "ファイル": null,
+            "存在": false,
+            "対象行": [],
+            "他ホスト行数": 0
+          }
+        },
+        {
+          "ケース": "G1 登録（max-age=600）",
+          "プロファイル": "(破棄)",
+          "応答": [
+            {
+              "url": "https://example.test/",
+              "本文": "parent-sts"
+            }
+          ],
+          "状態": {
+            "ファイル": "SiteSecurityServiceState.bin",
+            "バイト数": 286,
+            "存在": true,
+            "件数": 1,
+            "エントリ": [
+              {
+                "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
+                "値": "1787669489323,1,0",
+                "有効期限": "2026-08-25 14:51:29Z",
+                "状態": 1,
+                "includeSubDomains": false
+              }
+            ]
+          }
+        },
+        {
+          "ケース": "G2 登録（+includeSubDomains）",
+          "プロファイル": "(破棄)",
+          "応答": [
+            {
+              "url": "https://example.test/subs",
+              "本文": "parent-sts-subs"
+            }
+          ],
+          "状態": {
+            "ファイル": "SiteSecurityServiceState.bin",
+            "バイト数": 286,
+            "存在": true,
+            "件数": 1,
+            "エントリ": [
+              {
+                "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
+                "値": "1787669491106,1,1",
+                "有効期限": "2026-08-25 14:51:31Z",
+                "状態": 1,
+                "includeSubDomains": true
+              }
+            ]
+          }
+        },
+        {
+          "ケース": "G3 登録 → max-age=0",
+          "プロファイル": "(破棄)",
+          "応答": [
+            {
+              "url": "https://example.test/",
+              "本文": "parent-sts"
+            },
+            {
+              "url": "https://example.test/off",
+              "本文": "parent-sts-off"
+            }
+          ],
+          "状態": {
+            "ファイル": "SiteSecurityServiceState.bin",
+            "バイト数": 286,
+            "存在": true,
+            "件数": 0,
+            "エントリ": []
+          }
+        }
+      ]
+    },
+    "real": {
+      "エンジン": "実 Firefox",
+      "実行": true,
+      "版": "Mozilla Firefox 154.0",
+      "プロファイル": "(破棄)",
+      "登録後": {
+        "ファイル": "SiteSecurityServiceState.bin",
+        "バイト数": 572,
+        "存在": true,
+        "件数": 1,
+        "エントリ": [
+          {
+            "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
+            "値": "1787669494453,1,0",
+            "有効期限": "2026-08-25 14:51:34Z",
+            "状態": 1,
+            "includeSubDomains": false
+          }
+        ]
+      }
+    }
+  }
+}

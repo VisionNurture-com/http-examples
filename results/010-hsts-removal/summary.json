@@ -1,0 +1,121 @@
+{
+  "scenario": "010-hsts-removal",
+  "mode": "M2",
+  "measuredAt": "2026-08-25T13:13:02.607Z",
+  "note": "判定は到達したサーバの本文で行う。plain-http = 平文到達 / parent-*・child-quiet = https 昇格",
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "engine_versions": {
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "webkit": "26.5"
+  },
+  "cases_total": 4,
+  "engines_agree": true,
+  "k0_no_registration": "http到達",
+  "k1_after_register": "https昇格",
+  "k1_after_maxage0": "http到達",
+  "k3_child_before": "http到達",
+  "k3_child_after_subs": "https昇格",
+  "k3_child_after_off": "http到達",
+  "k6_after_off": "http到達",
+  "k6_after_revisit": "https昇格",
+  "engines": [
+    {
+      "engine": "chromium(同梱)",
+      "version": "151.0.7922.34",
+      "cases": {
+        "K0": {
+          "手順": "登録なしで http へ",
+          "到達": "http到達",
+          "本文": "plain-http",
+          "最終URL": "http://example.test/"
+        },
+        "K1": {
+          "手順": "STS登録 → http → max-age=0 → http",
+          "登録直後": "https昇格",
+          "解除後": "http到達",
+          "登録応答": "parent-sts",
+          "解除応答": "parent-sts-off",
+          "最終URL": "http://example.test/"
+        },
+        "K3": {
+          "手順": "子(前) → 親にincludeSubDomains → 子 → 親をmax-age=0 → 子",
+          "子_登録前": "http到達",
+          "子_登録後": "https昇格",
+          "子_解除後": "http到達"
+        },
+        "K6": {
+          "手順": "登録 → 解除 → http → https で再訪 → http",
+          "解除後": "http到達",
+          "再訪後": "https昇格"
+        }
+      }
+    },
+    {
+      "engine": "firefox(同梱)",
+      "version": "153.0",
+      "cases": {
+        "K0": {
+          "手順": "登録なしで http へ",
+          "到達": "http到達",
+          "本文": "plain-http",
+          "最終URL": "http://example.test/"
+        },
+        "K1": {
+          "手順": "STS登録 → http → max-age=0 → http",
+          "登録直後": "https昇格",
+          "解除後": "http到達",
+          "登録応答": "parent-sts",
+          "解除応答": "parent-sts-off",
+          "最終URL": "http://example.test/"
+        },
+        "K3": {
+          "手順": "子(前) → 親にincludeSubDomains → 子 → 親をmax-age=0 → 子",
+          "子_登録前": "http到達",
+          "子_登録後": "https昇格",
+          "子_解除後": "http到達"
+        },
+        "K6": {
+          "手順": "登録 → 解除 → http → https で再訪 → http",
+          "解除後": "http到達",
+          "再訪後": "https昇格"
+        }
+      }
+    },
+    {
+      "engine": "webkit(同梱)",
+      "version": "26.5",
+      "cases": {
+        "K0": {
+          "手順": "登録なしで http へ",
+          "到達": "http到達",
+          "本文": "plain-http",
+          "最終URL": "http://example.test/"
+        },
+        "K1": {
+          "手順": "STS登録 → http → max-age=0 → http",
+          "登録直後": "https昇格",
+          "解除後": "http到達",
+          "登録応答": "parent-sts",
+          "解除応答": "parent-sts-off",
+          "最終URL": "http://example.test/"
+        },
+        "K3": {
+          "手順": "子(前) → 親にincludeSubDomains → 子 → 親をmax-age=0 → 子",
+          "子_登録前": "http到達",
+          "子_登録後": "https昇格",
+          "子_解除後": "http到達"
+        },
+        "K6": {
+          "手順": "登録 → 解除 → http → https で再訪 → http",
+          "解除後": "http到達",
+          "再訪後": "https昇格"
+        }
+      }
+    }
+  ]
+}
