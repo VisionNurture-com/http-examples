@@ -90,8 +90,22 @@ if command -v mkcert >/dev/null 2>&1; then
     chmod 644 "$CERT_DIR/mismatch.crt" "$CERT_DIR/mismatch.key"
     echo "[gen-certs] mismatch.crt を発行しました（CN=other.${ALT}・CA は信頼される）"
 else
-    # mkcert が無い環境では要因を分離できない。K4b は測れないと記録する。
-    echo "[gen-certs] ⚠️ mkcert が無いため mismatch.crt を発行できません（001 の K4b は測定不可）"
+    # 🔴 mkcert が無くても mismatch.crt は必ず発行する。
+    #    001-layers.conf が ssl_certificate で必須参照しているため、ファイルが無いと
+    #    nginx が起動できず compose 全体が落ちる（CI には mkcert が無く、実際に
+    #    `container http-examples-edge exited (1)` で全シナリオが止まった）。
+    #    ただし自己署名になるため、K4b は「名前の不一致だけ」を分離できない
+    #    （openssl の検証コードは 62 ではなく 18 を返す）。curl の終了コードは
+    #    どちらも 60 で変わらないため、機械突合する値は影響を受けない。
+    openssl req -x509 -nodes -newkey rsa:2048 -days 825 \
+        -keyout "$CERT_DIR/mismatch.key" \
+        -out    "$CERT_DIR/mismatch.crt" \
+        -subj   "/CN=other.${ALT}" \
+        -addext "subjectAltName=DNS:other.${ALT}" \
+        2>/dev/null
+    chmod 644 "$CERT_DIR/mismatch.crt" "$CERT_DIR/mismatch.key"
+    echo "[gen-certs] ⚠️ mkcert が無いため mismatch.crt を自己署名で発行しました"
+    echo "[gen-certs]    （nginx は起動しますが、001 の K4b は要因を分離できません）"
 fi
 
 echo "[gen-certs] 完了: $CERT_DIR/server.{crt,key} / $CERT_DIR/wrongname.{crt,key} / $CERT_DIR/mismatch.{crt,key}"

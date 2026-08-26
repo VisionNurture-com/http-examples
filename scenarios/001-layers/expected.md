@@ -1,6 +1,10 @@
 # 001-layers — 記事に載せる値
 
 > この表の値は `results/001-layers/summary.json` と機械的に突合されます（`npm run check:provenance`）。片方だけ直すと落ちます。
+>
+> 🔴 **ホスト側の道具の版は `values` に入れません。** `curl` はリポジトリで固定していないため、
+> 別のマシンで再実行すると必ず乖離します（CI は Ubuntu の curl 8.5.0 で走り、`curl_version` の
+> 突合だけが落ちていました）。測った版は `summary.json` の `versions` と `run.log` に残ります。
 
 ```json
 {
@@ -34,7 +38,6 @@
     "exit_K7": 28,
     "time_connect_nonzero_K7": true,
     "arrivals_K7": 0,
-    "curl_version": "8.21.0",
     "chrome_error_K0": "status_200",
     "chrome_error_K1": "net::ERR_NAME_NOT_RESOLVED",
     "chrome_error_K2": "net::ERR_CONNECTION_REFUSED",
