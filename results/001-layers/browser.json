@@ -1,7 +1,7 @@
 {
   "scenario": "001-layers-browser",
   "mode": "M2",
-  "measured_at": "2026-08-26T03:42:35.217Z",
+  "measured_at": "2026-08-26T08:56:40.629Z",
   "note": "🔴 Firefox は Playwright 同梱版。実機 Firefox 154.0.1 は未測定（Playwright は同梱ビルド以外を駆動できない）。",
   "browsers": {
     "chrome-real": "152.0.7977.65",
@@ -19,13 +19,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 0.3999999761581421,
-            "domainLookupEnd": 0.3999999761581421,
-            "connectStart": 0.3999999761581421,
-            "connectEnd": 0.3999999761581421,
+            "domainLookupStart": 0.5,
+            "domainLookupEnd": 0.5,
+            "connectStart": 0.5,
+            "connectEnd": 0.5,
             "secureConnectionStart": 0,
-            "requestStart": 0.800000011920929,
-            "responseStart": 2.300000011920929,
+            "requestStart": 1,
+            "responseStart": 2,
             "has_secureConnectionStart_field": true
           }
         },
@@ -81,13 +81,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 0.2999999523162842,
-            "domainLookupEnd": 0.2999999523162842,
-            "connectStart": 0.2999999523162842,
-            "connectEnd": 0.2999999523162842,
+            "domainLookupStart": 3.599999964237213,
+            "domainLookupEnd": 3.599999964237213,
+            "connectStart": 3.599999964237213,
+            "connectEnd": 3.599999964237213,
             "secureConnectionStart": 0,
-            "requestStart": 0.7999999523162842,
-            "responseStart": 1.399999976158142,
+            "requestStart": 4.099999964237213,
+            "responseStart": 5.199999988079071,
             "has_secureConnectionStart_field": true
           }
         },
@@ -105,7 +105,7 @@
             "connectEnd": 0.40000003576278687,
             "secureConnectionStart": 0,
             "requestStart": 1,
-            "responseStart": 2.199999988079071,
+            "responseStart": 2.100000023841858,
             "has_secureConnectionStart_field": true
           }
         },
@@ -118,6 +118,24 @@
           "timing": {
             "entry": false,
             "reason": "evaluate 不可（ページが無い）"
+          }
+        },
+        "K0s": {
+          "layer": "なし（TLS の陽性対照）",
+          "url": "https://localhost:8452/001/ok?cs=K0sb",
+          "nav_status": 200,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0.8999999761581421,
+            "domainLookupEnd": 0.8999999761581421,
+            "connectStart": 0.8999999761581421,
+            "connectEnd": 8.699999988079071,
+            "secureConnectionStart": 0.8999999761581421,
+            "requestStart": 8.800000011920929,
+            "responseStart": 9.699999988079071,
+            "has_secureConnectionStart_field": true
           }
         }
       }
@@ -133,13 +151,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 2,
-            "domainLookupEnd": 2,
-            "connectStart": 2,
+            "domainLookupStart": 1,
+            "domainLookupEnd": 1,
+            "connectStart": 1,
             "connectEnd": 2,
             "secureConnectionStart": 0,
             "requestStart": 2,
-            "responseStart": 3,
+            "responseStart": 4,
             "has_secureConnectionStart_field": true
           }
         },
@@ -150,15 +168,8 @@
           "nav_error": "page.goto: NS_ERROR_UNKNOWN_HOST",
           "request_failed": "NS_ERROR_UNKNOWN_HOST",
           "timing": {
-            "entry": true,
-            "domainLookupStart": 0,
-            "domainLookupEnd": 0,
-            "connectStart": 0,
-            "connectEnd": 0,
-            "secureConnectionStart": 0,
-            "requestStart": 0,
-            "responseStart": 0,
-            "has_secureConnectionStart_field": true
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
           }
         },
         "K2": {
@@ -186,15 +197,8 @@
           "nav_error": "page.goto: SSL_ERROR_UNKNOWN",
           "request_failed": "SSL_ERROR_UNKNOWN",
           "timing": {
-            "entry": true,
-            "domainLookupStart": 0,
-            "domainLookupEnd": 0,
-            "connectStart": 0,
-            "connectEnd": 0,
-            "secureConnectionStart": 0,
-            "requestStart": 0,
-            "responseStart": 0,
-            "has_secureConnectionStart_field": true
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
           }
         },
         "K4b": {
@@ -223,13 +227,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 2,
+            "domainLookupStart": 1,
             "domainLookupEnd": 2,
             "connectStart": 2,
             "connectEnd": 2,
             "secureConnectionStart": 0,
             "requestStart": 2,
-            "responseStart": 2,
+            "responseStart": 5,
             "has_secureConnectionStart_field": true
           }
         },
@@ -247,7 +251,7 @@
             "connectEnd": 1,
             "secureConnectionStart": 0,
             "requestStart": 1,
-            "responseStart": 2,
+            "responseStart": 4,
             "has_secureConnectionStart_field": true
           }
         },
@@ -266,6 +270,24 @@
             "secureConnectionStart": 0,
             "requestStart": 0,
             "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K0s": {
+          "layer": "なし（TLS の陽性対照）",
+          "url": "https://localhost:8452/001/ok?cs=K0sb",
+          "nav_status": 200,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
+            "connectEnd": 10,
+            "secureConnectionStart": 3,
+            "requestStart": 10,
+            "responseStart": 12,
             "has_secureConnectionStart_field": true
           }
         }

@@ -39,6 +39,9 @@ const CASES = [
   { id: 'K5', layer: 'HTTP',             url: 'http://localhost:8095/001/http-503?cs=K5',  from: 'host', tls: false },
   { id: 'K6', layer: 'アプリ',           url: 'http://localhost:8095/001/app-down?cs=K6',  from: 'host', tls: false },
   { id: 'K7', layer: 'TCP は成立・応答なし', url: 'http://localhost:8096/001/ok?cs=K7',    from: 'host', tls: false },
+  // 🔴 握手まで通る対照。K4 / K4b は失敗するため time_appconnect が 0 のまま終わり、
+  //    「接続と暗号を分けられるか」を主張する材料が 1 件も取れない。
+  { id: 'K0s', layer: 'なし（TLS の陽性対照）', url: 'https://localhost:8452/001/ok?cs=K0s', from: 'host', tls: true },
 ];
 
 const W = ['exitcode=%{exitcode}', 'http_code=%{http_code}',
@@ -68,7 +71,11 @@ function observeCurl(c) {
   // 🔴 -k（--insecure）を付けてはいけない。付けると TLS の名前不一致（K4）が
   //    exit=0 に化け、要求がサーバまで届いて access.log にも 1 行出る。
   //    2026-08-26 の初回実行で実際にそうなった（測定器が観測対象を消した例）。
-  const common = ['-s', '-o', '/dev/null', '--max-time', '8', '-w', W, c.url];
+  // 🔴 K0s だけは信頼の起点を明示する。mkcert がある環境では OS の信頼ストアで通るが、
+  //    無い環境では server.crt が自己署名になり、同じコマンドが検証で止まる（CI で実際に落ちた）。
+  //    --cacert は -k と違い検証を省かない。起点を指定したうえで検証させる。
+  const caArgs = c.id === 'K0s' ? ['--cacert', join(ROOT, 'certs', 'k0s-ca.pem')] : [];
+  const common = ['-s', '-o', '/dev/null', '--max-time', '8', ...caArgs, '-w', W, c.url];
   const r = c.from === 'net'
     ? run('docker', ['run', '--rm', '--network', NET, CURL_IMAGE, ...common])
     : run('curl', common);
@@ -157,6 +164,8 @@ const summary = {
     return [
       [`exit_${c.id}`, r.curl.exit],
       [`time_connect_nonzero_${c.id}`, r.curl.time_connect > 0],
+      // 🔴 握手まで通ったかどうか。成功した TLS でしか値が入らない
+      [`time_appconnect_nonzero_${c.id}`, r.curl.time_appconnect > 0],
       [`arrivals_${c.id}`, r.server.arrivals],
     ];
   })),
@@ -178,6 +187,16 @@ if (existsSync(BROWSER_JSON)) {
     for (const [cid, v] of Object.entries(bj.detail?.[engKey]?.cases ?? {})) {
       summary[`${engLabel}_error_${cid}`] = v.request_failed ?? (v.nav_status !== null ? `status_${v.nav_status}` : 'none');
       summary[`${engLabel}_timing_entry_${cid}`] = Boolean(v.timing?.entry);
+      // 🔴 接続と暗号を分けられるかの材料。
+      //    secureConnectionStart は平文では 0、TLS では非 0 になる（MDN）。
+      //    ミリ秒の分解能に丸まると connectStart と一致するため、
+      //    「一致したか」は台帳に入れず、非 0 かどうかと connectEnd との前後だけを持つ。
+      const tm = v.timing;
+      if (tm && tm.entry) {
+        summary[`${engLabel}_secure_start_nonzero_${cid}`] = Number(tm.secureConnectionStart) > 0;
+        summary[`${engLabel}_connect_end_gt_secure_start_${cid}`] =
+          Number(tm.connectEnd) > Number(tm.secureConnectionStart);
+      }
     }
   }
   summary.browsers = bj.browsers;

@@ -1,7 +1,7 @@
 {
   "scenario": "001-layers",
   "mode": "M1",
-  "measured_at": "2026-08-26T05:29:01.975Z",
+  "measured_at": "2026-08-26T09:30:13.378Z",
   "versions": {
     "curl_host": "curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple",
     "openssl_host": "OpenSSL 3.6.3 9 Jun 2026 (Library: OpenSSL 3.6.3 9 Jun 2026)",
@@ -12,31 +12,44 @@
   },
   "exit_K0": 0,
   "time_connect_nonzero_K0": true,
+  "time_appconnect_nonzero_K0": false,
   "arrivals_K0": 1,
   "exit_K1": 6,
   "time_connect_nonzero_K1": false,
+  "time_appconnect_nonzero_K1": false,
   "arrivals_K1": 0,
   "exit_K2": 7,
   "time_connect_nonzero_K2": false,
+  "time_appconnect_nonzero_K2": false,
   "arrivals_K2": 0,
   "exit_K3": 28,
   "time_connect_nonzero_K3": false,
+  "time_appconnect_nonzero_K3": false,
   "arrivals_K3": 0,
   "exit_K4": 60,
   "time_connect_nonzero_K4": true,
+  "time_appconnect_nonzero_K4": false,
   "arrivals_K4": 0,
   "exit_K4b": 60,
   "time_connect_nonzero_K4b": true,
+  "time_appconnect_nonzero_K4b": false,
   "arrivals_K4b": 0,
   "exit_K5": 0,
   "time_connect_nonzero_K5": true,
+  "time_appconnect_nonzero_K5": false,
   "arrivals_K5": 1,
   "exit_K6": 0,
   "time_connect_nonzero_K6": true,
+  "time_appconnect_nonzero_K6": false,
   "arrivals_K6": 1,
   "exit_K7": 28,
   "time_connect_nonzero_K7": true,
+  "time_appconnect_nonzero_K7": false,
   "arrivals_K7": 0,
+  "exit_K0s": 0,
+  "time_connect_nonzero_K0s": true,
+  "time_appconnect_nonzero_K0s": true,
+  "arrivals_K0s": 1,
   "curl_version": "8.21.0",
   "detail": {
     "K0": {
@@ -46,8 +59,8 @@
       "curl": {
         "exit": 0,
         "http_code": 200,
-        "time_namelookup": 0.000013,
-        "time_connect": 0.000174,
+        "time_namelookup": 0.000015,
+        "time_connect": 0.000196,
         "time_appconnect": 0,
         "errormsg": ""
       },
@@ -60,7 +73,7 @@
       "server": {
         "arrivals": 1,
         "lines": [
-          "1787722142.010 2026-08-26T05:29:02+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+          "1787736613.413 2026-08-26T09:30:13+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
         ]
       }
     },
@@ -94,7 +107,7 @@
       "curl": {
         "exit": 7,
         "http_code": 0,
-        "time_namelookup": 0.000021,
+        "time_namelookup": 0.000019,
         "time_connect": 0,
         "time_appconnect": 0,
         "errormsg": "Failed to connect to localhost:8099 after 0 ms: Could not connect to server"
@@ -117,7 +130,7 @@
       "curl": {
         "exit": 28,
         "http_code": 0,
-        "time_namelookup": 0.000639,
+        "time_namelookup": 0.000281,
         "time_connect": 0,
         "time_appconnect": 0,
         "errormsg": "Connection timed out after 8003 milliseconds"
@@ -138,8 +151,8 @@
       "curl": {
         "exit": 60,
         "http_code": 0,
-        "time_namelookup": 0.000014,
-        "time_connect": 0.000236,
+        "time_namelookup": 0.000016,
+        "time_connect": 0.000227,
         "time_appconnect": 0,
         "errormsg": "SSL: no alternative certificate subject name matches target hostname 'localhost'"
       },
@@ -161,8 +174,8 @@
       "curl": {
         "exit": 60,
         "http_code": 0,
-        "time_namelookup": 0.000018,
-        "time_connect": 0.000203,
+        "time_namelookup": 0.000027,
+        "time_connect": 0.000422,
         "time_appconnect": 0,
         "errormsg": "SSL: no alternative certificate subject name matches target hostname 'localhost'"
       },
@@ -184,8 +197,8 @@
       "curl": {
         "exit": 0,
         "http_code": 503,
-        "time_namelookup": 0.000018,
-        "time_connect": 0.000227,
+        "time_namelookup": 0.00003,
+        "time_connect": 0.000355,
         "time_appconnect": 0,
         "errormsg": ""
       },
@@ -198,7 +211,7 @@
       "server": {
         "arrivals": 1,
         "lines": [
-          "1787722153.126 2026-08-26T05:29:13+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+          "1787736624.536 2026-08-26T09:30:24+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
         ]
       }
     },
@@ -209,8 +222,8 @@
       "curl": {
         "exit": 0,
         "http_code": 502,
-        "time_namelookup": 0.000021,
-        "time_connect": 0.000241,
+        "time_namelookup": 0.000028,
+        "time_connect": 0.000402,
         "time_appconnect": 0,
         "errormsg": ""
       },
@@ -223,7 +236,7 @@
       "server": {
         "arrivals": 1,
         "lines": [
-          "1787722153.628 2026-08-26T05:29:13+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+          "1787736625.038 2026-08-26T09:30:25+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
         ]
       }
     },
@@ -234,8 +247,8 @@
       "curl": {
         "exit": 28,
         "http_code": 0,
-        "time_namelookup": 0.000019,
-        "time_connect": 0.00021,
+        "time_namelookup": 0.000021,
+        "time_connect": 0.0002,
         "time_appconnect": 0,
         "errormsg": "Operation timed out after 8002 milliseconds with 0 bytes received"
       },
@@ -249,10 +262,37 @@
         "arrivals": 0,
         "lines": []
       }
+    },
+    "K0s": {
+      "layer": "なし（TLS の陽性対照）",
+      "from": "host",
+      "url": "https://localhost:8452/001/ok?cs=K0s",
+      "curl": {
+        "exit": 0,
+        "http_code": 200,
+        "time_namelookup": 0.00003,
+        "time_connect": 0.000339,
+        "time_appconnect": 0.00713,
+        "errormsg": ""
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 0,
+        "verify_return_code": 0,
+        "first_error_line": ""
+      },
+      "server": {
+        "arrivals": 1,
+        "lines": [
+          "1787736646.023 2026-08-26T09:30:46+00:00 GET 200 uri=\"/001/ok?cs=K0s\" cs=K0s proto=HTTP/2.0 scheme=https ssl_proto=\"TLSv1.3\" ssl_cipher=\"TLS_AES_256_GCM_SHA384\""
+        ]
+      }
     }
   },
   "chrome_error_K0": "status_200",
   "chrome_timing_entry_K0": true,
+  "chrome_secure_start_nonzero_K0": false,
+  "chrome_connect_end_gt_secure_start_K0": true,
   "chrome_error_K1": "net::ERR_NAME_NOT_RESOLVED",
   "chrome_timing_entry_K1": false,
   "chrome_error_K2": "net::ERR_CONNECTION_REFUSED",
@@ -263,29 +303,53 @@
   "chrome_timing_entry_K4b": false,
   "chrome_error_K5": "status_503",
   "chrome_timing_entry_K5": true,
+  "chrome_secure_start_nonzero_K5": false,
+  "chrome_connect_end_gt_secure_start_K5": true,
   "chrome_error_K6": "status_502",
   "chrome_timing_entry_K6": true,
+  "chrome_secure_start_nonzero_K6": false,
+  "chrome_connect_end_gt_secure_start_K6": true,
   "chrome_error_K7": "net::ERR_CONNECTION_RESET",
   "chrome_timing_entry_K7": false,
+  "chrome_error_K0s": "status_200",
+  "chrome_timing_entry_K0s": true,
+  "chrome_secure_start_nonzero_K0s": true,
+  "chrome_connect_end_gt_secure_start_K0s": true,
   "firefox_error_K0": "status_200",
   "firefox_timing_entry_K0": true,
+  "firefox_secure_start_nonzero_K0": false,
+  "firefox_connect_end_gt_secure_start_K0": true,
   "firefox_error_K1": "NS_ERROR_UNKNOWN_HOST",
-  "firefox_timing_entry_K1": true,
+  "firefox_timing_entry_K1": false,
   "firefox_error_K2": "NS_ERROR_CONNECTION_REFUSED",
   "firefox_timing_entry_K2": true,
+  "firefox_secure_start_nonzero_K2": false,
+  "firefox_connect_end_gt_secure_start_K2": false,
   "firefox_error_K4": "SSL_ERROR_UNKNOWN",
-  "firefox_timing_entry_K4": true,
+  "firefox_timing_entry_K4": false,
   "firefox_error_K4b": "SSL_ERROR_BAD_CERT_DOMAIN",
   "firefox_timing_entry_K4b": true,
+  "firefox_secure_start_nonzero_K4b": false,
+  "firefox_connect_end_gt_secure_start_K4b": false,
   "firefox_error_K5": "status_503",
   "firefox_timing_entry_K5": true,
+  "firefox_secure_start_nonzero_K5": false,
+  "firefox_connect_end_gt_secure_start_K5": true,
   "firefox_error_K6": "status_502",
   "firefox_timing_entry_K6": true,
+  "firefox_secure_start_nonzero_K6": false,
+  "firefox_connect_end_gt_secure_start_K6": true,
   "firefox_error_K7": "none",
   "firefox_timing_entry_K7": true,
+  "firefox_secure_start_nonzero_K7": false,
+  "firefox_connect_end_gt_secure_start_K7": false,
+  "firefox_error_K0s": "status_200",
+  "firefox_timing_entry_K0s": true,
+  "firefox_secure_start_nonzero_K0s": true,
+  "firefox_connect_end_gt_secure_start_K0s": true,
   "browsers": {
     "chrome-real": "152.0.7977.65",
     "firefox-bundled": "153.0"
   },
-  "browser_measured_at": "2026-08-26T03:42:35.217Z"
+  "browser_measured_at": "2026-08-26T08:56:40.629Z"
 }

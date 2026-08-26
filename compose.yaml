@@ -68,6 +68,9 @@ services:
       - "8450:450"
       # 451 = 名前不一致だけを分離した口（K4b。CA は信頼される）
       - "8451:451"
+      # 452 = 握手まで通る口（K0s）。time_appconnect と secureConnectionStart は
+      #       成功した TLS でしか値が入らないため、対照として要る
+      - "8452:452"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro

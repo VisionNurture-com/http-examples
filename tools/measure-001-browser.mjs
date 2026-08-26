@@ -35,6 +35,9 @@ const CASES = [
   { id: 'K5',  layer: 'HTTP',                   url: 'http://localhost:8095/001/http-503?cs=K5b' },
   { id: 'K6',  layer: 'アプリ',                 url: 'http://localhost:8095/001/app-down?cs=K6b' },
   { id: 'K7',  layer: 'TCP は成立・応答なし',    url: 'http://localhost:8096/001/ok' },
+  // 🔴 握手まで通る対照。secureConnectionStart は成功した TLS でしか値が入らないため、
+  //    これが無いと「API では接続と暗号を分けられる」を測る材料が 1 件も取れない。
+  { id: 'K0s', layer: 'なし（TLS の陽性対照）', url: 'https://localhost:8452/001/ok?cs=K0sb' },
 ];
 
 async function measureOne(browserType, launchOpts, label) {

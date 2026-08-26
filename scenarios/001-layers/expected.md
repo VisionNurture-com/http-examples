@@ -5,6 +5,14 @@
 > 🔴 **ホスト側の道具の版は `values` に入れません。** `curl` はリポジトリで固定していないため、
 > 別のマシンで再実行すると必ず乖離します（CI は Ubuntu の curl 8.5.0 で走り、`curl_version` の
 > 突合だけが落ちていました）。測った版は `summary.json` の `versions` と `run.log` に残ります。
+>
+> 🔴 **K0s（握手まで通る対照）は `time_appconnect` と `secureConnectionStart` を測るために要る。**
+> K4 / K4b は握手が失敗するため `time_appconnect` は 0 のまま終わる。対照が無いと
+> 「接続と暗号を分けられるか」を裏づける値が 1 件も取れない（2026-08-26 に実際に欠けていた）。
+>
+> 🔴 **`connectStart` と `secureConnectionStart` が一致したかは台帳に入れない。**
+> ミリ秒の分解能に丸まると一致するため反復で揺れる（実測: Firefox は 3 回中 2 回だけ別の値）。
+> 台帳が持つのは **非 0 かどうか**と **`connectEnd` との前後**だけにする。
 
 ```json
 {
@@ -38,6 +46,20 @@
     "exit_K7": 28,
     "time_connect_nonzero_K7": true,
     "arrivals_K7": 0,
+    "exit_K0s": 0,
+    "time_connect_nonzero_K0s": true,
+    "time_appconnect_nonzero_K0s": true,
+    "arrivals_K0s": 1,
+    "time_appconnect_nonzero_K4": false,
+    "time_appconnect_nonzero_K4b": false,
+    "chrome_error_K0s": "status_200",
+    "firefox_error_K0s": "status_200",
+    "chrome_secure_start_nonzero_K0": false,
+    "firefox_secure_start_nonzero_K0": false,
+    "chrome_secure_start_nonzero_K0s": true,
+    "firefox_secure_start_nonzero_K0s": true,
+    "chrome_connect_end_gt_secure_start_K0s": true,
+    "firefox_connect_end_gt_secure_start_K0s": true,
     "chrome_error_K0": "status_200",
     "chrome_error_K1": "net::ERR_NAME_NOT_RESOLVED",
     "chrome_error_K2": "net::ERR_CONNECTION_REFUSED",

@@ -108,4 +108,20 @@ else
     echo "[gen-certs]    （nginx は起動しますが、001 の K4b は要因を分離できません）"
 fi
 
+# --- 記事 001 用: K0s（握手まで通る対照）を検証するための CA バンドル ------------
+#
+# 🔴 K0s は「握手が最後まで通ること」を測る対照なので、どの環境でも同じ結果に
+#    なる必要がある。server.crt は mkcert があれば CA 署名、無ければ自己署名に
+#    分岐するため、curl に渡す信頼の起点も同じ分岐で決める。
+#    -k（--insecure）は使わない。検証を省くと「握手が通ったか」を測れなくなる。
+if command -v mkcert >/dev/null 2>&1 && [ -f "$(mkcert -CAROOT)/rootCA.pem" ]; then
+    cp "$(mkcert -CAROOT)/rootCA.pem" "$CERT_DIR/k0s-ca.pem"
+    echo "[gen-certs] k0s-ca.pem = mkcert のルート CA"
+else
+    # server.crt は自己署名なので、それ自身が信頼の起点になる
+    cp "$CERT_DIR/server.crt" "$CERT_DIR/k0s-ca.pem"
+    echo "[gen-certs] k0s-ca.pem = 自己署名の server.crt（mkcert 不在）"
+fi
+chmod 644 "$CERT_DIR/k0s-ca.pem"
+
 echo "[gen-certs] 完了: $CERT_DIR/server.{crt,key} / $CERT_DIR/wrongname.{crt,key} / $CERT_DIR/mismatch.{crt,key}"

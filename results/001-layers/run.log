@@ -1,10 +1,10 @@
-measured_at: 2026-08-26T05:29:01.975Z
+measured_at: 2026-08-26T09:30:13.378Z
 
 ### K0（なし（陽性対照））
 URL: http://localhost:8095/001/ok?cs=K0
-curl: {"exit":0,"http_code":200,"time_namelookup":0.000013,"time_connect":0.000174,"time_appconnect":0,"errormsg":""}
+curl: {"exit":0,"http_code":200,"time_namelookup":0.000015,"time_connect":0.000196,"time_appconnect":0,"errormsg":""}
 openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
-server: {"arrivals":1,"lines":["1787722142.010 2026-08-26T05:29:02+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+server: {"arrivals":1,"lines":["1787736613.413 2026-08-26T09:30:13+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
 
 ### K1（DNS）
 URL: http://nonexistent.invalid/001/ok?cs=K1
@@ -14,42 +14,48 @@ server: {"arrivals":0,"lines":[]}
 
 ### K2（TCP（拒否））
 URL: http://localhost:8099/001/ok?cs=K2
-curl: {"exit":7,"http_code":0,"time_namelookup":0.000021,"time_connect":0,"time_appconnect":0,"errormsg":"Failed to connect to localhost:8099 after 0 ms: Could not connect to server"}
+curl: {"exit":7,"http_code":0,"time_namelookup":0.000019,"time_connect":0,"time_appconnect":0,"errormsg":"Failed to connect to localhost:8099 after 0 ms: Could not connect to server"}
 openssl: {"applicable":true,"exit":1,"verify_return_code":null,"first_error_line":"809D9EF901000000:error:8000003D:system library:BIO_connect:Connection refused:crypto/bio/bio_sock2.c:183:calling connect()"}
 server: {"arrivals":0,"lines":[]}
 
 ### K3（TCP（無応答））
 URL: http://blackhole:9999/001/ok?cs=K3
-curl: {"exit":28,"http_code":0,"time_namelookup":0.000639,"time_connect":0,"time_appconnect":0,"errormsg":"Connection timed out after 8003 milliseconds"}
+curl: {"exit":28,"http_code":0,"time_namelookup":0.000281,"time_connect":0,"time_appconnect":0,"errormsg":"Connection timed out after 8003 milliseconds"}
 openssl: {"applicable":false,"reason":"docker network 内の宛先のためホストから到達できない"}
 server: {"arrivals":0,"lines":[]}
 
 ### K4（TLS）
 URL: https://localhost:8450/001/ok?cs=K4
-curl: {"exit":60,"http_code":0,"time_namelookup":0.000014,"time_connect":0.000236,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
+curl: {"exit":60,"http_code":0,"time_namelookup":0.000016,"time_connect":0.000227,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
 openssl: {"applicable":true,"exit":1,"verify_return_code":18,"first_error_line":"Verification error: self-signed certificate"}
 server: {"arrivals":0,"lines":[]}
 
 ### K4b（TLS（名前不一致のみ））
 URL: https://localhost:8451/001/ok?cs=K4b
-curl: {"exit":60,"http_code":0,"time_namelookup":0.000018,"time_connect":0.000203,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
+curl: {"exit":60,"http_code":0,"time_namelookup":0.000027,"time_connect":0.000422,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
 openssl: {"applicable":true,"exit":1,"verify_return_code":62,"first_error_line":"Verification error: hostname mismatch"}
 server: {"arrivals":0,"lines":[]}
 
 ### K5（HTTP）
 URL: http://localhost:8095/001/http-503?cs=K5
-curl: {"exit":0,"http_code":503,"time_namelookup":0.000018,"time_connect":0.000227,"time_appconnect":0,"errormsg":""}
+curl: {"exit":0,"http_code":503,"time_namelookup":0.00003,"time_connect":0.000355,"time_appconnect":0,"errormsg":""}
 openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
-server: {"arrivals":1,"lines":["1787722153.126 2026-08-26T05:29:13+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+server: {"arrivals":1,"lines":["1787736624.536 2026-08-26T09:30:24+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
 
 ### K6（アプリ）
 URL: http://localhost:8095/001/app-down?cs=K6
-curl: {"exit":0,"http_code":502,"time_namelookup":0.000021,"time_connect":0.000241,"time_appconnect":0,"errormsg":""}
+curl: {"exit":0,"http_code":502,"time_namelookup":0.000028,"time_connect":0.000402,"time_appconnect":0,"errormsg":""}
 openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
-server: {"arrivals":1,"lines":["1787722153.628 2026-08-26T05:29:13+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+server: {"arrivals":1,"lines":["1787736625.038 2026-08-26T09:30:25+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
 
 ### K7（TCP は成立・応答なし）
 URL: http://localhost:8096/001/ok?cs=K7
-curl: {"exit":28,"http_code":0,"time_namelookup":0.000019,"time_connect":0.00021,"time_appconnect":0,"errormsg":"Operation timed out after 8002 milliseconds with 0 bytes received"}
+curl: {"exit":28,"http_code":0,"time_namelookup":0.000021,"time_connect":0.0002,"time_appconnect":0,"errormsg":"Operation timed out after 8002 milliseconds with 0 bytes received"}
 openssl: {"applicable":true,"exit":-1,"verify_return_code":null,"first_error_line":""}
 server: {"arrivals":0,"lines":[]}
+
+### K0s（なし（TLS の陽性対照））
+URL: https://localhost:8452/001/ok?cs=K0s
+curl: {"exit":0,"http_code":200,"time_namelookup":0.00003,"time_connect":0.000339,"time_appconnect":0.00713,"errormsg":""}
+openssl: {"applicable":true,"exit":0,"verify_return_code":0,"first_error_line":""}
+server: {"arrivals":1,"lines":["1787736646.023 2026-08-26T09:30:46+00:00 GET 200 uri=\"/001/ok?cs=K0s\" cs=K0s proto=HTTP/2.0 scheme=https ssl_proto=\"TLSv1.3\" ssl_cipher=\"TLS_AES_256_GCM_SHA384\""]}
