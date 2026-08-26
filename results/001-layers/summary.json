@@ -1,0 +1,291 @@
+{
+  "scenario": "001-layers",
+  "mode": "M1",
+  "measured_at": "2026-08-26T05:29:01.975Z",
+  "versions": {
+    "curl_host": "curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple",
+    "openssl_host": "OpenSSL 3.6.3 9 Jun 2026 (Library: OpenSSL 3.6.3 9 Jun 2026)",
+    "curl_image": "curlimages/curl:8.21.0",
+    "nginx": "",
+    "docker": "Docker version 29.7.2, build a7dcaa6",
+    "os": "26.5.2"
+  },
+  "exit_K0": 0,
+  "time_connect_nonzero_K0": true,
+  "arrivals_K0": 1,
+  "exit_K1": 6,
+  "time_connect_nonzero_K1": false,
+  "arrivals_K1": 0,
+  "exit_K2": 7,
+  "time_connect_nonzero_K2": false,
+  "arrivals_K2": 0,
+  "exit_K3": 28,
+  "time_connect_nonzero_K3": false,
+  "arrivals_K3": 0,
+  "exit_K4": 60,
+  "time_connect_nonzero_K4": true,
+  "arrivals_K4": 0,
+  "exit_K4b": 60,
+  "time_connect_nonzero_K4b": true,
+  "arrivals_K4b": 0,
+  "exit_K5": 0,
+  "time_connect_nonzero_K5": true,
+  "arrivals_K5": 1,
+  "exit_K6": 0,
+  "time_connect_nonzero_K6": true,
+  "arrivals_K6": 1,
+  "exit_K7": 28,
+  "time_connect_nonzero_K7": true,
+  "arrivals_K7": 0,
+  "curl_version": "8.21.0",
+  "detail": {
+    "K0": {
+      "layer": "なし（陽性対照）",
+      "from": "host",
+      "url": "http://localhost:8095/001/ok?cs=K0",
+      "curl": {
+        "exit": 0,
+        "http_code": 200,
+        "time_namelookup": 0.000013,
+        "time_connect": 0.000174,
+        "time_appconnect": 0,
+        "errormsg": ""
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": 0,
+        "first_error_line": "809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"
+      },
+      "server": {
+        "arrivals": 1,
+        "lines": [
+          "1787722142.010 2026-08-26T05:29:02+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+        ]
+      }
+    },
+    "K1": {
+      "layer": "DNS",
+      "from": "host",
+      "url": "http://nonexistent.invalid/001/ok?cs=K1",
+      "curl": {
+        "exit": 6,
+        "http_code": 0,
+        "time_namelookup": 0,
+        "time_connect": 0,
+        "time_appconnect": 0,
+        "errormsg": "Could not resolve host: nonexistent.invalid"
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": null,
+        "first_error_line": "809D9EF901000000:error:10080002:BIO routines:BIO_lookup_ex:system lib:crypto/bio/bio_addr.c:767:nodename nor servname provided, or not known"
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    },
+    "K2": {
+      "layer": "TCP（拒否）",
+      "from": "host",
+      "url": "http://localhost:8099/001/ok?cs=K2",
+      "curl": {
+        "exit": 7,
+        "http_code": 0,
+        "time_namelookup": 0.000021,
+        "time_connect": 0,
+        "time_appconnect": 0,
+        "errormsg": "Failed to connect to localhost:8099 after 0 ms: Could not connect to server"
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": null,
+        "first_error_line": "809D9EF901000000:error:8000003D:system library:BIO_connect:Connection refused:crypto/bio/bio_sock2.c:183:calling connect()"
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    },
+    "K3": {
+      "layer": "TCP（無応答）",
+      "from": "net",
+      "url": "http://blackhole:9999/001/ok?cs=K3",
+      "curl": {
+        "exit": 28,
+        "http_code": 0,
+        "time_namelookup": 0.000639,
+        "time_connect": 0,
+        "time_appconnect": 0,
+        "errormsg": "Connection timed out after 8003 milliseconds"
+      },
+      "openssl": {
+        "applicable": false,
+        "reason": "docker network 内の宛先のためホストから到達できない"
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    },
+    "K4": {
+      "layer": "TLS",
+      "from": "host",
+      "url": "https://localhost:8450/001/ok?cs=K4",
+      "curl": {
+        "exit": 60,
+        "http_code": 0,
+        "time_namelookup": 0.000014,
+        "time_connect": 0.000236,
+        "time_appconnect": 0,
+        "errormsg": "SSL: no alternative certificate subject name matches target hostname 'localhost'"
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": 18,
+        "first_error_line": "Verification error: self-signed certificate"
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    },
+    "K4b": {
+      "layer": "TLS（名前不一致のみ）",
+      "from": "host",
+      "url": "https://localhost:8451/001/ok?cs=K4b",
+      "curl": {
+        "exit": 60,
+        "http_code": 0,
+        "time_namelookup": 0.000018,
+        "time_connect": 0.000203,
+        "time_appconnect": 0,
+        "errormsg": "SSL: no alternative certificate subject name matches target hostname 'localhost'"
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": 62,
+        "first_error_line": "Verification error: hostname mismatch"
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    },
+    "K5": {
+      "layer": "HTTP",
+      "from": "host",
+      "url": "http://localhost:8095/001/http-503?cs=K5",
+      "curl": {
+        "exit": 0,
+        "http_code": 503,
+        "time_namelookup": 0.000018,
+        "time_connect": 0.000227,
+        "time_appconnect": 0,
+        "errormsg": ""
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": 0,
+        "first_error_line": "809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"
+      },
+      "server": {
+        "arrivals": 1,
+        "lines": [
+          "1787722153.126 2026-08-26T05:29:13+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+        ]
+      }
+    },
+    "K6": {
+      "layer": "アプリ",
+      "from": "host",
+      "url": "http://localhost:8095/001/app-down?cs=K6",
+      "curl": {
+        "exit": 0,
+        "http_code": 502,
+        "time_namelookup": 0.000021,
+        "time_connect": 0.000241,
+        "time_appconnect": 0,
+        "errormsg": ""
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": 1,
+        "verify_return_code": 0,
+        "first_error_line": "809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"
+      },
+      "server": {
+        "arrivals": 1,
+        "lines": [
+          "1787722153.628 2026-08-26T05:29:13+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""
+        ]
+      }
+    },
+    "K7": {
+      "layer": "TCP は成立・応答なし",
+      "from": "host",
+      "url": "http://localhost:8096/001/ok?cs=K7",
+      "curl": {
+        "exit": 28,
+        "http_code": 0,
+        "time_namelookup": 0.000019,
+        "time_connect": 0.00021,
+        "time_appconnect": 0,
+        "errormsg": "Operation timed out after 8002 milliseconds with 0 bytes received"
+      },
+      "openssl": {
+        "applicable": true,
+        "exit": -1,
+        "verify_return_code": null,
+        "first_error_line": ""
+      },
+      "server": {
+        "arrivals": 0,
+        "lines": []
+      }
+    }
+  },
+  "chrome_error_K0": "status_200",
+  "chrome_timing_entry_K0": true,
+  "chrome_error_K1": "net::ERR_NAME_NOT_RESOLVED",
+  "chrome_timing_entry_K1": false,
+  "chrome_error_K2": "net::ERR_CONNECTION_REFUSED",
+  "chrome_timing_entry_K2": false,
+  "chrome_error_K4": "net::ERR_CERT_AUTHORITY_INVALID",
+  "chrome_timing_entry_K4": false,
+  "chrome_error_K4b": "net::ERR_CERT_COMMON_NAME_INVALID",
+  "chrome_timing_entry_K4b": false,
+  "chrome_error_K5": "status_503",
+  "chrome_timing_entry_K5": true,
+  "chrome_error_K6": "status_502",
+  "chrome_timing_entry_K6": true,
+  "chrome_error_K7": "net::ERR_CONNECTION_RESET",
+  "chrome_timing_entry_K7": false,
+  "firefox_error_K0": "status_200",
+  "firefox_timing_entry_K0": true,
+  "firefox_error_K1": "NS_ERROR_UNKNOWN_HOST",
+  "firefox_timing_entry_K1": true,
+  "firefox_error_K2": "NS_ERROR_CONNECTION_REFUSED",
+  "firefox_timing_entry_K2": true,
+  "firefox_error_K4": "SSL_ERROR_UNKNOWN",
+  "firefox_timing_entry_K4": true,
+  "firefox_error_K4b": "SSL_ERROR_BAD_CERT_DOMAIN",
+  "firefox_timing_entry_K4b": true,
+  "firefox_error_K5": "status_503",
+  "firefox_timing_entry_K5": true,
+  "firefox_error_K6": "status_502",
+  "firefox_timing_entry_K6": true,
+  "firefox_error_K7": "none",
+  "firefox_timing_entry_K7": true,
+  "browsers": {
+    "chrome-real": "152.0.7977.65",
+    "firefox-bundled": "153.0"
+  },
+  "browser_measured_at": "2026-08-26T03:42:35.217Z"
+}

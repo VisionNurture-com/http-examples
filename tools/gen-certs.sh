@@ -59,4 +59,39 @@ fi
 } >> "$CERT_DIR/provenance.txt"
 
 chmod 644 "$CERT_DIR/server.crt" "$CERT_DIR/server.key"
-echo "[gen-certs] 完了: $CERT_DIR/server.{crt,key}"
+
+# --- 記事 001 用: 名前がわざと一致しない証明書 -------------------------------
+#
+# 🔴 mkcert は使わない。mkcert の CA は信頼ストアに入っているため、
+#    「信頼できない CA」と「名前が一致しない」が混ざって層が分離できなくなる。
+#    ここで測りたいのは名前の不一致だけなので、openssl の自己署名にする。
+#
+# other.invalid は RFC 6761 §6.4 が予約した TLD で、名前解決が必ず失敗する。
+# 実在のホストと衝突しないため、証明書の名前としても安全に使える。
+openssl req -x509 -nodes -newkey rsa:2048 -days 825 \
+    -keyout "$CERT_DIR/wrongname.key" \
+    -out    "$CERT_DIR/wrongname.crt" \
+    -subj   "/CN=other.invalid" \
+    -addext "subjectAltName=DNS:other.invalid" \
+    2>/dev/null
+chmod 644 "$CERT_DIR/wrongname.crt" "$CERT_DIR/wrongname.key"
+
+# --- 記事 001 用: 名前だけが一致しない証明書（CA は信頼される）-----------------
+#
+# 🔴 wrongname.crt は「自己署名」かつ「名前不一致」の 2 要因を同時に持つ。
+#    2026-08-26 の実測で、curl は名前不一致を、openssl は自己署名（verify=18）を
+#    報告し、同じ失敗を別の理由で説明した。層の中で要因が混ざっている。
+#    mismatch.crt は mkcert（信頼ストアに入った CA）が other.example.test に対して
+#    発行するため、localhost へ接続したときの失敗要因は名前不一致だけになる。
+if command -v mkcert >/dev/null 2>&1; then
+    mkcert -cert-file "$CERT_DIR/mismatch.crt" \
+           -key-file  "$CERT_DIR/mismatch.key" \
+           "other.${ALT}" 2>/dev/null
+    chmod 644 "$CERT_DIR/mismatch.crt" "$CERT_DIR/mismatch.key"
+    echo "[gen-certs] mismatch.crt を発行しました（CN=other.${ALT}・CA は信頼される）"
+else
+    # mkcert が無い環境では要因を分離できない。K4b は測れないと記録する。
+    echo "[gen-certs] ⚠️ mkcert が無いため mismatch.crt を発行できません（001 の K4b は測定不可）"
+fi
+
+echo "[gen-certs] 完了: $CERT_DIR/server.{crt,key} / $CERT_DIR/wrongname.{crt,key} / $CERT_DIR/mismatch.{crt,key}"

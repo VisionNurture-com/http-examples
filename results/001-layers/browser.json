@@ -1,0 +1,275 @@
+{
+  "scenario": "001-layers-browser",
+  "mode": "M2",
+  "measured_at": "2026-08-26T03:42:35.217Z",
+  "note": "🔴 Firefox は Playwright 同梱版。実機 Firefox 154.0.1 は未測定（Playwright は同梱ビルド以外を駆動できない）。",
+  "browsers": {
+    "chrome-real": "152.0.7977.65",
+    "firefox-bundled": "153.0"
+  },
+  "detail": {
+    "chrome_real": {
+      "version": "152.0.7977.65",
+      "cases": {
+        "K0": {
+          "layer": "なし（陽性対照）",
+          "url": "http://localhost:8095/001/ok?cs=K0b",
+          "nav_status": 200,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0.3999999761581421,
+            "domainLookupEnd": 0.3999999761581421,
+            "connectStart": 0.3999999761581421,
+            "connectEnd": 0.3999999761581421,
+            "secureConnectionStart": 0,
+            "requestStart": 0.800000011920929,
+            "responseStart": 2.300000011920929,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K1": {
+          "layer": "DNS",
+          "url": "http://nonexistent.invalid/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://nonexistent.invalid/001/ok",
+          "request_failed": "net::ERR_NAME_NOT_RESOLVED",
+          "timing": {
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
+          }
+        },
+        "K2": {
+          "layer": "TCP（拒否）",
+          "url": "http://localhost:8099/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8099/001/ok",
+          "request_failed": "net::ERR_CONNECTION_REFUSED",
+          "timing": {
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
+          }
+        },
+        "K4": {
+          "layer": "TLS（自己署名+名前不一致）",
+          "url": "https://localhost:8450/001/ok?cs=K4b2",
+          "nav_status": null,
+          "nav_error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://localhost:8450/001/ok?cs=K4b2",
+          "request_failed": "net::ERR_CERT_AUTHORITY_INVALID",
+          "timing": {
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
+          }
+        },
+        "K4b": {
+          "layer": "TLS（名前不一致のみ）",
+          "url": "https://localhost:8451/001/ok?cs=K4bb",
+          "nav_status": null,
+          "nav_error": "page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://localhost:8451/001/ok?cs=K4bb",
+          "request_failed": "net::ERR_CERT_COMMON_NAME_INVALID",
+          "timing": {
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
+          }
+        },
+        "K5": {
+          "layer": "HTTP",
+          "url": "http://localhost:8095/001/http-503?cs=K5b",
+          "nav_status": 503,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0.2999999523162842,
+            "domainLookupEnd": 0.2999999523162842,
+            "connectStart": 0.2999999523162842,
+            "connectEnd": 0.2999999523162842,
+            "secureConnectionStart": 0,
+            "requestStart": 0.7999999523162842,
+            "responseStart": 1.399999976158142,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K6": {
+          "layer": "アプリ",
+          "url": "http://localhost:8095/001/app-down?cs=K6b",
+          "nav_status": 502,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0.40000003576278687,
+            "domainLookupEnd": 0.40000003576278687,
+            "connectStart": 0.40000003576278687,
+            "connectEnd": 0.40000003576278687,
+            "secureConnectionStart": 0,
+            "requestStart": 1,
+            "responseStart": 2.199999988079071,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K7": {
+          "layer": "TCP は成立・応答なし",
+          "url": "http://localhost:8096/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: Timeout 8000ms exceeded.",
+          "request_failed": "net::ERR_CONNECTION_RESET",
+          "timing": {
+            "entry": false,
+            "reason": "evaluate 不可（ページが無い）"
+          }
+        }
+      }
+    },
+    "firefox_bundled": {
+      "version": "153.0",
+      "cases": {
+        "K0": {
+          "layer": "なし（陽性対照）",
+          "url": "http://localhost:8095/001/ok?cs=K0b",
+          "nav_status": 200,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
+            "connectEnd": 2,
+            "secureConnectionStart": 0,
+            "requestStart": 2,
+            "responseStart": 3,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K1": {
+          "layer": "DNS",
+          "url": "http://nonexistent.invalid/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: NS_ERROR_UNKNOWN_HOST",
+          "request_failed": "NS_ERROR_UNKNOWN_HOST",
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0,
+            "domainLookupEnd": 0,
+            "connectStart": 0,
+            "connectEnd": 0,
+            "secureConnectionStart": 0,
+            "requestStart": 0,
+            "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K2": {
+          "layer": "TCP（拒否）",
+          "url": "http://localhost:8099/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: NS_ERROR_CONNECTION_REFUSED",
+          "request_failed": "NS_ERROR_CONNECTION_REFUSED",
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0,
+            "domainLookupEnd": 0,
+            "connectStart": 0,
+            "connectEnd": 0,
+            "secureConnectionStart": 0,
+            "requestStart": 0,
+            "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K4": {
+          "layer": "TLS（自己署名+名前不一致）",
+          "url": "https://localhost:8450/001/ok?cs=K4b2",
+          "nav_status": null,
+          "nav_error": "page.goto: SSL_ERROR_UNKNOWN",
+          "request_failed": "SSL_ERROR_UNKNOWN",
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0,
+            "domainLookupEnd": 0,
+            "connectStart": 0,
+            "connectEnd": 0,
+            "secureConnectionStart": 0,
+            "requestStart": 0,
+            "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K4b": {
+          "layer": "TLS（名前不一致のみ）",
+          "url": "https://localhost:8451/001/ok?cs=K4bb",
+          "nav_status": null,
+          "nav_error": "page.goto: SSL_ERROR_BAD_CERT_DOMAIN",
+          "request_failed": "SSL_ERROR_BAD_CERT_DOMAIN",
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0,
+            "domainLookupEnd": 0,
+            "connectStart": 0,
+            "connectEnd": 0,
+            "secureConnectionStart": 0,
+            "requestStart": 0,
+            "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K5": {
+          "layer": "HTTP",
+          "url": "http://localhost:8095/001/http-503?cs=K5b",
+          "nav_status": 503,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
+            "connectEnd": 2,
+            "secureConnectionStart": 0,
+            "requestStart": 2,
+            "responseStart": 2,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K6": {
+          "layer": "アプリ",
+          "url": "http://localhost:8095/001/app-down?cs=K6b",
+          "nav_status": 502,
+          "nav_error": null,
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 1,
+            "domainLookupEnd": 1,
+            "connectStart": 1,
+            "connectEnd": 1,
+            "secureConnectionStart": 0,
+            "requestStart": 1,
+            "responseStart": 2,
+            "has_secureConnectionStart_field": true
+          }
+        },
+        "K7": {
+          "layer": "TCP は成立・応答なし",
+          "url": "http://localhost:8096/001/ok",
+          "nav_status": null,
+          "nav_error": "page.goto: Timeout 8000ms exceeded.",
+          "request_failed": null,
+          "timing": {
+            "entry": true,
+            "domainLookupStart": 0,
+            "domainLookupEnd": 0,
+            "connectStart": 0,
+            "connectEnd": 0,
+            "secureConnectionStart": 0,
+            "requestStart": 0,
+            "responseStart": 0,
+            "has_secureConnectionStart_field": true
+          }
+        }
+      }
+    }
+  }
+}

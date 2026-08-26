@@ -54,6 +54,20 @@ services:
       #   92 = カード②の「構成別の到着」（素の転送 / 空文字剥がし / FastCGI）
       - "8091:91"
       - "8092:92"
+      # 記事 010 専用の入口。443 / 80 は 000-base.conf が example.test を取っており、
+      # includeSubDomains の測定には親 example.test 自身が STS を送る必要があるため
+      # 口を分ける。ブラウザからはローカルプロキシが :80 / :443 に見せかけるので、
+      # RFC 6797 §8.3 の upgrade がポートを保持しても測定が壊れない。
+      - "8094:94"
+      - "8449:449"
+      # 記事 001 専用の口。
+      #   95  = 平文（K0 陽性対照 / K5 HTTP 失敗 / K6 アプリ失敗）
+      #   450 = TLS。🔴 名前がわざと一致しない証明書を出す口（K4）。
+      #         443 / 449 は他記事が正しい証明書で使っているため分ける。
+      - "8095:95"
+      - "8450:450"
+      # 451 = 名前不一致だけを分離した口（K4b。CA は信頼される）
+      - "8451:451"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./public:/usr/share/nginx/public:ro
@@ -170,6 +184,41 @@ services:
       - ./apache/htaccess-cgipassauth/.htaccess:/usr/local/apache2/cgi-bin-htaccess/.htaccess:ro
     ports:
       - "8093:80"
+    networks:
+      - httpnet
+
+  # 記事 001 の対照。TCP の SYN を落として「無応答」を作る。
+  #
+  # 🔴 ホストの公開ポート経由では測れない（2026-08-26 実測）。Docker Desktop の
+  #    ポート公開はホスト側で握手を完了させるため、time_connect が 0.000257 秒で
+  #    成立してから応答待ちで切れる（rc=28 だが TCP は通っている）。
+  #    真の SYN drop を測るには docker network の内側から接続する必要がある。
+  #    そのため本サービスはポートを公開しない。
+  blackhole:
+    image: alpine:3.22
+    container_name: http-examples-blackhole
+    cap_add:
+      - NET_ADMIN
+    command:
+      - sh
+      - -c
+      - "apk add --no-cache iptables >/dev/null 2>&1 && iptables -A INPUT -p tcp --dport 9999 -j DROP && sleep infinity"
+    # 🔴 ルールが入るまで待つ。apk add に数秒かかるため、これが無いと
+    #    `docker compose up --wait` が「Healthy」を返した直後の測定で
+    #    DROP がまだ効いておらず、SYN が RST を受けて rc=7 / rc=56 に化ける
+    #    （2026-08-26 に実際に起きた。rc=28 を期待した測定が rc=7 を返した）。
+    healthcheck:
+      test: ["CMD", "iptables", "-C", "INPUT", "-p", "tcp", "--dport", "9999", "-j", "DROP"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+      start_period: 2s
+    ports:
+      # 🔴 公開しているが、これは K3（TCP 無応答）用ではない。
+      #    ホストからここへ繋ぐと Docker Desktop のポート公開が握手を完了させるため、
+      #    「TCP は成立するが応答が来ない」= K7 になる。K3 と K7 は同じ DROP から
+      #    経路だけを変えて作り分ける（2026-08-26 実測）。
+      - "8096:9999"
     networks:
       - httpnet
 

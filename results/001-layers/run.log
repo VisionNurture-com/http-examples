@@ -1,0 +1,55 @@
+measured_at: 2026-08-26T05:29:01.975Z
+
+### K0（なし（陽性対照））
+URL: http://localhost:8095/001/ok?cs=K0
+curl: {"exit":0,"http_code":200,"time_namelookup":0.000013,"time_connect":0.000174,"time_appconnect":0,"errormsg":""}
+openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
+server: {"arrivals":1,"lines":["1787722142.010 2026-08-26T05:29:02+00:00 GET 200 uri=\"/001/ok?cs=K0\" cs=K0 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+
+### K1（DNS）
+URL: http://nonexistent.invalid/001/ok?cs=K1
+curl: {"exit":6,"http_code":0,"time_namelookup":0,"time_connect":0,"time_appconnect":0,"errormsg":"Could not resolve host: nonexistent.invalid"}
+openssl: {"applicable":true,"exit":1,"verify_return_code":null,"first_error_line":"809D9EF901000000:error:10080002:BIO routines:BIO_lookup_ex:system lib:crypto/bio/bio_addr.c:767:nodename nor servname provided, or not known"}
+server: {"arrivals":0,"lines":[]}
+
+### K2（TCP（拒否））
+URL: http://localhost:8099/001/ok?cs=K2
+curl: {"exit":7,"http_code":0,"time_namelookup":0.000021,"time_connect":0,"time_appconnect":0,"errormsg":"Failed to connect to localhost:8099 after 0 ms: Could not connect to server"}
+openssl: {"applicable":true,"exit":1,"verify_return_code":null,"first_error_line":"809D9EF901000000:error:8000003D:system library:BIO_connect:Connection refused:crypto/bio/bio_sock2.c:183:calling connect()"}
+server: {"arrivals":0,"lines":[]}
+
+### K3（TCP（無応答））
+URL: http://blackhole:9999/001/ok?cs=K3
+curl: {"exit":28,"http_code":0,"time_namelookup":0.000639,"time_connect":0,"time_appconnect":0,"errormsg":"Connection timed out after 8003 milliseconds"}
+openssl: {"applicable":false,"reason":"docker network 内の宛先のためホストから到達できない"}
+server: {"arrivals":0,"lines":[]}
+
+### K4（TLS）
+URL: https://localhost:8450/001/ok?cs=K4
+curl: {"exit":60,"http_code":0,"time_namelookup":0.000014,"time_connect":0.000236,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
+openssl: {"applicable":true,"exit":1,"verify_return_code":18,"first_error_line":"Verification error: self-signed certificate"}
+server: {"arrivals":0,"lines":[]}
+
+### K4b（TLS（名前不一致のみ））
+URL: https://localhost:8451/001/ok?cs=K4b
+curl: {"exit":60,"http_code":0,"time_namelookup":0.000018,"time_connect":0.000203,"time_appconnect":0,"errormsg":"SSL: no alternative certificate subject name matches target hostname 'localhost'"}
+openssl: {"applicable":true,"exit":1,"verify_return_code":62,"first_error_line":"Verification error: hostname mismatch"}
+server: {"arrivals":0,"lines":[]}
+
+### K5（HTTP）
+URL: http://localhost:8095/001/http-503?cs=K5
+curl: {"exit":0,"http_code":503,"time_namelookup":0.000018,"time_connect":0.000227,"time_appconnect":0,"errormsg":""}
+openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
+server: {"arrivals":1,"lines":["1787722153.126 2026-08-26T05:29:13+00:00 GET 503 uri=\"/001/http-503?cs=K5\" cs=K5 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+
+### K6（アプリ）
+URL: http://localhost:8095/001/app-down?cs=K6
+curl: {"exit":0,"http_code":502,"time_namelookup":0.000021,"time_connect":0.000241,"time_appconnect":0,"errormsg":""}
+openssl: {"applicable":true,"exit":1,"verify_return_code":0,"first_error_line":"809D9EF901000000:error:0A00010B:SSL routines:tls_validate_record_header:wrong version number:ssl/record/methods/tlsany_meth.c:78:"}
+server: {"arrivals":1,"lines":["1787722153.628 2026-08-26T05:29:13+00:00 GET 502 uri=\"/001/app-down?cs=K6\" cs=K6 proto=HTTP/1.1 scheme=http ssl_proto=\"-\" ssl_cipher=\"-\""]}
+
+### K7（TCP は成立・応答なし）
+URL: http://localhost:8096/001/ok?cs=K7
+curl: {"exit":28,"http_code":0,"time_namelookup":0.000019,"time_connect":0.00021,"time_appconnect":0,"errormsg":"Operation timed out after 8002 milliseconds with 0 bytes received"}
+openssl: {"applicable":true,"exit":-1,"verify_return_code":null,"first_error_line":""}
+server: {"arrivals":0,"lines":[]}
