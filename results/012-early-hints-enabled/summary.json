@@ -1,7 +1,7 @@
 {
   "scenario": "012-early-hints-enabled",
   "mode": "M2",
-  "measured_at": "2026-08-23T13:51:48.631Z",
+  "measured_at": "2026-08-26T15:12:36.480Z",
   "base": "https://localhost:8445",
   "think_ms": 200,
   "cache_control": "no-store",
@@ -17,7 +17,7 @@
   "webkit_cannot_separate_final_headers_via_nginx": true,
   "engines": {
     "chrome": {
-      "version": "151.0.7922.170",
+      "version": "152.0.7977.65",
       "cases": {
         "default": {
           "label": "既定（early_hints を書かない）",
@@ -25,19 +25,19 @@
           "protocol": "h2",
           "interim_delivered": false,
           "interim_ms": 0,
-          "reported_ttfb_ms": 208.09999999403954,
-          "final_headers_ms": 208.09999999403954,
-          "css_response_end_ms": 369.30000001192093
+          "reported_ttfb_ms": 214.10000002384186,
+          "final_headers_ms": 214.10000002384186,
+          "css_response_end_ms": 384.7000000476837
         },
         "enabled": {
           "label": "early_hints を書いた",
           "path": "/012/ehon",
           "protocol": "h2",
           "interim_delivered": true,
-          "interim_ms": 3.0999999940395355,
-          "reported_ttfb_ms": 3.0999999940395355,
-          "final_headers_ms": 208.30000001192093,
-          "css_response_end_ms": 368.5
+          "interim_ms": 3.699999988079071,
+          "reported_ttfb_ms": 3.699999988079071,
+          "final_headers_ms": 210.10000002384186,
+          "css_response_end_ms": 372.89999997615814
         }
       }
     },
@@ -50,9 +50,9 @@
           "protocol": "h2",
           "interim_delivered": false,
           "interim_ms": 0,
-          "reported_ttfb_ms": 210,
-          "final_headers_ms": 210,
-          "css_response_end_ms": 388
+          "reported_ttfb_ms": 218,
+          "final_headers_ms": 218,
+          "css_response_end_ms": 393
         },
         "enabled": {
           "label": "early_hints を書いた",
@@ -61,8 +61,8 @@
           "interim_delivered": true,
           "interim_ms": 4,
           "reported_ttfb_ms": 4,
-          "final_headers_ms": 208,
-          "css_response_end_ms": 158
+          "final_headers_ms": 211,
+          "css_response_end_ms": 161
         }
       }
     },
@@ -75,19 +75,19 @@
           "protocol": "h2",
           "interim_delivered": false,
           "interim_ms": 0,
-          "reported_ttfb_ms": 207,
-          "final_headers_ms": 207,
-          "css_response_end_ms": 374
+          "reported_ttfb_ms": 212,
+          "final_headers_ms": 212,
+          "css_response_end_ms": 386
         },
         "enabled": {
           "label": "early_hints を書いた",
           "path": "/012/ehon",
           "protocol": "h2",
           "interim_delivered": true,
-          "interim_ms": 4,
-          "reported_ttfb_ms": 4,
-          "final_headers_ms": 4,
-          "css_response_end_ms": 379
+          "interim_ms": 3,
+          "reported_ttfb_ms": 3,
+          "final_headers_ms": 3,
+          "css_response_end_ms": 382
         }
       }
     }

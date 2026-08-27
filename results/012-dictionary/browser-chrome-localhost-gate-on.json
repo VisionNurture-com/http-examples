@@ -1,7 +1,7 @@
 {
-  "measuredAt": "2026-08-23T13:51:29.001Z",
+  "measuredAt": "2026-08-26T15:01:45.298Z",
   "engine": "chrome",
-  "version": "151.0.7922.170",
+  "version": "152.0.7977.65",
   "requireKnownRootCert": true,
   "base": "https://localhost:8445",
   "verdict": {
@@ -14,9 +14,9 @@
   },
   "timing": {
     "name": "https://localhost:8445/012/bundle-v2.js",
-    "transferSize": 878,
-    "encodedBodySize": 578,
-    "decodedBodySize": 100702
+    "transferSize": 877,
+    "encodedBodySize": 577,
+    "decodedBodySize": 100613
   },
   "observed": [
     {
@@ -32,13 +32,13 @@
         "accept-language": "en-US,en;q=0.9",
         "priority": "u=1, i",
         "referer": "https://localhost:8445/012/index.html",
-        "sec-ch-ua": "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\"",
+        "sec-ch-ua": "\"Chromium\";v=\"152\", \"Not?A_Brand\";v=\"24\", \"Google Chrome\";v=\"152\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36"
       }
     },
     {
@@ -48,11 +48,11 @@
       "headers": {
         "accept-ranges": "bytes",
         "cache-control": "public, max-age=3600",
-        "content-length": "99353",
+        "content-length": "99264",
         "content-type": "application/javascript",
-        "date": "Sun, 23 Aug 2026 13:51:26 GMT",
-        "etag": "\"6a897fe9-18419\"",
-        "last-modified": "Sat, 22 Aug 2026 10:54:33 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:43 GMT",
+        "etag": "\"6a8d75f7-183c0\"",
+        "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
         "server": "nginx/1.31.4",
         "use-as-dictionary": "match=\"/012/bundle-*.js\", match-dest=(\"script\"), id=\"bundle-v1\"",
         "x-served-file": "bundle-v1.js"
@@ -69,17 +69,17 @@
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br, zstd, dcb, dcz",
         "accept-language": "en-US,en;q=0.9",
-        "available-dictionary": ":nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=:",
+        "available-dictionary": ":fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=:",
         "dictionary-id": "\"bundle-v1\"",
         "priority": "u=1",
         "referer": "https://localhost:8445/012/v2.html",
-        "sec-ch-ua": "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\"",
+        "sec-ch-ua": "\"Chromium\";v=\"152\", \"Not?A_Brand\";v=\"24\", \"Google Chrome\";v=\"152\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "script",
         "sec-fetch-mode": "no-cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36"
       }
     },
     {
@@ -90,11 +90,11 @@
         "accept-ranges": "bytes",
         "cache-control": "no-store",
         "content-encoding": "dcb",
-        "content-length": "578",
+        "content-length": "577",
         "content-type": "application/javascript",
-        "date": "Sun, 23 Aug 2026 13:51:28 GMT",
-        "etag": "\"6a8afad2-242\"",
-        "last-modified": "Sun, 23 Aug 2026 13:51:14 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:44 GMT",
+        "etag": "\"6a8effc5-241\"",
+        "last-modified": "Wed, 26 Aug 2026 15:01:25 GMT",
         "server": "nginx/1.31.4",
         "vary": "Accept-Encoding, Available-Dictionary",
         "x-served-file": "bundle-v2.js.dcb"
@@ -102,10 +102,10 @@
     }
   ],
   "nginxAccessLog": [
-    "2026-08-23T13:51:26+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
-    "2026-08-23T13:51:26+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99353 status=200",
-    "2026-08-23T13:51:26+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=555 status=404",
-    "2026-08-23T13:51:28+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
-    "2026-08-23T13:51:28+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd, dcb, dcz\" avail=\":nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=:\" dict_matched=1 ce=\"dcb\" served=\"bundle-v2.js.dcb\" bytes=578 status=200"
+    "2026-08-26T15:01:43+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-08-26T15:01:43+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
+    "2026-08-26T15:01:43+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=555 status=404",
+    "2026-08-26T15:01:44+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-08-26T15:01:44+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd, dcb, dcz\" avail=\":fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=:\" dict_matched=1 ce=\"dcb\" served=\"bundle-v2.js.dcb\" bytes=577 status=200"
   ]
 }

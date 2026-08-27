@@ -1,5 +1,5 @@
 {
-  "probedAt": "2026-08-22T10:56:21.791Z",
+  "probedAt": "2026-08-26T15:10:16.400Z",
   "names": [
     "requestStart",
     "responseStart",
@@ -37,8 +37,8 @@
     },
     {
       "label": "Google Chrome (installed / channel=chrome)",
-      "version": "151.0.7922.170",
-      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "version": "152.0.7977.65",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
       "surface": {
         "requestStart": {
           "resourceTiming": true,

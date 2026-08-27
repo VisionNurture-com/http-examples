@@ -2,98 +2,98 @@
   "scenario": "012-compression-tradeoff",
   "mode": "M0",
   "generatedAt": "1970-01-01T00:00:00.000Z",
-  "node": "v24.18.0",
+  "node": "v24.19.0",
   "level_target_file": "public/012/bundle-v2.js",
-  "level_target_bytes": 100702,
+  "level_target_bytes": 100613,
   "level_rows": [
     {
       "algo": "gzip",
       "level": 1,
-      "bytes": 35448,
-      "ms": 0.499,
-      "ratio": 0.352
+      "bytes": 35398,
+      "ms": 0.41,
+      "ratio": 0.3518
     },
     {
       "algo": "gzip",
       "level": 6,
-      "bytes": 30877,
-      "ms": 1.025,
-      "ratio": 0.3066
+      "bytes": 30834,
+      "ms": 1.102,
+      "ratio": 0.3065
     },
     {
       "algo": "gzip",
       "level": 9,
-      "bytes": 30834,
-      "ms": 1.35,
-      "ratio": 0.3062
+      "bytes": 30791,
+      "ms": 1.396,
+      "ratio": 0.306
     },
     {
       "algo": "br",
       "level": 0,
-      "bytes": 36896,
-      "ms": 0.128,
+      "bytes": 36863,
+      "ms": 0.126,
       "ratio": 0.3664
     },
     {
       "algo": "br",
       "level": 4,
-      "bytes": 31790,
-      "ms": 0.527,
-      "ratio": 0.3157
+      "bytes": 31741,
+      "ms": 0.547,
+      "ratio": 0.3155
     },
     {
       "algo": "br",
       "level": 5,
-      "bytes": 28455,
-      "ms": 0.992,
-      "ratio": 0.2826
+      "bytes": 28418,
+      "ms": 1.075,
+      "ratio": 0.2824
     },
     {
       "algo": "br",
       "level": 9,
-      "bytes": 27741,
-      "ms": 1.33,
-      "ratio": 0.2755
+      "bytes": 27708,
+      "ms": 1.392,
+      "ratio": 0.2754
     },
     {
       "algo": "br",
       "level": 11,
-      "bytes": 25961,
-      "ms": 69.045,
-      "ratio": 0.2578
+      "bytes": 25917,
+      "ms": 71.619,
+      "ratio": 0.2576
     },
     {
       "algo": "zstd",
       "level": 1,
-      "bytes": 35884,
-      "ms": 0.117,
-      "ratio": 0.3563
+      "bytes": 35811,
+      "ms": 0.135,
+      "ratio": 0.3559
     },
     {
       "algo": "zstd",
       "level": 3,
-      "bytes": 32595,
-      "ms": 0.177,
-      "ratio": 0.3237
+      "bytes": 32557,
+      "ms": 0.173,
+      "ratio": 0.3236
     },
     {
       "algo": "zstd",
       "level": 9,
-      "bytes": 29424,
-      "ms": 0.985,
-      "ratio": 0.2922
+      "bytes": 29386,
+      "ms": 1.015,
+      "ratio": 0.2921
     },
     {
       "algo": "zstd",
       "level": 19,
-      "bytes": 27823,
-      "ms": 14.798,
-      "ratio": 0.2763
+      "bytes": 27789,
+      "ms": 15.27,
+      "ratio": 0.2762
     }
   ],
-  "br11_vs_br5_bytes_saved": 2494,
-  "br11_vs_br5_ms_added": 68.053,
-  "br11_vs_br5_times_slower": 69.6,
+  "br11_vs_br5_bytes_saved": 2501,
+  "br11_vs_br5_ms_added": 70.544,
+  "br11_vs_br5_times_slower": 66.6,
   "small_rows": [
     {
       "kind": "compressible",
@@ -320,8 +320,8 @@
     },
     "JSON（機械生成）": {
       "samples": 3,
-      "ratio_min": 0.2465,
-      "ratio_median": 0.4067,
+      "ratio_min": 0.2507,
+      "ratio_median": 0.4038,
       "ratio_max": 0.6846
     },
     "Markdown": {
@@ -408,14 +408,14 @@
       {
         "file": "results/012-dictionary/sizes.json",
         "bytes": 1040,
-        "br": 423,
-        "ratio": 0.4067
+        "br": 420,
+        "ratio": 0.4038
       },
       {
         "file": "results/012-crossover/summary.json",
-        "bytes": 3018,
-        "br": 744,
-        "ratio": 0.2465
+        "bytes": 3015,
+        "br": 756,
+        "ratio": 0.2507
       },
       {
         "file": "results/006-etag/summary.json",
@@ -447,20 +447,20 @@
     "既圧縮": [
       {
         "file": "public/012/bundle-v2.js.br",
-        "bytes": 25961,
-        "br": 25965,
+        "bytes": 25917,
+        "br": 25921,
         "ratio": 1.0002
       },
       {
         "file": "public/012/bundle-v2.js.zst",
-        "bytes": 27823,
-        "br": 27827,
+        "bytes": 27789,
+        "br": 27793,
         "ratio": 1.0001
       },
       {
         "file": "public/012/bundle-v2.js.dcb",
-        "bytes": 578,
-        "br": 582,
+        "bytes": 577,
+        "br": 581,
         "ratio": 1.0069
       }
     ]

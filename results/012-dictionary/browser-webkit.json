@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-08-23T13:51:26.048Z",
+  "measuredAt": "2026-08-26T15:01:42.535Z",
   "engine": "webkit",
   "version": "26.5",
   "requireKnownRootCert": false,
@@ -14,9 +14,9 @@
   },
   "timing": {
     "name": "https://localhost:8445/012/bundle-v2.js",
-    "transferSize": 101119,
-    "encodedBodySize": 100819,
-    "decodedBodySize": 100702
+    "transferSize": 101030,
+    "encodedBodySize": 100730,
+    "decodedBodySize": 100613
   },
   "observed": [
     {
@@ -42,12 +42,12 @@
       "status": 200,
       "headers": {
         "content-type": "application/javascript",
-        "last-modified": "Sat, 22 Aug 2026 10:54:33 GMT",
-        "date": "Sun, 23 Aug 2026 13:51:23 GMT",
+        "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:40 GMT",
         "accept-ranges": "bytes",
-        "content-length": "99353",
+        "content-length": "99264",
         "cache-control": "public, max-age=3600",
-        "etag": "\"6a897fe9-18419\"",
+        "etag": "\"6a8d75f7-183c0\"",
         "server": "nginx/1.31.4",
         "x-served-file": "bundle-v1.js",
         "use-as-dictionary": "match=\"/012/bundle-*.js\", match-dest=(\"script\"), id=\"bundle-v1\""
@@ -76,11 +76,11 @@
       "status": 200,
       "headers": {
         "content-type": "application/javascript",
-        "etag": "\"6a897fe9-1895e\"",
-        "last-modified": "Sat, 22 Aug 2026 10:54:33 GMT",
-        "date": "Sun, 23 Aug 2026 13:51:25 GMT",
+        "etag": "\"6a8d75f7-18905\"",
+        "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:42 GMT",
         "accept-ranges": "bytes",
-        "content-length": "100702",
+        "content-length": "100613",
         "cache-control": "no-store",
         "vary": "Accept-Encoding, Available-Dictionary",
         "server": "nginx/1.31.4",
@@ -89,9 +89,9 @@
     }
   ],
   "nginxAccessLog": [
-    "2026-08-23T13:51:23+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
-    "2026-08-23T13:51:23+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99353 status=200",
-    "2026-08-23T13:51:25+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
-    "2026-08-23T13:51:25+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100702 status=200"
+    "2026-08-26T15:01:40+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-08-26T15:01:40+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
+    "2026-08-26T15:01:41+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-08-26T15:01:42+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100613 status=200"
   ]
 }

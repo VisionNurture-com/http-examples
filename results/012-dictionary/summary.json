@@ -1,53 +1,53 @@
 {
   "scenario": "012-dictionary",
   "mode": "M2",
-  "generatedAt": "2026-08-23T13:51:14.018Z",
+  "generatedAt": "2026-08-26T15:01:25.871Z",
   "tools": {
     "node": "v24.19.0",
     "brotliCli": "brotli 1.2.0",
     "zstdCli": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
   },
-  "dictionary_bytes": 99353,
-  "dictionary_sha256_base64": "nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=",
-  "target_bytes": 100702,
-  "bytes_identity": 100702,
-  "bytes_gzip": 30834,
-  "bytes_br": 25961,
-  "bytes_zstd": 27823,
-  "bytes_dcb": 578,
+  "dictionary_bytes": 99264,
+  "dictionary_sha256_base64": "fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=",
+  "target_bytes": 100613,
+  "bytes_identity": 100613,
+  "bytes_gzip": 30791,
+  "bytes_br": 25917,
+  "bytes_zstd": 27789,
+  "bytes_dcb": 577,
   "bytes_dcz": 592,
   "engines": {
     "chrome": {
-      "version": "151.0.7922.170",
+      "version": "152.0.7977.65",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
-      "encodedBodySize": 578,
-      "decodedBodySize": 100702
+      "encodedBodySize": 577,
+      "decodedBodySize": 100613
     },
     "chromium": {
       "version": "151.0.7922.34",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
-      "encodedBodySize": 578,
-      "decodedBodySize": 100702
+      "encodedBodySize": 577,
+      "decodedBodySize": 100613
     },
     "firefox": {
       "version": "153.0",
       "sendsAvailableDictionary": false,
       "contentEncoding": "(なし)",
       "servedFile": "bundle-v2.js",
-      "encodedBodySize": 100702,
-      "decodedBodySize": 100702
+      "encodedBodySize": 100613,
+      "decodedBodySize": 100613
     },
     "webkit": {
       "version": "26.5",
       "sendsAvailableDictionary": false,
       "contentEncoding": "(なし)",
       "servedFile": "bundle-v2.js",
-      "encodedBodySize": 100819,
-      "decodedBodySize": 100702
+      "encodedBodySize": 100730,
+      "decodedBodySize": 100613
     }
   },
   "dictionary_users": [
@@ -56,42 +56,42 @@
   ],
   "cert_gate_arms": {
     "chrome-dcz": {
-      "version": "151.0.7922.138",
+      "version": "152.0.7977.65",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcz",
       "servedFile": "bundle-v2.js.dcz",
-      "encodedBodySize": 591,
-      "decodedBodySize": 100814,
+      "encodedBodySize": 592,
+      "decodedBodySize": 100613,
       "base": "https://localhost:8445",
       "requireKnownRootCert": false
     },
     "chrome-localhost-gate-on": {
-      "version": "151.0.7922.170",
+      "version": "152.0.7977.65",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
-      "encodedBodySize": 578,
-      "decodedBodySize": 100702,
+      "encodedBodySize": 577,
+      "decodedBodySize": 100613,
       "base": "https://localhost:8445",
       "requireKnownRootCert": true
     },
     "chrome-privatehost-gate-off": {
-      "version": "151.0.7922.170",
+      "version": "152.0.7977.65",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
-      "encodedBodySize": 578,
-      "decodedBodySize": 100702,
+      "encodedBodySize": 577,
+      "decodedBodySize": 100613,
       "base": "https://dict.example.test:8443",
       "requireKnownRootCert": false
     },
     "chrome-privatehost-gate-on": {
-      "version": "151.0.7922.170",
+      "version": "152.0.7977.65",
       "sendsAvailableDictionary": false,
       "contentEncoding": "(なし)",
       "servedFile": "bundle-v2.js",
-      "encodedBodySize": 100702,
-      "decodedBodySize": 100702,
+      "encodedBodySize": 100613,
+      "decodedBodySize": 100613,
       "base": "https://dict.example.test:8443",
       "requireKnownRootCert": true
     }

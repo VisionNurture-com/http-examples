@@ -22,7 +22,7 @@ const BASE = "https://localhost:8448";
 
 const original = readFileSync(join(ROOT, "public", "012", "bundle-v2.js"));
 const originalSha = createHash("sha256").update(original).digest("hex");
-const DICT_HASH = ":nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=:";
+const DICT_HASH = ":fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=:";
 
 /** curl で 1 回叩き、ヘッダと本文を別々に受け取る */
 function fetchOnce(path, { withDictionary }) {

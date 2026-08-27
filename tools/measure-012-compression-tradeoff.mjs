@@ -207,7 +207,7 @@ writeFileSync(
   ].join("\n")
 );
 
-console.log("=== ①-g 圧縮レベルと費用（bundle-v2.js / 100,814 バイト）===");
+console.log("=== ①-g 圧縮レベルと費用（bundle-v2.js / 100,613 バイト）===");
 console.log("方式    水準   バイト     対素    中央時間(ms)");
 for (const r of levelRows) {
   console.log(

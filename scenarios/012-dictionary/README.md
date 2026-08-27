@@ -8,8 +8,8 @@ RFC 9842（Compression Dictionary Transport）は、**すでに配ってある�
 
 | 役割 | ファイル | バイト |
 |---|---|---:|
-| 辞書（配布済みの版）| `public/012/bundle-v1.js` | 99,353 |
-| 対象（次のデプロイ）| `public/012/bundle-v2.js` | 100,702 |
+| 辞書（配布済みの版）| `public/012/bundle-v1.js` | 99,264 |
+| 対象（次のデプロイ）| `public/012/bundle-v2.js` | 100,613 |
 
 ## 記事のどこに出るか
 

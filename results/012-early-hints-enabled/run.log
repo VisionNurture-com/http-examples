@@ -1,12 +1,12 @@
-measured-at: 2026-08-23T13:51:37.709Z
+measured-at: 2026-08-26T15:12:25.383Z
 base=https://localhost:8445 think_ms=200 cache-control=no-store warmup=1 samples=3
 
-chrome   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=208.1 最終ヘッダ=208.1 CSS到着=369.3
-chrome   enabled  proto=h2 103届く=YES 103到着=3.1 報告TTFB=3.1 最終ヘッダ=208.3 CSS到着=368.5
-firefox  default  proto=h2 103届く=no  103到着=0.0 報告TTFB=210.0 最終ヘッダ=210.0 CSS到着=388.0
-firefox  enabled  proto=h2 103届く=YES 103到着=4.0 報告TTFB=4.0 最終ヘッダ=208.0 CSS到着=158.0
-webkit   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=207.0 最終ヘッダ=207.0 CSS到着=374.0
-webkit   enabled  proto=h2 103届く=YES 103到着=4.0 報告TTFB=4.0 最終ヘッダ=4.0 CSS到着=379.0
+chrome   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=214.1 最終ヘッダ=214.1 CSS到着=384.7
+chrome   enabled  proto=h2 103届く=YES 103到着=3.7 報告TTFB=3.7 最終ヘッダ=210.1 CSS到着=372.9
+firefox  default  proto=h2 103届く=no  103到着=0.0 報告TTFB=218.0 最終ヘッダ=218.0 CSS到着=393.0
+firefox  enabled  proto=h2 103届く=YES 103到着=4.0 報告TTFB=4.0 最終ヘッダ=211.0 CSS到着=161.0
+webkit   default  proto=h2 103届く=no  103到着=0.0 報告TTFB=212.0 最終ヘッダ=212.0 CSS到着=386.0
+webkit   enabled  proto=h2 103届く=YES 103到着=3.0 報告TTFB=3.0 最終ヘッダ=3.0 CSS到着=382.0
 
 既定で 103 が届いたエンジン: なし
 early_hints を書くと全エンジンで届く: YES

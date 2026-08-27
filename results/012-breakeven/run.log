@@ -3,14 +3,14 @@ scenario: 012-breakeven
 mode: M0
 judgement: 辞書代（ワイヤ上）÷ 更新 1 回あたりの節約 = 元が取れる更新回数
 ---
-{"dictionary_raw_bytes":99353,"dictionary_on_wire_bytes":25637}
-{"changed_ratio":0,"br":25637,"dcb":51,"saved_per_update":25586,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.01,"br":25616,"dcb":348,"saved_per_update":25268,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.02,"br":25545,"dcb":518,"saved_per_update":25027,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.05,"br":25480,"dcb":1076,"saved_per_update":24404,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.1,"br":25359,"dcb":1896,"saved_per_update":23463,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.2,"br":24560,"dcb":3627,"saved_per_update":20933,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.35,"br":23304,"dcb":6253,"saved_per_update":17051,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.5,"br":22819,"dcb":8972,"saved_per_update":13847,"breakeven_updates_dedicated_dictionary":2}
-{"changed_ratio":0.75,"br":20586,"dcb":13090,"saved_per_update":7496,"breakeven_updates_dedicated_dictionary":4}
-{"changed_ratio":1,"br":17324,"dcb":17349,"saved_per_update":-25,"breakeven_updates_dedicated_dictionary":null}
+{"dictionary_raw_bytes":99264,"dictionary_on_wire_bytes":25582}
+{"changed_ratio":0,"br":25582,"dcb":51,"saved_per_update":25531,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.01,"br":25552,"dcb":348,"saved_per_update":25204,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.02,"br":25497,"dcb":518,"saved_per_update":24979,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.05,"br":25448,"dcb":1076,"saved_per_update":24372,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.1,"br":25294,"dcb":1896,"saved_per_update":23398,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.2,"br":24502,"dcb":3627,"saved_per_update":20875,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.35,"br":23296,"dcb":6253,"saved_per_update":17043,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.5,"br":22720,"dcb":8972,"saved_per_update":13748,"breakeven_updates_dedicated_dictionary":2}
+{"changed_ratio":0.75,"br":20608,"dcb":13089,"saved_per_update":7519,"breakeven_updates_dedicated_dictionary":4}
+{"changed_ratio":1,"br":17320,"dcb":17354,"saved_per_update":-34,"breakeven_updates_dedicated_dictionary":null}

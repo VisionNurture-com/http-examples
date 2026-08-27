@@ -2,15 +2,15 @@
   "scenario": "012-vary",
   "mode": "M1",
   "generatedAt": "1970-01-01T00:00:00.000Z",
-  "original_bytes": 100702,
-  "original_sha256": "475106ccea400c1d88c9766948cea17d5f4801bc161662cb4708c448f43cfd70",
+  "original_bytes": 100613,
+  "original_sha256": "3baabb96cea73087ef6a25b5cc51bd33632e09ed4d619d49dcb50f19b9cc035c",
   "cases": [
     {
       "variant": "novary",
-      "path": "/012/novary.js?case=run-ddc24c8-63049",
+      "path": "/012/novary.js?case=run-40c7d1b-16810",
       "first": {
-        "bytes": 578,
-        "sha256": "4c26dba36da6315134bd6f4ad30755d0fa5a284e327912e710dd503d95c32e71",
+        "bytes": 577,
+        "sha256": "70080bac0f3f325988a959c8299eadbc415f05d70892f62558e14185e4ea3f28",
         "contentEncoding": "dcb",
         "cacheStatus": "MISS",
         "servedFile": "bundle-v2.js.dcb",
@@ -18,8 +18,8 @@
         "matchesOriginal": false
       },
       "second": {
-        "bytes": 578,
-        "sha256": "4c26dba36da6315134bd6f4ad30755d0fa5a284e327912e710dd503d95c32e71",
+        "bytes": 577,
+        "sha256": "70080bac0f3f325988a959c8299eadbc415f05d70892f62558e14185e4ea3f28",
         "contentEncoding": "dcb",
         "cacheStatus": "HIT",
         "servedFile": "bundle-v2.js.dcb",
@@ -29,10 +29,10 @@
     },
     {
       "variant": "withvary",
-      "path": "/012/withvary.js?case=run-ddc24c8-63049",
+      "path": "/012/withvary.js?case=run-40c7d1b-16810",
       "first": {
-        "bytes": 578,
-        "sha256": "4c26dba36da6315134bd6f4ad30755d0fa5a284e327912e710dd503d95c32e71",
+        "bytes": 577,
+        "sha256": "70080bac0f3f325988a959c8299eadbc415f05d70892f62558e14185e4ea3f28",
         "contentEncoding": "dcb",
         "cacheStatus": "MISS",
         "servedFile": "bundle-v2.js.dcb",
@@ -40,8 +40,8 @@
         "matchesOriginal": false
       },
       "second": {
-        "bytes": 100702,
-        "sha256": "475106ccea400c1d88c9766948cea17d5f4801bc161662cb4708c448f43cfd70",
+        "bytes": 100613,
+        "sha256": "3baabb96cea73087ef6a25b5cc51bd33632e09ed4d619d49dcb50f19b9cc035c",
         "contentEncoding": null,
         "cacheStatus": "MISS",
         "servedFile": "bundle-v2.js",

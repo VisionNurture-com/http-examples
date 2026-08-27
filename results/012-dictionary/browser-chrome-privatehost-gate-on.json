@@ -1,7 +1,7 @@
 {
-  "measuredAt": "2026-08-23T13:51:31.885Z",
+  "measuredAt": "2026-08-26T15:01:48.021Z",
   "engine": "chrome",
-  "version": "151.0.7922.170",
+  "version": "152.0.7977.65",
   "requireKnownRootCert": true,
   "base": "https://dict.example.test:8443",
   "verdict": {
@@ -14,9 +14,9 @@
   },
   "timing": {
     "name": "https://dict.example.test:8443/012/bundle-v2.js",
-    "transferSize": 101002,
-    "encodedBodySize": 100702,
-    "decodedBodySize": 100702
+    "transferSize": 100913,
+    "encodedBodySize": 100613,
+    "decodedBodySize": 100613
   },
   "observed": [
     {
@@ -32,13 +32,13 @@
         "accept-language": "en-US,en;q=0.9",
         "priority": "u=1, i",
         "referer": "https://dict.example.test:8443/012/index.html",
-        "sec-ch-ua": "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\"",
+        "sec-ch-ua": "\"Chromium\";v=\"152\", \"Not?A_Brand\";v=\"24\", \"Google Chrome\";v=\"152\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36"
       }
     },
     {
@@ -48,11 +48,11 @@
       "headers": {
         "accept-ranges": "bytes",
         "cache-control": "public, max-age=3600",
-        "content-length": "99353",
+        "content-length": "99264",
         "content-type": "application/javascript",
-        "date": "Sun, 23 Aug 2026 13:51:29 GMT",
-        "etag": "\"6a897fe9-18419\"",
-        "last-modified": "Sat, 22 Aug 2026 10:54:33 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:45 GMT",
+        "etag": "\"6a8d75f7-183c0\"",
+        "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
         "server": "nginx/1.31.4",
         "use-as-dictionary": "match=\"/012/bundle-*.js\", match-dest=(\"script\"), id=\"bundle-v1\"",
         "x-served-file": "bundle-v1.js"
@@ -71,13 +71,13 @@
         "accept-language": "en-US,en;q=0.9",
         "priority": "u=1",
         "referer": "https://dict.example.test:8443/012/v2.html",
-        "sec-ch-ua": "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\"",
+        "sec-ch-ua": "\"Chromium\";v=\"152\", \"Not?A_Brand\";v=\"24\", \"Google Chrome\";v=\"152\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "script",
         "sec-fetch-mode": "no-cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36"
       }
     },
     {
@@ -87,11 +87,11 @@
       "headers": {
         "accept-ranges": "bytes",
         "cache-control": "no-store",
-        "content-length": "100702",
+        "content-length": "100613",
         "content-type": "application/javascript",
-        "date": "Sun, 23 Aug 2026 13:51:31 GMT",
-        "etag": "\"6a897fe9-1895e\"",
-        "last-modified": "Sat, 22 Aug 2026 10:54:33 GMT",
+        "date": "Wed, 26 Aug 2026 15:01:47 GMT",
+        "etag": "\"6a8d75f7-18905\"",
+        "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
         "server": "nginx/1.31.4",
         "vary": "Accept-Encoding, Available-Dictionary",
         "x-served-file": "bundle-v2.js"
@@ -99,10 +99,10 @@
     }
   ],
   "nginxAccessLog": [
-    "2026-08-23T13:51:29+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
-    "2026-08-23T13:51:29+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99353 status=200",
-    "2026-08-23T13:51:29+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=555 status=404",
-    "2026-08-23T13:51:31+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
-    "2026-08-23T13:51:31+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100702 status=200"
+    "2026-08-26T15:01:45+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-08-26T15:01:45+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
+    "2026-08-26T15:01:45+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=555 status=404",
+    "2026-08-26T15:01:47+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-08-26T15:01:47+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100613 status=200"
   ]
 }

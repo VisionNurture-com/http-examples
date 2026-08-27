@@ -25,7 +25,7 @@ tools/measure-006-cache.mjs
 tools/measure-008-cache-key.mjs
 ```
 
-99,353 バイト。SHA-256（base64）は `nhPjQEQF8u4MC+YY/ts3K+PFHVIfPDLxMZYsdSy0TG8=` で、`nginx/conf.d/012-compression.conf` の `$dict_matched` がこの値を見ています。
+99,264 バイト。SHA-256（base64）は `fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=` で、`nginx/conf.d/012-compression.conf` の `$dict_matched` がこの値を見ています。
 
 ## bundle-v2.js（次のデプロイ）
 
@@ -37,7 +37,7 @@ v1 に対して、実際のデプロイで起きる程度の変更を加えた�
 | ビルド識別子の追加 | `const BUILD_ID = "2026-08-15-b";` を各モジュールの `ROOT` 定義の直後に挿入 |
 | 機能追加 1 本 | `app/012-compression/routes.mjs` 相当のルータ（固定ペイロードと、サーバ実処理時間を `Server-Timing` に出す経路）|
 
-100,702 バイト。
+100,613 バイト。
 
 ## この 2 つはコミットする
 
@@ -59,9 +59,9 @@ node tools/make-012-artifacts.mjs   # .gz / .br / .zst / .dcb / .dcz を作る
 
 | 変わってしまうもの | 現在の値 |
 |---|---|
-| 辞書と対象のバイト数 | 99,353 / 100,702 |
+| 辞書と対象のバイト数 | 99,264 / 100,613 |
 | `nginx/conf.d/012-compression.conf` に書いた SHA-256 | `waMBlW5oPJ8orWCX6X3OEk82TM6QsDY3P7oauiTTUqo=` |
-| 差分と非差分のバイト数 | `dcb` 578 / `dcz` 592 / `br` 25,961 |
+| 差分と非差分のバイト数 | `dcb` 577 / `dcz` 592 / `br` 25,917 |
 | 書き換え率を 10 段に振った逆転点の表 | `results/012-crossover/summary.json` |
 | 辞書の損益分岐 | `results/012-breakeven/summary.json` |
 

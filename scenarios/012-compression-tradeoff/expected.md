@@ -7,8 +7,8 @@
   "scenario": "012-compression-tradeoff",
   "mode": "M0",
   "values": {
-    "level_target_bytes": 100702,
-    "br11_vs_br5_bytes_saved": 2494,
+    "level_target_bytes": 100613,
+    "br11_vs_br5_bytes_saved": 2501,
     "gzip_min_length_default_spec": 20,
     "gzip_first_win_bytes_compressible": 64,
     "gzip_first_win_bytes_incompressible": 96,
