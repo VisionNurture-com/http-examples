@@ -1,0 +1,26 @@
+{
+  "sends_per_variant": 3,
+  "fetch_probe_upper_query_status": 200,
+  "fetch_probe_lower_query_status": 400,
+  "fetch_probe_upper_get_status": 200,
+  "fetch_probe_lower_get_status": 200,
+  "read_distinct_states": 1,
+  "read_status_sequence": [
+    200,
+    200,
+    200
+  ],
+  "counted_distinct_states": 3,
+  "counted_status_sequence": [
+    200,
+    200,
+    200
+  ],
+  "counted_final_quota": 3,
+  "case_probe_upper_query_status": 200,
+  "case_probe_lower_query_status": 400,
+  "case_probe_upper_get_status": 200,
+  "case_probe_lower_get_status": 400,
+  "client": "curl",
+  "curl_version": "8.22.0"
+}

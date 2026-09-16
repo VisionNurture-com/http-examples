@@ -33,5 +33,5 @@
   "control_post_created_count": 3,
   "repeats_rejected_by_stack": 0,
   "client": "curl",
-  "curl_version": "8.21.0"
+  "curl_version": "8.22.0"
 }

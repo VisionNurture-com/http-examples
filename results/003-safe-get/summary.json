@@ -7,5 +7,5 @@
   "head_response_body_bytes": 0,
   "control_safe_get_changed_state": false,
   "client": "curl",
-  "curl_version": "8.21.0"
+  "curl_version": "8.22.0"
 }

@@ -1,10 +1,10 @@
-measured-at: 2026-08-23T13:04:28.405Z
+measured-at: 2026-09-16T11:30:11.047Z
 scenario: 003-put-idempotent
 mode: M1
 base: http://localhost:8085
-nginx: 
+nginx: nginx version: nginx/1.31.6
 node: 24.19.0
-curl: 8.21.0
+curl: 8.22.0
 ---
 
 ## replace 送信 1/3
@@ -21,15 +21,15 @@ state.docs={"doc":{"title":"spec","body":"same bytes every time"}}
 
 ## stamped 送信 1/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-08-23T13:04:28.888Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.530Z"}}
 
 ## stamped 送信 2/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-08-23T13:04:29.027Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.664Z"}}
 
 ## stamped 送信 3/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-08-23T13:04:29.174Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.808Z"}}
 
 ## append 送信 1/3
 status=200

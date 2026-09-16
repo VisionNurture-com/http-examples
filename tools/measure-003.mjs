@@ -137,6 +137,101 @@ const SCENARIOS = {
   },
 
   // ② 2 回目の DELETE。状態と応答を分けて記録する
+  // ⑦ QUERY（RFC 10008）。仕様は safe かつ idempotent と定めるが、
+  //    それが実装の保証ではないことを PUT と同じ 3 回送りで測る。
+  //    あわせて、メソッド名を小文字で書いたときに何が届くかも記録する。
+  "003-query-method": async (log) => {
+    const SENDS = 3;
+    const payload = JSON.stringify({ q: "doc", token: "query" });
+
+    // (a) 読むだけの実装 — 仕様どおりなら 3 回送っても状態は 1 通り
+    reset();
+    const readSnaps = [];
+    const readCodes = [];
+    for (let i = 0; i < SENDS; i++) {
+      const r = send("QUERY", "/003/query/search", { data: payload, ctype: "application/json" });
+      readCodes.push(r.status);
+      readSnaps.push(state().quota);
+      log.push(`## query:search 送信 ${i + 1}/${SENDS}`);
+      log.push(`status=${r.status} body=${r.body}`);
+      log.push(`state.quota=${JSON.stringify(readSnaps[i])}`);
+      log.push("");
+      await sleep(50);
+    }
+
+    // (b) 読むだけのつもりで数を進める実装 — 名前が safe でも実装は別
+    reset();
+    const countSnaps = [];
+    const countCodes = [];
+    for (let i = 0; i < SENDS; i++) {
+      const r = send("QUERY", "/003/query/counted", { data: payload, ctype: "application/json" });
+      countCodes.push(r.status);
+      countSnaps.push(state().quota);
+      log.push(`## query:counted 送信 ${i + 1}/${SENDS}`);
+      log.push(`status=${r.status} body=${r.body}`);
+      log.push(`state.quota=${JSON.stringify(countSnaps[i])}`);
+      log.push("");
+      await sleep(50);
+    }
+
+    // (c) メソッド名の大文字小文字。QUERY は Fetch 標準の正規化対象 6 語に含まれないため、
+    //     書いたとおりに送られる。GET は正規化されるので対照になる。
+    const caseProbe = {};
+    for (const m of ["QUERY", "query", "GET", "get"]) {
+      const path = m.toUpperCase() === "GET" ? "/003/state" : "/003/query/search";
+      let status = null;
+      let err = null;
+      try {
+        const r = send(m, path, m.toUpperCase() === "GET" ? {} : { data: payload, ctype: "application/json" });
+        status = r.status;
+      } catch (e) {
+        err = String(e.message).split("\n")[0].slice(0, 80);
+      }
+      caseProbe[m] = { status, error: err };
+      log.push(`## case-probe -X ${m} -> status=${status} error=${err ?? "-"}`);
+    }
+    log.push("");
+
+    // (d) 同じ小文字を Node の fetch から送る。curl は書いたとおりに送るが、
+    //     Fetch 標準は 6 語（DELETE / GET / HEAD / OPTIONS / POST / PUT）だけを
+    //     大文字へ正規化する。同じ入力でも道具によって結果が変わる。
+    const fetchProbe = {};
+    for (const m of ["QUERY", "query", "GET", "get"]) {
+      const path = m.toUpperCase() === "GET" ? "/003/state" : "/003/query/search";
+      try {
+        const init = { method: m };
+        if (m.toUpperCase() !== "GET") {
+          init.body = payload;
+          init.headers = { "content-type": "application/json" };
+        }
+        const r = await fetch(`${BASE}${path}`, init);
+        fetchProbe[m] = { status: r.status, error: null };
+        await r.arrayBuffer();
+      } catch (e) {
+        fetchProbe[m] = { status: null, error: (e.cause?.code ?? e.constructor.name) };
+      }
+      log.push(`## fetch-probe method=${m} -> status=${fetchProbe[m].status ?? "-"} error=${fetchProbe[m].error ?? "-"}`);
+    }
+    log.push("");
+
+    return {
+      sends_per_variant: SENDS,
+      fetch_probe_upper_query_status: fetchProbe.QUERY.status,
+      fetch_probe_lower_query_status: fetchProbe.query.status,
+      fetch_probe_upper_get_status: fetchProbe.GET.status,
+      fetch_probe_lower_get_status: fetchProbe.get.status,
+      read_distinct_states: distinct(readSnaps),
+      read_status_sequence: readCodes,
+      counted_distinct_states: distinct(countSnaps),
+      counted_status_sequence: countCodes,
+      counted_final_quota: countSnaps.at(-1).query ?? 0,
+      case_probe_upper_query_status: caseProbe.QUERY.status,
+      case_probe_lower_query_status: caseProbe.query.status,
+      case_probe_upper_get_status: caseProbe.GET.status,
+      case_probe_lower_get_status: caseProbe.get.status,
+    };
+  },
+
   "003-delete-repeat": async (log) => {
     const SENDS = 2;
     const variants = [
@@ -325,11 +420,14 @@ const dir = join(ROOT, "results", id);
 mkdirSync(dir, { recursive: true });
 
 const log = [];
-const nginx = execFileSync("docker", ["compose", "exec", "-T", "edge", "nginx", "-v"], {
+// 🔴 nginx -v は stderr に書く。stdout だけを拾うと空文字が記録され、
+//    「版を測った」つもりの空欄が生ログに残る（003 の M1 6 本が実際にそうなっていた）。
+//    measure-002.mjs の dockerVersion() が同じ落とし穴を先に直している。
+const nginx = execFileSync("docker", ["compose", "exec", "-T", "edge", "sh", "-c", "nginx -v 2>&1"], {
   cwd: ROOT,
   encoding: "utf8",
   stdio: ["ignore", "pipe", "pipe"],
-}).trim();
+}).trim().split("\n").filter(Boolean).pop() ?? "(空)";
 const meta = JSON.parse(parseResponse(curlRaw(["-i", `${BASE}/__meta`])).body);
 const curlVersion = (execFileSync("curl", ["--version"], { encoding: "utf8" }).split("\n")[0].match(/curl ([\d.]+)/) || [])[1];
 

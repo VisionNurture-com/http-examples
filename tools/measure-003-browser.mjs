@@ -189,11 +189,20 @@ for (const k of keys) {
   summary[k] = Object.fromEntries(Object.entries(perEngine).map(([e, v]) => [e, v[k]]));
 }
 
+// 🔴 nginx -v は stderr に書く。stdout だけを拾うと空文字が残る（measure-003.mjs が実際にそうなっていた）。
+//    M2 も同じ入口（:8085）を通るため、どの版で測ったかを生ログ自身に残す。
+const nginxVersion = execFileSync("docker", ["compose", "exec", "-T", "edge", "sh", "-c", "nginx -v 2>&1"], {
+  cwd: ROOT,
+  encoding: "utf8",
+  stdio: ["ignore", "pipe", "pipe"],
+}).trim().split("\n").filter(Boolean).pop() ?? "(空)";
+
 const header = [
   `measured-at: ${new Date().toISOString()}`,
   `scenario: ${id}`,
   `mode: M2`,
   `base: ${BASE}`,
+  `nginx: ${nginxVersion}`,
   `engines: ${Object.entries(versions).map(([k, v]) => `${k} ${v}`).join(" / ")}`,
   "---",
   "",

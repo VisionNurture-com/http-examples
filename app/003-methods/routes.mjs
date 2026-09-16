@@ -126,6 +126,33 @@ export function register(app) {
     res.status(201).location(`/003/post/collection/${id}`).json({ id });
   });
 
+  // --- QUERY（RFC 10008・2026-06 Proposed Standard）---
+  //
+  // 仕様は QUERY を safe かつ idempotent と定めている（RFC 10008 §2 / IANA 登録）。
+  // 記事 003 の主題は「仕様が決めているのは名前の意味であって実装ではない」ことなので、
+  // ここでも PUT と同じ形で対照を 2 つ置く。express に app.query() は無いため app.all で受ける。
+  //
+  // 🔴 app.all は OPTIONS や未知のメソッドも拾う。QUERY 以外は 405 で弾き、
+  //    「QUERY として測った」ことを記録側で担保する。
+  const onlyQuery = (handler) => (req, res, next) => {
+    if (req.method !== "QUERY") return res.status(405).json({ error: "method_not_allowed", got: req.method });
+    return handler(req, res, next);
+  };
+
+  // 読むだけの実装。仕様どおり safe で、3 回送っても状態は 1 通り
+  app.all("/003/query/search", json, onlyQuery((req, res) => {
+    const q = req.body?.q ?? null;
+    res.json({ q, hits: Object.keys(state.docs).filter((k) => q === null || k.includes(String(q))) });
+  }));
+
+  // 読むだけのつもりで、呼ばれた回数を数える実装。
+  // メソッドが safe でも、ハンドラがそうなっているとは限らない（sec06 の GET と同型）
+  app.all("/003/query/counted", json, onlyQuery((req, res) => {
+    const token = String(req.body?.token ?? "default");
+    state.quota[token] = (state.quota[token] ?? 0) + 1;
+    res.json({ token, consumed: state.quota[token] });
+  }));
+
   // --- カード② 2 回目の DELETE ---
 
   // 存在を確かめてから消す

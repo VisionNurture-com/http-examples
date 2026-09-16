@@ -11,7 +11,7 @@
 services:
   edge:
     # nginx mainline（HTTP/3 を扱うため stable ではなく mainline）
-    image: nginx:1.31.4-alpine
+    image: nginx:1.31.6-alpine
     container_name: http-examples-edge
     depends_on:
       - app

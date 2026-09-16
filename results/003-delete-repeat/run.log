@@ -1,10 +1,10 @@
-measured-at: 2026-08-23T13:04:26.758Z
+measured-at: 2026-09-16T11:30:13.414Z
 scenario: 003-delete-repeat
 mode: M1
 base: http://localhost:8085
-nginx: 
+nginx: nginx version: nginx/1.31.6
 node: 24.19.0
-curl: 8.21.0
+curl: 8.22.0
 ---
 
 ## strict 送信 1/2

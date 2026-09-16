@@ -54,5 +54,5 @@
     }
   },
   "client": "curl",
-  "curl_version": "8.21.0"
+  "curl_version": "8.22.0"
 }

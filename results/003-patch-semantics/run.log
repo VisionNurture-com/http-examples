@@ -1,10 +1,10 @@
-measured-at: 2026-08-23T13:04:27.596Z
+measured-at: 2026-09-16T11:30:14.160Z
 scenario: 003-patch-semantics
 mode: M1
 base: http://localhost:8085
-nginx: 
+nginx: nginx version: nginx/1.31.6
 node: 24.19.0
-curl: 8.21.0
+curl: 8.22.0
 ---
 
 ## merge_set 送信 1/3

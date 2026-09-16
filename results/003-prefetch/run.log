@@ -1,7 +1,8 @@
-measured-at: 2026-08-23T13:25:55.245Z
+measured-at: 2026-09-16T11:30:55.692Z
 scenario: 003-prefetch
 mode: M2
 base: http://localhost:8085
+nginx: nginx version: nginx/1.31.6
 engines: chromium 151.0.7922.34 / firefox 153.0 / webkit 26.5
 ---
 
