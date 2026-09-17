@@ -1,0 +1,16 @@
+{
+  "scenario": "005-multiprocess-idempotency",
+  "mode": "M1",
+  "measured_at": "2026-09-17T03:14:36.081Z",
+  "nodes": 2,
+  "a_same_instance_charged": 2,
+  "a_two_instances_charged": 2,
+  "a_same_instance_statuses": "201,201",
+  "a_two_instances_statuses": "201,201",
+  "b_same_instance_charged": 1,
+  "b_two_instances_charged": 2,
+  "b_same_instance_statuses": "201,409",
+  "b_two_instances_statuses": "201,201",
+  "spec_impl_protects_single_instance": true,
+  "spec_impl_protects_across_instances": false
+}

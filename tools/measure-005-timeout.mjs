@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// measure-005-timeout.mjs — 応答が返らないとき、クライアントは何秒待つか（M1）
+// measure-005-timeout.mjs — 応答が返らないとき、クライアントは何秒待つか（M2）
 //
 // 🔴 測るのは「応答待ちのタイムアウト」だけである。
 //    接続そのものが成立しない場合（到達しない宛先）は別のタイムアウトが効く。
@@ -102,7 +102,7 @@ async function main() {
   summary.undici = undiciV;
 
   log("==========================================");
-  log(`005-fetch-timeout (M1) — node ${meta.node} / undici ${undiciV}`);
+  log(`005-fetch-timeout (M2) — node ${meta.node} / undici ${undiciV}`);
   log(`${curlV}`);
   log(`measured-at: ${summary.measured_at} / 上限 ${sec(CAP_MS)} 秒`);
   log("==========================================");

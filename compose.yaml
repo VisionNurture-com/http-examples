@@ -95,6 +95,22 @@ services:
     networks:
       - httpnet
 
+  # 記事 005 の 2 台目。冪等キーの排他（inFlight）が 1 プロセスの中でしか効かないことを
+  # 測るために、同じイメージをもう 1 つ立てる。ロードバランサは挟まない —— 2 本を
+  # それぞれ別のインスタンスへ直接送れば、振り分けの運不運に左右されず決定論的に測れる。
+  app2:
+    build:
+      context: ./app
+    container_name: http-examples-app2
+    environment:
+      PORT: "3000"
+      NODE_ENV: "production"
+    ports:
+      # 8090〜8096 は他のサービスが使っている。空いている最初の番号を採った
+      - "8097:3000"
+    networks:
+      - httpnet
+
   # 103 を HTTP/2 + TLS で出す対照。Express 直結は HTTP/1.1 の平文になるため、
   # 「ブラウザが 103 を活かさない」のが条件のせいかどうかを分けられない。
   h2:
