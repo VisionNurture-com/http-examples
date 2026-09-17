@@ -15,6 +15,11 @@ cd "$ROOT"
 # 削除済み inode へ書き続け、到着記録が届かなくなる（全ケースが偽の「preflight なし」になる）。
 docker compose exec -T edge nginx -s reopen
 
+mkdir -p results/008-cors-max-age
+
+# 測定時の nginx の版を生ログへ残す（🔴 nginx -v は stderr に書く・003 の周で実測済）
+echo "nginx: $(docker compose exec -T edge nginx -v 2>&1 | tr -d '\r')" >> results/008-cors-max-age/run.log
+
 # ① 宣言しないときの既定値
 node tools/measure-cors-max-age.mjs --browser=chromium --path=/008/maxage-default/cr --duration=24 --interval=1 --label=default
 node tools/measure-cors-max-age.mjs --browser=firefox  --path=/008/maxage-default/ff --duration=24 --interval=1 --label=default

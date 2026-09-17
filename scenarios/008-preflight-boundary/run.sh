@@ -12,6 +12,11 @@ cd "$ROOT"
 # 削除済み inode へ書き続け、到着記録が届かなくなる（全ケースが偽の「preflight なし」になる）。
 docker compose exec -T edge nginx -s reopen
 
+mkdir -p results/008-preflight-boundary
+
+# 測定時の nginx の版を生ログへ残す（🔴 nginx -v は stderr に書く・003 の周で実測済）
+echo "nginx: $(docker compose exec -T edge nginx -v 2>&1 | tr -d '\r')" >> results/008-preflight-boundary/run.log
+
 node tools/measure-preflight-boundary.mjs --browser=chromium
 node tools/measure-preflight-boundary.mjs --browser=firefox
 node tools/measure-preflight-boundary.mjs --browser=webkit

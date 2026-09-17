@@ -9,11 +9,11 @@
 | Chromium | 151.0.7922.34 |
 | Firefox | 153.0 |
 | WebKit | 26.5（Playwright 同梱。**Safari そのものではない**）|
-| nginx | 1.31.3-alpine |
+| nginx | 1.31.6-alpine |
 | 認証方式 | Basic 認証（`auth_basic` + `auth_basic_user_file`）|
 | 使ったアカウント | **測定専用の合成アカウント**（`demo`）。実在のユーザーではない。サーバのログには `auth=yes/no` だけを残す |
 | 宣言した `Access-Control-Max-Age` | 30 秒 |
-| 測定日 | 2026-08-09 |
+| 測定日 | 2026-09-17（nginx 1.31.6 で全ケースを再測定）|
 
 ## 3 つの設定
 

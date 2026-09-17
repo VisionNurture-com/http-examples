@@ -4,7 +4,7 @@
     "firefox": "153.0",
     "webkit": "26.5"
   },
-  "measured_at": "2026-08-08T05:20:50.409Z",
+  "measured_at": "2026-09-17T06:42:36.756Z",
   "clamp_chromium_preflight_count": 2,
   "clamp_chromium_gap_median_s": 7202,
   "clamp_firefox_preflight_count": 1,

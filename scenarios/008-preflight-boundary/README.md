@@ -2,9 +2,11 @@
 
 ## 何を測るか
 
-同じ「1 回のリクエスト」に見えても、条件を少し変えるだけでブラウザは事前に OPTIONS を送る（preflight）。その境界がどこにあるかを 8 通りで実測する。
+同じ「1 回のリクエスト」に見えても、条件を少し変えるだけでブラウザは事前に OPTIONS を送る（preflight）。その境界がどこにあるかを 10 通りで実測する。
 
 読者が踏みやすいのは `Content-Type` で、`text/plain` なら飛ばないのに `application/json` にした瞬間に飛ぶ。API を JSON にしただけでリクエスト数が倍になる。
+
+QUERY（[RFC 10008](https://www.rfc-editor.org/rfc/rfc10008.html)・2026-06 Proposed Standard）は `Content-Type` に関係なく飛ぶ。`query-text-plain` は**単純リクエストの条件に揃えた対照**で、これが飛ぶことで原因が `Content-Type` ではなくメソッドそのものだと切り分けられる。RFC §4 が「QUERY does not belong to the set of CORS-safelisted methods」と定めている。
 
 ## 記事のどこに出るか
 

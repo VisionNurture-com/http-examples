@@ -15,6 +15,9 @@ docker compose exec -T edge nginx -s reopen
 mkdir -p results/008-redirect
 rm -f results/008-redirect/run.log
 
+# 測定時の nginx の版を生ログへ残す（🔴 nginx -v は stderr に書く・003 の周で実測済）
+echo "nginx: $(docker compose exec -T edge nginx -v 2>&1 | tr -d '\r')" >> results/008-redirect/run.log
+
 node tools/measure-008-redirect.mjs --browser=chromium
 node tools/measure-008-redirect.mjs --browser=firefox
 node tools/measure-008-redirect.mjs --browser=webkit

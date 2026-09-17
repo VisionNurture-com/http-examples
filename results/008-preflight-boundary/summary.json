@@ -1,12 +1,12 @@
 {
-  "measured_at": "2026-08-23T13:49:30.732Z",
+  "measured_at": "2026-09-17T06:36:35.359Z",
   "browsers": {
     "chromium": "151.0.7922.34",
     "firefox": "153.0",
     "webkit": "26.5"
   },
-  "preflighted_count": 4,
-  "case_count": 8,
+  "preflighted_count": 6,
+  "case_count": 10,
   "preflight_get_plain": false,
   "preflight_get_custom_header": true,
   "preflight_post_text_plain": false,
@@ -15,5 +15,7 @@
   "preflight_post_json": true,
   "preflight_put_plain": true,
   "preflight_delete_plain": true,
+  "preflight_query_text_plain": true,
+  "preflight_query_json": true,
   "all_browsers_agree": true
 }

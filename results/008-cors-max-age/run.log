@@ -70,3 +70,77 @@ path: /008/maxage-2/wk  duration=30s interval=1s
 probes: 30 (failed 0)
 preflight arrivals: 15  offsets(s)=[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28]  gaps(s)=[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ---
+nginx: nginx version: nginx/1.31.6
+measured-at: 2026-09-17T06:31:30.103Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-default/cr  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 5, 10, 15, 20]  gaps(s)=[5, 5, 5, 5]
+---
+measured-at: 2026-09-17T06:31:55.649Z
+browser: firefox 153.0
+path: /008/maxage-default/ff  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 5, 10, 15, 20]  gaps(s)=[5, 5, 5, 5]
+---
+measured-at: 2026-09-17T06:32:20.738Z
+browser: webkit 26.5
+path: /008/maxage-default/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 6  offsets(s)=[0, 5, 10, 15, 20, 26]  gaps(s)=[5, 5, 5, 5, 6]
+---
+measured-at: 2026-09-17T06:32:51.388Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-2/cr  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 10, 12]  gaps(s)=[2, 2, 2, 2, 2, 2]
+---
+measured-at: 2026-09-17T06:33:06.728Z
+browser: firefox 153.0
+path: /008/maxage-2/ff  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 11, 13]  gaps(s)=[2, 2, 2, 2, 3, 2]
+---
+measured-at: 2026-09-17T06:33:21.848Z
+browser: webkit 26.5
+path: /008/maxage-2/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 15  offsets(s)=[0, 2, 4, 6, 8, 10, 12, 15, 17, 19, 21, 23, 25, 27, 29]  gaps(s)=[2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2]
+---
+nginx: nginx version: nginx/1.31.6
+measured-at: 2026-09-17T06:40:44.969Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-default/cr  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 6, 11, 16, 21]  gaps(s)=[6, 5, 5, 5]
+---
+measured-at: 2026-09-17T06:41:10.371Z
+browser: firefox 153.0
+path: /008/maxage-default/ff  duration=24s interval=1s
+probes: 24 (failed 0)
+preflight arrivals: 5  offsets(s)=[0, 5, 10, 15, 20]  gaps(s)=[5, 5, 5, 5]
+---
+measured-at: 2026-09-17T06:41:35.588Z
+browser: webkit 26.5
+path: /008/maxage-default/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 6  offsets(s)=[0, 5, 10, 15, 20, 25]  gaps(s)=[5, 5, 5, 5, 5]
+---
+measured-at: 2026-09-17T06:42:06.235Z
+browser: chromium 151.0.7922.34
+path: /008/maxage-2/cr  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 10, 12]  gaps(s)=[2, 2, 2, 2, 2, 2]
+---
+measured-at: 2026-09-17T06:42:21.597Z
+browser: firefox 153.0
+path: /008/maxage-2/ff  duration=14s interval=1s
+probes: 14 (failed 0)
+preflight arrivals: 7  offsets(s)=[0, 2, 4, 6, 8, 10, 12]  gaps(s)=[2, 2, 2, 2, 2, 2]
+---
+measured-at: 2026-09-17T06:42:36.756Z
+browser: webkit 26.5
+path: /008/maxage-2/wk  duration=30s interval=1s
+probes: 30 (failed 0)
+preflight arrivals: 15  offsets(s)=[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 23, 25, 27, 29]  gaps(s)=[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2]
+---

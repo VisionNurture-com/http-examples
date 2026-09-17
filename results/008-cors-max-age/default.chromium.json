@@ -10,16 +10,16 @@
   "preflight_count": 5,
   "preflight_offsets_s": [
     0,
-    5,
+    6,
     11,
     16,
     21
   ],
   "preflight_gaps_s": [
-    5,
     6,
+    5,
     5,
     5
   ],
-  "started_at": "2026-08-07T12:09:19.869Z"
+  "started_at": "2026-09-17T06:40:44.969Z"
 }

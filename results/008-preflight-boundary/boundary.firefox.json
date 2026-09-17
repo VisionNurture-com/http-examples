@@ -1,7 +1,7 @@
 {
   "browser": "firefox",
   "browser_version": "153.0",
-  "measured_at": "2026-08-23T13:49:26.291Z",
+  "measured_at": "2026-09-17T06:36:29.967Z",
   "cases": [
     {
       "id": "get-plain",
@@ -84,7 +84,29 @@
       "preflighted": true,
       "response_ok": true,
       "response_status": 200
+    },
+    {
+      "id": "query-text-plain",
+      "description": "QUERY・Content-Type: text/plain",
+      "method": "QUERY",
+      "request_headers": {
+        "content-type": "text/plain"
+      },
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
+    },
+    {
+      "id": "query-json",
+      "description": "QUERY・Content-Type: application/json",
+      "method": "QUERY",
+      "request_headers": {
+        "content-type": "application/json"
+      },
+      "preflighted": true,
+      "response_ok": true,
+      "response_status": 200
     }
   ],
-  "preflighted_count": 4
+  "preflighted_count": 6
 }
