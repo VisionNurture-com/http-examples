@@ -2,9 +2,9 @@
   "scenario": "007-real-browsers",
   "mode": "M2",
   "real_browsers": {
-    "chrome": "151.0.7922.170",
-    "firefox": "154.0",
-    "safari": "26.5.2"
+    "chrome": "153.0.8010.52",
+    "firefox": "156.0",
+    "safari": "26.6.2"
   },
   "non_js_loaded_chrome": 5,
   "D1_executed_chrome": true,

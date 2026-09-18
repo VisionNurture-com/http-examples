@@ -1,7 +1,7 @@
 {
   "scenario": "012-dictionary",
   "mode": "M2",
-  "generatedAt": "2026-08-26T15:01:25.871Z",
+  "generatedAt": "2026-09-18T13:32:01.197Z",
   "tools": {
     "node": "v24.19.0",
     "brotliCli": "brotli 1.2.0",
@@ -18,7 +18,7 @@
   "bytes_dcz": 592,
   "engines": {
     "chrome": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
@@ -56,7 +56,7 @@
   ],
   "cert_gate_arms": {
     "chrome-dcz": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcz",
       "servedFile": "bundle-v2.js.dcz",
@@ -66,7 +66,7 @@
       "requireKnownRootCert": false
     },
     "chrome-localhost-gate-on": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
@@ -76,7 +76,7 @@
       "requireKnownRootCert": true
     },
     "chrome-privatehost-gate-off": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "sendsAvailableDictionary": true,
       "contentEncoding": "dcb",
       "servedFile": "bundle-v2.js.dcb",
@@ -86,7 +86,7 @@
       "requireKnownRootCert": false
     },
     "chrome-privatehost-gate-on": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "sendsAvailableDictionary": false,
       "contentEncoding": "(なし)",
       "servedFile": "bundle-v2.js",

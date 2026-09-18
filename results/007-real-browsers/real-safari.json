@@ -1,6 +1,6 @@
 {
-  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15",
-  "at": "2026-08-21T13:38:14.657Z",
+  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.2 Safari/605.1.15",
+  "at": "2026-09-18T13:33:02.681Z",
   "data": {
     "destination": {
       "D1": {
@@ -155,10 +155,10 @@
         "hasBoldElement": false
       }
     },
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15"
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.2 Safari/605.1.15"
   },
   "detected": {
     "name": "safari",
-    "version": "26.5.2"
+    "version": "26.6.2"
   }
 }

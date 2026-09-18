@@ -95,7 +95,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "plain"
   },
   {
     "scenario": "006-immutable",
@@ -107,7 +108,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "plain"
   },
   {
     "scenario": "006-immutable",
@@ -119,7 +121,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "immutable"
   },
   {
     "scenario": "006-immutable",
@@ -131,7 +134,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "immutable"
   },
   {
     "scenario": "006-immutable",
@@ -143,7 +147,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "plain"
   },
   {
     "scenario": "006-immutable",
@@ -155,7 +160,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "plain"
   },
   {
     "scenario": "006-immutable",
@@ -167,7 +173,8 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "immutable"
   },
   {
     "scenario": "006-immutable",
@@ -179,6 +186,7 @@
     "first_hits": 1,
     "second_hits": 0,
     "second_statuses": [],
-    "silent_on_second": true
+    "silent_on_second": true,
+    "label": "immutable"
   }
 ]

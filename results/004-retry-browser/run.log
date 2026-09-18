@@ -1,9 +1,9 @@
 # 004-retry-browser
-measured-at: 2026-08-23T13:26:25.238Z
+measured-at: 2026-09-18T13:26:50.202Z
 
 chromium	status=429	Retry-After=3	到着 1 回（9 秒観測）
-  1787491585.375 2026-08-23T13:26:25+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-chromium&after=0&ra=3" cs=retryb cl=browser-retry-chromium wa="-" ra="3" cache=-
+  1789738010.329 2026-09-18T13:26:50+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-chromium&after=0&ra=3" cs=retryb cl=browser-retry-chromium wa="-" ra="3" cache=-
 firefox	status=429	Retry-After=3	到着 1 回（9 秒観測）
-  1787491595.454 2026-08-23T13:26:35+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-firefox&after=0&ra=3" cs=retryb cl=browser-retry-firefox wa="-" ra="3" cache=-
+  1789738020.408 2026-09-18T13:27:00+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-firefox&after=0&ra=3" cs=retryb cl=browser-retry-firefox wa="-" ra="3" cache=-
 webkit	status=429	Retry-After=3	到着 1 回（9 秒観測）
-  1787491605.123 2026-08-23T13:26:45+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-webkit&after=0&ra=3" cs=retryb cl=browser-retry-webkit wa="-" ra="3" cache=-
+  1789738030.101 2026-09-18T13:27:10+00:00 GET 429 uri="/004/api/limited?cs=retryb&cl=browser-retry-webkit&after=0&ra=3" cs=retryb cl=browser-retry-webkit wa="-" ra="3" cache=-

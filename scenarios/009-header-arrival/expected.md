@@ -8,7 +8,7 @@
 |---|---|
 | nginx | 1.31.4-alpine |
 | Apache httpd | 2.4.68-alpine |
-| PHP-FPM | 8.5.9-fpm-alpine |
+| PHP-FPM | 8.5.10-fpm-alpine |
 | Express | 5.2.1（node 24.19.0）|
 | 測定日 | 2026-08-23（P8 の追加は 2026-08-24 / **P9・P10 の追加も 2026-08-24**）|
 
@@ -87,7 +87,7 @@ P6 / P7 / P8 / P10 が「いつでも届いたと言うだけ」でないこと�
     { "path": "apache/htaccess-rewrite/.htaccess", "must_contain": ["RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]"] },
     { "path": "apache/htaccess-setenvif/.htaccess", "must_contain": ["SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1"] },
     { "path": "apache/htaccess-cgipassauth/.htaccess", "must_contain": ["CGIPassAuth On"] },
-    { "path": "compose.yaml", "must_contain": ["httpd:2.4.68-alpine", "php:8.5.9-fpm-alpine"] }
+    { "path": "compose.yaml", "must_contain": ["httpd:2.4.68-alpine", "php:8.5.10-fpm-alpine"] }
   ]
 }
 ```

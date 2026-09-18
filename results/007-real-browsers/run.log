@@ -1,11 +1,11 @@
 # 007-real-browsers (M2)
-measured-at: 2026-08-21T13:39:18.744Z
-host: darwin arm64 / node v24.18.0
+measured-at: 2026-09-18T13:33:03.763Z
+host: darwin arm64 / node v24.19.0
 🔴 Playwright 同梱版ではなく、ホストにインストールされた実ブラウザで測定
-実ブラウザの版: {"chrome":"151.0.7922.170","firefox":"154.0","safari":"26.5.2"}
+実ブラウザの版: {"chrome":"153.0.8010.52","firefox":"156.0","safari":"26.6.2"}
 
---- chrome 151.0.7922.170 ---
-ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36
+--- chrome 153.0.8010.52 ---
+ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36
 D1   classic script  ct=text/html   nosniff=0  event=load executed=true
 D2   classic script  ct=text/html   nosniff=1  event=error executed=false
 D3   classic script  ct=text/plain  nosniff=0  event=load executed=true
@@ -26,8 +26,8 @@ W7 ct=application/octet-stream   served=application/octet-stream; charset=utf-8 
 D11 document contentType=text/plain hasBold=false
 D12 document contentType=text/plain hasBold=false
 
---- firefox 154.0 ---
-ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:154.0) Gecko/20100101 Firefox/154.0
+--- firefox 156.0 ---
+ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0
 D1   classic script  ct=text/html   nosniff=0  event=load executed=true
 D2   classic script  ct=text/html   nosniff=1  event=error executed=false
 D3   classic script  ct=text/plain  nosniff=0  event=load executed=true
@@ -48,8 +48,8 @@ W7 ct=application/octet-stream   served=application/octet-stream; charset=utf-8 
 D11 document contentType=text/plain hasBold=false
 D12 document contentType=text/plain hasBold=false
 
---- safari 26.5.2 ---
-ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15
+--- safari 26.6.2 ---
+ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.2 Safari/605.1.15
 D1   classic script  ct=text/html   nosniff=0  event=load executed=true
 D2   classic script  ct=text/html   nosniff=1  event=error executed=false
 D3   classic script  ct=text/plain  nosniff=0  event=load executed=true

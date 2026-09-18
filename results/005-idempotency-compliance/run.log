@@ -1,6 +1,6 @@
 ==========================================
 005-idempotency-compliance (M1) — node 24.19.0
-measured-at: 2026-08-24T23:32:49.609Z
+measured-at: 2026-09-18T13:04:06.877Z
 ==========================================
 
 仕様 = draft-ietf-httpapi-idempotency-key-header-07（2026-04-18 失効・rev 07）

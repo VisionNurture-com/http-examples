@@ -1,7 +1,7 @@
 {
   "scenario": "012-crossover",
   "mode": "M0",
-  "generatedAt": "2026-08-26T15:01:18.636Z",
+  "generatedAt": "2026-09-18T13:07:32.580Z",
   "dictionary_bytes": 99264,
   "dictionary_lines": 2372,
   "model": "v1 の先頭から一定割合の行を辞書に無い内容へ置き換える（実デプロイの差分そのものではない）",

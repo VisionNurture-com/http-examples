@@ -1,7 +1,7 @@
 {
   "scenario": "010-hsts-removal",
   "mode": "M2",
-  "measuredAt": "2026-08-25T13:13:02.607Z",
+  "measuredAt": "2026-09-18T13:28:57.679Z",
   "note": "判定は到達したサーバの本文で行う。plain-http = 平文到達 / parent-*・child-quiet = https 昇格",
   "browsers": [
     "chromium",

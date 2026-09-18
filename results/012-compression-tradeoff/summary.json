@@ -10,42 +10,42 @@
       "algo": "gzip",
       "level": 1,
       "bytes": 35398,
-      "ms": 0.41,
+      "ms": 0.43,
       "ratio": 0.3518
     },
     {
       "algo": "gzip",
       "level": 6,
       "bytes": 30834,
-      "ms": 1.102,
+      "ms": 1.041,
       "ratio": 0.3065
     },
     {
       "algo": "gzip",
       "level": 9,
       "bytes": 30791,
-      "ms": 1.396,
+      "ms": 1.328,
       "ratio": 0.306
     },
     {
       "algo": "br",
       "level": 0,
       "bytes": 36863,
-      "ms": 0.126,
+      "ms": 0.146,
       "ratio": 0.3664
     },
     {
       "algo": "br",
       "level": 4,
       "bytes": 31741,
-      "ms": 0.547,
+      "ms": 0.566,
       "ratio": 0.3155
     },
     {
       "algo": "br",
       "level": 5,
       "bytes": 28418,
-      "ms": 1.075,
+      "ms": 1.044,
       "ratio": 0.2824
     },
     {
@@ -59,41 +59,41 @@
       "algo": "br",
       "level": 11,
       "bytes": 25917,
-      "ms": 71.619,
+      "ms": 71.652,
       "ratio": 0.2576
     },
     {
       "algo": "zstd",
       "level": 1,
       "bytes": 35811,
-      "ms": 0.135,
+      "ms": 0.118,
       "ratio": 0.3559
     },
     {
       "algo": "zstd",
       "level": 3,
       "bytes": 32557,
-      "ms": 0.173,
+      "ms": 0.2,
       "ratio": 0.3236
     },
     {
       "algo": "zstd",
       "level": 9,
       "bytes": 29386,
-      "ms": 1.015,
+      "ms": 1.014,
       "ratio": 0.2921
     },
     {
       "algo": "zstd",
       "level": 19,
       "bytes": 27789,
-      "ms": 15.27,
+      "ms": 15.22,
       "ratio": 0.2762
     }
   ],
   "br11_vs_br5_bytes_saved": 2501,
-  "br11_vs_br5_ms_added": 70.544,
-  "br11_vs_br5_times_slower": 66.6,
+  "br11_vs_br5_ms_added": 70.608,
+  "br11_vs_br5_times_slower": 68.6,
   "small_rows": [
     {
       "kind": "compressible",
@@ -321,7 +321,7 @@
     "JSON（機械生成）": {
       "samples": 3,
       "ratio_min": 0.2507,
-      "ratio_median": 0.4038,
+      "ratio_median": 0.4048,
       "ratio_max": 0.6846
     },
     "Markdown": {
@@ -379,9 +379,9 @@
       },
       {
         "file": "tools/measure-003.mjs",
-        "bytes": 12641,
-        "br": 4201,
-        "ratio": 0.3323
+        "bytes": 17273,
+        "br": 5665,
+        "ratio": 0.328
       },
       {
         "file": "app/006-cache/routes.mjs",
@@ -408,8 +408,8 @@
       {
         "file": "results/012-dictionary/sizes.json",
         "bytes": 1040,
-        "br": 420,
-        "ratio": 0.4038
+        "br": 421,
+        "ratio": 0.4048
       },
       {
         "file": "results/012-crossover/summary.json",

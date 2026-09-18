@@ -33,3 +33,27 @@ judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめ�
 {"case":"expires epoch","path":"/006/exp/epoch.css","status":200,"cache_control":["no-cache"],"expires":["Thu, 01 Jan 1970 00:00:01 GMT"]}
 {"case":"expires off","path":"/006/exp/off.css","status":200,"cache_control":[],"expires":[]}
 {"case":"expires 1h + 500 応答","path":"/006/exp/error.css","status":500,"cache_control":[],"expires":[]}
+measured-at: 2026-09-16T10:40:13.490Z
+scenario: 006-expires-directive
+mode: M1
+base: http://localhost:8084
+judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめない）
+---
+{"case":"expires 1h","path":"/006/exp/expires-only.css","status":200,"cache_control":["max-age=3600"],"expires":["Wed, 16 Sep 2026 11:40:13 GMT"]}
+{"case":"expires max","path":"/006/exp/max.css","status":200,"cache_control":["max-age=315360000"],"expires":["Thu, 31 Dec 2037 23:55:55 GMT"]}
+{"case":"expires -1","path":"/006/exp/minus.css","status":200,"cache_control":["no-cache"],"expires":["Wed, 16 Sep 2026 10:40:12 GMT"]}
+{"case":"expires epoch","path":"/006/exp/epoch.css","status":200,"cache_control":["no-cache"],"expires":["Thu, 01 Jan 1970 00:00:01 GMT"]}
+{"case":"expires off","path":"/006/exp/off.css","status":200,"cache_control":[],"expires":[]}
+{"case":"expires 1h + 500 応答","path":"/006/exp/error.css","status":500,"cache_control":[],"expires":[]}
+measured-at: 2026-09-18T13:04:08.519Z
+scenario: 006-expires-directive
+mode: M1
+base: http://localhost:8084
+judgement: curl が受け取ったヘッダ全行（同名ヘッダをまとめない）
+---
+{"case":"expires 1h","path":"/006/exp/expires-only.css","status":200,"cache_control":["max-age=3600"],"expires":["Fri, 18 Sep 2026 14:04:08 GMT"]}
+{"case":"expires max","path":"/006/exp/max.css","status":200,"cache_control":["max-age=315360000"],"expires":["Thu, 31 Dec 2037 23:55:55 GMT"]}
+{"case":"expires -1","path":"/006/exp/minus.css","status":200,"cache_control":["no-cache"],"expires":["Fri, 18 Sep 2026 13:04:07 GMT"]}
+{"case":"expires epoch","path":"/006/exp/epoch.css","status":200,"cache_control":["no-cache"],"expires":["Thu, 01 Jan 1970 00:00:01 GMT"]}
+{"case":"expires off","path":"/006/exp/off.css","status":200,"cache_control":[],"expires":[]}
+{"case":"expires 1h + 500 応答","path":"/006/exp/error.css","status":500,"cache_control":[],"expires":[]}

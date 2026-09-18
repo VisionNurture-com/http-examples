@@ -1,6 +1,6 @@
 {
-  "測定日": "2026-08-25",
-  "プロキシ": "http://127.0.0.1:49394",
+  "測定日": "2026-09-18",
+  "プロキシ": "http://127.0.0.1:55168",
   "結果": {
     "bundled": {
       "エンジン": "同梱 Firefox（Playwright）",
@@ -37,9 +37,9 @@
             "件数": 1,
             "エントリ": [
               {
-                "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
-                "値": "1787669489323,1,0",
-                "有効期限": "2026-08-25 14:51:29Z",
+                "キー": "Pêexample.test^partitionKey=%28https%2Cexample.test%29",
+                "値": "1789738745144,1,0",
+                "有効期限": "2026-09-18 13:39:05Z",
                 "状態": 1,
                 "includeSubDomains": false
               }
@@ -62,9 +62,9 @@
             "件数": 1,
             "エントリ": [
               {
-                "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
-                "値": "1787669491106,1,1",
-                "有効期限": "2026-08-25 14:51:31Z",
+                "キー": "Pêexample.test^partitionKey=%28https%2Cexample.test%29",
+                "値": "1789738746859,1,1",
+                "有効期限": "2026-09-18 13:39:06Z",
                 "状態": 1,
                 "includeSubDomains": true
               }
@@ -97,7 +97,7 @@
     "real": {
       "エンジン": "実 Firefox",
       "実行": true,
-      "版": "Mozilla Firefox 154.0",
+      "版": "Mozilla Firefox 156.0",
       "プロファイル": "(破棄)",
       "登録後": {
         "ファイル": "SiteSecurityServiceState.bin",
@@ -106,9 +106,9 @@
         "件数": 1,
         "エントリ": [
           {
-            "キー": "PÒexample.test^partitionKey=%28https%2Cexample.test%29",
-            "値": "1787669494453,1,0",
-            "有効期限": "2026-08-25 14:51:34Z",
+            "キー": "Pêexample.test^partitionKey=%28https%2Cexample.test%29",
+            "値": "1789738750215,1,0",
+            "有効期限": "2026-09-18 13:39:10Z",
             "状態": 1,
             "includeSubDomains": false
           }

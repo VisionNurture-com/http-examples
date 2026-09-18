@@ -1,5 +1,5 @@
 # 010-hsts-removal (M2)
-measured-at: 2026-08-25T13:13:02.607Z
+measured-at: 2026-09-18T13:28:57.679Z
 browsers: chromium(同梱) 151.0.7922.34 / firefox(同梱) 153.0 / webkit(同梱) 26.5
 
 🔴 Playwright 同梱版。実 Firefox 154.0 に対し同梱は 153.0 でメジャー 1 つ古い。

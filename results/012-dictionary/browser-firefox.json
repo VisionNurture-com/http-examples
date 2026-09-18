@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-08-26T15:01:38.085Z",
+  "measuredAt": "2026-09-18T13:32:10.236Z",
   "engine": "firefox",
   "version": "153.0",
   "requireKnownRootCert": false,
@@ -40,8 +40,8 @@
       "url": "https://localhost:8445/012/bundle-v1.js",
       "status": 200,
       "headers": {
-        "server": "nginx/1.31.4",
-        "date": "Wed, 26 Aug 2026 15:01:35 GMT",
+        "server": "nginx/1.31.6",
+        "date": "Fri, 18 Sep 2026 13:32:07 GMT",
         "content-type": "application/javascript",
         "content-length": "99264",
         "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
@@ -74,8 +74,8 @@
       "url": "https://localhost:8445/012/bundle-v2.js",
       "status": 200,
       "headers": {
-        "server": "nginx/1.31.4",
-        "date": "Wed, 26 Aug 2026 15:01:37 GMT",
+        "server": "nginx/1.31.6",
+        "date": "Fri, 18 Sep 2026 13:32:09 GMT",
         "content-type": "application/javascript",
         "content-length": "100613",
         "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
@@ -89,10 +89,10 @@
     }
   ],
   "nginxAccessLog": [
-    "2026-08-26T15:01:35+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
-    "2026-08-26T15:01:35+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
-    "2026-08-26T15:01:35+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=153 status=404",
-    "2026-08-26T15:01:37+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
-    "2026-08-26T15:01:37+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100613 status=200"
+    "2026-09-18T13:32:07+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-09-18T13:32:07+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
+    "2026-09-18T13:32:07+00:00 \"GET /favicon.ico HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=153 status=404",
+    "2026-09-18T13:32:09+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-09-18T13:32:09+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v2.js\" bytes=100613 status=200"
   ]
 }

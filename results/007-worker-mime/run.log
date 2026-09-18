@@ -1,5 +1,5 @@
 # 007-worker-mime (M2)
-measured-at: 2026-08-23T13:37:29.362Z
+measured-at: 2026-09-18T13:22:27.077Z
 host: darwin arm64 / node v24.19.0
 base: http://localhost:8080
 nosniff は付けない（classic worker 自身の MIME 検査を分離するため）

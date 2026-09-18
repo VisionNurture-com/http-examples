@@ -8,7 +8,7 @@ ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$ROOT"
 
 # 差分を作り直す（辞書のハッシュが変わったら 012-compression.conf も直す）
-node tools/make-012-artifacts.mjs
+node tools/make-012-artifacts.mjs --record
 
 # 4 エンジンぶん。firefox / webkit は辞書を使わないことの確認
 for engine in chrome chromium firefox webkit; do
@@ -21,5 +21,11 @@ DICT_HOST=dict.example.test DICT_PORT=8443 \
   node tools/measure-012-dictionary.mjs --engine=chrome --require-known-root --label=chrome-privatehost-gate-on
 DICT_HOST=dict.example.test DICT_PORT=8443 \
   node tools/measure-012-dictionary.mjs --engine=chrome --label=chrome-privatehost-gate-off
+
+# 🔴 dcz 側の配信・復号（2026-09-18 追加）。この 1 行が無かったため
+#    results/012-dictionary/browser-chrome-dcz.json だけが再生産されず、
+#    summary.json が「他は Chrome 153・dcz だけ Chrome 152」と版を混ぜていた。
+#    run.sh は summary.json を丸ごと再生産できる状態に保つ。
+node tools/measure-012-dictionary.mjs --engine=chrome --dcz --label=chrome-dcz
 
 node tools/aggregate-012.mjs dictionary

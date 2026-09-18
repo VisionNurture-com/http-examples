@@ -1,5 +1,5 @@
 # 009-header-arrival (M1)
-measured-at: 2026-08-24T10:40:36.572Z
+measured-at: 2026-09-18T13:04:10.081Z
 node: v24.19.0
 
 同じ Authorization を 11 経路へ送り、終端に届いたかだけを読む。値そのものは記録しない。

@@ -36,7 +36,7 @@
     "python-urllib3-retry": "urllib3=2.7.0",
     "python-requests": "requests=2.34.2",
     "java-httpclient": "java=25.0.4+7-LTS",
-    "go-nethttp": "go=go1.27.0",
+    "go-nethttp": "go=go1.27.1",
     "ruby-nethttp": "ruby=3.4.10",
     "bun-fetch": "bun=1.4.0"
   }

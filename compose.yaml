@@ -169,7 +169,7 @@ services:
   # 公式ドキュメントでは fastcgi_pass_request_headers が既定 on で、クライアントの
   # ヘッダーは HTTP_AUTHORIZATION として渡るはず。それを実測で確かめる側。
   php:
-    image: php:8.5.9-fpm-alpine
+    image: php:8.5.10-fpm-alpine
     container_name: http-examples-php
     volumes:
       - ./php:/var/www/html:ro

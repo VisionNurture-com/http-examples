@@ -40,6 +40,11 @@ const CASES = [
   { id: "post-json", desc: "POST・Content-Type: application/json", method: "POST", headers: { "content-type": "application/json" }, body: '{"a":1}' },
   { id: "put-plain", desc: "PUT・独自ヘッダなし", method: "PUT", headers: {}, body: "x" },
   { id: "delete-plain", desc: "DELETE・独自ヘッダなし", method: "DELETE", headers: {}, body: null },
+  // QUERY（RFC 10008・2026-06 Proposed Standard）。仕様は §4 で CORS-safelisted に
+  // 含めないと定めている。単純リクエストの条件（text/plain）に揃えた対照を置き、
+  // 飛ぶ原因が Content-Type ではなくメソッドそのものであることを切り分ける。
+  { id: "query-text-plain", desc: "QUERY・Content-Type: text/plain", method: "QUERY", headers: { "content-type": "text/plain" }, body: "q=1" },
+  { id: "query-json", desc: "QUERY・Content-Type: application/json", method: "QUERY", headers: { "content-type": "application/json" }, body: '{"q":1}' },
 ];
 
 function countArrivals(uri) {

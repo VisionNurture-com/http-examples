@@ -1,6 +1,6 @@
 {
   "retry_after_seconds": 3,
-  "curl_version": "8.21.0",
+  "curl_version": "8.22.0",
   "arrivals_curl-plain": 1,
   "gaps_curl-plain": [],
   "verdict_curl-plain": "no_retry",

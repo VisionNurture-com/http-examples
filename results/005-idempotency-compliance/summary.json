@@ -1,7 +1,7 @@
 {
   "scenario": "005-idempotency-compliance",
   "mode": "M1",
-  "measured_at": "2026-08-24T23:32:49.609Z",
+  "measured_at": "2026-09-18T13:04:06.877Z",
   "node": "24.19.0",
   "A_K1_status": 201,
   "A_K1_charged": 1,

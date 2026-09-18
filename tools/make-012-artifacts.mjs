@@ -12,8 +12,17 @@
 // 🔴 ハッシュは「辞書ファイルの中身」の SHA-256。ブラウザが Available-Dictionary で
 //    送ってくる値と 1 バイトでも違えば、サーバが正しい差分を返しても復号できない。
 //
-// 使い方: node tools/make-012-artifacts.mjs
-// 出力  : results/012-dictionary/sizes.json（生ログ）
+// 使い方: node tools/make-012-artifacts.mjs [--record]
+// 出力  : public/012/ の配信物（常に作る）
+//         results/012-dictionary/{sizes.json,run.log}（--record のときだけ）
+//
+// 🔴 --record を既定にしない理由（2026-09-18・実際に壊して直した）:
+//    run.log は本ツールがヘッダ + sizes 行を書き、そのあと measure-012-dictionary.mjs が
+//    ブラウザ 1 件につき 1 行ずつ足して完成する。ところが scenarios/012-vary/run.sh は
+//    配信物を作る目的だけで本ツールを呼ぶため、無条件に書くと **012-dictionary の
+//    ブラウザ実測 8 行が消える**。012-vary は M1 なので CI の M1 ループでも起きる。
+//    check-provenance は summary.json しか見ないため鳴らない（実際に鳴らなかった）。
+//    そこで記録は 012-dictionary/run.sh だけが --record で行う。
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -94,22 +103,26 @@ const sizes = {
   },
 };
 
-mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(join(OUT_DIR, "sizes.json"), JSON.stringify(sizes, null, 2) + "\n");
+const RECORD = process.argv.slice(2).includes("--record");
 
-// 生ログ。以降の measure-012-dictionary.mjs が同じファイルへ 1 行ずつ足す
-writeFileSync(
-  join(OUT_DIR, "run.log"),
-  [
-    `measured-at: ${sizes.generatedAt}`,
-    `scenario: 012-dictionary`,
-    `mode: M2`,
-    `judgement: 圧縮方式ごとのバイト数と、実ブラウザが辞書を使ったかどうか`,
-    `---`,
-    JSON.stringify({ step: "sizes", ...sizes }),
-    "",
-  ].join("\n")
-);
+if (RECORD) {
+  mkdirSync(OUT_DIR, { recursive: true });
+  writeFileSync(join(OUT_DIR, "sizes.json"), JSON.stringify(sizes, null, 2) + "\n");
+
+  // 生ログ。以降の measure-012-dictionary.mjs が同じファイルへ 1 行ずつ足す
+  writeFileSync(
+    join(OUT_DIR, "run.log"),
+    [
+      `measured-at: ${sizes.generatedAt}`,
+      `scenario: 012-dictionary`,
+      `mode: M2`,
+      `judgement: 圧縮方式ごとのバイト数と、実ブラウザが辞書を使ったかどうか`,
+      `---`,
+      JSON.stringify({ step: "sizes", ...sizes }),
+      "",
+    ].join("\n")
+  );
+}
 
 const rows = Object.entries(sizes.encodings);
 const base = target.length;
@@ -123,4 +136,4 @@ for (const [name, v] of rows) {
     `${name.padEnd(10)} ${String(v.bytes).padStart(8)}   ${pct}%      ${v.dictionary ? "あり" : "なし"}`
   );
 }
-console.log(`\n生ログ: results/012-dictionary/sizes.json`);
+console.log(RECORD ? `\n生ログ: results/012-dictionary/sizes.json` : `\n（--record 未指定のため生ログは書いていません）`);

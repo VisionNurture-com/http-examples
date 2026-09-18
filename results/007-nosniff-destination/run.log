@@ -1,5 +1,5 @@
 # 007-nosniff-destination (M2)
-measured-at: 2026-08-23T13:37:23.492Z
+measured-at: 2026-09-18T13:22:21.292Z
 host: darwin arm64 / node v24.19.0
 playwright: 1.62.1
 base: http://localhost:8080

@@ -1,6 +1,6 @@
 {
-  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:154.0) Gecko/20100101 Firefox/154.0",
-  "at": "2026-08-21T13:38:05.336Z",
+  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0",
+  "at": "2026-09-18T13:33:01.423Z",
   "data": {
     "destination": {
       "D1": {
@@ -155,10 +155,10 @@
         "hasBoldElement": false
       }
     },
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:154.0) Gecko/20100101 Firefox/154.0"
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0"
   },
   "detected": {
     "name": "firefox",
-    "version": "154.0"
+    "version": "155.0"
   }
 }

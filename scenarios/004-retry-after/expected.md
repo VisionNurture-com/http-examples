@@ -8,7 +8,7 @@
   "mode": "M2",
   "values": {
     "retry_after_seconds": 3,
-    "curl_version": "8.21.0",
+    "curl_version": "8.22.0",
     "arrivals_curl-plain": 1,
     "verdict_curl-plain": "no_retry",
     "arrivals_curl-retry": 3,
@@ -44,7 +44,7 @@
 - `curl` も同じで、**`--retry` を付けたときだけ**です。素の `curl` は 1 回で終わります
 - つまり `Retry-After` に従うのは「そう作られたクライアント」だけで、**付ければ待ってもらえる、という性質のヘッダではありません**
 
-> 🔴 **curl の結果は環境に依存します。**上の値は **curl 8.21.0**（macOS・Release-Date 2026-06-24）で測ったものです。**GitHub Actions の runner に入っている curl 8.5.0（Ubuntu）では、同じ `--retry 2` でも再送しませんでした**（2026-08-20 の CI が実測で検出。到着 1 回 / 判定 `no_retry`）。
+> 🔴 **curl の結果は環境に依存します。**上の値は **curl 8.22.0**（macOS・Release-Date 2026-09-02）で測ったものです。**GitHub Actions の runner に入っている curl 8.5.0（Ubuntu）では、同じ `--retry 2` でも再送しませんでした**（2026-08-20 の CI が実測で検出。到着 1 回 / 判定 `no_retry`）。
 >
 > ⏸ **原因は未特定です。**両方の版のドキュメントは同じ文言で 429 を transient error に挙げています（`docs/cmdline-opts/retry` を curl-8_5_0 と master で確認）。ディストリビューションのパッチによるものか実装差かは**未検証**です。
 >

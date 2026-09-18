@@ -1,6 +1,6 @@
 # 009-redirect-origin (M1)
-measured-at: 2026-08-23T15:25:58.941Z
-client: curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+measured-at: 2026-09-18T13:04:10.349Z
+client: curl 8.22.0 (aarch64-apple-darwin25.6.0) libcurl/8.22.0 OpenSSL/3.6.4 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libpsl/0.23.3 libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
 base: http://localhost:8080
 
 判定は終端 /009/whoami が報告した到着内容のみで行う。値そのものは記録しない。

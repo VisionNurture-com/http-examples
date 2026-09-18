@@ -1,7 +1,7 @@
 {
   "scenario": "005-multiprocess-idempotency",
   "mode": "M1",
-  "measured_at": "2026-09-17T03:14:36.081Z",
+  "measured_at": "2026-09-18T13:04:07.667Z",
   "nodes": 2,
   "a_same_instance_charged": 2,
   "a_two_instances_charged": 2,

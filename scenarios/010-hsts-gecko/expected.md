@@ -35,7 +35,7 @@ Firefox に無く、実体はプロファイル直下のファイルである。
   "mode": "M2",
   "values": {
     "state_file_name": "SiteSecurityServiceState.bin",
-    "engine_versions": { "bundled_firefox": "153.0", "real_firefox": "154.0" },
+    "engine_versions": { "bundled_firefox": "153.0", "real_firefox": "156.0" },
     "g0_state_file_exists": false,
     "g1_entry_key": "example.test^partitionKey=%28https%2Cexample.test%29",
     "g1_include_subdomains": false,

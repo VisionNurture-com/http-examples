@@ -1,15 +1,15 @@
 {
   "scenario": "001-layers-browser",
   "mode": "M2",
-  "measured_at": "2026-08-26T08:56:40.629Z",
+  "measured_at": "2026-09-18T13:34:19.760Z",
   "note": "🔴 Firefox は Playwright 同梱版。実機 Firefox 154.0.1 は未測定（Playwright は同梱ビルド以外を駆動できない）。",
   "browsers": {
-    "chrome-real": "152.0.7977.65",
+    "chrome-real": "153.0.8010.52",
     "firefox-bundled": "153.0"
   },
   "detail": {
     "chrome_real": {
-      "version": "152.0.7977.65",
+      "version": "153.0.8010.52",
       "cases": {
         "K0": {
           "layer": "なし（陽性対照）",
@@ -19,13 +19,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 0.5,
-            "domainLookupEnd": 0.5,
-            "connectStart": 0.5,
-            "connectEnd": 0.5,
+            "domainLookupStart": 0.19999998807907104,
+            "domainLookupEnd": 0.19999998807907104,
+            "connectStart": 0.19999998807907104,
+            "connectEnd": 0.19999998807907104,
             "secureConnectionStart": 0,
-            "requestStart": 1,
-            "responseStart": 2,
+            "requestStart": 0.699999988079071,
+            "responseStart": 1.5,
             "has_secureConnectionStart_field": true
           }
         },
@@ -81,13 +81,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 3.599999964237213,
-            "domainLookupEnd": 3.599999964237213,
-            "connectStart": 3.599999964237213,
-            "connectEnd": 3.599999964237213,
+            "domainLookupStart": 0.5,
+            "domainLookupEnd": 0.5,
+            "connectStart": 0.5,
+            "connectEnd": 0.5,
             "secureConnectionStart": 0,
-            "requestStart": 4.099999964237213,
-            "responseStart": 5.199999988079071,
+            "requestStart": 0.9000000059604645,
+            "responseStart": 1.699999988079071,
             "has_secureConnectionStart_field": true
           }
         },
@@ -99,13 +99,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 0.40000003576278687,
-            "domainLookupEnd": 0.40000003576278687,
-            "connectStart": 0.40000003576278687,
-            "connectEnd": 0.40000003576278687,
+            "domainLookupStart": 0.30000001192092896,
+            "domainLookupEnd": 0.30000001192092896,
+            "connectStart": 0.30000001192092896,
+            "connectEnd": 0.30000001192092896,
             "secureConnectionStart": 0,
-            "requestStart": 1,
-            "responseStart": 2.100000023841858,
+            "requestStart": 0.800000011920929,
+            "responseStart": 1.9000000059604645,
             "has_secureConnectionStart_field": true
           }
         },
@@ -128,13 +128,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 0.8999999761581421,
-            "domainLookupEnd": 0.8999999761581421,
-            "connectStart": 0.8999999761581421,
-            "connectEnd": 8.699999988079071,
-            "secureConnectionStart": 0.8999999761581421,
-            "requestStart": 8.800000011920929,
-            "responseStart": 9.699999988079071,
+            "domainLookupStart": 0.699999988079071,
+            "domainLookupEnd": 0.699999988079071,
+            "connectStart": 0.699999988079071,
+            "connectEnd": 4.799999982118607,
+            "secureConnectionStart": 0.699999988079071,
+            "requestStart": 4.899999976158142,
+            "responseStart": 5.5,
             "has_secureConnectionStart_field": true
           }
         }
@@ -151,13 +151,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 1,
-            "domainLookupEnd": 1,
-            "connectStart": 1,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
             "connectEnd": 2,
             "secureConnectionStart": 0,
             "requestStart": 2,
-            "responseStart": 4,
+            "responseStart": 3,
             "has_secureConnectionStart_field": true
           }
         },
@@ -227,13 +227,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 1,
+            "domainLookupStart": 2,
             "domainLookupEnd": 2,
             "connectStart": 2,
             "connectEnd": 2,
             "secureConnectionStart": 0,
             "requestStart": 2,
-            "responseStart": 5,
+            "responseStart": 3,
             "has_secureConnectionStart_field": true
           }
         },
@@ -245,13 +245,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 1,
-            "domainLookupEnd": 1,
-            "connectStart": 1,
-            "connectEnd": 1,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
+            "connectEnd": 2,
             "secureConnectionStart": 0,
-            "requestStart": 1,
-            "responseStart": 4,
+            "requestStart": 2,
+            "responseStart": 3,
             "has_secureConnectionStart_field": true
           }
         },
@@ -281,13 +281,13 @@
           "request_failed": null,
           "timing": {
             "entry": true,
-            "domainLookupStart": 2,
-            "domainLookupEnd": 2,
-            "connectStart": 2,
-            "connectEnd": 10,
+            "domainLookupStart": 3,
+            "domainLookupEnd": 3,
+            "connectStart": 3,
+            "connectEnd": 5,
             "secureConnectionStart": 3,
-            "requestStart": 10,
-            "responseStart": 12,
+            "requestStart": 5,
+            "responseStart": 6,
             "has_secureConnectionStart_field": true
           }
         }

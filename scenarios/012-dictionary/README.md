@@ -38,7 +38,7 @@ Chrome は**公的に信頼されたルートから辿れる証明書でない�
 ```bash
 bash tools/gen-certs.sh
 docker compose up -d --wait
-node tools/make-012-artifacts.mjs
+node tools/make-012-artifacts.mjs --record
 ```
 
 `brotli` と `zstd` の CLI が要ります（辞書付きの圧縮は node:zlib では作れません）。

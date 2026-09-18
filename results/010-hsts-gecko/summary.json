@@ -1,12 +1,12 @@
 {
   "scenario": "010-hsts-gecko",
   "mode": "M2",
-  "measuredAt": "2026-08-25",
+  "measuredAt": "2026-09-18",
   "note": "Gecko が HSTS をどこに持つか。UI 削除だけは半自動（人手で 1 クリック）。",
   "state_file_name": "SiteSecurityServiceState.bin",
   "engine_versions": {
     "bundled_firefox": "153.0",
-    "real_firefox": "154.0"
+    "real_firefox": "156.0"
   },
   "g0_state_file_exists": false,
   "g1_entry_key": "example.test^partitionKey=%28https%2Cexample.test%29",

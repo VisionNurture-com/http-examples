@@ -19,7 +19,12 @@ const NI = "chrome://net-internals/#hsts";
 const PARENT = "example.test";
 const PRELOADED = "github.com"; // 所有していないが、状態は Query できる
 
-const field = (t, k) => (t.match(new RegExp(`^${k}:\\s*(.*)$`, "m")) || [, ""])[1].trim();
+// 🔴 `\s*` は改行も食う（`m` フラグでも `\s` に `\n` が含まれる）。値が空の行では
+//    次の行を拾ってしまうため、水平空白だけに限る。
+//    Chrome 152 までは削除後の照会が「Not found」で該当行ごと無かったため潜伏していた。
+//    Chrome 153 が「Found: … dynamic_sts_domain:（空） / dynamic_upgrade_mode: UNKNOWN」を
+//    返すようになり、dynamic_sts_domain が "dynamic_upgrade_mode: UNKNOWN" と読めていた（2026-09-18）。
+const field = (t, k) => (t.match(new RegExp(`^${k}:[^\\S\\r\\n]*(.*)$`, "m")) || [, ""])[1].trim();
 
 async function query(page, host) {
   await page.goto(NI, { timeout: 10000 });

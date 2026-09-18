@@ -1,4 +1,4 @@
-measured-at: 2026-09-16T11:30:11.047Z
+measured-at: 2026-09-18T13:03:45.939Z
 scenario: 003-put-idempotent
 mode: M1
 base: http://localhost:8085
@@ -21,15 +21,15 @@ state.docs={"doc":{"title":"spec","body":"same bytes every time"}}
 
 ## stamped 送信 1/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.530Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-18T13:03:46.422Z"}}
 
 ## stamped 送信 2/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.664Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-18T13:03:46.556Z"}}
 
 ## stamped 送信 3/3
 status=200
-state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-16T11:30:11.808Z"}}
+state.docs={"doc":{"title":"spec","body":"same bytes every time","updatedAt":"2026-09-18T13:03:46.710Z"}}
 
 ## append 送信 1/3
 status=200

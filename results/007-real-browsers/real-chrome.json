@@ -1,6 +1,6 @@
 {
-  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
-  "at": "2026-08-21T13:36:16.443Z",
+  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "at": "2026-09-18T13:33:00.800Z",
   "data": {
     "destination": {
       "D1": {
@@ -155,10 +155,10 @@
         "hasBoldElement": false
       }
     },
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
   },
   "detected": {
     "name": "chrome",
-    "version": "151.0.0.0"
+    "version": "153.0.0.0"
   }
 }

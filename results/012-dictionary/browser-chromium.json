@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-08-26T15:01:32.075Z",
+  "measuredAt": "2026-09-18T13:32:06.522Z",
   "engine": "chromium",
   "version": "151.0.7922.34",
   "requireKnownRootCert": false,
@@ -49,10 +49,10 @@
         "cache-control": "public, max-age=3600",
         "content-length": "99264",
         "content-type": "application/javascript",
-        "date": "Wed, 26 Aug 2026 15:01:29 GMT",
+        "date": "Fri, 18 Sep 2026 13:32:04 GMT",
         "etag": "\"6a8d75f7-183c0\"",
         "last-modified": "Tue, 25 Aug 2026 11:01:11 GMT",
-        "server": "nginx/1.31.4",
+        "server": "nginx/1.31.6",
         "use-as-dictionary": "match=\"/012/bundle-*.js\", match-dest=(\"script\"), id=\"bundle-v1\"",
         "x-served-file": "bundle-v1.js"
       }
@@ -90,19 +90,19 @@
         "content-encoding": "dcb",
         "content-length": "577",
         "content-type": "application/javascript",
-        "date": "Wed, 26 Aug 2026 15:01:31 GMT",
-        "etag": "\"6a8effc5-241\"",
-        "last-modified": "Wed, 26 Aug 2026 15:01:25 GMT",
-        "server": "nginx/1.31.4",
+        "date": "Fri, 18 Sep 2026 13:32:05 GMT",
+        "etag": "\"6aad3d51-241\"",
+        "last-modified": "Fri, 18 Sep 2026 13:32:01 GMT",
+        "server": "nginx/1.31.6",
         "vary": "Accept-Encoding, Available-Dictionary",
         "x-served-file": "bundle-v2.js.dcb"
       }
     }
   ],
   "nginxAccessLog": [
-    "2026-08-26T15:01:29+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
-    "2026-08-26T15:01:29+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
-    "2026-08-26T15:01:31+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
-    "2026-08-26T15:01:31+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd, dcb, dcz\" avail=\":fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=:\" dict_matched=1 ce=\"dcb\" served=\"bundle-v2.js.dcb\" bytes=577 status=200"
+    "2026-09-18T13:32:04+00:00 \"GET /012/index.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1497 status=200",
+    "2026-09-18T13:32:04+00:00 \"GET /012/bundle-v1.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"bundle-v1.js\" bytes=99264 status=200",
+    "2026-09-18T13:32:05+00:00 \"GET /012/v2.html HTTP/2.0\" ae=\"gzip, deflate, br, zstd\" avail=\"-\" dict_matched=0 ce=\"-\" served=\"-\" bytes=1437 status=200",
+    "2026-09-18T13:32:05+00:00 \"GET /012/bundle-v2.js HTTP/2.0\" ae=\"gzip, deflate, br, zstd, dcb, dcz\" avail=\":fG6CMH4IkZ0KlMuIGGZxW3pNaBRrugvU30I+ppRPaIA=:\" dict_matched=1 ce=\"dcb\" served=\"bundle-v2.js.dcb\" bytes=577 status=200"
   ]
 }

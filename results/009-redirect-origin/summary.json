@@ -1,7 +1,7 @@
 {
   "scenario": "009-redirect-origin",
   "mode": "M1",
-  "curl_version": "8.21.0",
+  "curl_version": "8.22.0",
   "B0_L_auth": "yes",
   "B0_L_hops": 0,
   "B0_L_status": 200,

@@ -1,12 +1,12 @@
 # 009-redirect-clients (M2)
-measured-at: 2026-08-23T15:22:12.908Z
+measured-at: 2026-09-18T03:58:08.854Z
 base: http://localhost:8080
 
 ## 測ったランタイムの版
-  curl               curl 8.21.0 (aarch64-apple-darwin25.4.0) libcurl/8.21.0 OpenSSL/3.6.3 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+  curl               curl 8.22.0 (aarch64-apple-darwin25.6.0) libcurl/8.22.0 OpenSSL/3.6.4 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libpsl/0.23.3 libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
   python-requests    Python 3.14.7
   java-httpclient    openjdk 25.0.4 2026-07-21 LTS
-  go-nethttp         go version go1.27.0 darwin/arm64
+  go-nethttp         go version go1.27.1 darwin/arm64
   ruby-openuri       ruby 3.4.10 (2026-06-30 revision 2b0b7728dc) +PRISM [arm64-darwin25]
   ruby-openuri-guarded ruby 3.4.10 (2026-06-30 revision 2b0b7728dc) +PRISM [arm64-darwin25]
   node-fetch         v24.19.0

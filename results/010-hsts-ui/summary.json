@@ -2,14 +2,14 @@
   "scenario": "010-hsts-ui",
   "mode": "M2",
   "browser": "実 Chrome（channel:chrome・一時プロファイル）",
-  "uaBrands": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
-  "measuredAt": "2026-08-25T13:13:08.881Z",
+  "uaBrands": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "measuredAt": "2026-09-18T13:31:18.748Z",
   "selectors": {
     "query": "#hsts-view-query-input + #hsts-view-query-submit",
     "delete": "#domain-security-policy-view-delete-input + #domain-security-policy-view-delete-submit",
     "output": "#hsts-view-query-output"
   },
-  "chrome_version_ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+  "chrome_version_ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
   "k2_dynamic_before": "example.test",
   "k2_dynamic_after": "",
   "k2_http_before": "https昇格",
@@ -31,7 +31,7 @@
       },
       "削除後": {
         "dynamic_sts_domain": "",
-        "dynamic_upgrade_mode": "",
+        "dynamic_upgrade_mode": "UNKNOWN",
         "http到達": "http到達"
       }
     },
@@ -51,9 +51,9 @@
     }
   },
   "raw": {
-    "k2_before": "Found:\nstatic_sts_domain:\nstatic_upgrade_mode: UNKNOWN\nstatic_sts_include_subdomains:\nstatic_sts_observed:\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain: example.test\ndynamic_upgrade_mode: FORCE_HTTPS\ndynamic_sts_include_subdomains: false\ndynamic_sts_observed: 1787663583.523654\ndynamic_sts_expiry: 1787664183.523648\nstatic_sts_domain:\nstatic_upgrade_mode: UNKNOWN\nstatic_sts_include_subdomains:\nstatic_sts_observed:\nstatic_pkp_domain:\n",
-    "k2_after": "Not found",
-    "k5_before": "Found:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1787169453\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain:\ndynamic_upgrade_mode: UNKNOWN\ndynamic_sts_include_subdomains:\ndynamic_sts_observed:\ndynamic_sts_expiry:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1787169453\nstatic_pkp_domai",
-    "k5_after": "Found:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1787169453\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain:\ndynamic_upgrade_mode: UNKNOWN\ndynamic_sts_include_subdomains:\ndynamic_sts_observed:\ndynamic_sts_expiry:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1787169453\nstatic_pkp_domai"
+    "k2_before": "Found:\nstatic_sts_domain:\nstatic_upgrade_mode: DEFAULT\nstatic_sts_include_subdomains: false\nstatic_sts_observed: 0\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain: example.test\ndynamic_upgrade_mode: FORCE_HTTPS\ndynamic_sts_include_subdomains: false\ndynamic_sts_observed: 1789738273.855627\ndynamic_sts_expiry: 1789738873.855626\nstatic_sts_domain:\nstatic_upgrade_mode: DEFAULT\nstatic_sts_include_subdomains: false\nstatic_sts_observed: 0\nsta",
+    "k2_after": "Found:\nstatic_sts_domain:\nstatic_upgrade_mode: DEFAULT\nstatic_sts_include_subdomains: false\nstatic_sts_observed: 0\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain:\ndynamic_upgrade_mode: UNKNOWN\ndynamic_sts_include_subdomains:\ndynamic_sts_observed:\ndynamic_sts_expiry:\nstatic_sts_domain:\nstatic_upgrade_mode: DEFAULT\nstatic_sts_include_subdomains: false\nstatic_sts_observed: 0\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_o",
+    "k5_before": "Found:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1789616867\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain:\ndynamic_upgrade_mode: UNKNOWN\ndynamic_sts_include_subdomains:\ndynamic_sts_observed:\ndynamic_sts_expiry:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1789616867\nstatic_pkp_domai",
+    "k5_after": "Found:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1789616867\nstatic_pkp_domain:\nstatic_pkp_include_subdomains:\nstatic_pkp_observed:\nstatic_spki_hashes:\ndynamic_sts_domain:\ndynamic_upgrade_mode: UNKNOWN\ndynamic_sts_include_subdomains:\ndynamic_sts_observed:\ndynamic_sts_expiry:\nstatic_sts_domain: github.com\nstatic_upgrade_mode: FORCE_HTTPS\nstatic_sts_include_subdomains: true\nstatic_sts_observed: 1789616867\nstatic_pkp_domai"
   }
 }

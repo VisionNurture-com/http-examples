@@ -198,6 +198,27 @@ const BUILDERS = {
       bfcache_restored_no_store_page: bf.cases.find((c) => c.page_cache_control === "no-store").restored_from_bfcache,
       bfcache_page_arrivals_on_back: 0,
       playwright_can_measure_bfcache: bf.playwright_comparison.restored_from_bfcache,
+      // 🔴 scheme / Cookie の対照 6 件（2026-09-18 追加）。
+      //    これらは 7352e19「記事 006 の bfcache 計測にスキームと Cookie の対照を追加する」で
+      //    **summary.json へ直に書かれ、集計側が更新されていなかった**。そのため
+      //    006-navigation を回すたびに 6 キーが消え、check-provenance が落ちる状態だった
+      //    （expected.md と summary.json の双方が手で揃えてあったため、回すまで鳴らない）。
+      //    値の出どころは bfcache-manual.json（bfcache は Playwright で測れないため手測定）。
+      ...(() => {
+        const one = (scheme, cc) =>
+          bf.cases.find(
+            (c) => c.scheme === scheme && c.page_cache_control === cc && c.cookie_changed === false
+          );
+        const changed = bf.cases.find((c) => c.cookie_changed === true);
+        return {
+          bfcache_restored_no_store_page_http: one("http", "no-store").restored_from_bfcache,
+          bfcache_restored_no_store_page_https: one("https", "no-store").restored_from_bfcache,
+          bfcache_restored_no_cache_page_http: one("http", "no-cache").restored_from_bfcache,
+          bfcache_restored_no_cache_page_https: one("https", "no-cache").restored_from_bfcache,
+          bfcache_restored_when_cookie_changed: changed.restored_from_bfcache,
+          bfcache_page_arrivals_on_back_when_cookie_changed: changed.page_arrivals_on_back,
+        };
+      })(),
     };
   },
 

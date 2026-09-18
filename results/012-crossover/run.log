@@ -1,4 +1,4 @@
-measured-at: 2026-08-26T15:01:18.636Z
+measured-at: 2026-09-18T13:07:32.580Z
 scenario: 012-crossover
 mode: M0
 judgement: 変更率を振り、辞書あり（dcb/dcz）が辞書なし（br/zstd）を上回る点を探す
