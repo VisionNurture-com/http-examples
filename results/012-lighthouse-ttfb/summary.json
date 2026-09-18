@@ -1,12 +1,12 @@
 {
   "scenario": "012-lighthouse-ttfb",
   "mode": "M1",
-  "measured_at": "2026-09-18T13:05:33.778Z",
+  "measured_at": "2026-09-18T22:49:50.835Z",
   "base": "http://localhost:8086",
   "think_ms": 200,
   "cache_control": "no-store",
   "samples": 3,
-  "lighthouse_version": "13.4.1",
+  "lighthouse_version": "13.5.0",
   "server_response_time_collapses_with_interim": true,
   "paint_metrics_improve_with_interim": false,
   "report_breaks_with_interim": false,
@@ -16,13 +16,13 @@
       "url": "http://localhost:8086/012/eh?hints=none&ms=200&cc=no-store",
       "runtime_error": null,
       "server_response_time_ms": [
-        210,
-        207,
+        218,
+        211,
         206
       ],
-      "server_response_time_median_ms": 207,
-      "first_contentful_paint_median_ms": 1063,
-      "largest_contentful_paint_median_ms": 1213
+      "server_response_time_median_ms": 211,
+      "first_contentful_paint_median_ms": 1070,
+      "largest_contentful_paint_median_ms": 1220
     },
     "preload": {
       "label": "103 で実際に使う資源を先読みさせる",

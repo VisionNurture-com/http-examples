@@ -7,7 +7,7 @@
   "scenario": "012-lighthouse-ttfb",
   "mode": "M1",
   "values": {
-    "lighthouse_version": "13.4.1",
+    "lighthouse_version": "13.5.0",
     "samples": 3,
     "server_response_time_collapses_with_interim": true,
     "paint_metrics_improve_with_interim": false,
@@ -26,9 +26,9 @@
 
 ## 読み方
 
-- **`server_response_time_collapses_with_interim`**: Lighthouse の `server-response-time`（レポート上は "Root document took N ms"）は、103 を送るだけで **205 ミリ秒から 1 ミリ秒**へ落ちます。サーバは同じだけ待たせているので、落ちたのは待ち時間ではなく**測り始めの位置**です
-- **`paint_metrics_improve_with_interim`**: 同じ実行で取った LCP は **1,211 → 1,220 ミリ秒**、FCP は **1,061 → 1,070 ミリ秒**で、どちらも改善していません。**サーバ応答時間の指摘だけが消えて、画面の速さは変わらない**という形です
-- **`report_breaks_with_interim`**: 103 を送るとレポートが `NOT_HTML` で失敗する報告が [2021 年にあり](https://github.com/GoogleChrome/lighthouse/issues/13379)（同年 12 月に close）、13.4.1 では再現しませんでした。**壊れないからこそ、値が動いたことに気づきにくい**とも読めます
+- **`server_response_time_collapses_with_interim`**: Lighthouse の `server-response-time`（レポート上は "Root document took N ms"）は、103 を送るだけで **211 ミリ秒から 2 ミリ秒**へ落ちます。サーバは同じだけ待たせているので、落ちたのは待ち時間ではなく**測り始めの位置**です
+- **`paint_metrics_improve_with_interim`**: 同じ実行で取った LCP は **1,220 → 1,212 ミリ秒**、FCP は **1,070 → 1,062 ミリ秒**で、差はどちらも 8 ミリ秒（1% 未満）です。判定のしきい値は LCP の 10% 変化なので、これは「動いていない」側に入ります。**サーバ応答時間の指摘だけが消えて、画面の速さは変わらない**という形です
+- **`report_breaks_with_interim`**: 103 を送るとレポートが `NOT_HTML` で失敗する報告が [2021 年にあり](https://github.com/GoogleChrome/lighthouse/issues/13379)（同年 12 月に close）、13.5.0 では再現しませんでした。**壊れないからこそ、値が動いたことに気づきにくい**とも読めます
 - ミリ秒そのものは実行のたびに動くため、突合対象は上の 3 つの判定（真偽）と版・回数にしています。実測の並びは `summary.json` の `cases.<none|preload>.server_response_time_ms` にあります
 - 🔴 **アプリへ直結して測っています**。nginx は既定で上流の 103 を落とすため（`012-early-hints`）、経路に挟むと「103 あり」の条件そのものが作れません
 
