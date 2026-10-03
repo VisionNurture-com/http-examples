@@ -96,13 +96,20 @@ async function main() {
     const p = spawn("curl", ["--version"]); let o = "";
     p.stdout.on("data", (d) => (o += d)); p.on("close", () => r(o.split("\n")[0]));
   });
-  summary.node = meta.node;
+  // 版は「どちら側の版か」を分けて記録する。
+  //   server_node … 応答を返さない口を立てているアプリのコンテナ（観測値を決めない）
+  //   client_*    … 組み込みの fetch を実際に動かしているこのプロセス（観測値を決める側）
+  //   undici      … npm で入れた undici パッケージ（「undici を直接」のほう）
+  // 組み込みの fetch が使う undici は Node に同梱された別物で、npm の版とは一致しない。
+  summary.server_node = meta.node;
+  summary.client_node = process.versions.node;
+  summary.client_undici_bundled = process.versions.undici;
   summary.curl = curlV;
   const undiciV = (await import("undici/package.json", { with: { type: "json" } })).default.version;
   summary.undici = undiciV;
 
   log("==========================================");
-  log(`005-fetch-timeout (M2) — node ${meta.node} / undici ${undiciV}`);
+  log(`005-fetch-timeout (M2) — client node ${process.versions.node}（同梱 undici ${process.versions.undici}）/ npm undici ${undiciV} / server node ${meta.node}`);
   log(`${curlV}`);
   log(`measured-at: ${summary.measured_at} / 上限 ${sec(CAP_MS)} 秒`);
   log("==========================================");

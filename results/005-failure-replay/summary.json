@@ -1,0 +1,15 @@
+{
+  "scenario": "005-failure-replay",
+  "mode": "M1",
+  "measured_at": "2026-10-03T06:35:32.257Z",
+  "server_node": "24.19.0",
+  "trials": 20,
+  "b_first_statuses": "500x20",
+  "b_retry_statuses": "201x20",
+  "b_charged": "2x20",
+  "b_save_first_statuses": "500x20",
+  "b_save_retry_statuses": "500rx20",
+  "b_save_charged": "1x20",
+  "b_charges_twice_after_failure": true,
+  "b_save_charges_once_after_failure": true
+}

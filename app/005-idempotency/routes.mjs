@@ -5,6 +5,12 @@
 // A / B 対照を同じサーバに並べる:
 //   A = /005/charge-naive … 素朴な実装。キーは見るが境界を実装していない
 //   B = /005/charge       … draft-ietf-httpapi-idempotency-key-header-07 準拠
+//   C = /005/charge-pg    … B と同じ判定を、処理中のキーを PostgreSQL の一意制約で確保して行う
+//       /005/charge-redis … 同じく Redis の SET NX で確保して行う
+//   B-save = /005/charge-save-failures … B と同じだが、失敗した結果（500）も保存して再生する
+//
+// B の排他（inFlight）はプロセスの中の変数なので、サーバを 2 台に並べると隣の台から見えない。
+// C は置き場所だけを 2 台から見える所へ移したもので、判定の分岐（400 / 422 / 409 / 再生）は B と同じ。
 //
 // 🔴 ドラフトは 2026-04-18 に失効している（rev 07 / std_level null）。
 //    「デファクト標準」の実体は、失効した仕様とそれに完全には従わない実装である。
@@ -16,6 +22,8 @@
 //    イベントループが 2 本のリクエストを直列化してしまい、素朴実装でも
 //    二重登録が再現しない（= 現実と違う結論が出る）。細工ではなく現実の模写。
 import express from "express";
+import pg from "pg";
+import { createClient } from "redis";
 
 const naiveStore = new Map(); // key -> { status, body }
 const specStore = new Map(); // key -> { status, body, fingerprint, storedAt }
@@ -23,6 +31,23 @@ const inFlight = new Set(); // 処理中のキー（B のみ）
 
 const DEFAULT_TTL_MS = 24 * 60 * 60 * 1000; // Stripe の 24 時間に合わせた既定
 let charged = 0; // 実際に課金処理が走った回数。二重登録の観測に使う
+
+// ---- 共有ストアへの接続（C 用）--------------------------------------------
+// 接続先が無い環境（ほかの記事のシナリオだけを動かす場合など）でもサーバが起動するよう、
+// 接続は最初に使うときに張る。張れなければ C は 503 を返す。
+let pgPool = null;
+function pgClient() {
+  if (!process.env.IDEM_PG_URL) return null;
+  pgPool ??= new pg.Pool({ connectionString: process.env.IDEM_PG_URL, max: 4 });
+  return pgPool;
+}
+
+let redisReady = null;
+function redisClient() {
+  if (!process.env.IDEM_REDIS_URL) return null;
+  redisReady ??= createClient({ url: process.env.IDEM_REDIS_URL }).connect();
+  return redisReady;
+}
 
 /** DB 書き込みを模した非同期の間。0 でも await はイベントループを 1 周させる */
 const settle = (ms = 30) => new Promise((r) => setTimeout(r, ms));
@@ -48,11 +73,16 @@ async function doCharge(req) {
 
 export function register(app) {
   // ---- 観測用 ----------------------------------------------------------
-  app.post("/005/__reset", (_req, res) => {
+  app.post("/005/__reset", async (_req, res) => {
     naiveStore.clear();
     specStore.clear();
     inFlight.clear();
     charged = 0;
+    // 共有ストアは 2 台で 1 つなので、どちらの台から何回呼ばれても同じ状態になる操作で空にする
+    const pool = pgClient();
+    if (pool) await pool.query("TRUNCATE idempotency_keys").catch(() => {});
+    const redis = redisClient();
+    if (redis) await (await redis).flushDb().catch(() => {});
     res.status(204).end();
   });
 
@@ -122,10 +152,134 @@ export function register(app) {
     inFlight.add(key);
     try {
       const body = await doCharge(req);
+      failIfAsked(req);
       specStore.set(key, { status: 201, body, fingerprint: fingerprint(req), storedAt: Date.now() });
       return res.status(201).json(body);
+    } catch {
+      // B は失敗した結果を保存しない。同じキーで送り直すと、もう一度処理される
+      return problem(res, 500, "Charge failed", "The charge failed after it may have been applied.");
     } finally {
       inFlight.delete(key);
     }
   });
+
+  // ---- B-save: 失敗した結果も保存する ------------------------------------
+  // Stripe の公開ドキュメントと同じ方針（成功でも失敗でも最初の結果を保存し、500 も再生する）。
+  app.post("/005/charge-save-failures", express.json(), async (req, res) => {
+    const key = req.headers["idempotency-key"];
+    if (!key) {
+      return problem(res, 400, "Idempotency-Key is missing", "This operation requires an Idempotency-Key header.");
+    }
+
+    const live = specStore.get(key);
+    if (live) {
+      if (live.fingerprint !== fingerprint(req)) {
+        return problem(res, 422, "Idempotency-Key is already used", "This Idempotency-Key was used with a different request payload.");
+      }
+      res.set("Idempotency-Replayed", "true");
+      return res.status(live.status).type(live.type).send(live.raw);
+    }
+    if (inFlight.has(key)) {
+      return problem(res, 409, "A request is outstanding for this Idempotency-Key", "A request with the same Idempotency-Key is still being processed.");
+    }
+
+    inFlight.add(key);
+    try {
+      const body = await doCharge(req);
+      failIfAsked(req);
+      specStore.set(key, { status: 201, type: "application/json", raw: JSON.stringify(body), fingerprint: fingerprint(req), storedAt: Date.now() });
+      return res.status(201).json(body);
+    } catch {
+      const err = { type: "https://example.com/probs/idempotency", title: "Charge failed", detail: "The charge failed after it may have been applied.", status: 500 };
+      specStore.set(key, { status: 500, type: "application/problem+json", raw: JSON.stringify(err), fingerprint: fingerprint(req), storedAt: Date.now() });
+      return res.status(500).type("application/problem+json").json(err);
+    } finally {
+      inFlight.delete(key);
+    }
+  });
+
+  // ---- C: 処理中のキーを PostgreSQL の一意制約で確保する -------------------
+  app.post("/005/charge-pg", express.json(), async (req, res) => {
+    const key = req.headers["idempotency-key"];
+    if (!key) {
+      return problem(res, 400, "Idempotency-Key is missing", "This operation requires an Idempotency-Key header.");
+    }
+    const pool = pgClient();
+    if (!pool) return problem(res, 503, "Store unavailable", "IDEM_PG_URL is not set.");
+
+    const fp = fingerprint(req);
+    // 主キーに当たった 2 本目は挿入されず、RETURNING は 0 行になる
+    const claimed = await pool.query(
+      "INSERT INTO idempotency_keys (key, fingerprint) VALUES ($1, $2) ON CONFLICT (key) DO NOTHING RETURNING key",
+      [key, fp],
+    );
+    if (claimed.rowCount === 0) {
+      const { rows: [row] } = await pool.query("SELECT fingerprint, status, body FROM idempotency_keys WHERE key = $1", [key]);
+      if (row.fingerprint !== fp) {
+        return problem(res, 422, "Idempotency-Key is already used", "This Idempotency-Key was used with a different request payload.");
+      }
+      if (row.status === null) {
+        return problem(res, 409, "A request is outstanding for this Idempotency-Key", "A request with the same Idempotency-Key is still being processed.");
+      }
+      res.set("Idempotency-Replayed", "true");
+      return res.status(row.status).json(row.body);
+    }
+
+    try {
+      const body = await doCharge(req);
+      await pool.query("UPDATE idempotency_keys SET status = 201, body = $2 WHERE key = $1", [key, body]);
+      return res.status(201).json(body);
+    } catch {
+      // 失敗した結果は保存しない（B と同じ）。行を消して、同じキーでの送り直しを受け付ける
+      await pool.query("DELETE FROM idempotency_keys WHERE key = $1", [key]).catch(() => {});
+      return problem(res, 500, "Charge failed", "The charge failed after it may have been applied.");
+    }
+  });
+
+  // ---- C: 処理中のキーを Redis の SET NX で確保する -----------------------
+  app.post("/005/charge-redis", express.json(), async (req, res) => {
+    const key = req.headers["idempotency-key"];
+    if (!key) {
+      return problem(res, 400, "Idempotency-Key is missing", "This operation requires an Idempotency-Key header.");
+    }
+    const ready = redisClient();
+    if (!ready) return problem(res, 503, "Store unavailable", "IDEM_REDIS_URL is not set.");
+    const redis = await ready;
+
+    const fp = fingerprint(req);
+    const slot = `idem:${key}`;
+    // キーが既にあれば NX で設定されず、null が返る。期限は Stripe に合わせて 24 時間
+    const claimed = await redis.set(slot, JSON.stringify({ fp, status: null }), {
+      condition: "NX",
+      expiration: { type: "PX", value: DEFAULT_TTL_MS },
+    });
+    if (claimed !== "OK") {
+      const row = JSON.parse(await redis.get(slot));
+      if (row.fp !== fp) {
+        return problem(res, 422, "Idempotency-Key is already used", "This Idempotency-Key was used with a different request payload.");
+      }
+      if (row.status === null) {
+        return problem(res, 409, "A request is outstanding for this Idempotency-Key", "A request with the same Idempotency-Key is still being processed.");
+      }
+      res.set("Idempotency-Replayed", "true");
+      return res.status(row.status).json(row.body);
+    }
+
+    try {
+      const body = await doCharge(req);
+      await redis.set(slot, JSON.stringify({ fp, status: 201, body }), {
+        condition: "XX",
+        expiration: { type: "PX", value: DEFAULT_TTL_MS },
+      });
+      return res.status(201).json(body);
+    } catch {
+      await redis.del(slot).catch(() => {});
+      return problem(res, 500, "Charge failed", "The charge failed after it may have been applied.");
+    }
+  });
+}
+
+/** 測定用の口。?fail_after_charge=1 のとき、課金のあとで失敗させる（課金は済んでいる）*/
+function failIfAsked(req) {
+  if (req.query.fail_after_charge === "1") throw new Error("failure after charge");
 }

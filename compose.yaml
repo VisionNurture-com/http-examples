@@ -88,6 +88,14 @@ services:
     environment:
       PORT: "3000"
       NODE_ENV: "production"
+      # 記事 005 の共有ストア（処理中のキーを 2 台から見える所に置く）
+      IDEM_PG_URL: "postgres://idem:idem@idem-pg:5432/idem"
+      IDEM_REDIS_URL: "redis://idem-redis:6379"
+    depends_on:
+      idem-pg:
+        condition: service_healthy
+      idem-redis:
+        condition: service_healthy
     ports:
       # 🔴 記事 012 の 103 Early Hints 測定で、nginx を挟まない対照を取るために直接開ける。
       #    「103 が届かない」のがアプリ側の問題かプロキシの問題かを分けるため。
@@ -105,6 +113,14 @@ services:
     environment:
       PORT: "3000"
       NODE_ENV: "production"
+      # 記事 005 の共有ストア（処理中のキーを 2 台から見える所に置く）
+      IDEM_PG_URL: "postgres://idem:idem@idem-pg:5432/idem"
+      IDEM_REDIS_URL: "redis://idem-redis:6379"
+    depends_on:
+      idem-pg:
+        condition: service_healthy
+      idem-redis:
+        condition: service_healthy
     ports:
       # 8090〜8096 は他のサービスが使っている。空いている最初の番号を採った
       - "8097:3000"
@@ -238,6 +254,39 @@ services:
       #    「TCP は成立するが応答が来ない」= K7 になる。K3 と K7 は同じ DROP から
       #    経路だけを変えて作り分ける（2026-08-26 実測）。
       - "8096:9999"
+    networks:
+      - httpnet
+
+  # 記事 005 の共有ストア 1: PostgreSQL。処理中のキーを一意制約で確保する。
+  # 表は初期化スクリプトで作る。2 台のアプリが同時に CREATE TABLE IF NOT EXISTS を
+  # 流すと、PostgreSQL では型の登録が競合して片方が落ちることがあるため。
+  idem-pg:
+    image: postgres:18.6-alpine
+    container_name: http-examples-idem-pg
+    environment:
+      POSTGRES_USER: idem
+      POSTGRES_PASSWORD: idem
+      POSTGRES_DB: idem
+    volumes:
+      - ./app/005-idempotency/schema.sql:/docker-entrypoint-initdb.d/005-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U idem -d idem"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    networks:
+      - httpnet
+
+  # 記事 005 の共有ストア 2: Redis。処理中のキーを SET NX で確保する。
+  # 1 台構成で測る（複数台の Redis やフェイルオーバーは測定の範囲外）。
+  idem-redis:
+    image: redis:8.10.2-alpine
+    container_name: http-examples-idem-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
     networks:
       - httpnet
 
